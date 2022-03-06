@@ -1,33 +1,40 @@
 import os
 import time
+import uuid
+from email.mime.application import MIMEApplication
 from typing import List
 
 import selenium
-from selenium import webdriver
 
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.firefox import webdriver
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.header import Header
+
+from common.email import EmailInfo, AttachInfo
 
 
 class CommonCrawl:
     def __init__(self):
         self.urls = []
-        self.obj_dic = {}
         self.mode = 0
-        self.img_location = ''
+        self.file_location = ''
+        self.email_info = EmailInfo()
+        self.__img_path = []
 
-    def run(self):
-        self.before_crawl()
+    def run(self, *args):
+        self.before_crawl(args)
         # 使用 fire_fox 的 WebDriver
         fire_fox_options = Options()
-        # fire_fox_options.add_argument('--headless')
-        browser = webdriver.Firefox(options=fire_fox_options)
+        fire_fox_options.add_argument('--headless')
+        browser = selenium.webdriver.Firefox(options=fire_fox_options)
         for i in range(0, len(self.urls)):
             browser.get(self.urls[i])
             # save img
-            self.__save_img(browser, i)
+            self.__save_img(browser, i, "normal")
             # parse html
             self.parse(browser)
             # page search
@@ -35,25 +42,59 @@ class CommonCrawl:
         browser.close()
         # 处理结果的策略
         if self.mode == 0:
-            self.send_email()
+            self.before_send_email()
+            self.__send_email()
         else:
             pass
 
-    def before_crawl(self):
+    def before_crawl(self, args):
         pass
 
     def parse(self, browser: WebDriver):
         pass
 
-    def send_email(self):
+    def before_send_email(self):
         pass
+
+    def __send_email(self):
+        if self.email_info is None:
+            return
+        sender = '2840498397@qq.com'
+        receivers = self.email_info.receivers
+        if len(receivers) == 0:
+            return
+
+        # 创建一个带附件的实例
+        message = MIMEMultipart()
+        message['From'] = Header("tacbin", 'utf-8')
+        subject = self.email_info.subject
+        message['Subject'] = Header(subject, 'utf-8')
+
+        # 邮件正文内容
+        message.attach(MIMEText(self.email_info.content, 'html', 'utf-8'))
+        for attach_info in self.email_info.attaches:
+            if not isinstance(attach_info, AttachInfo):
+                return
+            # 构造附件
+            att = MIMEText(open(attach_info.file_location, 'rb').read(), 'base64', 'utf-8')
+            att["Content-Type"] = 'application/octet-stream'
+            att["Content-Disposition"] = 'attachment; filename="%s"' % attach_info.file_name
+            message.attach(att)
+        try:
+            smtp = smtplib.SMTP_SSL(host='smtp.qq.com')
+            smtp.ehlo("smtp.qq.com")
+            smtp.login(sender, 'yfxehwhnrxqadche')
+            smtp.sendmail(sender, receivers, message.as_string())
+            smtp.close()
+        except smtplib.SMTPException as e:
+            print(e)
 
     def get_next_elements(self, browser: WebDriver) -> List[WebElement]:
         # return browser.find_elements(By.XPATH, '//div[@class="page"]/a[@ka="page-next"]')
         return []
 
-    def __save_img(self, browser: WebDriver, i: int):
-        if self.img_location is None:
+    def __save_img(self, browser: WebDriver, i: int, prefix: str):
+        if self.file_location is None:
             return
         time.sleep(2)
         # 用js获取页面的宽高，如果有其他需要用js的部分也可以用这个方法
@@ -61,10 +102,15 @@ class CommonCrawl:
         height = browser.execute_script("return document.documentElement.scrollHeight")
         # 将浏览器的宽高设置成刚刚获取的宽高
         browser.set_window_size(width, height)
-        browser.get_screenshot_as_file(os.path.join(self.img_location, str(i), "_img.png"))
+        dirs = self.get_file_path()
+        if not os.path.exists(dirs):
+            os.makedirs(dirs, mode=0o1777)
+        file_path = os.path.join(dirs, prefix + "_" + str(i) + "_" + str(uuid.uuid4()) + ".png")
+        browser.get_screenshot_as_file(file_path)
+        self.__img_path.append(file_path)
 
     def __next_click(self, browser: WebDriver):
-        elements = self.get_next_elements()
+        elements = self.get_next_elements(browser)
         if len(elements) == 0:
             return
         current_url = browser.current_url
@@ -75,9 +121,15 @@ class CommonCrawl:
                 break
             current_url = browser.current_url
             # save img
-            self.__save_img(browser, i)
+            self.__save_img(browser, i, "click")
             # parse html
             self.parse(browser)
             # next page
-            elements = self.get_next_elements()
+            elements = self.get_next_elements(browser)
             i += 1
+
+    def get_file_path(self):
+        return os.path.join('.', self.file_location)
+
+    def get_img_local_path(self):
+        return self.__img_path
