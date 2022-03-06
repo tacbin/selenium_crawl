@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+import platform
 import time
 import uuid
 from email.mime.application import MIMEApplication
@@ -33,7 +34,10 @@ class CommonCrawl:
         fire_fox_options = Options()
         # 代理
         fire_fox_options.add_argument('--headless')
-        browser = selenium.webdriver.Firefox(options=fire_fox_options,executable_path='./geckodriver')
+        if platform.system().lower() == 'linux':
+            browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
+        else:
+            browser = selenium.webdriver.Firefox(options=fire_fox_options)
         for i in range(0, len(self.urls)):
             browser.get(self.urls[i])
             # save img
@@ -136,4 +140,3 @@ class CommonCrawl:
 
     def get_img_local_path(self):
         return self.__img_path
-
