@@ -53,7 +53,7 @@ class BossCrawl(CommonCrawl):
             skills = sel.xpath('//span[@class="tag-item"]/text()')
             company_status = sel.xpath('//div[@class="company-text"]/p/text()[1]')[0]
             company_size = company_status
-            if len(sel.xpath('//div[@class="company-text"]/p/text()[1]')) > 1:
+            if len(sel.xpath('//div[@class="company-text"]/p/text()[2]')) > 0:
                 company_size = sel.xpath('//div[@class="company-text"]/p/text()[2]')[0]
             job_detail = "https://www.zhipin.com" + sel.xpath('//div[@class="primary-box"]/@href')[0]
             obj_dict = {
