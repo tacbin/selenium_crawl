@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import time
 import uuid
@@ -5,6 +6,7 @@ from email.mime.application import MIMEApplication
 from typing import List
 
 import selenium
+from pip._vendor import requests
 
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.webdriver import WebDriver
@@ -29,6 +31,7 @@ class CommonCrawl:
         self.before_crawl(args)
         # 使用 fire_fox 的 WebDriver
         fire_fox_options = Options()
+        # 代理
         fire_fox_options.add_argument('--headless')
         browser = selenium.webdriver.Firefox(options=fire_fox_options)
         for i in range(0, len(self.urls)):
@@ -133,3 +136,4 @@ class CommonCrawl:
 
     def get_img_local_path(self):
         return self.__img_path
+

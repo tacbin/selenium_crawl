@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # This is a sample Python script.
 
 # Press Alt+Shift+X to execute it or replace it with your code.
@@ -9,7 +10,7 @@ import crawl_mapping
 from common_crawl import CommonCrawl
 
 if __name__ == '__main__':
-    args = ['运营主管', 'java', 'go', '活动运营']
+    args = ['测试专家']
     crawl = crawl_mapping.obj_mapping['boss']
     if isinstance(crawl, CommonCrawl):
         crawl.run(args)

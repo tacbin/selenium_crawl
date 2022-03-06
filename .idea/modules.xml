@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../proxy_pool/.idea/proxy_pool.iml" filepath="$PROJECT_DIR$/../proxy_pool/.idea/proxy_pool.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/selenium_crawl.iml" filepath="$PROJECT_DIR$/.idea/selenium_crawl.iml" />
     </modules>
   </component>
