@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
-from boss.boss_crawl import BossCrawl
+from crawl.boss.boss_crawl import BossCrawl
+from crawl.hok.hok_crwal import HokCrawl
 
 obj_mapping = {
-    "boss": BossCrawl()
+    "boss": BossCrawl(),
+    "hok": HokCrawl()
 }
