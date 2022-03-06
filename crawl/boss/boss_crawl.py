@@ -84,7 +84,7 @@ class BossCrawl(CommonCrawl):
         self.email_info = EmailInfo()
         self.email_info.subject = '请查收数据'
         self.email_info.content = '详情请查看附件'
-        self.email_info.receivers = ['2840498397@qq.com']
+        self.email_info.receivers = ['2840498397@qq.com', '1208559252@qq.com']
         # gen excel
         for key in self.result_map:
             df_json = pd.read_json(json.dumps(self.result_map[key]))
