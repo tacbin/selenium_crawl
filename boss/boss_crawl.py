@@ -99,7 +99,7 @@ class BossCrawl(CommonCrawl):
             attach.file_name = p.get_pinyin('%s.xlsx' % key)
             self.email_info.content = self.email_info.content + key + "(" + attach.file_name + ");"
             attach.file_location = excel_file_path
-            self.email_info.attaches = [attach]
+            self.email_info.attaches.append(attach)
 
     def get_next_elements(self, browser: WebDriver) -> List[WebElement]:
         return browser.find_elements(By.XPATH, '//div[@class="page"]/a[@ka="page-next"]')
