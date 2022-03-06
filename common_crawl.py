@@ -33,7 +33,7 @@ class CommonCrawl:
         fire_fox_options = Options()
         # 代理
         fire_fox_options.add_argument('--headless')
-        browser = selenium.webdriver.Firefox(options=fire_fox_options)
+        browser = selenium.webdriver.Firefox(options=fire_fox_options,executable_path='./geckodriver')
         for i in range(0, len(self.urls)):
             browser.get(self.urls[i])
             # save img
