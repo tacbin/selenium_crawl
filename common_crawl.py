@@ -27,12 +27,15 @@ class CommonCrawl:
         self.file_location = ''
         self.email_info = EmailInfo()
         self.__img_path = []
+        self.is_save_img = False
 
     def run(self, *args):
         self.before_crawl(args)
         # 使用 fire_fox 的 WebDriver
         fire_fox_options = Options()
         # 代理
+        # proxy = self.__get_proxy()
+        # fire_fox_options.add_argument('--proxy-server=' + proxy)
         fire_fox_options.add_argument('--headless')
         if platform.system().lower() == 'linux':
             browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
@@ -43,6 +46,7 @@ class CommonCrawl:
             # save img
             self.__save_img(browser, i, "normal")
             # parse html
+            time.sleep(1.5)
             self.parse(browser)
             # page search
             self.__next_click(browser)
@@ -101,7 +105,7 @@ class CommonCrawl:
         return []
 
     def __save_img(self, browser: WebDriver, i: int, prefix: str):
-        if self.file_location is None:
+        if not self.is_save_img:
             return
         time.sleep(2)
         # 用js获取页面的宽高，如果有其他需要用js的部分也可以用这个方法
@@ -130,6 +134,7 @@ class CommonCrawl:
             # save img
             self.__save_img(browser, i, "click")
             # parse html
+            time.sleep(1.5)
             self.parse(browser)
             # next page
             elements = self.get_next_elements(browser)
@@ -140,3 +145,6 @@ class CommonCrawl:
 
     def get_img_local_path(self):
         return self.__img_path
+
+    # def __get_proxy(self):
+    #     return requests.get("http://127.0.0.1:5010/get/").text

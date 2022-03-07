@@ -10,7 +10,7 @@ import crawl_mapping
 from common_crawl import CommonCrawl
 
 if __name__ == '__main__':
-    args = ['运营总监', '技术总监', 'CTO', 'CEO', 'AI', '图像识别', '神经网络', '创业']
+    args = ['运营专员', '运营主管', '产品运营', '内容运营', '用户运营', '商家运营', '新媒体运营', '社区运营']
     crawl = crawl_mapping.obj_mapping['boss']
     if isinstance(crawl, CommonCrawl):
         crawl.run(args)

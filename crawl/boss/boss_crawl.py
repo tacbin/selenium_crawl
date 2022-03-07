@@ -31,6 +31,7 @@ class BossCrawl(CommonCrawl):
                 self.key_word_map[value[i]] = i
         self.mode = 0
         self.file_location = 'boss_crawl'
+        self.is_save_img = True
 
     def parse(self, browser: WebDriver):
         page = browser.page_source
@@ -85,12 +86,12 @@ class BossCrawl(CommonCrawl):
         self.email_info.subject = '请查收数据'
         self.email_info.content = '详情请查看附件'
         self.email_info.receivers = ['2840498397@qq.com', '1208559252@qq.com']
+        dirs = self.get_file_path()
+        if not os.path.exists(dirs):
+            os.makedirs(dirs)
         # gen excel
         for key in self.result_map:
             df_json = pd.read_json(json.dumps(self.result_map[key]))
-            dirs = self.get_file_path()
-            if not os.path.exists(dirs):
-                os.makedirs(dirs)
             excel_file_path = os.path.join(dirs, '%s.xlsx' % key)
             df_json.to_excel(excel_file_path)
             attach = AttachInfo()
