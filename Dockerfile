@@ -10,5 +10,6 @@ WORKDIR /$APP_HOME
 COPY . $APP_HOME/
 
 #CMD tail -f /dev/null
-CMD pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/ && \
+CMD chmod +x ./geckodriver && \
+    pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/ && \
     python3 main.py
