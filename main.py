@@ -25,8 +25,6 @@ def msg_consumer(ch, method, properties, data_bytes):
     else:
         print(crawl, 'does not implement CommonCrawl')
 
-    ch.basic_ack(delivery_tag=method.delivery_tag)  # 手动提交偏移量
-
 
 if __name__ == '__main__':
     credentials = pika.PlainCredentials('guest', 'tacbin@123')
@@ -35,6 +33,7 @@ if __name__ == '__main__':
     channel.basic_consume('selenium-crawl-queue',  # 队列名
                           msg_consumer,  # 回调函数
                           consumer_tag="selenium_crawl_consumer",
+                          auto_ack=True
                           )
     print("start")
     channel.start_consuming()
