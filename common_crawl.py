@@ -35,9 +35,10 @@ class CommonCrawl:
         # 代理
         # proxy = self.__get_proxy()
         # fire_fox_options.add_argument('--proxy-server=' + proxy)
-        # fire_fox_options.add_argument('--headless')
+        fire_fox_options.add_argument('--headless')
         if platform.system().lower() == 'linux':
             browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
+            fire_fox_options.arguments.remove('--headless')
         else:
             browser = selenium.webdriver.Firefox(options=fire_fox_options)
         browser = self.before_crawl(args, browser)
@@ -60,7 +61,7 @@ class CommonCrawl:
             pass
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
-        pass
+        return browser
 
     def parse(self, browser: WebDriver):
         pass
