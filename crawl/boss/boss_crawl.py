@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
 import os
-import urllib
 from typing import List
 from urllib import parse
 
@@ -15,6 +14,7 @@ from common.email import EmailInfo, AttachInfo
 from common_crawl import CommonCrawl
 import pandas as pd
 from io import StringIO
+
 
 class BossCrawl(CommonCrawl):
 

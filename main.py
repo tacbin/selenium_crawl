@@ -14,16 +14,19 @@ from common_crawl import CommonCrawl
 
 
 def msg_consumer(ch, method, properties, data_bytes):
-    msg = data_bytes.decode()
-    print('get msg:', msg)
-    msg_dto = json.loads(msg)
-    msg_type = msg_dto['type']
-    msg_args = msg_dto['args']
-    crawl = crawl_mapping.obj_mapping[msg_type]
-    if isinstance(crawl, CommonCrawl):
-        crawl.run(msg_args)
-    else:
-        print(crawl, 'does not implement CommonCrawl')
+    try:
+        msg = data_bytes.decode()
+        print('get msg:', msg)
+        msg_dto = json.loads(msg)
+        msg_type = msg_dto['type']
+        msg_args = msg_dto['args']
+        crawl = crawl_mapping.obj_mapping[msg_type]
+        if isinstance(crawl, CommonCrawl):
+            crawl.run(msg_args)
+        else:
+            print(crawl, 'does not implement CommonCrawl')
+    except Exception as e:
+        print(e)
 
 
 if __name__ == '__main__':
