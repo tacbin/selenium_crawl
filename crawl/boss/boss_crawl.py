@@ -5,7 +5,7 @@ import urllib
 from typing import List
 from urllib import parse
 
-from lxml import etree
+from lxml import html
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
@@ -14,7 +14,7 @@ from xpinyin import Pinyin
 from common.email import EmailInfo, AttachInfo
 from common_crawl import CommonCrawl
 import pandas as pd
-
+from io import StringIO
 
 class BossCrawl(CommonCrawl):
 
@@ -35,6 +35,7 @@ class BossCrawl(CommonCrawl):
 
     def parse(self, browser: WebDriver):
         page = browser.page_source
+        etree = html.etree
         selector = etree.HTML(page)
         companies = selector.xpath('//*[@id="main"]/div/div/ul/li/div')
         for c in companies:
@@ -91,7 +92,7 @@ class BossCrawl(CommonCrawl):
             os.makedirs(dirs)
         # gen excel
         for key in self.result_map:
-            df_json = pd.read_json(json.dumps(self.result_map[key]))
+            df_json = pd.read_json(StringIO(json.dumps(self.result_map[key])))
             excel_file_path = os.path.join(dirs, '%s.xlsx' % key)
             df_json.to_excel(excel_file_path)
             attach = AttachInfo()

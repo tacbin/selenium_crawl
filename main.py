@@ -5,14 +5,36 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 # Press the green button in the gutter to run the script.
+import json
+
+import pika as pika
 
 import crawl_mapping
 from common_crawl import CommonCrawl
 
-if __name__ == '__main__':
-    args = ['运营专员', '运营主管', '产品运营', '内容运营', '用户运营', '商家运营', '新媒体运营', '社区运营']
-    crawl = crawl_mapping.obj_mapping['boss']
+
+def msg_consumer(ch, method, properties, data_bytes):
+    msg = data_bytes.decode()
+    print('get msg:', msg)
+    msg_dto = json.loads(msg)
+    msg_type = msg_dto['type']
+    msg_args = msg_dto['args']
+    crawl = crawl_mapping.obj_mapping[msg_type]
     if isinstance(crawl, CommonCrawl):
-        crawl.run(args)
+        crawl.run(msg_args)
     else:
         print(crawl, 'does not implement CommonCrawl')
+
+    ch.basic_ack(delivery_tag=method.delivery_tag)  # 手动提交偏移量
+
+
+if __name__ == '__main__':
+    credentials = pika.PlainCredentials('guest', 'tacbin@123')
+    connection = pika.BlockingConnection(pika.ConnectionParameters('42.194.223.190', 5672, '/', credentials))
+    channel = connection.channel()
+    channel.basic_consume('selenium-crawl-queue',  # 队列名
+                          msg_consumer,  # 回调函数
+                          consumer_tag="selenium_crawl_consumer",
+                          )
+    print("start")
+    channel.start_consuming()
