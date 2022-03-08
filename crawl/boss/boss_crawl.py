@@ -23,7 +23,7 @@ class BossCrawl(CommonCrawl):
         self.result_map = {}
         self.key_word_map = {}
 
-    def before_crawl(self, args):
+    def before_crawl(self, args, browser: WebDriver):
         for _, value in enumerate(args):
             for i in range(0, len(value)):
                 url = 'https://www.zhipin.com/job_detail/?query=%s&city=101280600&source=8' % value[i]
@@ -32,6 +32,7 @@ class BossCrawl(CommonCrawl):
         self.mode = 0
         self.file_location = 'boss_crawl'
         self.is_save_img = True
+        return browser
 
     def parse(self, browser: WebDriver):
         page = browser.page_source

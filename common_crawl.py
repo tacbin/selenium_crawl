@@ -30,17 +30,17 @@ class CommonCrawl:
         self.is_save_img = False
 
     def run(self, *args):
-        self.before_crawl(args)
         # 使用 fire_fox 的 WebDriver
         fire_fox_options = Options()
         # 代理
         # proxy = self.__get_proxy()
         # fire_fox_options.add_argument('--proxy-server=' + proxy)
-        fire_fox_options.add_argument('--headless')
+        # fire_fox_options.add_argument('--headless')
         if platform.system().lower() == 'linux':
             browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
         else:
             browser = selenium.webdriver.Firefox(options=fire_fox_options)
+        browser = self.before_crawl(args, browser)
         for i in range(0, len(self.urls)):
             browser.get(self.urls[i])
             # save img
@@ -50,6 +50,7 @@ class CommonCrawl:
             self.parse(browser)
             # page search
             self.__next_click(browser)
+        time.sleep(10)
         browser.close()
         # 处理结果的策略
         if self.mode == 0:
@@ -58,7 +59,7 @@ class CommonCrawl:
         else:
             pass
 
-    def before_crawl(self, args):
+    def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         pass
 
     def parse(self, browser: WebDriver):
