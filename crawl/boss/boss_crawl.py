@@ -102,6 +102,14 @@ class BossCrawl(CommonCrawl):
             self.email_info.content = self.email_info.content + key + "(" + attach.file_name + ");"
             attach.file_location = excel_file_path
             self.email_info.attaches.append(attach)
+        # exception no data
+        if len(self.email_info.attaches) == 0:
+            self.email_info.receivers = ['2840498397@qq.com']
+            self.email_info.content = 'get no data'
+            for img_url in self.get_img_local_path():
+                attach = AttachInfo()
+                attach.file_location = img_url
+                self.email_info.attaches.append(attach)
 
     def get_next_elements(self, browser: WebDriver) -> List[WebElement]:
         return browser.find_elements(By.XPATH, '//div[@class="page"]/a[@ka="page-next"]')
