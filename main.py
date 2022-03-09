@@ -20,7 +20,7 @@ def msg_consumer(ch, method, properties, data_bytes):
         msg_dto = json.loads(msg)
         msg_type = msg_dto['type']
         msg_args = msg_dto['args']
-        crawl = crawl_mapping.obj_mapping[msg_type]
+        crawl = crawl_mapping.crawl_factory(msg_type)
         if isinstance(crawl, CommonCrawl):
             crawl.run(msg_args)
         else:
