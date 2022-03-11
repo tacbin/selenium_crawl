@@ -11,6 +11,7 @@ import pika as pika
 
 import crawl_mapping
 from common_crawl import CommonCrawl
+from middleware.rabbit_mq import init_middleware, get_rabbit_mq_channel
 
 
 def msg_consumer(ch, method, properties, data_bytes):
@@ -29,13 +30,24 @@ def msg_consumer(ch, method, properties, data_bytes):
         print(e)
 
 
+def api_msg_consumer(ch, method, properties, data_bytes):
+    try:
+        pass
+    except Exception as e:
+        print(e)
+
+
 if __name__ == '__main__':
-    credentials = pika.PlainCredentials('guest', 'tacbin@123')
-    connection = pika.BlockingConnection(pika.ConnectionParameters('42.194.223.190', 5672, '/', credentials))
-    channel = connection.channel()
+    init_middleware()
+    channel = get_rabbit_mq_channel()
     channel.basic_consume('selenium-crawl-queue',  # 队列名
                           msg_consumer,  # 回调函数
                           consumer_tag="selenium_crawl_consumer",
+                          auto_ack=True
+                          )
+    channel.basic_consume('api-crawl-queue',  # 队列名
+                          msg_consumer,  # 回调函数
+                          consumer_tag="api_crawl_consumer",
                           auto_ack=True
                           )
     print("start")
