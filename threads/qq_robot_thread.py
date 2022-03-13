@@ -27,6 +27,7 @@ def run_http():
     verify_key = 'INITKEYurlPivoQ'  # 你在 setting.yml 中设置的 verifyKey
     port = 8080  # 你在 setting.yml 中设置的 port (http)
     mirai = miraicle.Mirai(qq=qq, verify_key=verify_key, port=port)
+    mirai.base_url = mirai.base_url.replace('localhost', '119.29.97.135')
     mirai.run()
 
 
