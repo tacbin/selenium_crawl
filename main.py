@@ -5,50 +5,17 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 # Press the green button in the gutter to run the script.
-import json
 
-import pika as pika
+import miraicle
 
-import crawl_mapping
-from common_crawl import CommonCrawl
-from middleware.rabbit_mq import init_middleware, get_rabbit_mq_channel
-
-
-def msg_consumer(ch, method, properties, data_bytes):
-    try:
-        msg = data_bytes.decode()
-        print('get msg:', msg)
-        msg_dto = json.loads(msg)
-        msg_type = msg_dto['type']
-        msg_args = msg_dto['args']
-        crawl = crawl_mapping.crawl_factory(msg_type)
-        if isinstance(crawl, CommonCrawl):
-            crawl.run(msg_args)
-        else:
-            print(crawl, 'does not implement CommonCrawl')
-    except Exception as e:
-        print(e)
-
-
-def api_msg_consumer(ch, method, properties, data_bytes):
-    try:
-        pass
-    except Exception as e:
-        print(e)
-
+from middleware.rabbit_mq import init_middleware
+from threads.mq_thread import MqThreadControl
+from threads.qq_robot_thread import QQRobotThreadControl
 
 if __name__ == '__main__':
     init_middleware()
-    channel = get_rabbit_mq_channel()
-    channel.basic_consume('selenium-crawl-queue',  # 队列名
-                          msg_consumer,  # 回调函数
-                          consumer_tag="selenium_crawl_consumer",
-                          auto_ack=True
-                          )
-    channel.basic_consume('api-crawl-queue',  # 队列名
-                          msg_consumer,  # 回调函数
-                          consumer_tag="api_crawl_consumer",
-                          auto_ack=True
-                          )
-    print("start")
-    channel.start_consuming()
+    mq_thread = MqThreadControl(1, 'mq thread')
+    mq_thread.start()
+
+    qq_thread = QQRobotThreadControl(2, 'qq thread')
+    qq_thread.start()
