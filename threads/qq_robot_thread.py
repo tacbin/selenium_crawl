@@ -13,23 +13,21 @@ class QQRobotThreadControl(threading.Thread):
         self.name = name
 
     def run(self):
-        proc = multiprocessing.Process(target=run_http, args=(True,))
+        proc = multiprocessing.Process(target=run_http, args=())
         proc.start()
         while True:
             time.sleep(300)
             proc.terminate()
-            proc = multiprocessing.Process(target=run_http, args=(False,))
+            proc = multiprocessing.Process(target=run_http, args=())
             proc.start()
 
 
-def run_http(first_run: bool):
+def run_http():
     qq = 3266363480  # 你登录的机器人 QQ 号
     verify_key = 'INITKEYurlPivoQ'  # 你在 setting.yml 中设置的 verifyKey
     port = 8080  # 你在 setting.yml 中设置的 port (http)
     mirai = miraicle.Mirai(qq=qq, verify_key=verify_key, port=port)
     mirai.base_url = mirai.base_url.replace('localhost', '119.29.97.135')
-    if first_run:
-        mirai.send_group_msg(group=461936572, msg='重启成功了~')
     mirai.run()
 
 
