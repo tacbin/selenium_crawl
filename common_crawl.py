@@ -1,22 +1,20 @@
 # -*- coding: utf-8 -*-
 import os
 import platform
+import smtplib
 import time
 import uuid
-from email.mime.application import MIMEApplication
+from email.header import Header
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 from typing import List
 
 import selenium
-from pip._vendor import requests
-
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from email.header import Header
 
+from common.common_instantce import CommonInstance
 from common.email import EmailInfo, AttachInfo
 
 
@@ -54,9 +52,11 @@ class CommonCrawl:
         time.sleep(10)
         browser.close()
         # 处理结果的策略
+        self.before_send()
         if self.mode == 0:
-            self.before_send_email()
             self.__send_email()
+        elif self.mode == 1:
+            self.custom_send()
         else:
             pass
 
@@ -66,7 +66,10 @@ class CommonCrawl:
     def parse(self, browser: WebDriver):
         pass
 
-    def before_send_email(self):
+    def before_send(self):
+        pass
+
+    def custom_send(self):
         pass
 
     def __send_email(self):

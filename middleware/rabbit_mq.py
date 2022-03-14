@@ -16,5 +16,4 @@ def __init_rabbit_mq():
     __rabbit_mq_conn = connection.channel()
 
 
-def init_middleware():
-    __init_rabbit_mq()
+

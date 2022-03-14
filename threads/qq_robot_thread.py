@@ -5,6 +5,8 @@ import time
 
 import miraicle
 
+from common.common_instantce import CommonInstance
+
 
 class QQRobotThreadControl(threading.Thread):
     def __init__(self, thread_id, name):
@@ -13,22 +15,12 @@ class QQRobotThreadControl(threading.Thread):
         self.name = name
 
     def run(self):
-        proc = multiprocessing.Process(target=run_http, args=())
-        proc.start()
-        while True:
-            time.sleep(300)
-            proc.terminate()
-            proc = multiprocessing.Process(target=run_http, args=())
-            proc.start()
-
-
-def run_http():
-    qq = 3266363480  # 你登录的机器人 QQ 号
-    verify_key = 'INITKEYurlPivoQ'  # 你在 setting.yml 中设置的 verifyKey
-    port = 8080  # 你在 setting.yml 中设置的 port (http)
-    mirai = miraicle.Mirai(qq=qq, verify_key=verify_key, port=port)
-    mirai.base_url = mirai.base_url.replace('localhost', '119.29.97.135')
-    mirai.run()
+        qq = 3266363480  # 你登录的机器人 QQ 号
+        verify_key = 'INITKEYurlPivoQ'  # 你在 setting.yml 中设置的 verifyKey
+        port = 8080  # 你在 setting.yml 中设置的 port (http)
+        CommonInstance.QQ_ROBOT = miraicle.Mirai(qq=qq, verify_key=verify_key, port=port)
+        CommonInstance.QQ_ROBOT.base_url = CommonInstance.QQ_ROBOT.base_url.replace('localhost', '119.29.97.135')
+        CommonInstance.QQ_ROBOT.run()
 
 
 @miraicle.Mirai.receiver('GroupMessage')
@@ -57,6 +49,6 @@ def hello_to_friend(robot: miraicle.Mirai, msg: miraicle.FriendMessage):
     robot.send_friend_msg(qq=msg.sender, msg='咩~')
 
 
-@miraicle.scheduled_job(miraicle.Scheduler.every().day.at('8:40'))
+@miraicle.scheduled_job(miraicle.Scheduler.every(1).day.at('8:40'))
 def morning(bot: miraicle.Mirai):
     bot.send_group_msg(group=461936572, msg='早上好')

@@ -83,7 +83,7 @@ class BossCrawl(CommonCrawl):
                 else:
                     self.result_map[key] = [obj_dict]
 
-    def before_send_email(self):
+    def before_send(self):
         self.email_info = EmailInfo()
         self.email_info.subject = '请查收数据'
         self.email_info.content = '详情请查看附件'
