@@ -10,17 +10,21 @@ from common_crawl import CommonCrawl
 class ZhuBaJieCrawl(CommonCrawl):
     def __init__(self):
         super().__init__()
-        self.result = []
+        self.result_map = {}
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
-        self.urls = ["https://task.zbj.com/hall/list/h1"]
+        self.urls = ["https://task.zbj.com/hall/list/h1", "https://task.zbj.com/hall/list/h7",
+                     "https://task.zbj.com/hall/list/h9"]
+        for url in self.urls:
+            self.result_map[url] = []
+
         self.file_location = 'zhu_ba_jie_crawl'
         self.is_save_img = False
         self.mode = 1
         return browser
 
     def parse(self, browser: WebDriver):
-        print('zhu ba jie start crawl..')
+        print('zhu ba jie start crawl..', browser.current_url)
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)
@@ -44,29 +48,30 @@ class ZhuBaJieCrawl(CommonCrawl):
             url = url.replace('\n', '')
             url = url.replace('//', '')
 
-            self.result.append(TaskResult(title, detail, money, url))
-        print('zhu ba jie end crawl..')
+            self.result_map[browser.current_url].append(TaskResult(title, detail, money, url))
+        print('zhu ba jie end crawl..', browser.current_url)
 
     def custom_send(self):
-        print('zhu ba jie start custom_send..')
-        cache_result = CommonInstance.Redis_client.get('2840498397_zhu_ba_jie')
-        cache_result = cache_result.decode("utf-8")
-        first_one = ''
-        for data in self.result:
-            if first_one == '':
-                first_one = data.url
-            if data.url == cache_result:
-                CommonInstance.Redis_client.set('2840498397_zhu_ba_jie', first_one)
-                return
-            txt = '商机来啦\n' \
-                  '【%s】\n' \
-                  '详情:%s\n' \
-                  '价格:%s\n' \
-                  '链接:%s' % (data.title, data.detail, data.money, data.url)
-            CommonInstance.QQ_ROBOT.send_group_msg(group=461936572,
-                                                   msg=[miraicle.Face.from_name('嘿嘿'), miraicle.Plain(txt),
-                                                        miraicle.Face.from_name('鲸鱼')])
-        CommonInstance.Redis_client.set('2840498397_zhu_ba_jie', first_one)
+        for url in self.result_map:
+            print('zhu ba jie start custom_send..', url)
+            cache_result = CommonInstance.Redis_client.get(url)
+            cache_result = cache_result.decode("utf-8") if cache_result is not None else ''
+            first_one = ''
+            for data in self.result_map[url]:
+                if first_one == '':
+                    first_one = data.url
+                if data.url == cache_result:
+                    CommonInstance.Redis_client.set(url, first_one)
+                    return
+                txt = '商机来啦\n' \
+                      '【%s】\n' \
+                      '详情:%s\n' \
+                      '价格:%s\n' \
+                      '链接:%s' % (data.title, data.detail, data.money, data.url)
+                CommonInstance.QQ_ROBOT.send_group_msg(group=461936572,
+                                                       msg=[miraicle.Face.from_name('嘿嘿'), miraicle.Plain(txt),
+                                                            miraicle.Face.from_name('鲸鱼')])
+            CommonInstance.Redis_client.set(url, first_one)
 
 
 class TaskResult:

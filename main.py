@@ -1,12 +1,4 @@
 # -*- coding: utf-8 -*-
-# This is a sample Python script.
-
-# Press Alt+Shift+X to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-# Press the green button in the gutter to run the script.
-
-import miraicle
 from apscheduler.schedulers.background import BackgroundScheduler
 
 from crawl.code_task.zhu_ba_jie_crawl import ZhuBaJieCrawl
@@ -28,4 +20,5 @@ if __name__ == '__main__':
     crawl = ZhuBaJieCrawl()
     scheduler.add_job(crawl.run, 'interval', seconds=1800)
     # 启动调度任务
+    print('启动调度任务')
     scheduler.start()
