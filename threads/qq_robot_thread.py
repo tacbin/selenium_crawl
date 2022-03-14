@@ -41,6 +41,10 @@ def hello_to_group(robot: miraicle.Mirai, msg: miraicle.GroupMessage):
         robot.send_group_msg(group=msg.group, msg=[miraicle.Plain('@我干嘛'),
                                                    miraicle.At(msg.sender),
                                                    miraicle.Face.from_name('汪汪')])
+    if '呼叫小羊' in msg.plain:
+        robot.send_group_msg(group=msg.group, msg=[miraicle.Plain('大哥我来了~'),
+                                                   miraicle.At(msg.sender),
+                                                   miraicle.Face.from_name('悠闲')])
 
     if msg.group in [461936572]:
         robot.send_group_msg(group=msg.group, msg=msg)
