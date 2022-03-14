@@ -50,4 +50,9 @@ def hello_to_group(robot: miraicle.Mirai, msg: miraicle.GroupMessage):
 
 @miraicle.Mirai.receiver('FriendMessage')
 def hello_to_friend(robot: miraicle.Mirai, msg: miraicle.FriendMessage):
-    robot.send_group_msg(group=msg.sender, msg='咩~')
+    robot.send_friend_msg(qq=msg.sender, msg='咩~')
+
+
+@miraicle.scheduled_job(miraicle.Scheduler.every().day.at('8:40'))
+def morning(bot: miraicle.Mirai):
+    bot.send_group_msg(group=461936572, msg='早上好')
