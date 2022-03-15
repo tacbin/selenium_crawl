@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from apscheduler.schedulers.background import BackgroundScheduler
 
+from crawl.code_task.wei_ke_crawl import WeiKeCrawl
 from crawl.code_task.zhu_ba_jie_crawl import ZhuBaJieCrawl
 from middleware.init_middleware import init_middleware
 from threads.mq_thread import MqThreadControl
@@ -17,8 +18,10 @@ if __name__ == '__main__':
     # 创建后台执行的 schedulers
     scheduler = BackgroundScheduler()
     # 添加调度任务
-    crawl = ZhuBaJieCrawl()
-    scheduler.add_job(crawl.run, 'interval', seconds=1800)
+    zbj_crawl = ZhuBaJieCrawl()
+    scheduler.add_job(zbj_crawl.run, 'interval', seconds=1800)
+    wei_ke_crawl = WeiKeCrawl()
+    scheduler.add_job(wei_ke_crawl.run, 'interval', seconds=1800)
     # 启动调度任务
     print('启动调度任务')
     scheduler.start()

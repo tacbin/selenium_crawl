@@ -50,7 +50,7 @@ class ZhuBaJieCrawl(CommonCrawl):
             url = url.replace('\n', '')
             url = url.replace('//', '')
 
-            self.result_map[browser.current_url].append(TaskResult(title, detail, money, url))
+            self.result_map[browser.current_url].append(ZhuBaJieTaskResult(title, detail, money, url))
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'zhu ba jie end crawl..', browser.current_url)
 
     def custom_send(self):
@@ -76,7 +76,7 @@ class ZhuBaJieCrawl(CommonCrawl):
             CommonInstance.Redis_client.set(url, first_one)
 
 
-class TaskResult:
+class ZhuBaJieTaskResult:
     def __init__(self, title, detail, money, url):
         self.title = title
         self.detail = detail

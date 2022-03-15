@@ -111,5 +111,5 @@ class BossCrawl(CommonCrawl):
                 attach.file_location = img_url
                 self.email_info.attaches.append(attach)
 
-    def get_next_elements(self, browser: WebDriver) -> List[WebElement]:
+    def get_next_click_elements(self, browser: WebDriver) -> List[WebElement]:
         return browser.find_elements(By.XPATH, '//div[@class="page"]/a[@ka="page-next"]')
