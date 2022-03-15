@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import time
+
 import miraicle
 from lxml import html
 from selenium.webdriver.firefox.webdriver import WebDriver
@@ -24,7 +26,7 @@ class ZhuBaJieCrawl(CommonCrawl):
         return browser
 
     def parse(self, browser: WebDriver):
-        print('zhu ba jie start crawl..', browser.current_url)
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'zhu ba jie start crawl..', browser.current_url)
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)
@@ -49,11 +51,11 @@ class ZhuBaJieCrawl(CommonCrawl):
             url = url.replace('//', '')
 
             self.result_map[browser.current_url].append(TaskResult(title, detail, money, url))
-        print('zhu ba jie end crawl..', browser.current_url)
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'zhu ba jie end crawl..', browser.current_url)
 
     def custom_send(self):
         for url in self.result_map:
-            print('zhu ba jie start custom_send..', url)
+            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'zhu ba jie start custom_send..', url)
             cache_result = CommonInstance.Redis_client.get(url)
             cache_result = cache_result.decode("utf-8") if cache_result is not None else ''
             first_one = ''
