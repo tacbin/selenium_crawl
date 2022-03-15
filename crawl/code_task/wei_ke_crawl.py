@@ -55,6 +55,7 @@ class WeiKeCrawl(CommonCrawl):
             if CommonInstance.Redis_client.get(url) is not None:
                 continue
             self.next_urls.append(url)
+            CommonInstance.Redis_client.set(url, '')
 
             money = sel.xpath('//span[@class="price"]/text()')
             money = money[0] if len(money) > 0 else ''
@@ -67,15 +68,19 @@ class WeiKeCrawl(CommonCrawl):
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)
-        detail = etree.tostring(selector.xpath("//div[@class='task-info-content']")[0], encoding='utf-8', method='html')
-        dr = re.compile(r'<[^>]+>', re.S)
-        dd = dr.sub('', detail.decode('utf-8'))
-        dd = dd.replace('\n', '')
-        dd = dd.replace(' ', '')
-        for url in self.urls:
-            for item in self.result_map[url]:
-                if item.url == browser.current_url:
-                    item.detail = dd
+        try:
+            detail = etree.tostring(selector.xpath("//div[@class='task-info-content']")[0], encoding='utf-8',
+                                    method='html')
+            dr = re.compile(r'<[^>]+>', re.S)
+            dd = dr.sub('', detail.decode('utf-8'))
+            dd = dd.replace('\n', '')
+            dd = dd.replace(' ', '')
+            for url in self.urls:
+                for item in self.result_map[url]:
+                    if item.url == browser.current_url:
+                        item.detail = dd
+        except Exception as e:
+            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'detail_strategy exception:', e)
 
     def custom_send(self):
         for url in self.result_map:
@@ -88,7 +93,6 @@ class WeiKeCrawl(CommonCrawl):
                       '链接:%s' % (data.title, data.detail, data.money, data.url)
                 CommonInstance.QQ_ROBOT.send_group_msg(group=461936572,
                                                        msg=[miraicle.Plain(txt)])
-                CommonInstance.Redis_client.set(data.url, '')
 
     def get_next_urls(self, browser: WebDriver) -> List[str]:
         return self.next_urls
