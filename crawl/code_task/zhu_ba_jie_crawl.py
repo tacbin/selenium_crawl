@@ -56,15 +56,9 @@ class ZhuBaJieCrawl(CommonCrawl):
     def custom_send(self):
         for url in self.result_map:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'zhu ba jie start custom_send..', url)
-            cache_result = CommonInstance.Redis_client.get(url)
-            cache_result = cache_result.decode("utf-8") if cache_result is not None else ''
-            first_one = ''
             for data in self.result_map[url]:
-                if first_one == '':
-                    first_one = data.url
-                if data.url == cache_result:
-                    CommonInstance.Redis_client.set(url, first_one)
-                    return
+                if CommonInstance.Redis_client.get(data.url) is not None:
+                    continue
                 txt = '商机来啦\n' \
                       '【%s】\n' \
                       '详情:%s\n' \
@@ -73,7 +67,7 @@ class ZhuBaJieCrawl(CommonCrawl):
                 CommonInstance.QQ_ROBOT.send_group_msg(group=461936572,
                                                        msg=[miraicle.Face.from_name('嘿嘿'), miraicle.Plain(txt),
                                                             miraicle.Face.from_name('鲸鱼')])
-            CommonInstance.Redis_client.set(url, first_one)
+                CommonInstance.Redis_client.set(data.url, '')
 
 
 class ZhuBaJieTaskResult:
