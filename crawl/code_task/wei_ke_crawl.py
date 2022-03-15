@@ -43,6 +43,8 @@ class WeiKeCrawl(CommonCrawl):
         etree = html.etree
         selector = etree.HTML(page)
         tasks = selector.xpath("//div[@class='content-lists']//div[contains(@class,'itemblock')]")
+        cache_result = CommonInstance.Redis_client.get(browser.current_url)
+        cache_result = cache_result.decode("utf-8") if cache_result is not None else ''
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
             title = sel.xpath('//a[@class="text_over"]/@title')
@@ -52,6 +54,8 @@ class WeiKeCrawl(CommonCrawl):
             url = sel.xpath('//a[@class="text_over"]/@href')
             url = url[0] if len(url) > 0 else ''
             url = url.replace('\n', '')
+            if cache_result == url:
+                return
             self.next_urls.append(url)
 
             money = sel.xpath('//span[@class="price"]/text()')
