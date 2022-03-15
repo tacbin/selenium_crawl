@@ -1,42 +1,27 @@
 # -*- coding: utf-8 -*-
-# This is a sample Python script.
+from apscheduler.schedulers.background import BackgroundScheduler
 
-# Press Alt+Shift+X to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-# Press the green button in the gutter to run the script.
-import json
-
-import pika as pika
-
-import crawl_mapping
-from common_crawl import CommonCrawl
-
-
-def msg_consumer(ch, method, properties, data_bytes):
-    try:
-        msg = data_bytes.decode()
-        print('get msg:', msg)
-        msg_dto = json.loads(msg)
-        msg_type = msg_dto['type']
-        msg_args = msg_dto['args']
-        crawl = crawl_mapping.crawl_factory(msg_type)
-        if isinstance(crawl, CommonCrawl):
-            crawl.run(msg_args)
-        else:
-            print(crawl, 'does not implement CommonCrawl')
-    except Exception as e:
-        print(e)
-
+from crawl.code_task.wei_ke_crawl import WeiKeCrawl
+from crawl.code_task.zhu_ba_jie_crawl import ZhuBaJieCrawl
+from middleware.init_middleware import init_middleware
+from threads.mq_thread import MqThreadControl
+from threads.qq_robot_thread import QQRobotThreadControl
 
 if __name__ == '__main__':
-    credentials = pika.PlainCredentials('guest', 'tacbin@123')
-    connection = pika.BlockingConnection(pika.ConnectionParameters('42.194.223.190', 5672, '/', credentials))
-    channel = connection.channel()
-    channel.basic_consume('selenium-crawl-queue',  # 队列名
-                          msg_consumer,  # 回调函数
-                          consumer_tag="selenium_crawl_consumer",
-                          auto_ack=True
-                          )
-    print("start")
-    channel.start_consuming()
+    init_middleware()
+    mq_thread = MqThreadControl(1, 'mq thread')
+    mq_thread.start()
+
+    qq_thread = QQRobotThreadControl(2, 'qq thread')
+    qq_thread.start()
+
+    # 创建后台执行的 schedulers
+    scheduler = BackgroundScheduler()
+    # 添加调度任务
+    zbj_crawl = ZhuBaJieCrawl()
+    scheduler.add_job(zbj_crawl.run, 'interval', seconds=300)
+    wei_ke_crawl = WeiKeCrawl()
+    scheduler.add_job(wei_ke_crawl.run, 'interval', seconds=300)
+    # 启动调度任务
+    print('启动调度任务')
+    scheduler.start()

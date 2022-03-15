@@ -83,7 +83,7 @@ class BossCrawl(CommonCrawl):
                 else:
                     self.result_map[key] = [obj_dict]
 
-    def before_send_email(self):
+    def before_send(self):
         self.email_info = EmailInfo()
         self.email_info.subject = '请查收数据'
         self.email_info.content = '详情请查看附件'
@@ -111,5 +111,5 @@ class BossCrawl(CommonCrawl):
                 attach.file_location = img_url
                 self.email_info.attaches.append(attach)
 
-    def get_next_elements(self, browser: WebDriver) -> List[WebElement]:
+    def get_next_click_elements(self, browser: WebDriver) -> List[WebElement]:
         return browser.find_elements(By.XPATH, '//div[@class="page"]/a[@ka="page-next"]')

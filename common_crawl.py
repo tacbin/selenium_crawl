@@ -1,22 +1,20 @@
 # -*- coding: utf-8 -*-
 import os
 import platform
+import smtplib
 import time
 import uuid
-from email.mime.application import MIMEApplication
+from email.header import Header
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 from typing import List
 
 import selenium
-from pip._vendor import requests
-
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from email.header import Header
 
+from common.common_instantce import CommonInstance
 from common.email import EmailInfo, AttachInfo
 
 
@@ -51,12 +49,16 @@ class CommonCrawl:
             self.parse(browser)
             # page search
             self.__next_click(browser)
+            self.__next_url(browser)
+
         time.sleep(10)
         browser.close()
         # 处理结果的策略
+        self.before_send()
         if self.mode == 0:
-            self.before_send_email()
             self.__send_email()
+        elif self.mode == 1:
+            self.custom_send()
         else:
             pass
 
@@ -66,7 +68,10 @@ class CommonCrawl:
     def parse(self, browser: WebDriver):
         pass
 
-    def before_send_email(self):
+    def before_send(self):
+        pass
+
+    def custom_send(self):
         pass
 
     def __send_email(self):
@@ -102,8 +107,11 @@ class CommonCrawl:
         except smtplib.SMTPException as e:
             print(e)
 
-    def get_next_elements(self, browser: WebDriver) -> List[WebElement]:
+    def get_next_click_elements(self, browser: WebDriver) -> List[WebElement]:
         # return browser.find_elements(By.XPATH, '//div[@class="page"]/a[@ka="page-next"]')
+        return []
+
+    def get_next_urls(self, browser: WebDriver) -> List[str]:
         return []
 
     def __save_img(self, browser: WebDriver, i: int, prefix: str):
@@ -123,7 +131,7 @@ class CommonCrawl:
         self.__img_path.append(file_path)
 
     def __next_click(self, browser: WebDriver):
-        elements = self.get_next_elements(browser)
+        elements = self.get_next_click_elements(browser)
         if len(elements) == 0:
             return
         current_url = browser.current_url
@@ -139,8 +147,20 @@ class CommonCrawl:
             time.sleep(1.5)
             self.parse(browser)
             # next page
-            elements = self.get_next_elements(browser)
+            elements = self.get_next_click_elements(browser)
             i += 1
+
+    def __next_url(self, browser: WebDriver):
+        urls = self.get_next_urls(browser)
+        if len(urls) == 0:
+            return
+        for i in range(0, len(urls)):
+            browser.get(urls[i])
+            # save img
+            self.__save_img(browser, i, "normal")
+            # parse html
+            time.sleep(1.5)
+            self.parse(browser)
 
     def get_file_path(self):
         return os.path.join('.', self.file_location)
