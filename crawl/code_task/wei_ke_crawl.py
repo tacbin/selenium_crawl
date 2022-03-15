@@ -87,8 +87,7 @@ class WeiKeCrawl(CommonCrawl):
                       '价格:%s\n' \
                       '链接:%s' % (data.title, data.detail, data.money, data.url)
                 CommonInstance.QQ_ROBOT.send_group_msg(group=461936572,
-                                                       msg=[miraicle.Face.from_name('嘿嘿'), miraicle.Plain(txt),
-                                                            miraicle.Face.from_name('鲸鱼')])
+                                                       msg=[miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
 
     def get_next_urls(self, browser: WebDriver) -> List[str]:

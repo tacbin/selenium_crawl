@@ -115,8 +115,7 @@ class BeiKeCrawl(CommonCrawl):
                       '标签:%s\n' \
                       '链接:%s' % (data.title, data.area, data.community, data.house_info, data.price, data.tag, data.url)
                 CommonInstance.QQ_ROBOT.send_group_msg(group=885445945,
-                                                       msg=[miraicle.Face.from_name('嘿嘿'), miraicle.Plain(txt),
-                                                            miraicle.Face.from_name('鲸鱼')])
+                                                       msg=[miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
 
 
