@@ -18,7 +18,7 @@ class WeiKeCrawl(CommonCrawl):
         self.next_urls = []
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
-        self.urls = ["https://task.epwk.com/"]
+        self.urls = ["https://task.epwk.com/?o=7"]
         for url in self.urls:
             self.result_map[url] = []
 
