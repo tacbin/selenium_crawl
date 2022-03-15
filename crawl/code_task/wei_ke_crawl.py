@@ -55,7 +55,6 @@ class WeiKeCrawl(CommonCrawl):
             if CommonInstance.Redis_client.get(url) is not None:
                 continue
             self.next_urls.append(url)
-            CommonInstance.Redis_client.set(url, '')
 
             money = sel.xpath('//span[@class="price"]/text()')
             money = money[0] if len(money) > 0 else ''
@@ -84,6 +83,7 @@ class WeiKeCrawl(CommonCrawl):
 
     def custom_send(self):
         for url in self.result_map:
+            time.sleep(1)
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'wei ke start custom_send..', url)
             for data in self.result_map[url]:
                 txt = '商机来啦\n' \
@@ -93,6 +93,7 @@ class WeiKeCrawl(CommonCrawl):
                       '链接:%s' % (data.title, data.detail, data.money, data.url)
                 CommonInstance.QQ_ROBOT.send_group_msg(group=461936572,
                                                        msg=[miraicle.Plain(txt)])
+            CommonInstance.Redis_client.set(url, '')
 
     def get_next_urls(self, browser: WebDriver) -> List[str]:
         return self.next_urls

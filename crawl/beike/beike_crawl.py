@@ -105,6 +105,7 @@ class BeiKeCrawl(CommonCrawl):
 
     def custom_send(self):
         for url in self.result_map:
+            time.sleep(1)
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'wei ke start custom_send..', url)
             for data in self.result_map[url]:
                 txt = '新房源\n' \

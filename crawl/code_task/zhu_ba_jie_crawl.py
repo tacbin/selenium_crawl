@@ -57,6 +57,7 @@ class ZhuBaJieCrawl(CommonCrawl):
         for url in self.result_map:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'zhu ba jie start custom_send..', url)
             for data in self.result_map[url]:
+                time.sleep(1)
                 if CommonInstance.Redis_client.get(data.url) is not None:
                     continue
                 txt = '商机来啦\n' \
