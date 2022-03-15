@@ -28,38 +28,41 @@ class CommonCrawl:
         self.is_save_img = False
 
     def run(self, *args):
-        # 使用 fire_fox 的 WebDriver
-        fire_fox_options = Options()
-        # 代理
-        # proxy = self.__get_proxy()
-        # fire_fox_options.add_argument('--proxy-server=' + proxy)
-        fire_fox_options.add_argument('--headless')
-        if platform.system().lower() == 'linux':
-            browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
-        else:
-            browser = selenium.webdriver.Firefox(options=fire_fox_options)
-        browser = self.before_crawl(args, browser)
-        for i in range(0, len(self.urls)):
-            browser.get(self.urls[i])
-            # save img
-            self.__save_img(browser, i, "normal")
-            # parse html
-            time.sleep(1.5)
-            self.parse(browser)
-            # page search
-            self.__next_click(browser)
-            self.__next_url(browser)
+        try:
+            # 使用 fire_fox 的 WebDriver
+            fire_fox_options = Options()
+            # 代理
+            # proxy = self.__get_proxy()
+            # fire_fox_options.add_argument('--proxy-server=' + proxy)
+            fire_fox_options.add_argument('--headless')
+            if platform.system().lower() == 'linux':
+                browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
+            else:
+                browser = selenium.webdriver.Firefox(options=fire_fox_options)
+            browser = self.before_crawl(args, browser)
+            for i in range(0, len(self.urls)):
+                browser.get(self.urls[i])
+                # save img
+                self.__save_img(browser, i, "normal")
+                # parse html
+                time.sleep(1.5)
+                self.parse(browser)
+                # page search
+                self.__next_click(browser)
+                self.__next_url(browser)
 
-        time.sleep(10)
-        browser.close()
-        # 处理结果的策略
-        self.before_send()
-        if self.mode == 0:
-            self.__send_email()
-        elif self.mode == 1:
-            self.custom_send()
-        else:
-            pass
+            time.sleep(10)
+            browser.close()
+            # 处理结果的策略
+            self.before_send()
+            if self.mode == 0:
+                self.__send_email()
+            elif self.mode == 1:
+                self.custom_send()
+            else:
+                pass
+        except Exception as e:
+            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'common crawl exception:', e)
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         return browser
