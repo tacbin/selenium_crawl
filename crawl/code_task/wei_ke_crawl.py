@@ -18,10 +18,11 @@ class WeiKeCrawl(CommonCrawl):
         self.next_urls = []
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
+        self.result_map = {}
+        self.next_urls = []
         self.urls = ["https://task.epwk.com/?o=7"]
         for url in self.urls:
             self.result_map[url] = []
-
         self.file_location = 'wei_ke_crawl'
         self.is_save_img = False
         self.mode = 1

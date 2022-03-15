@@ -15,6 +15,7 @@ class ZhuBaJieCrawl(CommonCrawl):
         self.result_map = {}
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
+        self.result_map = {}
         self.urls = ["https://task.zbj.com/hall/list/h1", "https://task.zbj.com/hall/list/h7",
                      "https://task.zbj.com/hall/list/h9"]
         for url in self.urls:

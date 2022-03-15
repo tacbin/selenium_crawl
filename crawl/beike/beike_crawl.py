@@ -18,6 +18,8 @@ class BeiKeCrawl(CommonCrawl):
         self.next_urls = []
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
+        self.result_map = {}
+        self.next_urls = []
         self.urls = ["https://sz.ke.com/ershoufang/co32/"]
         for url in self.urls:
             self.result_map[url] = []
