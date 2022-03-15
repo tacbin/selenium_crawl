@@ -108,7 +108,7 @@ class BeiKeCrawl(CommonCrawl):
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'wei ke start custom_send..', url)
             for data in self.result_map[url]:
                 txt = '新房源\n' \
-                      '%s\n' \
+                      '【%s】\n' \
                       '区域:%s %s\n' \
                       '房子信息:%s\n' \
                       '价格:%s\n' \
