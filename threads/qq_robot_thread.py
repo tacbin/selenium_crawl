@@ -25,7 +25,7 @@ class QQRobotThreadControl(threading.Thread):
 
 @miraicle.Mirai.receiver('GroupMessage')
 def hello_to_group(robot: miraicle.Mirai, msg: miraicle.GroupMessage):
-    if 'At:1208559252' in msg.text or 'At:2840498397' in msg.text:
+    if 'At:1208559252' in msg.text or 'At:2840498397' in msg.text or 52110919 in msg.text:
         robot.send_group_msg(group=msg.group, msg=[miraicle.Plain('@我大哥干嘛'),
                                                    miraicle.At(msg.sender)])
         return
