@@ -25,8 +25,6 @@ class HokCrawl(CommonCrawl):
     def parse(self, browser: WebDriver):
         print(browser.page_source)
 
-    def before_send(self, browser: WebDriver):
-        pass
 
 
 class EventListeners(AbstractEventListener):

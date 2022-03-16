@@ -76,6 +76,13 @@ class CommonCrawl:
     def custom_send(self):
         pass
 
+    def get_next_click_elements(self, browser: WebDriver) -> List[WebElement]:
+        # return browser.find_elements(By.XPATH, '//div[@class="page"]/a[@ka="page-next"]')
+        return []
+
+    def get_next_urls(self, browser: WebDriver) -> List[str]:
+        return []
+
     def __send_email(self):
         if self.email_info is None:
             return
@@ -108,13 +115,6 @@ class CommonCrawl:
             smtp.close()
         except smtplib.SMTPException as e:
             print(e)
-
-    def get_next_click_elements(self, browser: WebDriver) -> List[WebElement]:
-        # return browser.find_elements(By.XPATH, '//div[@class="page"]/a[@ka="page-next"]')
-        return []
-
-    def get_next_urls(self, browser: WebDriver) -> List[str]:
-        return []
 
     def __save_img(self, browser: WebDriver, i: int, prefix: str):
         if not self.is_save_img:
