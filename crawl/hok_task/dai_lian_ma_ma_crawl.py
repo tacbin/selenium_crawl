@@ -58,15 +58,16 @@ class DaiLianMaMaCrawl(CommonCrawl):
 
     def custom_send(self):
         for url in self.result_map:
-            time.sleep(1)
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'wei ke start custom_send..', url)
             for data in self.result_map[url]:
                 txt = '新的订单\n' \
                       '%s\n' \
                       '区服:%s\n' \
                       '价格:%s\n' \
-                      '%s' % (data.title, data.area, data.money, data.end_time)
-                CommonInstance.QQ_ROBOT.send_group_msg(group=705403783,
+                      '%s\n'\
+                      'http://m.dailianmama.com/v-3.0.9-zh_CN-/dlmm/index.w?language=zh_CN&skin=&ttt=random6833130&p3704878=pp1435623&t=1647424588903#!main'% (data.title, data.area, data.money, data.end_time)
+                time.sleep(1)
+                CommonInstance.QQ_ROBOT.send_group_msg(group=461936572,
                                                        msg=[miraicle.Plain(txt)])
                 key = data.title + data.area + data.end_time + data.money
                 CommonInstance.Redis_client.set(key, '')
