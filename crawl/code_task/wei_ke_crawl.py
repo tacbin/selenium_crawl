@@ -84,7 +84,6 @@ class WeiKeCrawl(CommonCrawl):
 
     def custom_send(self):
         for url in self.result_map:
-            time.sleep(1)
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'wei ke start custom_send..', url)
             for data in self.result_map[url]:
                 txt = '商机来啦\n' \
@@ -92,8 +91,10 @@ class WeiKeCrawl(CommonCrawl):
                       '详情:%s\n' \
                       '价格:%s\n' \
                       '链接:%s' % (data.title, data.detail, data.money, data.url)
+                time.sleep(1)
                 CommonInstance.QQ_ROBOT.send_group_msg(group=461936572,
                                                        msg=[miraicle.Plain(txt)])
+                time.sleep(1)
                 CommonInstance.QQ_ROBOT.send_group_msg(group=963961013,
                                                        msg=[miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')

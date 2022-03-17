@@ -58,7 +58,6 @@ class ZhuBaJieCrawl(CommonCrawl):
         for url in self.result_map:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'zhu ba jie start custom_send..', url)
             for data in self.result_map[url]:
-                time.sleep(1)
                 if CommonInstance.Redis_client.get(data.url) is not None:
                     continue
                 txt = '商机来啦\n' \
@@ -66,8 +65,10 @@ class ZhuBaJieCrawl(CommonCrawl):
                       '详情:%s\n' \
                       '价格:%s\n' \
                       '链接:%s' % (data.title, data.detail, data.money, data.url)
+                time.sleep(1)
                 CommonInstance.QQ_ROBOT.send_group_msg(group=461936572,
                                                        msg=[miraicle.Plain(txt)])
+                time.sleep(1)
                 CommonInstance.QQ_ROBOT.send_group_msg(group=963961013,
                                                        msg=[miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
