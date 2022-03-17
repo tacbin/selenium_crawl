@@ -26,8 +26,7 @@ if __name__ == '__main__':
     scheduler.add_job(wei_ke_crawl.run, 'interval', seconds=300)
     bei_ke_crawl = BeiKeCrawl()
     scheduler.add_job(bei_ke_crawl.run, 'interval', seconds=300)
-    dai_lian_mama_crawl = DaiLianMaMaCrawl()
-    scheduler.add_job(dai_lian_mama_crawl.run, 'interval', seconds=300)
+
     # 启动调度任务
     print('启动调度任务')
     scheduler.start()
