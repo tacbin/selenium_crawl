@@ -7,6 +7,7 @@ from lxml import html
 from selenium.webdriver.firefox.webdriver import WebDriver
 
 from common.common_instantce import CommonInstance
+from common.qq_robot import QQRobot
 from common_crawl import CommonCrawl
 
 
@@ -64,11 +65,10 @@ class DaiLianMaMaCrawl(CommonCrawl):
                       '%s\n' \
                       '区服:%s\n' \
                       '价格:%s\n' \
-                      '%s\n'\
-                      'http://m.dailianmama.com/v-3.0.9-zh_CN-/dlmm/index.w?language=zh_CN&skin=&ttt=random6833130&p3704878=pp1435623&t=1647424588903#!main'% (data.title, data.area, data.money, data.end_time)
-                time.sleep(1)
-                CommonInstance.QQ_ROBOT.send_group_msg(group=461936572,
-                                                       msg=[miraicle.Plain(txt)])
+                      '%s\n' \
+                      'http://m.dailianmama.com/v-3.0.9-zh_CN-/dlmm/index.w?language=zh_CN&skin=&ttt=random6833130&p3704878=pp1435623&t=1647424588903#!main' % (
+                      data.title, data.area, data.money, data.end_time)
+                QQRobot.send_group_msg(461936572, [miraicle.Plain(txt)])
                 key = data.title + data.area + data.end_time + data.money
                 CommonInstance.Redis_client.set(key, '')
 

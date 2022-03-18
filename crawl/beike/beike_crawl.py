@@ -8,6 +8,7 @@ from lxml import html
 from selenium.webdriver.firefox.webdriver import WebDriver
 
 from common.common_instantce import CommonInstance
+from common.qq_robot import QQRobot
 from common_crawl import CommonCrawl
 
 
@@ -107,7 +108,6 @@ class BeiKeCrawl(CommonCrawl):
 
     def custom_send(self):
         for url in self.result_map:
-            time.sleep(1)
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'wei ke start custom_send..', url)
             for data in self.result_map[url]:
                 txt = '新房源\n' \
@@ -116,9 +116,9 @@ class BeiKeCrawl(CommonCrawl):
                       '房子信息:%s\n' \
                       '价格:%s\n' \
                       '标签:%s\n' \
-                      '链接:%s ' % (data.title, data.area, data.community, data.house_info, data.price, data.tag, data.url)
-                CommonInstance.QQ_ROBOT.send_group_msg(group=885445945,
-                                                       msg=[miraicle.Plain(txt)])
+                      '链接:%s ' % (
+                      data.title, data.area, data.community, data.house_info, data.price, data.tag, data.url)
+                QQRobot.send_group_msg(885445945, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
 
 

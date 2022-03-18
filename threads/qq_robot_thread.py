@@ -6,6 +6,7 @@ import time
 import miraicle
 
 from common.common_instantce import CommonInstance
+from common.qq_robot import QQRobot
 
 
 class QQRobotThreadControl(threading.Thread):
@@ -26,17 +27,18 @@ class QQRobotThreadControl(threading.Thread):
 @miraicle.Mirai.receiver('GroupMessage')
 def hello_to_group(robot: miraicle.Mirai, msg: miraicle.GroupMessage):
     if 'At:1208559252' in msg.text or 'At:2840498397' in msg.text or 'At:52110919' in msg.text:
-        robot.send_group_msg(group=msg.group, msg=[miraicle.Plain('@我大哥干嘛'),
-                                                   miraicle.At(msg.sender)])
+        QQRobot.send_group_msg(group=msg.group, msg=[miraicle.Plain('@我大哥干嘛'),
+                                                     miraicle.At(msg.sender)])
+
         return
     if msg.at_me():
-        robot.send_group_msg(group=msg.group, msg=[miraicle.Plain('@我干嘛'),
-                                                   miraicle.At(msg.sender),
-                                                   miraicle.Face.from_name('汪汪')])
+        QQRobot.send_group_msg(group=msg.group, msg=[miraicle.Plain('@我干嘛'),
+                                                     miraicle.At(msg.sender),
+                                                     miraicle.Face.from_name('汪汪')])
     if '呼叫小羊' in msg.plain:
-        robot.send_group_msg(group=msg.group, msg=[miraicle.Plain('大哥我来了~'),
-                                                   miraicle.At(msg.sender),
-                                                   miraicle.Face.from_name('悠闲')])
+        QQRobot.send_group_msg(group=msg.group, msg=[miraicle.Plain('大哥我来了~'),
+                                                     miraicle.At(msg.sender),
+                                                     miraicle.Face.from_name('悠闲')])
 
     if msg.group in [461936572]:
         robot.send_group_msg(group=msg.group, msg=msg)
