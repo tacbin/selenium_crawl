@@ -9,10 +9,14 @@ class QQRobot:
     @staticmethod
     def send_group_msg(group: int, msg: List):
         lock_name = 'send_group_lock'
-        while CommonInstance.Redis_client.get(lock_name) is not None:
+        try:
+            while CommonInstance.Redis_client.get(lock_name) is not None:
+                time.sleep(5)
+            CommonInstance.Redis_client.set(lock_name, 'locked', ex=10)
             time.sleep(1)
-        CommonInstance.Redis_client.set(lock_name, 'locked', ex=10)
-        time.sleep(1)
-        CommonInstance.QQ_ROBOT.send_group_msg(group=group,
-                                               msg=msg)
-        CommonInstance.Redis_client.delete(lock_name)
+            CommonInstance.QQ_ROBOT.send_group_msg(group=group,
+                                                   msg=msg)
+        except Exception as e:
+            print('send_group_msg', e)
+        finally:
+            CommonInstance.Redis_client.delete(lock_name)
