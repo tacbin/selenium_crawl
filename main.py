@@ -34,9 +34,9 @@ if __name__ == '__main__':
     wei_ke_crawl = WeiKeCrawl()
     scheduler.add_job(wei_ke_crawl.run, 'interval', seconds=350)
     bei_ke_crawl = BeiKeCrawl()
-    scheduler.add_job(bei_ke_crawl.run, 'interval', seconds=600)
+    scheduler.add_job(bei_ke_crawl.run, 'interval', seconds=400)
     cs_bei_ke_crawl = CsBeiKeCrawl()
-    scheduler.add_job(cs_bei_ke_crawl.run, 'interval', seconds=900)
+    scheduler.add_job(cs_bei_ke_crawl.run, 'interval', seconds=450)
 
     # 启动调度任务
     print('启动调度任务')
