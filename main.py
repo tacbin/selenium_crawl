@@ -4,6 +4,7 @@ import time
 from apscheduler.schedulers.background import BackgroundScheduler
 
 from crawl.beike.beike_crawl import BeiKeCrawl
+from crawl.beike.cs_beike_crawl import CsBeiKeCrawl
 from crawl.code_task.wei_ke_crawl import WeiKeCrawl
 from crawl.code_task.zhu_ba_jie_crawl import ZhuBaJieCrawl
 from crawl.hok_task.dai_lian_ma_ma_crawl import DaiLianMaMaCrawl
@@ -34,6 +35,8 @@ if __name__ == '__main__':
     scheduler.add_job(wei_ke_crawl.run, 'interval', seconds=350)
     bei_ke_crawl = BeiKeCrawl()
     scheduler.add_job(bei_ke_crawl.run, 'interval', seconds=600)
+    cs_bei_ke_crawl = CsBeiKeCrawl()
+    scheduler.add_job(cs_bei_ke_crawl.run, 'interval', seconds=900)
 
     # 启动调度任务
     print('启动调度任务')
