@@ -34,8 +34,8 @@ class CommonCrawl:
             # 代理
             # proxy = self.__get_proxy()
             # fire_fox_options.add_argument('--proxy-server=' + proxy)
-            fire_fox_options.add_argument('--headless')
             if platform.system().lower() == 'linux':
+                fire_fox_options.add_argument('--headless')
                 browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
             else:
                 browser = selenium.webdriver.Firefox(options=fire_fox_options)
@@ -45,7 +45,7 @@ class CommonCrawl:
                 # save img
                 self.__save_img(browser, i, "normal")
                 # parse html
-                time.sleep(1.5)
+                time.sleep(3)
                 self.parse(browser)
                 # page search
                 self.__next_click(browser)
