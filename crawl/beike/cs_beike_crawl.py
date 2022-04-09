@@ -110,7 +110,7 @@ class CsBeiKeCrawl(CommonCrawl):
         for url in self.result_map:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'wei ke start custom_send..', url)
             for data in self.result_map[url]:
-                txt = '新房源\n' \
+                txt = '长沙新房源\n' \
                       '【%s】\n' \
                       '区域:%s %s\n' \
                       '房子信息:%s\n' \
@@ -119,6 +119,7 @@ class CsBeiKeCrawl(CommonCrawl):
                       '链接:%s ' % (
                       data.title, data.area, data.community, data.house_info, data.price, data.tag, data.url)
                 QQRobot.send_group_msg(829642968, [miraicle.Plain(txt)])
+                QQRobot.send_group_msg(885445945, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
 
 
