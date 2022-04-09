@@ -28,15 +28,15 @@ if __name__ == '__main__':
     # 创建后台执行的 schedulers
     scheduler = BackgroundScheduler()
     scheduler.add_job(empty_run, 'interval', seconds=300)
-    # 添加调度任务
-    zbj_crawl = ZhuBaJieCrawl()
-    scheduler.add_job(zbj_crawl.run, 'interval', seconds=300)
-    wei_ke_crawl = WeiKeCrawl()
-    scheduler.add_job(wei_ke_crawl.run, 'interval', seconds=350)
+    # # 添加调度任务
+    # zbj_crawl = ZhuBaJieCrawl()
+    # scheduler.add_job(zbj_crawl.run, 'interval', seconds=300)
+    # wei_ke_crawl = WeiKeCrawl()
+    # scheduler.add_job(wei_ke_crawl.run, 'interval', seconds=350)
     bei_ke_crawl = BeiKeCrawl()
-    scheduler.add_job(bei_ke_crawl.run, 'interval', seconds=400)
-    cs_bei_ke_crawl = CsBeiKeCrawl()
-    scheduler.add_job(cs_bei_ke_crawl.run, 'interval', seconds=450)
+    scheduler.add_job(bei_ke_crawl.run, 'interval', seconds=60)
+    # cs_bei_ke_crawl = CsBeiKeCrawl()
+    # scheduler.add_job(cs_bei_ke_crawl.run, 'interval', seconds=450)
 
     # 启动调度任务
     print('启动调度任务')

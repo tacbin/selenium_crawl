@@ -41,7 +41,7 @@ class CommonCrawl:
                 browser = selenium.webdriver.Firefox(options=fire_fox_options)
             browser = self.before_crawl(args, browser)
             for i in range(0, len(self.urls)):
-                browser.get(self.urls[i])
+                browser.execute_script(f"location.href='{self.urls[i]}';")
                 # save img
                 self.__save_img(browser, i, "normal")
                 # parse html
@@ -157,7 +157,7 @@ class CommonCrawl:
         if len(urls) == 0:
             return
         for i in range(0, len(urls)):
-            browser.get(urls[i])
+            browser.execute_script(f"location.href='{urls[i]}';")
             # save img
             self.__save_img(browser, i, "normal")
             # parse html
