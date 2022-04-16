@@ -10,6 +10,15 @@ from common.utils import get_first_one_or_empty
 from common_crawl import CommonCrawl
 
 
+class MessageInfo:
+    def __init__(self):
+        self.nick_name = ''
+        # 0是加入，1是发消息
+        self.msg_type = 0
+        self.msg = ''
+        self.image = ''
+
+
 class DouYinLiveCrawl(CommonCrawl):
     def __init__(self, live_url):
         super().__init__()
@@ -55,14 +64,16 @@ class DouYinLiveCrawl(CommonCrawl):
                     msg_info.msg_type = 1
                     msg_info.msg = msg
                     if nick_name not in name_image_dic:
-                        elements = browser.find_elements(By.XPATH, '//span[@class="tfObciRM"]')
+                        elements = browser.find_elements(By.XPATH,
+                                                         '//div[@class="webcast-chatroom___items"]//div[@class="webcast-chatroom___item webcast-chatroom___enter-done"]//span[@class="tfObciRM"]')
                         if len(elements) == 0:
                             continue
                         elements[0].click()
-                        time.sleep(0.3)
+                        time.sleep(0.4)
                         page = browser.page_source
-                        elements = browser.find_elements(By.ID, "root")
+                        elements = browser.find_elements(By.XPATH, "//div[@class='ohjo+Xk3']")
                         elements[0].click()
+                        time.sleep(0.1)
                         selector = etree.HTML(page)
                         image = selector.xpath("//div[@class='p-0+JvaK nsOPFX+X']//img[@class='qCM610OQ']/@src")
                         name = selector.xpath("//div[@class='_7KeH6hPD']/text()")
@@ -73,6 +84,7 @@ class DouYinLiveCrawl(CommonCrawl):
                         name_image_dic[name] = image
                     msg_info.image = name_image_dic[nick_name]
                     msg_info.nick_name = nick_name
+                    self.send_to_mq(msg_info)
 
                 new_users = selector.xpath("//div[@class='webcast-chatroom___bottom-message']")
                 for u in new_users:
@@ -85,53 +97,49 @@ class DouYinLiveCrawl(CommonCrawl):
                         continue
 
                     msg_info.msg_type = 0
+                    msg_info.msg = ''
                     msg_info.nick_name = user
                     if user in users_dict:
                         continue
-                    if len(users_dict) > 10:
+                    if len(users_dict) > 5:
                         users_dict = {}
                     users_dict[user] = ''
                     print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), user + '来了')
 
                     if user in name_image_dic:
                         msg_info.image = name_image_dic[user]
+                        self.send_to_mq(msg_info)
                         continue
                     elements = browser.find_elements(By.XPATH,
-                                                     "//div[@class='webcast-chatroom___bottom-message']//span[@class='tfObciRM']")
+                                                     "//div[contains(@class,'webcast-chatroom___bottom-message')]//span[@class='tfObciRM']")
                     if len(elements) == 0:
                         continue
                     elements[0].click()
-                    time.sleep(0.5)
+                    time.sleep(0.4)
                     page = browser.page_source
-                    elements = browser.find_elements(By.ID, "root")
+                    elements = browser.find_elements(By.XPATH, "//div[@class='ohjo+Xk3']")
                     elements[0].click()
                     time.sleep(0.1)
-
                     selector = etree.HTML(page)
                     image = selector.xpath("//div[@class='p-0+JvaK nsOPFX+X']//img[@class='qCM610OQ']/@src")
                     name = selector.xpath("//div[@class='_7KeH6hPD']/text()")
 
                     image = get_first_one_or_empty(image)
                     name = get_first_one_or_empty(name)
-                    print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), '头像对应', image, name)
+                    print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), name, image)
                     name_image_dic[name] = image
                     msg_info.image = name_image_dic[user]
+                    self.send_to_mq(msg_info)
             except Exception as e:
                 print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'dou_yin crawl exception:', e)
-            finally:
-                try:
-                    if msg_info.nick_name is None:
-                        return
-                    self.channel.basic_publish(exchange="", routing_key="dou-yin-queue",
-                                               body=json.dumps(msg_info.__dict__))
-                except Exception as e:
-                    print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'send mq exception:', e)
 
-
-class MessageInfo:
-    def __init__(self):
-        self.nick_name = ''
-        # 0是加入，1是发消息
-        self.msg_type = 0
-        self.msg = ''
-        self.image = ''
+    def send_to_mq(self, msg_info: MessageInfo):
+        try:
+            if msg_info.nick_name is None or len(msg_info.nick_name) == 0:
+                return
+            data = json.dumps(msg_info.__dict__, ensure_ascii=False)
+            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'send mq data:', data)
+            self.channel.basic_publish(exchange="", routing_key="dou-yin-queue",
+                                       body=data)
+        except Exception as e:
+            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'send mq exception:', e)

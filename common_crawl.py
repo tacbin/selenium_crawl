@@ -41,7 +41,7 @@ class CommonCrawl:
                 fire_fox_options.add_argument('--headless')
                 browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
             else:
-                fire_fox_options.add_argument('--headless')
+                # fire_fox_options.add_argument('--headless')
                 browser = selenium.webdriver.Firefox(options=fire_fox_options)
             browser = self.before_crawl(args, browser)
             for i in range(0, len(self.urls)):
