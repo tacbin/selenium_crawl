@@ -16,6 +16,7 @@ from selenium.webdriver.remote.webelement import WebElement
 
 from common.common_instantce import CommonInstance
 from common.email import EmailInfo, AttachInfo
+from middleware.rabbit_mq import get_rabbit_mq_channel
 
 
 class CommonCrawl:
@@ -26,8 +27,10 @@ class CommonCrawl:
         self.email_info = EmailInfo()
         self.__img_path = []
         self.is_save_img = False
+        self.channel = get_rabbit_mq_channel()
 
     def run(self, *args):
+        global browser
         try:
             # 使用 fire_fox 的 WebDriver
             fire_fox_options = Options()
@@ -38,6 +41,7 @@ class CommonCrawl:
                 fire_fox_options.add_argument('--headless')
                 browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
             else:
+                fire_fox_options.add_argument('--headless')
                 browser = selenium.webdriver.Firefox(options=fire_fox_options)
             browser = self.before_crawl(args, browser)
             for i in range(0, len(self.urls)):
@@ -63,6 +67,7 @@ class CommonCrawl:
                 pass
         except Exception as e:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'common crawl exception:', e)
+            browser.close()
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         return browser
