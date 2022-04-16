@@ -1,27 +1,22 @@
 # -*- coding: utf-8 -*-
 import json
-import re
 import time
-from typing import List
 
-import miraicle
 from lxml import html
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
 
-from common.common_instantce import CommonInstance
-from common.qq_robot import QQRobot
 from common.utils import get_first_one_or_empty
-
 from common_crawl import CommonCrawl
 
 
 class DouYinLiveCrawl(CommonCrawl):
-    def __init__(self):
+    def __init__(self, live_url):
         super().__init__()
+        self.live_url = live_url
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
-        self.urls = ["https://live.douyin.com/619641072814"]
+        self.urls = [self.live_url]
         self.mode = 1
         self.file_location = 'dou_yin_live_crawl'
         self.is_save_img = False
