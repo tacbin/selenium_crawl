@@ -48,7 +48,7 @@ class CometchatCrawl(CommonCrawl):
             date = sel.xpath('//div[@class="date-blog"]/text()')
             date = date[0] if len(date) > 0 else ''
             date = date.replace('\n', '')
-
+            date = date.replace(' ', '')
             title = sel.xpath("//p[@class='text-gray text-medium']")
             title = title[0] if len(title) > 0 else ''
             title = title.replace('\n', '')

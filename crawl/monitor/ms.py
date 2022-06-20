@@ -47,6 +47,7 @@ class MsCrawl(CommonCrawl):
 
             date = sel.xpath("//p[@class='pl-2 text-gray-200 text-sm mb-2']/text()")
             date = date[0] if len(date) > 0 else ''
+            date = date.replace(' ', '')
             date = date.replace('\n', '')
 
             title = sel.xpath("//h1[@class='font-medium text-2xl px-2']/text()")

@@ -47,7 +47,7 @@ class AgoraCrawl(CommonCrawl):
             date = sel.xpath("//time/text()")
             date = date[0] if len(date) > 0 else ''
             date = date.replace('\n', '')
-
+            date = date.replace(' ', '')
             title = sel.xpath("//h2/text()")
             title = title[0] if len(title) > 0 else ''
             title = title.replace('\n', '')
