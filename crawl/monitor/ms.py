@@ -67,8 +67,7 @@ class MsCrawl(CommonCrawl):
                       '标题:%s\n' \
                       '时间:%s\n' \
                       '链接:%s' % (data.title, data.date, data.url)
-                QQRobot.send_group_msg(461936572, [miraicle.Plain(txt)])
-                QQRobot.send_group_msg(963961013, [miraicle.Plain(txt)])
+                QQRobot.send_group_msg(569108046, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
 
     def get_next_urls(self, browser: WebDriver) -> List[str]:

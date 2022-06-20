@@ -30,7 +30,7 @@ class CommonCrawl:
         self.channel = get_rabbit_mq_channel()
 
     def run(self, *args):
-        global browser
+        browser = None
         try:
             # 使用 fire_fox 的 WebDriver
             fire_fox_options = Options()
@@ -56,7 +56,7 @@ class CommonCrawl:
                 self.__next_url(browser)
 
             time.sleep(10)
-            browser.close()
+            browser.quit()
             # 处理结果的策略
             self.before_send()
             if self.mode == 0:
@@ -67,7 +67,7 @@ class CommonCrawl:
                 pass
         except Exception as e:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'common crawl exception:', e)
-            browser.close()
+            browser.quit()
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         return browser

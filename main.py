@@ -7,6 +7,8 @@ from crawl.beike.beike_crawl import BeiKeCrawl
 from crawl.beike.cs_beike_crawl import CsBeiKeCrawl
 from crawl.code_task.wei_ke_crawl import WeiKeCrawl
 from crawl.code_task.zhu_ba_jie_crawl import ZhuBaJieCrawl
+from crawl.monitor.agora import AgoraCrawl
+from crawl.monitor.cometchat import CometchatCrawl
 from crawl.monitor.ms import MsCrawl
 from middleware.init_middleware import init_middleware
 from threads.mq_thread import MqThreadControl
@@ -29,16 +31,15 @@ if __name__ == '__main__':
     scheduler = BackgroundScheduler()
     scheduler.add_job(empty_run, 'interval', seconds=300)
     # 添加调度任务
-    # zbj_crawl = ZhuBaJieCrawl()
-    # scheduler.add_job(zbj_crawl.run, 'interval', seconds=300)
-    # wei_ke_crawl = WeiKeCrawl()
-    # scheduler.add_job(wei_ke_crawl.run, 'interval', seconds=350)
-    # bei_ke_crawl = BeiKeCrawl()
-    # scheduler.add_job(bei_ke_crawl.run, 'interval', seconds=400)
-    # cs_bei_ke_crawl = CsBeiKeCrawl()
-    # scheduler.add_job(cs_bei_ke_crawl.run, 'interval', seconds=450)
     ms = MsCrawl()
-    scheduler.add_job(ms.run, 'interval', seconds=100)
+    scheduler.add_job(ms.run, 'interval', seconds=1)
+
+    agora = AgoraCrawl()
+    scheduler.add_job(agora.run, 'interval', seconds=1)
+
+    cometchat = CometchatCrawl()
+    scheduler.add_job(cometchat.run, 'interval', seconds=1)
+
     # 启动调度任务
     print('启动调度任务')
     scheduler.start()
