@@ -32,13 +32,13 @@ if __name__ == '__main__':
     scheduler.add_job(empty_run, 'interval', seconds=300)
     # 添加调度任务
     ms = MsCrawl()
-    scheduler.add_job(ms.run, 'interval', seconds=1)
+    scheduler.add_job(ms.run, 'interval', seconds=60 * 10 * 2)
 
     agora = AgoraCrawl()
-    scheduler.add_job(agora.run, 'interval', seconds=1)
+    scheduler.add_job(agora.run, 'interval', seconds=60 * 10 * 3)
 
     cometchat = CometchatCrawl()
-    scheduler.add_job(cometchat.run, 'interval', seconds=1)
+    scheduler.add_job(cometchat.run, 'interval', seconds=60 * 10 * 5)
 
     # 启动调度任务
     print('启动调度任务')
