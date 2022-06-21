@@ -49,7 +49,7 @@ class CometchatCrawl(CommonCrawl):
             date = date[0] if len(date) > 0 else ''
             date = date.replace('\n', '')
             date = date.replace(' ', '')
-            title = sel.xpath("//p[@class='text-gray text-medium']")
+            title = sel.xpath("//p[@class='text-gray text-medium']/text()")
             title = title[0] if len(title) > 0 else ''
             title = title.replace('\n', '')
             if CommonInstance.Redis_client.get(url) is not None:
