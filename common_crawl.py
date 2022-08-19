@@ -18,6 +18,8 @@ from common.common_instantce import CommonInstance
 from common.email import EmailInfo, AttachInfo
 from middleware.rabbit_mq import get_rabbit_mq_channel
 
+browser = None
+
 
 class CommonCrawl:
     def __init__(self):
@@ -40,6 +42,8 @@ class CommonCrawl:
             if platform.system().lower() == 'linux':
                 fire_fox_options.add_argument('--headless')
                 browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
+            elif platform.system().lower() == 'darwin':
+                browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./mac_geckodriver')
             else:
                 # fire_fox_options.add_argument('--headless')
                 browser = selenium.webdriver.Firefox(options=fire_fox_options)
@@ -67,6 +71,8 @@ class CommonCrawl:
                 pass
         except Exception as e:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'common crawl exception:', e)
+            if browser is None:
+                return
             browser.close()
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
