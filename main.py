@@ -30,6 +30,7 @@ if __name__ == '__main__':
     tasks = [ZhuBaJieCrawl(), WeiKeCrawl(), BeiKeCrawl(), CsBeiKeCrawl()]
     for task in tasks:
         task.run()
+        time.sleep(60*10)
 
     # scheduler = BackgroundScheduler()
     # scheduler.add_job(empty_run, 'interval', seconds=300)
