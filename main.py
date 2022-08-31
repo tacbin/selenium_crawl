@@ -28,9 +28,10 @@ if __name__ == '__main__':
 
     # 创建后台执行的 schedulers
     tasks = [ZhuBaJieCrawl(), WeiKeCrawl(), BeiKeCrawl(), CsBeiKeCrawl()]
-    for task in tasks:
-        task.run()
-        time.sleep(60*10)
+    while True:
+        for task in tasks:
+            task.run()
+            time.sleep(60 * 10)
 
     # scheduler = BackgroundScheduler()
     # scheduler.add_job(empty_run, 'interval', seconds=300)
