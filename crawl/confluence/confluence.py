@@ -86,6 +86,7 @@ class ConfluenceCrawl(CommonCrawl):
                 if url in url_map:
                     continue
                 url_map[url] = ''
+                title += ' -> ' + url.split('pageId=', 2)[1].split('&', 2)[0]
                 print(url, title)
                 if '周报' in title or '日报' in title:
                     continue
