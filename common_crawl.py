@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 import os
 import platform
 import smtplib
@@ -60,6 +61,10 @@ class CommonCrawl:
                 self.__next_url(browser)
 
             time.sleep(10)
+            cookies = browser.get_cookies()
+            json_cookies = json.dumps(cookies)
+            with open('cookies.json', 'w') as f:
+                f.write(json_cookies)
             browser.close()
             # 处理结果的策略
             self.before_send()
@@ -86,6 +91,9 @@ class CommonCrawl:
 
     def custom_send(self):
         pass
+
+    def get_file_name(self):
+        return str(uuid.uuid4())
 
     def get_next_click_elements(self, browser: WebDriver) -> List[WebElement]:
         # return browser.find_elements(By.XPATH, '//div[@class="page"]/a[@ka="page-next"]')
@@ -139,7 +147,7 @@ class CommonCrawl:
         dirs = self.get_file_path()
         if not os.path.exists(dirs):
             os.makedirs(dirs, mode=0o1777)
-        file_path = os.path.join(dirs, prefix + "_" + str(i) + "_" + str(uuid.uuid4()) + ".png")
+        file_path = os.path.join(dirs, prefix + "_" + str(i) + "_" + self.get_file_name() + ".png")
         browser.get_screenshot_as_file(file_path)
         self.__img_path.append(file_path)
 
@@ -183,3 +191,10 @@ class CommonCrawl:
 
     # def __get_proxy(self):
     #     return requests.get("http://127.0.0.1:5010/get/").text
+
+    def load_cookie(self, browser: WebDriver):
+        if os.path.exists('cookies.json'):
+            with open('cookies.json', 'r', encoding='utf-8') as f:
+                list_cookies = json.loads(f.read())
+            for cookie in list_cookies:
+                browser.add_cookie(cookie)
