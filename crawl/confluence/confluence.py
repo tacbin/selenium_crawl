@@ -22,7 +22,7 @@ class ConfluenceCrawl(CommonCrawl):
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.next_urls = []
         self.urls = [
-            "https://confluence.shopee.io/pages/viewpage.action?pageId=877396414"]
+            "https://confluence.shopee.io/display/SSCP/Shopee+Supply+Chain+-+FPM"]
         for url in self.urls:
             self.result_map[url] = []
         self.file_location = 'confluence_crawl'
