@@ -19,7 +19,7 @@ class ConfluenceCrawl(CommonCrawl):
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.next_urls = []
         self.urls = [
-            "https://confluence.shopee.io/display/SSCP/Shopee+Supply+Chain+-+FPM"]
+            "https://confluence.shopee.io/pages/viewpage.action?pageId=858131627"]
         for url in self.urls:
             self.result_map[url] = []
         self.file_location = 'confluence_crawl'
@@ -55,18 +55,21 @@ class ConfluenceCrawl(CommonCrawl):
     def recursive_search(self, root, browser: WebDriver, url_map):
         # 点击当前页
         browser.execute_script(f"location.href='{root.url}';")
-        time.sleep(5)
+        time.sleep(10)
         self.save_img(browser, 0, root.name)
-        eles = browser.find_elements(By.XPATH, "//a[contains(@id,'action-menu-link')]")
-        if len(eles) != 0:
-            time.sleep(1)
-            eles[0].click()
-            time.sleep(1)
-        eles = browser.find_elements(By.XPATH, "//a[contains(@id,'action-export-pdf-link')]")
-        if len(eles) != 0:
-            time.sleep(1)
-            eles[0].click()
-            time.sleep(2)
+        try:
+            eles = browser.find_elements(By.XPATH, "//a[contains(@id,'action-menu-link')]")
+            if len(eles) != 0:
+                time.sleep(1)
+                eles[0].click()
+                time.sleep(3)
+            eles = browser.find_elements(By.XPATH, "//a[contains(@id,'action-export-pdf-link')]")
+            if len(eles) != 0:
+                time.sleep(1)
+                eles[0].click()
+                time.sleep(5)
+        except Exception as e:
+            print(e, root.url, root.name)
         # 获取所有新的url
         page_source = browser.page_source
         etree = html.etree
@@ -84,6 +87,8 @@ class ConfluenceCrawl(CommonCrawl):
                     continue
                 url_map[url] = ''
                 print(url, title)
+                if '周报' in title or '日报' in title:
+                    continue
                 node = ConfluenceTree(title, url, root)
                 root.children.append(node)
                 self.recursive_search(node, browser, url_map)
