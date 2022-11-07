@@ -52,7 +52,7 @@ class CommonCrawl:
             for i in range(0, len(self.urls)):
                 browser.execute_script(f"location.href='{self.urls[i]}';")
                 # save img
-                self.__save_img(browser, i, "normal")
+                self.save_img(browser, i, "normal")
                 # parse html
                 time.sleep(3)
                 self.parse(browser)
@@ -135,10 +135,10 @@ class CommonCrawl:
         except smtplib.SMTPException as e:
             print(e)
 
-    def __save_img(self, browser: WebDriver, i: int, prefix: str):
+    def save_img(self, browser: WebDriver, i: int, file_name: str):
         if not self.is_save_img:
             return
-        time.sleep(2)
+        # time.sleep(2)
         # 用js获取页面的宽高，如果有其他需要用js的部分也可以用这个方法
         width = browser.execute_script("return document.documentElement.scrollWidth")
         height = browser.execute_script("return document.documentElement.scrollHeight")
@@ -147,7 +147,7 @@ class CommonCrawl:
         dirs = self.get_file_path()
         if not os.path.exists(dirs):
             os.makedirs(dirs, mode=0o1777)
-        file_path = os.path.join(dirs, prefix + "_" + str(i) + "_" + self.get_file_name() + ".png")
+        file_path = os.path.join(dirs, file_name + ".png")
         browser.get_screenshot_as_file(file_path)
         self.__img_path.append(file_path)
 
@@ -163,7 +163,7 @@ class CommonCrawl:
                 break
             current_url = browser.current_url
             # save img
-            self.__save_img(browser, i, "click")
+            self.save_img(browser, i, "click")
             # parse html
             time.sleep(1.5)
             self.parse(browser)
@@ -178,7 +178,7 @@ class CommonCrawl:
         for i in range(0, len(urls)):
             browser.execute_script(f"location.href='{urls[i]}';")
             # save img
-            self.__save_img(browser, i, "normal")
+            self.save_img(browser, i, "normal")
             # parse html
             time.sleep(1.5)
             self.parse(browser)
