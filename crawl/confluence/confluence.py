@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 import time
-from telnetlib import EC
-
 from lxml import html
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
-from selenium.webdriver.support.wait import WebDriverWait
 
 from common_crawl import CommonCrawl
 
@@ -27,7 +24,7 @@ class ConfluenceCrawl(CommonCrawl):
             self.result_map[url] = []
         self.file_location = 'confluence_crawl'
         self.is_save_img = True
-        self.mode = 1
+        self.mode = -1
         self.build_tree(browser)
 
         return browser
@@ -86,13 +83,10 @@ class ConfluenceCrawl(CommonCrawl):
                 if url in url_map:
                     continue
                 url_map[url] = ''
-                print(url)
+                print(url, title)
                 node = ConfluenceTree(title, url, root)
                 root.children.append(node)
                 self.recursive_search(node, browser, url_map)
-
-    def custom_send(self):
-        pass
 
 
 class ConfluenceTree:
