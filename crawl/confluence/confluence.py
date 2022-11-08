@@ -7,7 +7,7 @@ from selenium.webdriver.firefox.webdriver import WebDriver
 from common_crawl import CommonCrawl
 
 
-# 先获取全部url。形成url树。每个url进行点击下载。叶子节点不再建文件夹。
+# 边获取url边下载
 class ConfluenceCrawl(CommonCrawl):
     def __init__(self):
         super().__init__()

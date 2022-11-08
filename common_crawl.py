@@ -138,7 +138,6 @@ class CommonCrawl:
     def save_img(self, browser: WebDriver, i: int, file_name: str):
         if not self.is_save_img:
             return
-        # time.sleep(2)
         # 用js获取页面的宽高，如果有其他需要用js的部分也可以用这个方法
         width = browser.execute_script("return document.documentElement.scrollWidth")
         height = browser.execute_script("return document.documentElement.scrollHeight")
@@ -150,6 +149,7 @@ class CommonCrawl:
         file_path = os.path.join(dirs, file_name + ".png")
         browser.get_screenshot_as_file(file_path)
         self.__img_path.append(file_path)
+        time.sleep(2)
 
     def __next_click(self, browser: WebDriver):
         elements = self.get_next_click_elements(browser)
