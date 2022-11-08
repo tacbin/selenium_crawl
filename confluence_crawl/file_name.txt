@@ -1,0 +1,31 @@
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721649&src=contextnavpagetreemode Company&Team Instruction -> 797721649
+https://confluence.shopee.io/pages/viewpage.action?pageId=91922582&src=contextnavpagetreemode 线上值班——By Product -> 91922582
+https://confluence.shopee.io/pages/viewpage.action?pageId=1413709609&src=contextnavpagetreemode 运费迁移需求 -> 1413709609
+https://confluence.shopee.io/pages/viewpage.action?pageId=1443940928&src=contextnavpagetreemode 过去工作简介 -> 1443940928
+https://confluence.shopee.io/pages/viewpage.action?pageId=1459030210&src=contextnavpagetreemode 服务拆分 -> 1459030210
+https://confluence.shopee.io/pages/viewpage.action?pageId=1459030210
+                         -> 1459030210
+https://confluence.shopee.io/pages/viewpage.action?pageId=1407276648 SPX计费业务梳理 -> 1407276648
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721735&src=contextnavpagetreemode 01 Management Policy / 产品线管理政策 -> 797721735
+https://confluence.shopee.io/pages/viewpage.action?pageId=1113046385&src=contextnavpagetreemode Probation Management / 试用期管理 -> 1113046385
+https://confluence.shopee.io/pages/viewpage.action?pageId=1113048279&src=contextnavpagetreemode Mentor Guidance / 导师指南 -> 1113048279
+https://confluence.shopee.io/pages/viewpage.action?pageId=1113049349&src=contextnavpagetreemode Communication / 沟通机制 -> 1113049349
+https://confluence.shopee.io/pages/viewpage.action?pageId=821125220&src=contextnavpagetreemode 02 New Hire Onboarding Journey / 新人融入计划 -> 821125220
+https://confluence.shopee.io/pages/viewpage.action?pageId=575191176&src=contextnavpagetreemode Fresh Graduate Training Program / 校招新员工培训项目 -> 575191176
+https://confluence.shopee.io/pages/viewpage.action?pageId=1348957780&src=contextnavpagetreemode User Handbook(SSC HR System) / 校招培养流程用户手册 -> 1348957780
+https://confluence.shopee.io/pages/viewpage.action?pageId=1350360335&src=contextnavpagetreemode Leader/Reporting Manager 视角 -> 1350360335
+https://confluence.shopee.io/pages/viewpage.action?pageId=1348958067&src=contextnavpagetreemode Member 视角 -> 1348958067
+https://confluence.shopee.io/pages/viewpage.action?pageId=1348958438&src=contextnavpagetreemode Mentor 视角 -> 1348958438
+https://confluence.shopee.io/pages/viewpage.action?pageId=849055924&src=contextnavpagetreemode New Employee Orientation for experienced hired / 社招新员工入职培训 -> 849055924
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721907&src=contextnavpagetreemode 03 Development Basis / 研发基础 -> 797721907
+https://confluence.shopee.io/pages/viewpage.action?pageId=1152622531&src=contextnavpagetreemode R&D Process and Specification 研发流程&规范 -> 1152622531
+https://confluence.shopee.io/pages/viewpage.action?pageId=7538221&src=contextnavpagetreemode API Design Specification 接口设计规范 -> 7538221
+https://confluence.shopee.io/pages/viewpage.action?pageId=1181888116&src=contextnavpagetreemode Branch Management Specification 分支管理规范 -> 1181888116
+https://confluence.shopee.io/pages/viewpage.action?pageId=1181888130&src=contextnavpagetreemode R&D Process Management-DMS -> 1181888130
+https://confluence.shopee.io/pages/viewpage.action?pageId=106741196&src=contextnavpagetreemode SSC Incident Management Specification SSC故障管理规范 -> 106741196
+https://confluence.shopee.io/pages/viewpage.action?pageId=61368816&src=contextnavpagetreemode SSC Project Management Process 专项项目管理流程 -> 61368816
+https://confluence.shopee.io/pages/viewpage.action?pageId=1181888099&src=contextnavpagetreemode SSC Version Release Process SSC版本发布流程 -> 1181888099
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=1181888099"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=1181888099&src=contextnavpagetreemode SSC Version Release Process SSC版本发布流程 -> 1181888099
+https://confluence.shopee.io/pages/viewpage.action?pageId=1185619250&src=contextnavpagetreemode Supply Chain Database Specification 数据库规范 -> 1185619250
+https://confluence.shopee.io/pages/viewpage.action?pageId=213296211&src=contextnavpagetreemode 系统分析设计说明书模版 -> 213296211
