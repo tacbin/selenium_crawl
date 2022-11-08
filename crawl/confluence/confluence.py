@@ -4,6 +4,7 @@ from lxml import html
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
 
+from common.common_instantce import CommonInstance
 from common_crawl import CommonCrawl
 
 
@@ -58,16 +59,19 @@ class ConfluenceCrawl(CommonCrawl):
         time.sleep(10)
         self.save_img(browser, 0, root.name)
         try:
-            eles = browser.find_elements(By.XPATH, "//a[contains(@id,'action-menu-link')]")
-            if len(eles) != 0:
-                time.sleep(1)
-                eles[0].click()
-                time.sleep(3)
-            eles = browser.find_elements(By.XPATH, "//a[contains(@id,'action-export-pdf-link')]")
-            if len(eles) != 0:
-                time.sleep(1)
-                eles[0].click()
-                time.sleep(5)
+            if CommonInstance.Redis_client.get(root.url) is None:
+                eles = browser.find_elements(By.XPATH, "//a[contains(@id,'action-menu-link')]")
+                if len(eles) != 0:
+                    time.sleep(1)
+                    eles[0].click()
+                    time.sleep(3)
+                eles = browser.find_elements(By.XPATH, "//a[contains(@id,'action-export-pdf-link')]")
+                if len(eles) != 0:
+                    time.sleep(1)
+                    eles[0].click()
+                    time.sleep(5)
+                CommonInstance.Redis_client.set(root.url, '')
+
         except Exception as e:
             print(e, root.url, root.name)
         # 获取所有新的url
