@@ -1,0 +1,151 @@
+/Users/weibin.liu/Documents/github/selenium_crawl/venv/bin/Python /Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/pydevd.py --multiproc --qt-support=auto --client 127.0.0.1 --port 57521 --file /Users/weibin.liu/Documents/github/selenium_crawl/test.py
+Connected to pydev debugger (build 212.5080.64)
+2022-11-09 14:08:51 ConfluenceCrawl start crawl.. about:blank
+请登录后操作..
+登录成功..
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721649&src=contextnavpagetreemode Company&Team Instruction -> 797721649
+https://confluence.shopee.io/pages/viewpage.action?pageId=91922582&src=contextnavpagetreemode 线上值班——By Product -> 91922582
+https://confluence.shopee.io/pages/viewpage.action?pageId=91922582
+                         -> 91922582
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721649
+                         -> 797721649
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721735&src=contextnavpagetreemode 01 Management Policy / 产品线管理政策 -> 797721735
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721735 01 Management Policy / 产品线管理政策 -> 797721735
+https://confluence.shopee.io/pages/viewpage.action?pageId=1113046385 Probation Management / 试用期管理 -> 1113046385
+https://confluence.shopee.io/pages/viewpage.action?pageId=1113048279 Mentor Guidance / 导师指南 -> 1113048279
+https://confluence.shopee.io/pages/viewpage.action?pageId=1113046385&src=contextnavpagetreemode Probation Management / 试用期管理 -> 1113046385
+https://confluence.shopee.io/pages/viewpage.action?pageId=1113048279&src=contextnavpagetreemode Mentor Guidance / 导师指南 -> 1113048279
+https://confluence.shopee.io/pages/viewpage.action?pageId=1113049349&src=contextnavpagetreemode Communication / 沟通机制 -> 1113049349
+https://confluence.shopee.io/pages/viewpage.action?pageId=821125220&src=contextnavpagetreemode 02 New Hire Onboarding Journey / 新人融入计划 -> 821125220
+https://confluence.shopee.io/pages/viewpage.action?pageId=575191176&src=contextnavpagetreemode Fresh Graduate Training Program / 校招新员工培训项目 -> 575191176
+https://confluence.shopee.io/pages/viewpage.action?pageId=1348957780&src=contextnavpagetreemode User Handbook(SSC HR System) / 校招培养流程用户手册 -> 1348957780
+https://confluence.shopee.io/pages/viewpage.action?pageId=1350360335&src=contextnavpagetreemode Leader/Reporting Manager 视角 -> 1350360335
+https://confluence.shopee.io/pages/viewpage.action?pageId=821125220 02 New Hire Onboarding Journey / 新人融入计划 -> 821125220
+https://confluence.shopee.io/pages/viewpage.action?pageId=849055924&src=contextnavpagetreemode New Employee Orientation for experienced hired / 社招新员工入职培训 -> 849055924
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721907&src=contextnavpagetreemode 03 Development Basis / 研发基础 -> 797721907
+https://confluence.shopee.io/pages/viewpage.action?pageId=1152622531&src=contextnavpagetreemode R&D Process and Specification 研发流程&规范 -> 1152622531
+https://confluence.shopee.io/pages/viewpage.action?pageId=7538221&src=contextnavpagetreemode API Design Specification 接口设计规范 -> 7538221
+https://confluence.shopee.io/pages/viewpage.action?pageId=1181888116&src=contextnavpagetreemode Branch Management Specification 分支管理规范 -> 1181888116
+https://confluence.shopee.io/pages/viewpage.action?pageId=1181888130&src=contextnavpagetreemode R&D Process Management-DMS -> 1181888130
+https://confluence.shopee.io/pages/viewpage.action?pageId=106741196&src=contextnavpagetreemode SSC Incident Management Specification SSC故障管理规范 -> 106741196
+https://confluence.shopee.io/pages/viewpage.action?pageId=61368816&src=contextnavpagetreemode SSC Project Management Process 专项项目管理流程 -> 61368816
+https://confluence.shopee.io/pages/viewpage.action?pageId=1181888099&src=contextnavpagetreemode SSC Version Release Process SSC版本发布流程 -> 1181888099
+https://confluence.shopee.io/pages/viewpage.action?pageId=1185619250&src=contextnavpagetreemode Supply Chain Database Specification 数据库规范 -> 1185619250
+https://confluence.shopee.io/pages/viewpage.action?pageId=1185619250
+                         -> 1185619250
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=1185619250"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=1185619250
+                         -> 1185619250
+https://confluence.shopee.io/pages/viewpage.action?pageId=213296211&src=contextnavpagetreemode 系统分析设计说明书模版 -> 213296211
+Message: Element <a id="action-menu-link" class="action aui-dropdown2-trigger-arrowless aui-button aui-button-subtle ajs-menu-title aui-dropdown2-trigger" href="#"> is not clickable at point (1743,15) because another element <a id="user-menu-link" class="aui-dropdown2-trigger aui-dropdown2-trigger-arrowless " href="#"> obscures it
+ https://confluence.shopee.io/pages/viewpage.action?pageId=213296211&src=contextnavpagetreemode 系统分析设计说明书模版 -> 213296211
+https://confluence.shopee.io/pages/viewpage.action?pageId=1152622639&src=contextnavpagetreemode R&D Environment&Permission 研发环境&权限 -> 1152622639
+https://confluence.shopee.io/pages/viewpage.action?pageId=162188156&src=contextnavpagetreemode Git Basics Git入门 -> 162188156
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721907 03 Development Basis / 研发基础 -> 797721907
+https://confluence.shopee.io/pages/viewpage.action?pageId=28528520&src=contextnavpagetreemode 项目工具使用 -> 28528520
+https://confluence.shopee.io/pages/viewpage.action?pageId=28529013&src=contextnavpagetreemode CAT（Central Application Tracking） -> 28529013
+https://confluence.shopee.io/pages/viewpage.action?pageId=1152622531 R&D Process and Specification 研发流程&规范 -> 1152622531
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=1152622531"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=1152622531 R&D Process and Specification 研发流程&规范 -> 1152622531
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621&src=contextnavpagetreemode 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=90614597&src=contextnavpagetreemode 供应链大促计划 -> 90614597
+https://confluence.shopee.io/pages/viewpage.action?pageId=90614603&src=contextnavpagetreemode 2019.11.11大促 -> 90614603
+https://confluence.shopee.io/pages/viewpage.action?pageId=90614597 供应链大促计划 -> 90614597
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=90614597"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=90614597 供应链大促计划 -> 90614597
+https://confluence.shopee.io/pages/viewpage.action?pageId=98003730&src=contextnavpagetreemode 2019.12.12大促 -> 98003730
+https://confluence.shopee.io/pages/viewpage.action?pageId=99766654&src=contextnavpagetreemode 12.12TWS容量评估 -> 99766654
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=99766654"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=99766654&src=contextnavpagetreemode 12.12TWS容量评估 -> 99766654
+https://confluence.shopee.io/pages/viewpage.action?pageId=99764129&src=contextnavpagetreemode OMS 12.12容量评估 -> 99764129
+https://confluence.shopee.io/pages/viewpage.action?pageId=98003883&src=contextnavpagetreemode sls压测目标 -> 98003883
+https://confluence.shopee.io/pages/viewpage.action?pageId=99774154&src=contextnavpagetreemode SPX 12.12容量评估 -> 99774154
+https://confluence.shopee.io/pages/viewpage.action?pageId=99766586&src=contextnavpagetreemode WMS双12容量评估 -> 99766586
+https://confluence.shopee.io/pages/viewpage.action?pageId=101557261&src=contextnavpagetreemode 双12大促-SLS容量评估 -> 101557261
+https://confluence.shopee.io/pages/viewpage.action?pageId=131086381&src=contextnavpagetreemode 2020.05.05 大促 -> 131086381
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=131086381"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=131086381&src=contextnavpagetreemode 2020.05.05 大促 -> 131086381
+https://confluence.shopee.io/pages/viewpage.action?pageId=131086403&src=contextnavpagetreemode WMS 2020.04.24 斋月活动 容量评估 -> 131086403
+https://confluence.shopee.io/pages/viewpage.action?pageId=180559751&src=contextnavpagetreemode 2020.09.09大促 -> 180559751
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=180559751"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=180559751&src=contextnavpagetreemode 2020.09.09大促 -> 180559751
+https://confluence.shopee.io/pages/viewpage.action?pageId=180567906&src=contextnavpagetreemode LCS 容量评估 -> 180567906
+https://confluence.shopee.io/pages/viewpage.action?pageId=180562758&src=contextnavpagetreemode OMS 2020 9.9容量评估 -> 180562758
+https://confluence.shopee.io/pages/viewpage.action?pageId=180559768&src=contextnavpagetreemode TWS 9.9容量评估 -> 180559768
+https://confluence.shopee.io/pages/viewpage.action?pageId=469206045&src=contextnavpagetreemode 2021.5.5 大促 -> 469206045
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=469206045"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=469206045&src=contextnavpagetreemode 2021.5.5 大促 -> 469206045
+https://confluence.shopee.io/pages/viewpage.action?pageId=1114934894&src=contextnavpagetreemode 2022.6.6 大促 - P2 -> 1114934894
+https://confluence.shopee.io/pages/viewpage.action?pageId=1138735965&src=contextnavpagetreemode 2022.6.6 大促 -  Fulfillment -> 1138735965
+https://confluence.shopee.io/pages/viewpage.action?pageId=1114935252&src=contextnavpagetreemode 2022.6.6 大促 - SLS -> 1114935252
+https://confluence.shopee.io/pages/viewpage.action?pageId=1141406204&src=contextnavpagetreemode 压测0525 -> 1141406204
+https://confluence.shopee.io/pages/viewpage.action?pageId=1147289633&src=contextnavpagetreemode 2022.6.6 大促 - SPX -> 1147289633
+https://confluence.shopee.io/pages/viewpage.action?pageId=1150036260&src=contextnavpagetreemode 2022.6.6 大促-WMS -> 1150036260
+https://confluence.shopee.io/pages/viewpage.action?pageId=1154140755&src=contextnavpagetreemode 2022.6月小促 -> 1154140755
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=1154140755"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=1154140755&src=contextnavpagetreemode 2022.6月小促 -> 1154140755
+https://confluence.shopee.io/pages/viewpage.action?pageId=1185643814&src=contextnavpagetreemode 2022.7.7 大促 - P2 -> 1185643814
+None
+https://confluence.shopee.io/pages/viewpage.action?pageId=1188325207&src=contextnavpagetreemode 2022.7.7 大促 - SLS -> 1188325207
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=1188325207"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=1188325207&src=contextnavpagetreemode 2022.7.7 大促 - SLS -> 1188325207
+https://confluence.shopee.io/pages/viewpage.action?pageId=1302985506&src=contextnavpagetreemode 2022.8.8 大促 - P2 -> 1302985506
+Message: Element <a id="action-menu-link" class="action aui-dropdown2-trigger-arrowless aui-button aui-button-subtle ajs-menu-title aui-dropdown2-trigger" href="#"> is not clickable at point (1743,15) because another element <a id="user-menu-link" class="aui-dropdown2-trigger aui-dropdown2-trigger-arrowless " href="#"> obscures it
+ https://confluence.shopee.io/pages/viewpage.action?pageId=1302985506&src=contextnavpagetreemode 2022.8.8 大促 - P2 -> 1302985506
+https://confluence.shopee.io/pages/viewpage.action?pageId=1302985516&src=contextnavpagetreemode 2022.8.8 大促 - SLS -> 1302985516
+https://confluence.shopee.io/pages/viewpage.action?pageId=1185618456&src=contextnavpagetreemode 2022.9.9 大促 - P0 -> 1185618456
+https://confluence.shopee.io/pages/viewpage.action?pageId=1185618623&src=contextnavpagetreemode 2022.09.09 大促 - P0 - SLS -> 1185618623
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=1185618623"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=1185618623&src=contextnavpagetreemode 2022.09.09 大促 - P0 - SLS -> 1185618623
+https://confluence.shopee.io/pages/viewpage.action?pageId=1300009913&src=contextnavpagetreemode 压测0803 -> 1300009913
+https://confluence.shopee.io/pages/viewpage.action?pageId=1348956620&src=contextnavpagetreemode 压测0827 -> 1348956620
+https://confluence.shopee.io/pages/viewpage.action?pageId=1357877682&src=contextnavpagetreemode 压测0830 -> 1357877682
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=1357877682"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=1357877682&src=contextnavpagetreemode 压测0830 -> 1357877682
+https://confluence.shopee.io/pages/viewpage.action?pageId=1365125374&src=contextnavpagetreemode 压测0902 -> 1365125374
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=1365125374"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=1365125374&src=contextnavpagetreemode 压测0902 -> 1365125374
+https://confluence.shopee.io/pages/viewpage.action?pageId=1334697871&src=contextnavpagetreemode 汇总项 -> 1334697871
+https://confluence.shopee.io/pages/viewpage.action?pageId=1185625498&src=contextnavpagetreemode 2022.9.9 大促-P0-Fulfillment -> 1185625498
+https://confluence.shopee.io/pages/viewpage.action?pageId=1188300109&src=contextnavpagetreemode 2022.9.9 大促-P0-WMS -> 1188300109
+https://confluence.shopee.io/pages/viewpage.action?pageId=1382963546&src=contextnavpagetreemode 2022.10.10 大促 - P2 -> 1382963546
+https://confluence.shopee.io/pages/viewpage.action?pageId=1446385985&src=contextnavpagetreemode 2022.11.11 大促 - P0 -> 1446385985
+https://confluence.shopee.io/pages/viewpage.action?pageId=1114935746&src=contextnavpagetreemode 大促筹备SOP -> 1114935746
+https://confluence.shopee.io/pages/viewpage.action?pageId=912419359&src=contextnavpagetreemode 容量评估SOP -> 912419359
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020112&src=contextnavpagetreemode 大促系统 -> 902020112
+https://confluence.shopee.io/pages/viewpage.action?pageId=1267144367&src=contextnavpagetreemode 演练SOP -> 1267144367
+https://confluence.shopee.io/pages/viewpage.action?pageId=858131627&src=contextnavpagetreemode SLS(Shopee Logistic) -> 858131627
+https://confluence.shopee.io/pages/viewpage.action?pageId=865078141&src=contextnavpagetreemode SPX(Shopee Xpress) -> 865078141
+https://confluence.shopee.io/pages/viewpage.action?pageId=865079720&src=contextnavpagetreemode WMS(Warehouse Managment System) -> 865079720
+https://confluence.shopee.io/pages/viewpage.action?pageId=877396892&src=contextnavpagetreemode 内部项目(CICD & APP) -> 877396892
+https://confluence.shopee.io/pages/viewpage.action?pageId=897324703&src=contextnavpagetreemode 质量管理 -> 897324703
+https://confluence.shopee.io/pages/viewpage.action?pageId=9802654&src=contextnavpagetreemode 内部分享与培训 -> 9802654
+https://confluence.shopee.io/pages/viewpage.action?pageId=885002462&src=contextnavpagetreemode 废弃文档归总 -> 885002462
+https://confluence.shopee.io/pages/viewpage.action?pageId=889529756&src=contextnavpagetreemode 历史文档归总 -> 889529756
+https://confluence.shopee.io/pages/viewpage.action?pageId=1449307474&src=contextnavpagetreemode SCTP (Supply Chain Tech Platform) -> 1449307474
+https://confluence.shopee.io/pages/viewpage.action?pageId=858132737&src=contextnavpagetreemode Finance(logistic finance) -> 858132737
+https://confluence.shopee.io/pages/viewpage.action?pageId=1365125374
+                         -> 1365125374
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621&src=breadcrumbs-expanded 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=90614597&src=breadcrumbs-expanded 供应链大促计划 -> 90614597
+https://confluence.shopee.io/pages/viewpage.action?pageId=1185618456&src=breadcrumbs-expanded 2022.9.9 大促 - P0 -> 1185618456
+https://confluence.shopee.io/pages/viewpage.action?pageId=1185618623&src=breadcrumbs-parent 2022.09.09 大促 - P0 - SLS -> 1185618623
+https://confluence.shopee.io/pages/viewpage.action?pageId=1185618456 2022.9.9 大促 - P0 -> 1185618456
+https://confluence.shopee.io/pages/viewpage.action?pageId=1185618623 2022.09.09 大促 - P0 - SLS -> 1185618623
+https://confluence.shopee.io/pages/viewpage.action?pageId=1357877682
+                         -> 1357877682
+https://confluence.shopee.io/pages/viewpage.action?pageId=1337860893 create order参数模版 -> 1337860893
+https://confluence.shopee.io/pages/viewpage.action?pageId=1348956620
+                         -> 1348956620
+https://confluence.shopee.io/pages/viewpage.action?pageId=1337861141 tracking参数模版 -> 1337861141
+https://confluence.shopee.io/pages/viewpage.action?pageId=1300009913
+                         -> 1300009913
+https://confluence.shopee.io/pages/viewpage.action?pageId=1185618456&src=breadcrumbs-parent 2022.9.9 大促 - P0 -> 1185618456
+https://confluence.shopee.io/pages/viewpage.action?pageId=1328521563 【2022-09-09】大促常规项检查 -> 1328521563
+https://confluence.shopee.io/pages/viewpage.action?pageId=917295003 扩容标准 -> 917295003
+https://confluence.shopee.io/pages/viewpage.action?pageId=90614597&src=breadcrumbs-parent 供应链大促计划 -> 90614597
+https://confluence.shopee.io/pages/viewpage.action?pageId=1302985516
+                         -> 1302985516
+https://confluence.shopee.io/pages/viewpage.action?pageId=1302985506&src=breadcrumbs-parent 2022.8.8 大促 - P2 -> 1302985506
+https://confluence.shopee.io/pages/viewpage.action?pageId=1302985506 2022.8.8 大促 - P2 -> 1302985506
