@@ -1,31 +1,116 @@
+/Users/weibin.liu/Documents/github/selenium_crawl/venv/bin/Python /Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/pydevd.py --multiproc --qt-support=auto --client 127.0.0.1 --port 51659 --file /Users/weibin.liu/Documents/github/selenium_crawl/test.py
+Connected to pydev debugger (build 212.5080.64)
+2022-11-08 19:02:57 ConfluenceCrawl start crawl.. about:blank
+请登录后操作..
+登录成功..
 https://confluence.shopee.io/pages/viewpage.action?pageId=797721649&src=contextnavpagetreemode Company&Team Instruction -> 797721649
 https://confluence.shopee.io/pages/viewpage.action?pageId=91922582&src=contextnavpagetreemode 线上值班——By Product -> 91922582
-https://confluence.shopee.io/pages/viewpage.action?pageId=1413709609&src=contextnavpagetreemode 运费迁移需求 -> 1413709609
-https://confluence.shopee.io/pages/viewpage.action?pageId=1443940928&src=contextnavpagetreemode 过去工作简介 -> 1443940928
-https://confluence.shopee.io/pages/viewpage.action?pageId=1459030210&src=contextnavpagetreemode 服务拆分 -> 1459030210
-https://confluence.shopee.io/pages/viewpage.action?pageId=1459030210
-                         -> 1459030210
-https://confluence.shopee.io/pages/viewpage.action?pageId=1407276648 SPX计费业务梳理 -> 1407276648
+https://confluence.shopee.io/pages/viewpage.action?pageId=91922582 
+                         -> 91922582
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=91922582"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=91922582 
+                         -> 91922582
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721649 
+                         -> 797721649
 https://confluence.shopee.io/pages/viewpage.action?pageId=797721735&src=contextnavpagetreemode 01 Management Policy / 产品线管理政策 -> 797721735
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721735 01 Management Policy / 产品线管理政策 -> 797721735
 https://confluence.shopee.io/pages/viewpage.action?pageId=1113046385&src=contextnavpagetreemode Probation Management / 试用期管理 -> 1113046385
+https://confluence.shopee.io/pages/viewpage.action?pageId=1113046385 Probation Management / 试用期管理 -> 1113046385
 https://confluence.shopee.io/pages/viewpage.action?pageId=1113048279&src=contextnavpagetreemode Mentor Guidance / 导师指南 -> 1113048279
+https://confluence.shopee.io/pages/viewpage.action?pageId=1113048279 Mentor Guidance / 导师指南 -> 1113048279
 https://confluence.shopee.io/pages/viewpage.action?pageId=1113049349&src=contextnavpagetreemode Communication / 沟通机制 -> 1113049349
+https://confluence.shopee.io/pages/viewpage.action?pageId=1113049349 Communication / 沟通机制 -> 1113049349
 https://confluence.shopee.io/pages/viewpage.action?pageId=821125220&src=contextnavpagetreemode 02 New Hire Onboarding Journey / 新人融入计划 -> 821125220
+https://confluence.shopee.io/pages/viewpage.action?pageId=821125220 02 New Hire Onboarding Journey / 新人融入计划 -> 821125220
 https://confluence.shopee.io/pages/viewpage.action?pageId=575191176&src=contextnavpagetreemode Fresh Graduate Training Program / 校招新员工培训项目 -> 575191176
+https://confluence.shopee.io/pages/viewpage.action?pageId=575191176 Fresh Graduate Training Program / 校招新员工培训项目 -> 575191176
 https://confluence.shopee.io/pages/viewpage.action?pageId=1348957780&src=contextnavpagetreemode User Handbook(SSC HR System) / 校招培养流程用户手册 -> 1348957780
+https://confluence.shopee.io/pages/viewpage.action?pageId=1348957780 User Handbook(SSC HR System) / 校招培养流程用户手册 -> 1348957780
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=1348957780"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=1348957780 User Handbook(SSC HR System) / 校招培养流程用户手册 -> 1348957780
 https://confluence.shopee.io/pages/viewpage.action?pageId=1350360335&src=contextnavpagetreemode Leader/Reporting Manager 视角 -> 1350360335
+https://confluence.shopee.io/pages/viewpage.action?pageId=1350360335 Leader/Reporting Manager 视角 -> 1350360335
 https://confluence.shopee.io/pages/viewpage.action?pageId=1348958067&src=contextnavpagetreemode Member 视角 -> 1348958067
+https://confluence.shopee.io/pages/viewpage.action?pageId=1348958067 Member 视角 -> 1348958067
 https://confluence.shopee.io/pages/viewpage.action?pageId=1348958438&src=contextnavpagetreemode Mentor 视角 -> 1348958438
 https://confluence.shopee.io/pages/viewpage.action?pageId=849055924&src=contextnavpagetreemode New Employee Orientation for experienced hired / 社招新员工入职培训 -> 849055924
 https://confluence.shopee.io/pages/viewpage.action?pageId=797721907&src=contextnavpagetreemode 03 Development Basis / 研发基础 -> 797721907
 https://confluence.shopee.io/pages/viewpage.action?pageId=1152622531&src=contextnavpagetreemode R&D Process and Specification 研发流程&规范 -> 1152622531
 https://confluence.shopee.io/pages/viewpage.action?pageId=7538221&src=contextnavpagetreemode API Design Specification 接口设计规范 -> 7538221
-https://confluence.shopee.io/pages/viewpage.action?pageId=1181888116&src=contextnavpagetreemode Branch Management Specification 分支管理规范 -> 1181888116
-https://confluence.shopee.io/pages/viewpage.action?pageId=1181888130&src=contextnavpagetreemode R&D Process Management-DMS -> 1181888130
-https://confluence.shopee.io/pages/viewpage.action?pageId=106741196&src=contextnavpagetreemode SSC Incident Management Specification SSC故障管理规范 -> 106741196
-https://confluence.shopee.io/pages/viewpage.action?pageId=61368816&src=contextnavpagetreemode SSC Project Management Process 专项项目管理流程 -> 61368816
-https://confluence.shopee.io/pages/viewpage.action?pageId=1181888099&src=contextnavpagetreemode SSC Version Release Process SSC版本发布流程 -> 1181888099
-Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=1181888099"> could not be scrolled into view
- https://confluence.shopee.io/pages/viewpage.action?pageId=1181888099&src=contextnavpagetreemode SSC Version Release Process SSC版本发布流程 -> 1181888099
-https://confluence.shopee.io/pages/viewpage.action?pageId=1185619250&src=contextnavpagetreemode Supply Chain Database Specification 数据库规范 -> 1185619250
-https://confluence.shopee.io/pages/viewpage.action?pageId=213296211&src=contextnavpagetreemode 系统分析设计说明书模版 -> 213296211
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721907 03 Development Basis / 研发基础 -> 797721907
+https://confluence.shopee.io/pages/viewpage.action?pageId=1152622639&src=contextnavpagetreemode R&D Environment&Permission 研发环境&权限 -> 1152622639
+https://confluence.shopee.io/pages/viewpage.action?pageId=162188156&src=contextnavpagetreemode Git Basics Git入门 -> 162188156
+https://confluence.shopee.io/pages/viewpage.action?pageId=183818454&src=contextnavpagetreemode Golang Development Environment Golang开发环境 -> 183818454
+https://confluence.shopee.io/pages/viewpage.action?pageId=1222184208&src=contextnavpagetreemode Permission Application Guideline 权限申请指引 -> 1222184208
+https://confluence.shopee.io/pages/viewpage.action?pageId=120976416&src=contextnavpagetreemode Set up Work Environment 工作环境搭建 -> 120976416
+https://confluence.shopee.io/pages/viewpage.action?pageId=28528520&src=contextnavpagetreemode 项目工具使用 -> 28528520
+https://confluence.shopee.io/pages/viewpage.action?pageId=28529013&src=contextnavpagetreemode CAT（Central Application Tracking） -> 28529013
+https://confluence.shopee.io/pages/viewpage.action?pageId=28529025&src=contextnavpagetreemode Data-manager 数据管理中心 -> 28529025
+Message: Element <a id="action-export-pdf-link" class="" href="/spaces/flyingpdf/pdfpageexport.action?pageId=28529025"> could not be scrolled into view
+ https://confluence.shopee.io/pages/viewpage.action?pageId=28529025&src=contextnavpagetreemode Data-manager 数据管理中心 -> 28529025
+https://confluence.shopee.io/pages/viewpage.action?pageId=28529592&src=contextnavpagetreemode Grafana 查看Live环境容器/中间件/服务状态 -> 28529592
+https://confluence.shopee.io/pages/viewpage.action?pageId=142653030&src=contextnavpagetreemode K8S运维平台 -> 142653030
+https://confluence.shopee.io/pages/viewpage.action?pageId=28529101&src=contextnavpagetreemode Kibana 日志检索 -> 28529101
+https://confluence.shopee.io/pages/viewpage.action?pageId=28529536&src=contextnavpagetreemode RabbitMQ 后台管理 -> 28529536
+https://confluence.shopee.io/pages/viewpage.action?pageId=28529179&src=contextnavpagetreemode smc (shopee-mesos-cli) -> 28529179
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621&src=contextnavpagetreemode 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=90614597&src=contextnavpagetreemode 供应链大促计划 -> 90614597
+https://confluence.shopee.io/pages/viewpage.action?pageId=90614603&src=contextnavpagetreemode 2019.11.11大促 -> 90614603
+https://confluence.shopee.io/pages/viewpage.action?pageId=90618399&src=contextnavpagetreemode OMS容量评估 -> 90618399
+https://confluence.shopee.io/pages/viewpage.action?pageId=98000545&src=contextnavpagetreemode sls压测复盘 -> 98000545
+https://confluence.shopee.io/pages/viewpage.action?pageId=90614654&src=contextnavpagetreemode SLS容量评估 -> 90614654
+https://confluence.shopee.io/pages/viewpage.action?pageId=90619803&src=contextnavpagetreemode SPX容量评估 -> 90619803
+https://confluence.shopee.io/pages/viewpage.action?pageId=90619925&src=contextnavpagetreemode TWS容量评估 -> 90619925
+https://confluence.shopee.io/pages/viewpage.action?pageId=90622982&src=contextnavpagetreemode WMS容量评估 -> 90622982
+https://confluence.shopee.io/pages/viewpage.action?pageId=90614650&src=contextnavpagetreemode 值班安排 -> 90614650
+https://confluence.shopee.io/pages/viewpage.action?pageId=98003730&src=contextnavpagetreemode 2019.12.12大促 -> 98003730
+Traceback (most recent call last):
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/test.py", line 18, in <module>
+    crawl.run()
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/common_crawl.py", line 51, in run
+    browser = self.before_crawl(args, browser)
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/crawl/confluence/confluence.py", line 29, in before_crawl
+    self.build_tree(browser)
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/crawl/confluence/confluence.py", line 47, in build_tree
+    self.recursive_search(root, browser, self.url_map)
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/crawl/confluence/confluence.py", line 99, in recursive_search
+    self.recursive_search(node, browser, url_map)
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/crawl/confluence/confluence.py", line 99, in recursive_search
+    self.recursive_search(node, browser, url_map)
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/crawl/confluence/confluence.py", line 99, in recursive_search
+    self.recursive_search(node, browser, url_map)
+  [Previous line repeated 45 more times]
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/crawl/confluence/confluence.py", line 71, in recursive_search
+    eles[0].click()
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 319, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/venv/lib/python3.8/site-packages/selenium/webdriver/remote/remote_connection.py", line 374, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/venv/lib/python3.8/site-packages/selenium/webdriver/remote/remote_connection.py", line 397, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/venv/lib/python3.8/site-packages/urllib3/request.py", line 78, in request
+    return self.request_encode_body(
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/venv/lib/python3.8/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/venv/lib/python3.8/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/weibin.liu/Documents/github/selenium_crawl/venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/http/client.py", line 1344, in getresponse
+    response.begin()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/http/client.py", line 307, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/http/client.py", line 268, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+KeyboardInterrupt
+
+Process finished with exit code 130 (interrupted by signal 2: SIGINT)
