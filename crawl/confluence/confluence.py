@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import json
 import time
+import uuid
+
 from lxml import html
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
@@ -45,7 +47,7 @@ class ConfluenceCrawl(CommonCrawl):
         # 挑选出/pages/的前缀所有页面
         root = load_tree()
         if root is None:
-            root = ConfluenceTree("root", browser.current_url, 1, -1)
+            root = ConfluenceTree("root", browser.current_url, uuid.uuid4().hex, -1)
         print('root init:', root)
         self.recursive_search(root, browser, self.url_map)
         print(root)
@@ -104,9 +106,10 @@ class ConfluenceCrawl(CommonCrawl):
                     my_file.write(url + " " + title + "\n")
                 if '周报' in title or '日报' in title or '大促计划' in title:
                     continue
-                node = ConfluenceTree(title, url, root.node_id + 1, root.node_id)
+                node = ConfluenceTree(title, url, uuid.uuid4().hex, root.node_id)
                 root.add_child(node)
-                self.recursive_search(node, browser, url_map)
+        for c in root.children:
+            self.recursive_search(c, browser, url_map)
 
 
 class ConfluenceTree:
