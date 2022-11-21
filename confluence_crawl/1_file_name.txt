@@ -216,3 +216,788 @@ https://confluence.shopee.io/pages/viewpage.action?pageId=912419483&src=contextn
 https://confluence.shopee.io/pages/viewpage.action?pageId=912419359&src=breadcrumbs-parent 容量评估SOP -> 912419359
 https://confluence.shopee.io/pages/viewpage.action?pageId=631449638 大促压测流程 -> 631449638
 https://confluence.shopee.io/pages/viewpage.action?pageId=912419359 容量评估SOP -> 912419359
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721649&src=contextnavpagetreemode Company&Team Instruction -> 797721649
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721735&src=contextnavpagetreemode 01 Management Policy / 产品线管理政策 -> 797721735
+https://confluence.shopee.io/pages/viewpage.action?pageId=821125220&src=contextnavpagetreemode 02 New Hire Onboarding Journey / 新人融入计划 -> 821125220
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721907&src=contextnavpagetreemode 03 Development Basis / 研发基础 -> 797721907
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621&src=contextnavpagetreemode 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=90614597&src=contextnavpagetreemode 供应链大促计划 -> 90614597
+https://confluence.shopee.io/pages/viewpage.action?pageId=1114935746&src=contextnavpagetreemode 大促筹备SOP -> 1114935746
+https://confluence.shopee.io/pages/viewpage.action?pageId=912419359&src=contextnavpagetreemode 容量评估SOP -> 912419359
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020112&src=contextnavpagetreemode 大促系统 -> 902020112
+https://confluence.shopee.io/pages/viewpage.action?pageId=1073453197&src=contextnavpagetreemode 前置预案自动化-技术方案 -> 1073453197
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020221&src=contextnavpagetreemode 基线监控体系-技术方案 -> 902020221
+https://confluence.shopee.io/pages/viewpage.action?pageId=1163805217&src=contextnavpagetreemode 大促OPS变更优化-技术方案 -> 1163805217
+https://confluence.shopee.io/pages/viewpage.action?pageId=733134286&src=contextnavpagetreemode 大促系统流程设计 -> 733134286
+https://confluence.shopee.io/pages/viewpage.action?pageId=851775383&src=contextnavpagetreemode 大促系统重要表格汇总 -> 851775383
+https://confluence.shopee.io/pages/viewpage.action?pageId=904452986&src=contextnavpagetreemode 容量评估自动化-技术方案 -> 904452986
+https://confluence.shopee.io/pages/viewpage.action?pageId=1248467848&src=contextnavpagetreemode 履约后链路压测在SLS实施 -> 1248467848
+https://confluence.shopee.io/pages/viewpage.action?pageId=1390069677&src=contextnavpagetreemode 应急预案告警平台模块优化技术方案 -> 1390069677
+https://confluence.shopee.io/pages/viewpage.action?pageId=1471545993&src=contextnavpagetreemode 应急预案需求文档 -> 1471545993
+https://confluence.shopee.io/pages/viewpage.action?pageId=1294689728&src=contextnavpagetreemode 指导文档 -> 1294689728
+https://confluence.shopee.io/pages/viewpage.action?pageId=1223630806&src=contextnavpagetreemode 故障注入技术方案 -> 1223630806
+https://confluence.shopee.io/pages/viewpage.action?pageId=885001178&src=contextnavpagetreemode 核心链路-设计方案集 -> 885001178
+https://confluence.shopee.io/pages/viewpage.action?pageId=1054843534&src=contextnavpagetreemode 混沌工程技术方案 -> 1054843534
+https://confluence.shopee.io/pages/viewpage.action?pageId=1052242886&src=contextnavpagetreemode 资源管控 -> 1052242886
+https://confluence.shopee.io/pages/viewpage.action?pageId=948327207&src=contextnavpagetreemode 链路稳定性探测技术方案 -> 948327207
+https://confluence.shopee.io/pages/viewpage.action?pageId=767631067&src=contextnavpagetreemode 预案下发日常化设计 -> 767631067
+https://confluence.shopee.io/pages/viewpage.action?pageId=1267144367&src=contextnavpagetreemode 演练SOP -> 1267144367
+https://confluence.shopee.io/pages/viewpage.action?pageId=858131627&src=contextnavpagetreemode SLS(Shopee Logistic) -> 858131627
+https://confluence.shopee.io/pages/viewpage.action?pageId=865078141&src=contextnavpagetreemode SPX(Shopee Xpress) -> 865078141
+https://confluence.shopee.io/pages/viewpage.action?pageId=865079720&src=contextnavpagetreemode WMS(Warehouse Managment System) -> 865079720
+https://confluence.shopee.io/pages/viewpage.action?pageId=877396892&src=contextnavpagetreemode 内部项目(CICD & APP) -> 877396892
+https://confluence.shopee.io/pages/viewpage.action?pageId=897324703&src=contextnavpagetreemode 质量管理 -> 897324703
+https://confluence.shopee.io/pages/viewpage.action?pageId=9802654&src=contextnavpagetreemode 内部分享与培训 -> 9802654
+https://confluence.shopee.io/pages/viewpage.action?pageId=885002462&src=contextnavpagetreemode 废弃文档归总 -> 885002462
+https://confluence.shopee.io/pages/viewpage.action?pageId=889529756&src=contextnavpagetreemode 历史文档归总 -> 889529756
+https://confluence.shopee.io/pages/viewpage.action?pageId=1449307474&src=contextnavpagetreemode SCTP (Supply Chain Tech Platform) -> 1449307474
+https://confluence.shopee.io/pages/viewpage.action?pageId=858132737&src=contextnavpagetreemode Finance(logistic finance) -> 858132737
+https://confluence.shopee.io/pages/viewpage.action?pageId=91922582&src=contextnavpagetreemode 线上值班——By Product -> 91922582
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020112 
+                         -> 902020112
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621&src=breadcrumbs-parent 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=1396790884&src=contextnavpagetreemode 压测安全 -> 1396790884
+https://confluence.shopee.io/pages/viewpage.action?pageId=1396790818&src=contextnavpagetreemode 压测引擎 -> 1396790818
+https://confluence.shopee.io/pages/viewpage.action?pageId=1396790594&src=contextnavpagetreemode 数据工厂 -> 1396790594
+https://confluence.shopee.io/pages/viewpage.action?pageId=1248484586&src=contextnavpagetreemode 组件标准化 -> 1248484586
+https://confluence.shopee.io/pages/viewpage.action?pageId=1394609913&src=contextnavpagetreemode 组件标准化(旧) -> 1394609913
+https://confluence.shopee.io/pages/viewpage.action?pageId=1248467848 
+                         -> 1248467848
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621&src=breadcrumbs-expanded 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020112&src=breadcrumbs-parent 大促系统 -> 902020112
+https://confluence.shopee.io/pages/viewpage.action?pageId=633538089 002.Shopee MySQL Shadow Databases -> 633538089
+https://confluence.shopee.io/pages/viewpage.action?pageId=907737330 B2C发货场景业务梳理 -> 907737330
+https://confluence.shopee.io/pages/viewpage.action?pageId=899707594 流量识别及传输功能设计说明 -> 899707594
+https://confluence.shopee.io/pages/viewpage.action?pageId=877418537#id-全链路压测平台技术文档-%E5%85%A8%E9%93%BE%E8%B7%AF%E5%8E%8B%E6%B5%8B%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3-3%E3%80%81%E5%8E%8B%E6%B5%8B%E7%86%94%E6%96%AD 全链路压测平台--技术文档-压测熔断 -> 877418537#id-全链路压测平台技术文档-%E5%85%A8%E9%93%BE%E8%B7%AF%E5%8E%8B%E6%B5%8B%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3-3%E3%80%81%E5%8E%8B%E6%B5%8B%E7%86%94%E6%96%AD
+https://confluence.shopee.io/pages/viewpage.action?pageId=1337860893 create order参数模版 -> 1337860893
+https://confluence.shopee.io/pages/viewpage.action?pageId=1337861141 tracking参数模版 -> 1337861141
+https://confluence.shopee.io/pages/viewpage.action?pageId=1396790884 
+                         -> 1396790884
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020112&src=breadcrumbs-expanded 大促系统 -> 902020112
+https://confluence.shopee.io/pages/viewpage.action?pageId=1248467848&src=breadcrumbs-parent 履约后链路压测在SLS实施 -> 1248467848
+https://confluence.shopee.io/pages/viewpage.action?pageId=720213117 动态覆盖率方案探讨（new） -> 720213117
+https://confluence.shopee.io/pages/viewpage.action?pageId=368978007 Golang覆盖率服务接入 -> 368978007
+https://confluence.shopee.io/pages/viewpage.action?pageId=270372868&src=contextnavpagetreemode Credit-新人入职指引 -> 270372868
+https://confluence.shopee.io/pages/viewpage.action?pageId=173575792&src=contextnavpagetreemode 00.公共技术文档 -> 173575792
+https://confluence.shopee.io/pages/viewpage.action?pageId=28514657&src=contextnavpagetreemode 01.项目管理规范 -> 28514657
+https://confluence.shopee.io/pages/viewpage.action?pageId=15475579&src=contextnavpagetreemode 服务运维监控 -> 15475579
+https://confluence.shopee.io/pages/viewpage.action?pageId=462164807&src=contextnavpagetreemode UC&Funding -> 462164807
+https://confluence.shopee.io/pages/viewpage.action?pageId=675648331&src=contextnavpagetreemode Cashloan&Fastescrow 内部项目 -> 675648331
+https://confluence.shopee.io/pages/viewpage.action?pageId=710653200&src=contextnavpagetreemode api自动化测试 -> 710653200
+https://confluence.shopee.io/pages/viewpage.action?pageId=762960242&src=contextnavpagetreemode btp测试平台 -> 762960242
+https://confluence.shopee.io/pages/viewpage.action?pageId=677811357&src=contextnavpagetreemode ceph-proxy项目 -> 677811357
+https://confluence.shopee.io/pages/viewpage.action?pageId=677811167&src=contextnavpagetreemode CI/CD项目 -> 677811167
+https://confluence.shopee.io/pages/viewpage.action?pageId=677811440&src=contextnavpagetreemode gateway项目 -> 677811440
+https://confluence.shopee.io/pages/viewpage.action?pageId=677810520&src=contextnavpagetreemode Push系统 -> 677810520
+https://confluence.shopee.io/pages/viewpage.action?pageId=677811074&src=contextnavpagetreemode Redis分布式锁项目 -> 677811074
+https://confluence.shopee.io/pages/viewpage.action?pageId=774322789&src=contextnavpagetreemode seadt项目(Credit分布式事务解决方案) -> 774322789
+https://confluence.shopee.io/pages/viewpage.action?pageId=729361970&src=contextnavpagetreemode Sentry Webhook 告警配置平台 -> 729361970
+https://confluence.shopee.io/pages/viewpage.action?pageId=710653220&src=contextnavpagetreemode ui自动化测试 -> 710653220
+https://confluence.shopee.io/pages/viewpage.action?pageId=675648388&src=contextnavpagetreemode 任务调度系统 goscheduler -> 675648388
+https://confluence.shopee.io/pages/viewpage.action?pageId=706497447&src=contextnavpagetreemode 低代码业务中台 -> 706497447
+https://confluence.shopee.io/pages/viewpage.action?pageId=677810490&src=contextnavpagetreemode 动态代码覆盖率系统 -> 677810490
+https://confluence.shopee.io/pages/viewpage.action?pageId=1200167264&src=contextnavpagetreemode FastEscrow团队使用Context覆盖率的报告分析 -> 1200167264
+https://confluence.shopee.io/pages/viewpage.action?pageId=1023591896&src=contextnavpagetreemode gococo代码覆盖率深度分析 -> 1023591896
+https://confluence.shopee.io/pages/viewpage.action?pageId=834602541&src=contextnavpagetreemode Gococo需求列表 -> 834602541
+https://confluence.shopee.io/pages/viewpage.action?pageId=724212356&src=contextnavpagetreemode 代码覆盖率项目相关分享 -> 724212356
+https://confluence.shopee.io/pages/viewpage.action?pageId=843995725&src=contextnavpagetreemode 关键字测试覆盖率需求及设计说明 -> 843995725
+https://confluence.shopee.io/pages/viewpage.action?pageId=720213221&src=contextnavpagetreemode 动态代码覆盖率功能探讨（new） -> 720213221
+https://confluence.shopee.io/pages/viewpage.action?pageId=774327531&src=contextnavpagetreemode 动态覆盖率平台admin重构 -> 774327531
+https://confluence.shopee.io/pages/viewpage.action?pageId=720213117&src=contextnavpagetreemode 动态覆盖率方案探讨（new） -> 720213117
+https://confluence.shopee.io/pages/viewpage.action?pageId=1297690324&src=contextnavpagetreemode 场景覆盖率之相关性临时解决方案 -> 1297690324
+https://confluence.shopee.io/pages/viewpage.action?pageId=1187742423&src=contextnavpagetreemode 基于context覆盖率的操作指南 -> 1187742423
+https://confluence.shopee.io/pages/viewpage.action?pageId=767628075&src=contextnavpagetreemode 接入指南 -> 767628075
+https://confluence.shopee.io/pages/viewpage.action?pageId=1120757116&src=contextnavpagetreemode 相关性覆盖率实现思路 -> 1120757116
+https://confluence.shopee.io/pages/viewpage.action?pageId=1294669300&src=contextnavpagetreemode 相关性问题及解决方案 -> 1294669300
+https://confluence.shopee.io/pages/viewpage.action?pageId=907718270&src=contextnavpagetreemode 覆盖率-context特定标签覆盖率统计探讨 -> 907718270
+https://confluence.shopee.io/pages/viewpage.action?pageId=841766802&src=contextnavpagetreemode 覆盖率代码排除&方法关注操作指南 -> 841766802
+https://confluence.shopee.io/pages/viewpage.action?pageId=965682591&src=contextnavpagetreemode 覆盖率关键场景操作指南 -> 965682591
+https://confluence.shopee.io/pages/viewpage.action?pageId=1003373095&src=contextnavpagetreemode 覆盖率-基于context的特殊标签的原理分析 -> 1003373095
+https://confluence.shopee.io/pages/viewpage.action?pageId=1184828175&src=contextnavpagetreemode 覆盖率常见问题及解决办法 -> 1184828175
+https://confluence.shopee.io/pages/viewpage.action?pageId=910103010&src=contextnavpagetreemode 覆盖率-开放API获取覆盖率报告 -> 910103010
+https://confluence.shopee.io/pages/viewpage.action?pageId=839500685&src=contextnavpagetreemode 覆盖率测试Case录入操作指南 -> 839500685
+https://confluence.shopee.io/pages/viewpage.action?pageId=843995572&src=contextnavpagetreemode 覆盖率跨分支自动归并 -> 843995572
+https://confluence.shopee.io/pages/viewpage.action?pageId=1294677275&src=contextnavpagetreemode 覆盖率项目优化计划 -> 1294677275
+https://confluence.shopee.io/pages/viewpage.action?pageId=816906596&src=contextnavpagetreemode 覆盖率项目接入进度 -> 816906596
+https://confluence.shopee.io/pages/viewpage.action?pageId=677810462&src=contextnavpagetreemode 可靠事件组件 -> 677810462
+https://confluence.shopee.io/pages/viewpage.action?pageId=710653251&src=contextnavpagetreemode 用户体验测试 -> 710653251
+https://confluence.shopee.io/pages/viewpage.action?pageId=729361394&src=contextnavpagetreemode 翻译配置管理平台 -> 729361394
+https://confluence.shopee.io/pages/viewpage.action?pageId=885009830&src=contextnavpagetreemode 通用权限服务AMP -> 885009830
+https://confluence.shopee.io/pages/viewpage.action?pageId=897345375&src=contextnavpagetreemode cashloan 业务监控 -> 897345375
+https://confluence.shopee.io/pages/viewpage.action?pageId=1394628477&src=contextnavpagetreemode 服务治理平台Seamiter -> 1394628477
+https://confluence.shopee.io/pages/viewpage.action?pageId=108756266&src=contextnavpagetreemode 05.版本过程管理 -> 108756266
+https://confluence.shopee.io/pages/viewpage.action?pageId=55237721&src=contextnavpagetreemode 07.项目管理 -> 55237721
+https://confluence.shopee.io/pages/viewpage.action?pageId=63202038&src=contextnavpagetreemode 08.运维 -> 63202038
+https://confluence.shopee.io/pages/viewpage.action?pageId=69378111&src=contextnavpagetreemode 09.WiseSkyLark项目 -> 69378111
+https://confluence.shopee.io/pages/viewpage.action?pageId=91928232&src=contextnavpagetreemode 10.Kredit Lite项目 -> 91928232
+https://confluence.shopee.io/pages/viewpage.action?pageId=654988000&src=contextnavpagetreemode 14. [Credit] Funding&Credit Core -> 654988000
+https://confluence.shopee.io/pages/viewpage.action?pageId=137268710&src=contextnavpagetreemode 17. [Credit]爬虫 -> 137268710
+https://confluence.shopee.io/pages/viewpage.action?pageId=152638624&src=contextnavpagetreemode 技术分享 -> 152638624
+https://confluence.shopee.io/pages/viewpage.action?pageId=171944059&src=contextnavpagetreemode Shopee APP测试说明 -> 171944059
+https://confluence.shopee.io/pages/viewpage.action?pageId=296421280&src=contextnavpagetreemode 离职交接文档 -> 296421280
+https://confluence.shopee.io/pages/viewpage.action?pageId=534397358&src=contextnavpagetreemode 指导文章 -> 534397358
+https://confluence.shopee.io/pages/viewpage.action?pageId=809734057&src=contextnavpagetreemode 故障排除文章 -> 809734057
+https://confluence.shopee.io/pages/viewpage.action?pageId=858128722&src=contextnavpagetreemode Credit-项目白皮书 -> 858128722
+https://confluence.shopee.io/pages/viewpage.action?pageId=1171292223&src=contextnavpagetreemode Casement报告 -> 1171292223
+https://confluence.shopee.io/pages/viewpage.action?pageId=1307628182&src=contextnavpagetreemode [BR][ALL]关系网络函数适配（包含Parados接入） -> 1307628182
+https://confluence.shopee.io/pages/viewpage.action?pageId=675648331&src=breadcrumbs-expanded Cashloan&Fastescrow 内部项目 -> 675648331
+https://confluence.shopee.io/pages/viewpage.action?pageId=677810490&src=breadcrumbs-parent 动态代码覆盖率系统 -> 677810490
+https://confluence.shopee.io/pages/viewpage.action?pageId=675648331 Cashloan&Fastescrow 内部项目 -> 675648331
+https://confluence.shopee.io/pages/viewpage.action?pageId=677810490 动态代码覆盖率系统 -> 677810490
+https://confluence.shopee.io/pages/viewpage.action?pageId=270372877&src=contextnavpagetreemode 公共-指引 -> 270372877
+https://confluence.shopee.io/pages/viewpage.action?pageId=284763077&src=contextnavpagetreemode 分Team指引 -> 284763077
+https://confluence.shopee.io/pages/viewpage.action?pageId=508953933&src=contextnavpagetreemode 指南 - Confluence View + Comment 权限申请 ｜Apply Confluence View and Comment Access -> 508953933
+https://confluence.shopee.io/pages/viewpage.action?pageId=421666208&src=contextnavpagetreemode 新人培训-课程 -> 421666208
+https://confluence.shopee.io/pages/viewpage.action?pageId=270372868 Credit-新人入职指引 -> 270372868
+https://confluence.shopee.io/pages/viewpage.action?pageId=294396890&src=contextnavpagetreemode 1.增加基础权限 -> 294396890
+https://confluence.shopee.io/pages/viewpage.action?pageId=294396905&src=contextnavpagetreemode 2.权限申请向导 -> 294396905
+https://confluence.shopee.io/pages/viewpage.action?pageId=294396918&src=contextnavpagetreemode 3.基础软件和工具 -> 294396918
+https://confluence.shopee.io/pages/viewpage.action?pageId=294396928&src=contextnavpagetreemode 4.汇报模板 -> 294396928
+https://confluence.shopee.io/pages/viewpage.action?pageId=294396956&src=contextnavpagetreemode 5.通用文档 -> 294396956
+https://confluence.shopee.io/pages/viewpage.action?pageId=294396969&src=contextnavpagetreemode 6.shopee app下载安装 -> 294396969
+https://confluence.shopee.io/pages/viewpage.action?pageId=294396979&src=contextnavpagetreemode 7.办公指南 -> 294396979
+https://confluence.shopee.io/pages/viewpage.action?pageId=294396999&src=contextnavpagetreemode 8.培训 -> 294396999
+https://confluence.shopee.io/pages/viewpage.action?pageId=799839974&src=contextnavpagetreemode 10. 常见缩写词汇整理 -> 799839974
+https://confluence.shopee.io/pages/viewpage.action?pageId=652875635&src=contextnavpagetreemode 新员工聚餐报销指引 -> 652875635
+https://confluence.shopee.io/pages/viewpage.action?pageId=270372868&src=breadcrumbs-parent Credit-新人入职指引 -> 270372868
+https://confluence.shopee.io/pages/viewpage.action?pageId=270372877 公共-指引 -> 270372877
+https://confluence.shopee.io/pages/viewpage.action?pageId=270372868&src=breadcrumbs-expanded Credit-新人入职指引 -> 270372868
+https://confluence.shopee.io/pages/viewpage.action?pageId=270372877&src=breadcrumbs-parent 公共-指引 -> 270372877
+https://confluence.shopee.io/pages/viewpage.action?pageId=294396890 1.增加基础权限 -> 294396890
+https://confluence.shopee.io/pages/viewpage.action?pageId=294396905 2.权限申请向导 -> 294396905
+https://confluence.shopee.io/pages/viewpage.action?pageId=524499567 Apollo soup登录开通 -> 524499567
+https://confluence.shopee.io/pages/viewpage.action?pageId=162176259&src=contextnavpagetreemode [Credit] ConsumerLoan-交易 -> 162176259
+https://confluence.shopee.io/pages/viewpage.action?pageId=347883400&src=contextnavpagetreemode [Credit] ConsumerLoan-账单 -> 347883400
+https://confluence.shopee.io/pages/viewpage.action?pageId=1191227379&src=contextnavpagetreemode [Credit-ConsumerLoan-BFF] -> 1191227379
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613238&src=contextnavpagetreemode [Credit-ConsumerLoan-账单]API -> 158613238
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613251&src=contextnavpagetreemode [Credit-ConsumerLoan-账单]DB -> 158613251
+https://confluence.shopee.io/pages/viewpage.action?pageId=275252605&src=contextnavpagetreemode [Credit-ConsumerLoan-账单]上线checklist -> 275252605
+https://confluence.shopee.io/pages/viewpage.action?pageId=347890670&src=contextnavpagetreemode [Credit-ConsumerLoan-账单]业务梳理 -> 347890670
+https://confluence.shopee.io/pages/viewpage.action?pageId=347885351&src=contextnavpagetreemode [Credit-ConsumerLoan-账单]会议纪要 -> 347885351
+https://confluence.shopee.io/pages/viewpage.action?pageId=1226668002&src=contextnavpagetreemode [Credit-ConsumerLoan-账单]小组分享 -> 1226668002
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613257&src=contextnavpagetreemode [Credit-ConsumerLoan-账单]技术方案 -> 158613257
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613278&src=contextnavpagetreemode [Credit-ConsumerLoan-账单]技术调研&内部项目 -> 158613278
+https://confluence.shopee.io/pages/viewpage.action?pageId=347890998&src=contextnavpagetreemode Credit配置中心 -> 347890998
+https://confluence.shopee.io/pages/viewpage.action?pageId=1425967119&src=contextnavpagetreemode Apollo 交接文档 -> 1425967119
+https://confluence.shopee.io/pages/viewpage.action?pageId=490177816&src=contextnavpagetreemode Apollo 变更记录 -> 490177816
+https://confluence.shopee.io/pages/viewpage.action?pageId=454432792&src=contextnavpagetreemode Apollo 接入使用手册 -> 454432792
+https://confluence.shopee.io/pages/viewpage.action?pageId=454437551&src=contextnavpagetreemode Apollo client 代码集成 -> 454437551
+https://confluence.shopee.io/pages/viewpage.action?pageId=522587128&src=contextnavpagetreemode Apollo client 监控视图配置 -> 522587128
+https://confluence.shopee.io/pages/viewpage.action?pageId=529475395&src=contextnavpagetreemode Apollo live环境配置发布消息通知效果图 -> 529475395
+https://confluence.shopee.io/pages/viewpage.action?pageId=524499567&src=contextnavpagetreemode Apollo soup登录开通 -> 524499567
+https://confluence.shopee.io/pages/viewpage.action?pageId=454437102&src=contextnavpagetreemode Apollo 接入指南 -> 454437102
+https://confluence.shopee.io/pages/viewpage.action?pageId=454441379&src=contextnavpagetreemode Apollo操作使用手册 -> 454441379
+https://confluence.shopee.io/pages/viewpage.action?pageId=454432802&src=contextnavpagetreemode Apollo 超级管理员使用手册 -> 454432802
+https://confluence.shopee.io/pages/viewpage.action?pageId=500735213&src=contextnavpagetreemode Apollo项目管理权限收敛 -> 500735213
+https://confluence.shopee.io/pages/viewpage.action?pageId=454439415&src=contextnavpagetreemode Credit Apollo 配置约定 -> 454439415
+https://confluence.shopee.io/pages/viewpage.action?pageId=1439135275&src=contextnavpagetreemode Apollo源码学习 -> 1439135275
+https://confluence.shopee.io/pages/viewpage.action?pageId=1449305292&src=contextnavpagetreemode Apollo问题记录 -> 1449305292
+https://confluence.shopee.io/pages/viewpage.action?pageId=610964638&src=contextnavpagetreemode 脚本工具 -> 610964638
+https://confluence.shopee.io/pages/viewpage.action?pageId=456205250&src=contextnavpagetreemode 配置中心-技术调研 -> 456205250
+https://confluence.shopee.io/pages/viewpage.action?pageId=456205356&src=contextnavpagetreemode 配置中心-接入项目 -> 456205356
+https://confluence.shopee.io/pages/viewpage.action?pageId=456205147&src=contextnavpagetreemode 配置中心-部署文档 -> 456205147
+https://confluence.shopee.io/pages/viewpage.action?pageId=635575057&src=contextnavpagetreemode 分表同步工具 -> 635575057
+https://confluence.shopee.io/pages/viewpage.action?pageId=347891031&src=contextnavpagetreemode 单元测试覆盖率提升项目 -> 347891031
+https://confluence.shopee.io/pages/viewpage.action?pageId=939043123&src=contextnavpagetreemode 消息中心 -> 939043123
+https://confluence.shopee.io/pages/viewpage.action?pageId=981070052&src=contextnavpagetreemode 账单核心数据风险治理 -> 981070052
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613268&src=contextnavpagetreemode [Credit-ConsumerLoan-账单]服务部署&中间件依赖 -> 158613268
+https://confluence.shopee.io/pages/viewpage.action?pageId=463938564&src=contextnavpagetreemode [Credit-ConsumerLoan-账单]约定&规范&指引 -> 463938564
+https://confluence.shopee.io/pages/viewpage.action?pageId=106745905&src=contextnavpagetreemode [Credit-ConsumerLoan-账单]线上值班 -> 106745905
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613672&src=contextnavpagetreemode [Credit-ConsumerLoan-账单]线上问题记录 -> 158613672
+https://confluence.shopee.io/pages/viewpage.action?pageId=347889815&src=contextnavpagetreemode [Credit-ConsumerLoan-账单]自测文档 -> 347889815
+https://confluence.shopee.io/pages/viewpage.action?pageId=347884424&src=contextnavpagetreemode 历史归档 -> 347884424
+https://confluence.shopee.io/pages/viewpage.action?pageId=327226063&src=contextnavpagetreemode [Credit] ConsumerLoan-试算 -> 327226063
+https://confluence.shopee.io/pages/viewpage.action?pageId=347883400&src=breadcrumbs-expanded [Credit] ConsumerLoan-账单 -> 347883400
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613278&src=breadcrumbs-expanded [Credit-ConsumerLoan-账单]技术调研&内部项目 -> 158613278
+https://confluence.shopee.io/pages/viewpage.action?pageId=347890998&src=breadcrumbs-expanded Credit配置中心 -> 347890998
+https://confluence.shopee.io/pages/viewpage.action?pageId=454432792&src=breadcrumbs-parent Apollo 接入使用手册 -> 454432792
+https://confluence.shopee.io/pages/viewpage.action?pageId=347883400 [Credit] ConsumerLoan-账单 -> 347883400
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613278 [Credit-ConsumerLoan-账单]技术调研&内部项目 -> 158613278
+https://confluence.shopee.io/pages/viewpage.action?pageId=347890998 Credit配置中心 -> 347890998
+https://confluence.shopee.io/pages/viewpage.action?pageId=454432792 Apollo 接入使用手册 -> 454432792
+https://confluence.shopee.io/pages/viewpage.action?pageId=163716278&src=contextnavpagetreemode [ConsumerLoan-交易] - Credit Pay模块 -> 163716278
+https://confluence.shopee.io/pages/viewpage.action?pageId=720224826&src=contextnavpagetreemode [ConsumerLoan-交易] - Credit Transcation模块 -> 720224826
+https://confluence.shopee.io/pages/viewpage.action?pageId=189342002&src=contextnavpagetreemode [ConsumerLoan-交易] - 清结算项目 -> 189342002
+https://confluence.shopee.io/pages/viewpage.action?pageId=163716319&src=contextnavpagetreemode [ConsumerLoan-交易] - 内部项目 -> 163716319
+https://confluence.shopee.io/pages/viewpage.action?pageId=176492874&src=contextnavpagetreemode [ConsumerLoan-交易] - 监控告警 -> 176492874
+https://confluence.shopee.io/pages/viewpage.action?pageId=163716136&src=contextnavpagetreemode [ConsumerLoan-交易] - 需求开发 -> 163716136
+https://confluence.shopee.io/pages/viewpage.action?pageId=163716117&src=contextnavpagetreemode [ConsumerLoan-交易] - 线上值班 -> 163716117
+https://confluence.shopee.io/pages/viewpage.action?pageId=195671362&src=contextnavpagetreemode [ConsumerLoan-交易] - 团队规范 -> 195671362
+https://confluence.shopee.io/pages/viewpage.action?pageId=163717296&src=contextnavpagetreemode [ConsumerLoan-交易] - 会议纪要 -> 163717296
+https://confluence.shopee.io/pages/viewpage.action?pageId=327226025&src=contextnavpagetreemode [ConsumerLoan-交易] - 单元测试 -> 327226025
+https://confluence.shopee.io/pages/viewpage.action?pageId=176505839&src=contextnavpagetreemode [ConsumerLoan-交易] - 其他 -> 176505839
+https://confluence.shopee.io/pages/viewpage.action?pageId=361209928&src=contextnavpagetreemode [ConsumerLoan-交易] - 知识库 -> 361209928
+https://confluence.shopee.io/pages/viewpage.action?pageId=558340864&src=contextnavpagetreemode [ConsumerLoan-交易]值班问题记录汇总 -> 558340864
+https://confluence.shopee.io/pages/viewpage.action?pageId=163716067&src=contextnavpagetreemode [ConsumerLoan-交易] 项目周报 -> 163716067
+https://confluence.shopee.io/pages/viewpage.action?pageId=680538814&src=contextnavpagetreemode [ConsumerLoan-交易] - 值班休假 -> 680538814
+https://confluence.shopee.io/pages/viewpage.action?pageId=700647970&src=contextnavpagetreemode [ConsumerLoan-交易] - 大促值班 -> 700647970
+https://confluence.shopee.io/pages/viewpage.action?pageId=858130849&src=contextnavpagetreemode 方案设计调研概要设计 -> 858130849
+https://confluence.shopee.io/pages/viewpage.action?pageId=1076053042&src=contextnavpagetreemode [ConsumerLoan-交易] -周会纪要 -> 1076053042
+https://confluence.shopee.io/pages/viewpage.action?pageId=1079224349&src=contextnavpagetreemode [ConsumerLoan-交易]-项目文档 -> 1079224349
+https://confluence.shopee.io/pages/viewpage.action?pageId=162176259 [Credit] ConsumerLoan-交易 -> 162176259
+https://confluence.shopee.io/pages/viewpage.action?pageId=189341486&src=contextnavpagetreemode Credit Pay（印尼版） -> 189341486
+https://confluence.shopee.io/pages/viewpage.action?pageId=176490689&src=contextnavpagetreemode Credit Pay（非印尼版） -> 176490689
+https://confluence.shopee.io/pages/viewpage.action?pageId=276765592&src=contextnavpagetreemode Credit Pay API优化设计 -> 276765592
+https://confluence.shopee.io/pages/viewpage.action?pageId=571159172&src=contextnavpagetreemode Pay db 文档 -> 571159172
+https://confluence.shopee.io/pages/viewpage.action?pageId=162176259&src=breadcrumbs-parent [Credit] ConsumerLoan-交易 -> 162176259
+https://confluence.shopee.io/pages/viewpage.action?pageId=163716278 [ConsumerLoan-交易] - Credit Pay模块 -> 163716278
+https://confluence.shopee.io/pages/viewpage.action?pageId=240192925 Pay 方案设计（印尼版） -> 240192925
+https://confluence.shopee.io/pages/viewpage.action?pageId=238760216 Pay DB设计（印尼版） -> 238760216
+https://confluence.shopee.io/pages/viewpage.action?pageId=240193176 Pay 方案设计（非印尼版） -> 240193176
+https://confluence.shopee.io/pages/viewpage.action?pageId=240193182 Pay DB设计（非印尼版） -> 240193182
+https://confluence.shopee.io/pages/viewpage.action?pageId=240192925&src=contextnavpagetreemode Pay 方案设计（印尼版） -> 240192925
+https://confluence.shopee.io/pages/viewpage.action?pageId=238760216&src=contextnavpagetreemode Pay DB设计（印尼版） -> 238760216
+https://confluence.shopee.io/pages/viewpage.action?pageId=176490703&src=contextnavpagetreemode Pay 优化方案（印尼版和非印尼版） -> 176490703
+https://confluence.shopee.io/pages/viewpage.action?pageId=162176259&src=breadcrumbs-expanded [Credit] ConsumerLoan-交易 -> 162176259
+https://confluence.shopee.io/pages/viewpage.action?pageId=163716278&src=breadcrumbs-parent [ConsumerLoan-交易] - Credit Pay模块 -> 163716278
+https://confluence.shopee.io/pages/viewpage.action?pageId=189341486 Credit Pay（印尼版） -> 189341486
+https://confluence.shopee.io/pages/viewpage.action?pageId=163716278&src=breadcrumbs-expanded [ConsumerLoan-交易] - Credit Pay模块 -> 163716278
+https://confluence.shopee.io/pages/viewpage.action?pageId=189341486&src=breadcrumbs-parent Credit Pay（印尼版） -> 189341486
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331818&src=contextnavpagetreemode checkout_info_table (交易记录表) -> 151331818
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331822&src=contextnavpagetreemode order_info_table (订单信息表) -> 151331822
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331823&src=contextnavpagetreemode order_item_info_table (订单商品信息表) -> 151331823
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331821&src=contextnavpagetreemode order_fee_table (订单费用明细表) -> 151331821
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331826&src=contextnavpagetreemode order_status_change_table (订单状态转移表) -> 151331826
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331825&src=contextnavpagetreemode order_refund_table (订单退款记录表) -> 151331825
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331824&src=contextnavpagetreemode order_refund_item_table (退款记录商品详情表) -> 151331824
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331819&src=contextnavpagetreemode contract_table (合同表) -> 151331819
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331820&src=contextnavpagetreemode instalment_product_table(分期产品表) -> 151331820
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331827&src=contextnavpagetreemode pay_v2库 分表规则 -> 151331827
+https://confluence.shopee.io/pages/viewpage.action?pageId=240193243&src=contextnavpagetreemode 公用枚举字段 -> 240193243
+https://confluence.shopee.io/pages/viewpage.action?pageId=286371342&src=contextnavpagetreemode checkout_pending_result_tab (pending order状态记录表) -> 286371342
+https://confluence.shopee.io/pages/viewpage.action?pageId=319265565&src=contextnavpagetreemode retry_cmd_tab (重试指令记录表) -> 319265565
+https://confluence.shopee.io/pages/viewpage.action?pageId=356361471&src=contextnavpagetreemode interest_discount_record_tab (差异化定价优惠规则记录表) -> 356361471
+https://confluence.shopee.io/pages/viewpage.action?pageId=189341486&src=breadcrumbs-expanded Credit Pay（印尼版） -> 189341486
+https://confluence.shopee.io/pages/viewpage.action?pageId=238760216&src=breadcrumbs-parent Pay DB设计（印尼版） -> 238760216
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331818 checkout_info_table (交易记录表) -> 151331818
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331822 order_info_table (订单信息表) -> 151331822
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331823 order_item_info_table (订单商品信息表) -> 151331823
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331821 order_fee_table (订单费用明细表) -> 151331821
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331826 order_status_change_table (订单状态转移表) -> 151331826
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331825 order_refund_table (订单退款记录表) -> 151331825
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331824 order_refund_item_table (退款记录商品详情表) -> 151331824
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331819 contract_table (合同表) -> 151331819
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331820 instalment_product_table(分期产品表) -> 151331820
+https://confluence.shopee.io/pages/viewpage.action?pageId=151331827 pay_v2库 分表规则 -> 151331827
+https://confluence.shopee.io/pages/viewpage.action?pageId=240193243 公用枚举字段 -> 240193243
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613433 General-SPL 通用DB枚举定义 -> 158613433
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613389&src=contextnavpagetreemode [General-SPL]DB文档 -> 158613389
+https://confluence.shopee.io/pages/viewpage.action?pageId=467344183&src=contextnavpagetreemode DB-Portal申请手册(废弃) -> 467344183
+https://confluence.shopee.io/pages/viewpage.action?pageId=767631964&src=contextnavpagetreemode DB Portal 申请权限和提单流程 -> 767631964
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613433&src=contextnavpagetreemode General-SPL 通用DB枚举定义 -> 158613433
+https://confluence.shopee.io/pages/viewpage.action?pageId=447415092&src=contextnavpagetreemode ID活动中心资源评估 -> 447415092
+https://confluence.shopee.io/pages/viewpage.action?pageId=1382941978&src=contextnavpagetreemode nonlive-DB-迁移新机房 -> 1382941978
+https://confluence.shopee.io/pages/viewpage.action?pageId=1025016694&src=contextnavpagetreemode 分库分表规则 -> 1025016694
+https://confluence.shopee.io/pages/viewpage.action?pageId=407575326&src=contextnavpagetreemode 手工增加的DAO方法（repayment_plan_money） -> 407575326
+https://confluence.shopee.io/pages/viewpage.action?pageId=1078062575&src=contextnavpagetreemode 还款渠道映射 -> 1078062575
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613251&src=breadcrumbs-parent [Credit-ConsumerLoan-账单]DB -> 158613251
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613251 [Credit-ConsumerLoan-账单]DB -> 158613251
+https://confluence.shopee.io/pages/viewpage.action?pageId=158613389 [General-SPL]DB文档 -> 158613389
+https://confluence.shopee.io/pages/viewpage.action?pageId=467344183 DB-Portal申请手册(废弃) -> 467344183
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721649&src=contextnavpagetreemode Company&Team Instruction -> 797721649
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721735&src=contextnavpagetreemode 01 Management Policy / 产品线管理政策 -> 797721735
+https://confluence.shopee.io/pages/viewpage.action?pageId=821125220&src=contextnavpagetreemode 02 New Hire Onboarding Journey / 新人融入计划 -> 821125220
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721907&src=contextnavpagetreemode 03 Development Basis / 研发基础 -> 797721907
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621&src=contextnavpagetreemode 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=90614597&src=contextnavpagetreemode 供应链大促计划 -> 90614597
+https://confluence.shopee.io/pages/viewpage.action?pageId=1114935746&src=contextnavpagetreemode 大促筹备SOP -> 1114935746
+https://confluence.shopee.io/pages/viewpage.action?pageId=912419359&src=contextnavpagetreemode 容量评估SOP -> 912419359
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020112&src=contextnavpagetreemode 大促系统 -> 902020112
+https://confluence.shopee.io/pages/viewpage.action?pageId=1073453197&src=contextnavpagetreemode 前置预案自动化-技术方案 -> 1073453197
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020221&src=contextnavpagetreemode 基线监控体系-技术方案 -> 902020221
+https://confluence.shopee.io/pages/viewpage.action?pageId=1163805217&src=contextnavpagetreemode 大促OPS变更优化-技术方案 -> 1163805217
+https://confluence.shopee.io/pages/viewpage.action?pageId=733134286&src=contextnavpagetreemode 大促系统流程设计 -> 733134286
+https://confluence.shopee.io/pages/viewpage.action?pageId=851775383&src=contextnavpagetreemode 大促系统重要表格汇总 -> 851775383
+https://confluence.shopee.io/pages/viewpage.action?pageId=904452986&src=contextnavpagetreemode 容量评估自动化-技术方案 -> 904452986
+https://confluence.shopee.io/pages/viewpage.action?pageId=1248467848&src=contextnavpagetreemode 履约后链路压测在SLS实施 -> 1248467848
+https://confluence.shopee.io/pages/viewpage.action?pageId=1488923879&src=contextnavpagetreemode 巡检工具数据统计 -> 1488923879
+https://confluence.shopee.io/pages/viewpage.action?pageId=1390069677&src=contextnavpagetreemode 应急预案告警平台模块优化技术方案 -> 1390069677
+https://confluence.shopee.io/pages/viewpage.action?pageId=1471545993&src=contextnavpagetreemode 应急预案需求文档 -> 1471545993
+https://confluence.shopee.io/pages/viewpage.action?pageId=1294689728&src=contextnavpagetreemode 指导文档 -> 1294689728
+https://confluence.shopee.io/pages/viewpage.action?pageId=1223630806&src=contextnavpagetreemode 故障注入技术方案 -> 1223630806
+https://confluence.shopee.io/pages/viewpage.action?pageId=885001178&src=contextnavpagetreemode 核心链路-设计方案集 -> 885001178
+https://confluence.shopee.io/pages/viewpage.action?pageId=1054843534&src=contextnavpagetreemode 混沌工程技术方案 -> 1054843534
+https://confluence.shopee.io/pages/viewpage.action?pageId=1052242886&src=contextnavpagetreemode 资源管控 -> 1052242886
+https://confluence.shopee.io/pages/viewpage.action?pageId=948327207&src=contextnavpagetreemode 链路稳定性探测技术方案 -> 948327207
+https://confluence.shopee.io/pages/viewpage.action?pageId=767631067&src=contextnavpagetreemode 预案下发日常化设计 -> 767631067
+https://confluence.shopee.io/pages/viewpage.action?pageId=1267144367&src=contextnavpagetreemode 演练SOP -> 1267144367
+https://confluence.shopee.io/pages/viewpage.action?pageId=858131627&src=contextnavpagetreemode SLS(Shopee Logistic) -> 858131627
+https://confluence.shopee.io/pages/viewpage.action?pageId=865078141&src=contextnavpagetreemode SPX(Shopee Xpress) -> 865078141
+https://confluence.shopee.io/pages/viewpage.action?pageId=865079720&src=contextnavpagetreemode WMS(Warehouse Managment System) -> 865079720
+https://confluence.shopee.io/pages/viewpage.action?pageId=877396892&src=contextnavpagetreemode 内部项目(CICD & APP) -> 877396892
+https://confluence.shopee.io/pages/viewpage.action?pageId=897324703&src=contextnavpagetreemode 质量管理 -> 897324703
+https://confluence.shopee.io/pages/viewpage.action?pageId=9802654&src=contextnavpagetreemode 内部分享与培训 -> 9802654
+https://confluence.shopee.io/pages/viewpage.action?pageId=885002462&src=contextnavpagetreemode 废弃文档归总 -> 885002462
+https://confluence.shopee.io/pages/viewpage.action?pageId=889529756&src=contextnavpagetreemode 历史文档归总 -> 889529756
+https://confluence.shopee.io/pages/viewpage.action?pageId=1449307474&src=contextnavpagetreemode SCTP (Supply Chain Tech Platform) -> 1449307474
+https://confluence.shopee.io/pages/viewpage.action?pageId=858132737&src=contextnavpagetreemode Finance(logistic finance) -> 858132737
+https://confluence.shopee.io/pages/viewpage.action?pageId=91922582&src=contextnavpagetreemode 线上值班——By Product -> 91922582
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020112 
+                         -> 902020112
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621&src=breadcrumbs-parent 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=1488923879 
+                         -> 1488923879
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621&src=breadcrumbs-expanded 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020112&src=breadcrumbs-parent 大促系统 -> 902020112
+https://confluence.shopee.io/pages/viewpage.action?pageId=1390069677 
+                         -> 1390069677
+https://confluence.shopee.io/pages/viewpage.action?pageId=1471545993 
+                         -> 1471545993
+https://confluence.shopee.io/pages/viewpage.action?pageId=1294689820&src=contextnavpagetreemode 应急预案及其监控配置指导 -> 1294689820
+https://confluence.shopee.io/pages/viewpage.action?pageId=1420477989&src=contextnavpagetreemode 组件标准化改造指导 -> 1420477989
+https://confluence.shopee.io/pages/viewpage.action?pageId=1294689728 
+                         -> 1294689728
+https://confluence.shopee.io/pages/viewpage.action?pageId=1294689820 
+                         -> 1294689820
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020112&src=breadcrumbs-expanded 大促系统 -> 902020112
+https://confluence.shopee.io/pages/viewpage.action?pageId=1294689728&src=breadcrumbs-parent 指导文档 -> 1294689728
+https://confluence.shopee.io/pages/viewpage.action?pageId=1420477989 
+                         -> 1420477989
+https://confluence.shopee.io/pages/viewpage.action?pageId=1223630806 
+                         -> 1223630806
+https://confluence.shopee.io/pages/viewpage.action?pageId=814729741 Golang 常见性能问题总结 -> 814729741
+https://confluence.shopee.io/pages/viewpage.action?pageId=860906496&src=contextnavpagetreemode SLS-技术管理 -> 860906496
+https://confluence.shopee.io/pages/viewpage.action?pageId=858132005&src=contextnavpagetreemode LCS(logistic channel) -> 858132005
+https://confluence.shopee.io/pages/viewpage.action?pageId=149464862&src=contextnavpagetreemode Deprecated-LFS(logistic lane fulfillment) -> 149464862
+https://confluence.shopee.io/pages/viewpage.action?pageId=858131965&src=contextnavpagetreemode LFS(logistic fulfillment) -> 858131965
+https://confluence.shopee.io/pages/viewpage.action?pageId=858132049&src=contextnavpagetreemode LHS（Logistics line haul fulfillment） -> 858132049
+https://confluence.shopee.io/pages/viewpage.action?pageId=858131797&src=contextnavpagetreemode LPS(logistic product) -> 858131797
+https://confluence.shopee.io/pages/viewpage.action?pageId=472622969&src=contextnavpagetreemode SPLOP(Shopee logistics open service) -> 472622969
+https://confluence.shopee.io/pages/viewpage.action?pageId=875421213&src=contextnavpagetreemode PartnerOpen(logistics partner open platform) -> 875421213
+https://confluence.shopee.io/pages/viewpage.action?pageId=860893273&src=contextnavpagetreemode SLS-业务线管理 -> 860893273
+https://confluence.shopee.io/pages/viewpage.action?pageId=858135671&src=contextnavpagetreemode SLS - 质量管理 -> 858135671
+https://confluence.shopee.io/pages/viewpage.action?pageId=793390067&src=contextnavpagetreemode SLS-运营支撑&架构优化 -> 793390067
+https://confluence.shopee.io/pages/viewpage.action?pageId=858135443&src=contextnavpagetreemode 大促 -> 858135443
+https://confluence.shopee.io/pages/viewpage.action?pageId=997545010&src=contextnavpagetreemode 2022 SLS DB容量评估 -> 997545010
+https://confluence.shopee.io/pages/viewpage.action?pageId=940891265&src=contextnavpagetreemode SLS 多活&灾备 -> 940891265
+https://confluence.shopee.io/pages/viewpage.action?pageId=877415901&src=contextnavpagetreemode 个人目录 -> 877415901
+https://confluence.shopee.io/pages/viewpage.action?pageId=877414363&src=contextnavpagetreemode 大促 - 业务梳理 -> 877414363
+https://confluence.shopee.io/pages/viewpage.action?pageId=877414420&src=contextnavpagetreemode 大促 - 历史归档 -> 877414420
+https://confluence.shopee.io/pages/viewpage.action?pageId=877411753&src=contextnavpagetreemode 大促 - 工作目录 -> 877411753
+https://confluence.shopee.io/pages/viewpage.action?pageId=877414515&src=contextnavpagetreemode 大促 - 技术文档 -> 877414515
+https://confluence.shopee.io/pages/viewpage.action?pageId=877415613&src=contextnavpagetreemode 性能优化方案 -> 877415613
+https://confluence.shopee.io/pages/viewpage.action?pageId=814729741&src=contextnavpagetreemode Golang 常见性能问题总结 -> 814729741
+https://confluence.shopee.io/pages/viewpage.action?pageId=855952618&src=contextnavpagetreemode LPS-API 优化方案 -> 855952618
+https://confluence.shopee.io/pages/viewpage.action?pageId=788285742&src=contextnavpagetreemode sls-api -> lcos链路优化 -> 788285742
+https://confluence.shopee.io/pages/viewpage.action?pageId=843975429&src=contextnavpagetreemode SLS-API 优化方案 -> 843975429
+https://confluence.shopee.io/pages/viewpage.action?pageId=851795569&src=contextnavpagetreemode 数据更新事件监听设计方案 -> 851795569
+https://confluence.shopee.io/pages/viewpage.action?pageId=877418228&src=contextnavpagetreemode 压测工具 -> 877418228
+https://confluence.shopee.io/pages/viewpage.action?pageId=1057304805&src=contextnavpagetreemode 大促 - 筹备SOP -> 1057304805
+https://confluence.shopee.io/pages/viewpage.action?pageId=994314177&src=contextnavpagetreemode 新功能发布记录 -> 994314177
+https://confluence.shopee.io/pages/viewpage.action?pageId=877408272&src=contextnavpagetreemode SLS-基础服务&LCOS -> 877408272
+https://confluence.shopee.io/pages/viewpage.action?pageId=910109623&src=contextnavpagetreemode SLS-归档内容 -> 910109623
+https://confluence.shopee.io/pages/viewpage.action?pageId=1048973930&src=contextnavpagetreemode SLS-运单在途&运单中心 -> 1048973930
+https://confluence.shopee.io/pages/viewpage.action?pageId=508967769&src=contextnavpagetreemode SLS-RT 回归测试组 -> 508967769
+https://confluence.shopee.io/pages/viewpage.action?pageId=534397403&src=contextnavpagetreemode SLS-大促 (废弃) -> 534397403
+https://confluence.shopee.io/pages/viewpage.action?pageId=1433626604&src=contextnavpagetreemode CB-在途(cb-in transit) -> 1433626604
+https://confluence.shopee.io/pages/viewpage.action?pageId=858131627&src=breadcrumbs-expanded SLS(Shopee Logistic) -> 858131627
+https://confluence.shopee.io/pages/viewpage.action?pageId=858135443&src=breadcrumbs-expanded 大促 -> 858135443
+https://confluence.shopee.io/pages/viewpage.action?pageId=877414515&src=breadcrumbs-expanded 大促 - 技术文档 -> 877414515
+https://confluence.shopee.io/pages/viewpage.action?pageId=877415613&src=breadcrumbs-parent 性能优化方案 -> 877415613
+https://confluence.shopee.io/pages/viewpage.action?pageId=684393629 2021.09.01-LCOS-内存异常暴增故障报告 -> 684393629
+https://confluence.shopee.io/pages/viewpage.action?pageId=812030713 2021.11.19-LCOS-CPU暴涨导致服务挂掉 -> 812030713
+https://confluence.shopee.io/pages/viewpage.action?pageId=786342697 2021.11.04 压测导致lcos系统负载高，接口超时使得点线流向的channel没有返回导致PMS无法下单 -> 786342697
+https://confluence.shopee.io/pages/viewpage.action?pageId=858131627 SLS(Shopee Logistic) -> 858131627
+https://confluence.shopee.io/pages/viewpage.action?pageId=858135443 大促 -> 858135443
+https://confluence.shopee.io/pages/viewpage.action?pageId=877414515 大促 - 技术文档 -> 877414515
+https://confluence.shopee.io/pages/viewpage.action?pageId=877415613 性能优化方案 -> 877415613
+https://confluence.shopee.io/pages/viewpage.action?pageId=875420896&src=contextnavpagetreemode SLS-CR管理 -> 875420896
+https://confluence.shopee.io/pages/viewpage.action?pageId=875420923&src=contextnavpagetreemode SLS-技术分享 -> 875420923
+https://confluence.shopee.io/pages/viewpage.action?pageId=875420865&src=contextnavpagetreemode SLS-技术方案管理 -> 875420865
+https://confluence.shopee.io/pages/viewpage.action?pageId=860906496 
+                         -> 860906496
+https://confluence.shopee.io/pages/viewpage.action?pageId=858131627&src=breadcrumbs-parent SLS(Shopee Logistic) -> 858131627
+https://confluence.shopee.io/pages/viewpage.action?pageId=877406033&src=contextnavpagetreemode CR周报 -> 877406033
+https://confluence.shopee.io/pages/viewpage.action?pageId=832408153&src=contextnavpagetreemode CR执行流程规范 -> 832408153
+https://confluence.shopee.io/pages/viewpage.action?pageId=963288820&src=contextnavpagetreemode 最佳实践学习汇总 -> 963288820
+https://confluence.shopee.io/pages/viewpage.action?pageId=875420896 
+                         -> 875420896
+https://confluence.shopee.io/pages/viewpage.action?pageId=860906496&src=breadcrumbs-parent SLS-技术管理 -> 860906496
+https://confluence.shopee.io/pages/viewpage.action?pageId=832415429&src=contextnavpagetreemode CodeReview最佳实践 -> 832415429
+https://confluence.shopee.io/pages/viewpage.action?pageId=832416004&src=contextnavpagetreemode Go编码最佳实践 -> 832416004
+https://confluence.shopee.io/pages/viewpage.action?pageId=84087363&src=contextnavpagetreemode SLS FE 开发 / CR 最佳实践 -> 84087363
+https://confluence.shopee.io/pages/viewpage.action?pageId=832408153 
+                         -> 832408153
+https://confluence.shopee.io/pages/viewpage.action?pageId=860906496&src=breadcrumbs-expanded SLS-技术管理 -> 860906496
+https://confluence.shopee.io/pages/viewpage.action?pageId=875420896&src=breadcrumbs-parent SLS-CR管理 -> 875420896
+https://confluence.shopee.io/pages/viewpage.action?pageId=832415429 
+                         -> 832415429
+https://confluence.shopee.io/pages/viewpage.action?pageId=875420896&src=breadcrumbs-expanded SLS-CR管理 -> 875420896
+https://confluence.shopee.io/pages/viewpage.action?pageId=832408153&src=breadcrumbs-parent CR执行流程规范 -> 832408153
+https://confluence.shopee.io/pages/viewpage.action?pageId=962826371&src=contextnavpagetreemode CR执行双周报（220207-220218） -> 962826371
+https://confluence.shopee.io/pages/viewpage.action?pageId=1021478513&src=contextnavpagetreemode CR执行双周报（220307-220318） -> 1021478513
+https://confluence.shopee.io/pages/viewpage.action?pageId=853770731&src=contextnavpagetreemode CR执行周报（211206-211210） -> 853770731
+https://confluence.shopee.io/pages/viewpage.action?pageId=865075633&src=contextnavpagetreemode CR执行周报（211213-211217） -> 865075633
+https://confluence.shopee.io/pages/viewpage.action?pageId=875421096&src=contextnavpagetreemode CR执行周报（211220-211224） -> 875421096
+https://confluence.shopee.io/pages/viewpage.action?pageId=899698996&src=contextnavpagetreemode CR执行周报（220103-220107） -> 899698996
+https://confluence.shopee.io/pages/viewpage.action?pageId=914828750&src=contextnavpagetreemode CR执行周报（220110-220114） -> 914828750
+https://confluence.shopee.io/pages/viewpage.action?pageId=883009457&src=contextnavpagetreemode CR执行月报（211206-211231） -> 883009457
+https://confluence.shopee.io/pages/viewpage.action?pageId=931340114&src=contextnavpagetreemode CR执行月报（220101-220130） -> 931340114
+https://confluence.shopee.io/pages/viewpage.action?pageId=1027732758&src=contextnavpagetreemode LLS-LCS技术分享汇总 -> 1027732758
+https://confluence.shopee.io/pages/viewpage.action?pageId=1029505784&src=contextnavpagetreemode 【LLS/LCS 小组分享2021年度调研总结】 -> 1029505784
+https://confluence.shopee.io/pages/viewpage.action?pageId=1294685393&src=contextnavpagetreemode 技术分享 -> 1294685393
+https://confluence.shopee.io/pages/viewpage.action?pageId=832416004 
+                         -> 832416004
+https://confluence.shopee.io/pages/viewpage.action?pageId=883009457 
+                         -> 883009457
+https://confluence.shopee.io/pages/viewpage.action?pageId=877406033&src=breadcrumbs-parent CR周报 -> 877406033
+https://confluence.shopee.io/pages/viewpage.action?pageId=877406033 CR周报 -> 877406033
+https://confluence.shopee.io/pages/viewpage.action?pageId=931340114 
+                         -> 931340114
+https://confluence.shopee.io/pages/viewpage.action?pageId=1027732758 
+                         -> 1027732758
+https://confluence.shopee.io/pages/viewpage.action?pageId=875420923&src=breadcrumbs-parent SLS-技术分享 -> 875420923
+https://confluence.shopee.io/pages/viewpage.action?pageId=875420923 SLS-技术分享 -> 875420923
+https://confluence.shopee.io/pages/viewpage.action?pageId=1029505784 
+                         -> 1029505784
+https://confluence.shopee.io/pages/viewpage.action?pageId=875420923&src=breadcrumbs-expanded SLS-技术分享 -> 875420923
+https://confluence.shopee.io/pages/viewpage.action?pageId=1027732758&src=breadcrumbs-parent LLS-LCS技术分享汇总 -> 1027732758
+https://confluence.shopee.io/pages/viewpage.action?pageId=1294685393 
+                         -> 1294685393
+https://confluence.shopee.io/pages/viewpage.action?pageId=84087363 
+                         -> 84087363
+https://confluence.shopee.io/pages/viewpage.action?pageId=963288820 最佳实践学习汇总 -> 963288820
+https://confluence.shopee.io/pages/viewpage.action?pageId=805474280&src=contextnavpagetreemode 技术方案设计模板、指引和流程规范 / Technical Solution Design Template Guideline And Process Specification -> 805474280
+https://confluence.shopee.io/pages/viewpage.action?pageId=887238032&src=contextnavpagetreemode 优秀技术方案收录 -> 887238032
+https://confluence.shopee.io/pages/viewpage.action?pageId=889529428&src=contextnavpagetreemode 重点项目技术方案委员会初评日历 -> 889529428
+https://confluence.shopee.io/pages/viewpage.action?pageId=875420865 
+                         -> 875420865
+https://confluence.shopee.io/pages/viewpage.action?pageId=887255657&src=contextnavpagetreemode 详细方案设计模板 -> 887255657
+https://confluence.shopee.io/pages/viewpage.action?pageId=805486832&src=contextnavpagetreemode 系统设计分析手册 -> 805486832
+https://confluence.shopee.io/pages/viewpage.action?pageId=887255277&src=contextnavpagetreemode 分析设计说明书模板 -> 887255277
+https://confluence.shopee.io/pages/viewpage.action?pageId=1235042684&src=contextnavpagetreemode 技术评审打分规则 -> 1235042684
+https://confluence.shopee.io/pages/viewpage.action?pageId=805474280 
+                         -> 805474280
+https://confluence.shopee.io/pages/viewpage.action?pageId=875420865&src=breadcrumbs-parent SLS-技术方案管理 -> 875420865
+https://confluence.shopee.io/pages/viewpage.action?pageId=887255277 分析设计说明书模板 -> 887255277
+https://confluence.shopee.io/pages/viewpage.action?pageId=887255657 详细方案设计模板 -> 887255657
+https://confluence.shopee.io/pages/viewpage.action?pageId=805486673 分析设计说明书写作指引 -> 805486673
+https://confluence.shopee.io/pages/viewpage.action?pageId=805486832 系统设计分析手册 -> 805486832
+https://confluence.shopee.io/pages/viewpage.action?pageId=875420865&src=breadcrumbs-expanded SLS-技术方案管理 -> 875420865
+https://confluence.shopee.io/pages/viewpage.action?pageId=805474280&src=breadcrumbs-parent 技术方案设计模板、指引和流程规范 / Technical Solution Design Template Guideline And Process Specification -> 805474280
+https://confluence.shopee.io/pages/viewpage.action?pageId=805486673&src=contextnavpagetreemode 分析设计说明书写作指引 -> 805486673
+https://confluence.shopee.io/pages/viewpage.action?pageId=805474280&src=breadcrumbs-expanded 技术方案设计模板、指引和流程规范 / Technical Solution Design Template Guideline And Process Specification -> 805474280
+https://confluence.shopee.io/pages/viewpage.action?pageId=887255277&src=breadcrumbs-parent 分析设计说明书模板 -> 887255277
+https://confluence.shopee.io/pages/viewpage.action?pageId=1235042684 
+                         -> 1235042684
+https://confluence.shopee.io/pages/viewpage.action?pageId=887238032 
+                         -> 887238032
+https://confluence.shopee.io/pages/viewpage.action?pageId=772022506 计费平台详细设计说明书 -> 772022506
+https://confluence.shopee.io/pages/viewpage.action?pageId=745914817 LLS点线履约系统概要分析设计说明书 -> 745914817
+https://confluence.shopee.io/pages/viewpage.action?pageId=812050359 LFS履约接口切换LLS方案分析设计说明书 -> 812050359
+https://confluence.shopee.io/pages/viewpage.action?pageId=607040391&src=contextnavpagetreemode Finance-cr记录 -> 607040391
+https://confluence.shopee.io/pages/viewpage.action?pageId=356357413&src=contextnavpagetreemode Finance-QA文档 -> 356357413
+https://confluence.shopee.io/pages/viewpage.action?pageId=1436444790&src=contextnavpagetreemode Finance-SLS计费 -> 1436444790
+https://confluence.shopee.io/pages/viewpage.action?pageId=974022310&src=contextnavpagetreemode Finance-WFH日报汇总 -> 974022310
+https://confluence.shopee.io/pages/viewpage.action?pageId=629322626&src=contextnavpagetreemode Finance-个人文档 -> 629322626
+https://confluence.shopee.io/pages/viewpage.action?pageId=1118312992&src=contextnavpagetreemode Finance-仿真 -> 1118312992
+https://confluence.shopee.io/pages/viewpage.action?pageId=703048343&src=contextnavpagetreemode Finance-优化池 -> 703048343
+https://confluence.shopee.io/pages/viewpage.action?pageId=437432658&src=contextnavpagetreemode Finance-会议纪要 -> 437432658
+https://confluence.shopee.io/pages/viewpage.action?pageId=457942612&src=contextnavpagetreemode Finance-值班 -> 457942612
+https://confluence.shopee.io/pages/viewpage.action?pageId=356357513&src=contextnavpagetreemode Finance-发版记录 -> 356357513
+https://confluence.shopee.io/pages/viewpage.action?pageId=537961200&src=contextnavpagetreemode Finance-周会 -> 537961200
+https://confluence.shopee.io/pages/viewpage.action?pageId=356357937&src=contextnavpagetreemode Finance-周报 -> 356357937
+https://confluence.shopee.io/pages/viewpage.action?pageId=1366268645&src=contextnavpagetreemode Finance - 回收站 -> 1366268645
+https://confluence.shopee.io/pages/viewpage.action?pageId=1126106028&src=contextnavpagetreemode Finance团队拆分后的流程规范跟进指引说明 -> 1126106028
+https://confluence.shopee.io/pages/viewpage.action?pageId=633546531&src=contextnavpagetreemode Finance-大促 -> 633546531
+https://confluence.shopee.io/pages/viewpage.action?pageId=907738528&src=contextnavpagetreemode Finance-废弃文档 -> 907738528
+https://confluence.shopee.io/pages/viewpage.action?pageId=776554684&src=contextnavpagetreemode Finance - 技术分享 -> 776554684
+https://confluence.shopee.io/pages/viewpage.action?pageId=734963469&src=contextnavpagetreemode Finance-技术池 -> 734963469
+https://confluence.shopee.io/pages/viewpage.action?pageId=629321876&src=contextnavpagetreemode Finance-新人文档 -> 629321876
+https://confluence.shopee.io/pages/viewpage.action?pageId=1008212804&src=contextnavpagetreemode Finance 日常需求方案 -> 1008212804
+https://confluence.shopee.io/pages/viewpage.action?pageId=597245313&src=contextnavpagetreemode Finance-流程规范 -> 597245313
+https://confluence.shopee.io/pages/viewpage.action?pageId=547685512&src=contextnavpagetreemode Finance-测试分析文档 -> 547685512
+https://confluence.shopee.io/pages/viewpage.action?pageId=981062021&src=contextnavpagetreemode finance-系统容量评估 -> 981062021
+https://confluence.shopee.io/pages/viewpage.action?pageId=1235045596&src=contextnavpagetreemode Finance-英语学习 -> 1235045596
+https://confluence.shopee.io/pages/viewpage.action?pageId=644057525&src=contextnavpagetreemode Finance-计费平台 -> 644057525
+https://confluence.shopee.io/pages/viewpage.action?pageId=1031223867&src=contextnavpagetreemode 0408发版 -> 1031223867
+https://confluence.shopee.io/pages/viewpage.action?pageId=1188302722&src=contextnavpagetreemode SPX MY和VN 非4.1 上线checklist -> 1188302722
+https://confluence.shopee.io/pages/viewpage.action?pageId=742615259&src=contextnavpagetreemode 供应链计费平台 -> 742615259
+https://confluence.shopee.io/pages/viewpage.action?pageId=1057298434&src=contextnavpagetreemode SLS 业务 -> 1057298434
+https://confluence.shopee.io/pages/viewpage.action?pageId=1138738788&src=contextnavpagetreemode SLS 对接系统梳理 -> 1138738788
+https://confluence.shopee.io/pages/viewpage.action?pageId=1057298270&src=contextnavpagetreemode SPX 业务 -> 1057298270
+https://confluence.shopee.io/pages/viewpage.action?pageId=1064508236&src=contextnavpagetreemode 内部使用规范 -> 1064508236
+https://confluence.shopee.io/pages/viewpage.action?pageId=1191234143&src=contextnavpagetreemode 周会分享内容 -> 1191234143
+https://confluence.shopee.io/pages/viewpage.action?pageId=1171915503&src=contextnavpagetreemode 小工具使用 -> 1171915503
+https://confluence.shopee.io/pages/viewpage.action?pageId=807714586&src=contextnavpagetreemode 计费平台二期codereview -> 807714586
+https://confluence.shopee.io/pages/viewpage.action?pageId=885004730&src=contextnavpagetreemode 计费平台二期ES方案 -> 885004730
+https://confluence.shopee.io/pages/viewpage.action?pageId=742615303&src=contextnavpagetreemode 计费平台二期中间件申请 -> 742615303
+https://confluence.shopee.io/pages/viewpage.action?pageId=742615402&src=contextnavpagetreemode 计费平台二期概要设计 -> 742615402
+https://confluence.shopee.io/pages/viewpage.action?pageId=803215621&src=contextnavpagetreemode 计费平台二期联调 -> 803215621
+https://confluence.shopee.io/pages/viewpage.action?pageId=1237215701&src=contextnavpagetreemode 计费平台优化 -> 1237215701
+https://confluence.shopee.io/pages/viewpage.action?pageId=1064503872&src=contextnavpagetreemode 计费平台优化项 -> 1064503872
+https://confluence.shopee.io/pages/viewpage.action?pageId=745898629&src=contextnavpagetreemode 计费平台会议纪要 -> 745898629
+https://confluence.shopee.io/pages/viewpage.action?pageId=891921162&src=contextnavpagetreemode 计费平台关于需要迁移运费老业务需求文档(uat/新需求/待上线需求) -> 891921162
+https://confluence.shopee.io/pages/viewpage.action?pageId=1062545199&src=contextnavpagetreemode 计费平台概念模型 -> 1062545199
+https://confluence.shopee.io/pages/viewpage.action?pageId=1059959724&src=contextnavpagetreemode 计费平台沙箱系统技术分析说明书（预研） -> 1059959724
+https://confluence.shopee.io/pages/viewpage.action?pageId=742615404&src=contextnavpagetreemode 计费平台计费规则技术方案设计 -> 742615404
+https://confluence.shopee.io/pages/viewpage.action?pageId=772022506&src=contextnavpagetreemode 计费平台详细设计说明书 -> 772022506
+https://confluence.shopee.io/pages/viewpage.action?pageId=1068193340&src=contextnavpagetreemode 计费平台资源评估 -> 1068193340
+https://confluence.shopee.io/pages/viewpage.action?pageId=1094848892&src=contextnavpagetreemode 计费模型视图 -> 1094848892
+https://confluence.shopee.io/pages/viewpage.action?pageId=779356659&src=contextnavpagetreemode 详细设计部分 -> 779356659
+https://confluence.shopee.io/pages/viewpage.action?pageId=1064508476&src=contextnavpagetreemode 通用能力 -> 1064508476
+https://confluence.shopee.io/pages/viewpage.action?pageId=1488302546&src=contextnavpagetreemode Penalized Rts 分析设计说明书 -> 1488302546
+https://confluence.shopee.io/pages/viewpage.action?pageId=825963661&src=contextnavpagetreemode 测试分析评审会议纪要 -> 825963661
+https://confluence.shopee.io/pages/viewpage.action?pageId=1151968741&src=contextnavpagetreemode 用户操作指南 -> 1151968741
+https://confluence.shopee.io/pages/viewpage.action?pageId=879366250&src=contextnavpagetreemode 计费平台1230版测试报告 -> 879366250
+https://confluence.shopee.io/pages/viewpage.action?pageId=644057576&src=contextnavpagetreemode 计费平台一期技术文档 -> 644057576
+https://confluence.shopee.io/pages/viewpage.action?pageId=1038752430&src=contextnavpagetreemode 计费平台二期- SLS计费迁移测试报告 -> 1038752430
+https://confluence.shopee.io/pages/viewpage.action?pageId=1254282169&src=contextnavpagetreemode 计费平台大促-2022 -> 1254282169
+https://confluence.shopee.io/pages/viewpage.action?pageId=828230116&src=contextnavpagetreemode 计费平台测试分析评审第一次会议纪要 -> 828230116
+https://confluence.shopee.io/pages/viewpage.action?pageId=1023601182&src=contextnavpagetreemode 计费平台相关需求梳理 -> 1023601182
+https://confluence.shopee.io/pages/viewpage.action?pageId=1209194986&src=contextnavpagetreemode 计费平台迁移优化1.1～1.4测试报告 -> 1209194986
+https://confluence.shopee.io/pages/viewpage.action?pageId=1023606115&src=contextnavpagetreemode 计费平台需求梳理 -> 1023606115
+https://confluence.shopee.io/pages/viewpage.action?pageId=914823986&src=contextnavpagetreemode 计费平台项目管理 -> 914823986
+https://confluence.shopee.io/pages/viewpage.action?pageId=1374405406&src=contextnavpagetreemode 问题分析 -> 1374405406
+https://confluence.shopee.io/pages/viewpage.action?pageId=870811201&src=contextnavpagetreemode Finance 资源评估指南 -> 870811201
+https://confluence.shopee.io/pages/viewpage.action?pageId=629322072&src=contextnavpagetreemode Finance-运费 -> 629322072
+https://confluence.shopee.io/pages/viewpage.action?pageId=891936718&src=contextnavpagetreemode Finance-风控 -> 891936718
+https://confluence.shopee.io/pages/viewpage.action?pageId=1143510572&src=contextnavpagetreemode Finance-对帐 -> 1143510572
+https://confluence.shopee.io/pages/viewpage.action?pageId=1138726331&src=contextnavpagetreemode 账单结算 -> 1138726331
+https://confluence.shopee.io/pages/viewpage.action?pageId=1477412000&src=contextnavpagetreemode 2022Q4业务&技术分享培训计划 -> 1477412000
+https://confluence.shopee.io/pages/viewpage.action?pageId=858132737&src=breadcrumbs-expanded Finance(logistic finance) -> 858132737
+https://confluence.shopee.io/pages/viewpage.action?pageId=644057525&src=breadcrumbs-expanded Finance-计费平台 -> 644057525
+https://confluence.shopee.io/pages/viewpage.action?pageId=742615259&src=breadcrumbs-parent 供应链计费平台 -> 742615259
+https://confluence.shopee.io/pages/viewpage.action?pageId=731058379 计费平台二期-PRD -> 731058379
+https://confluence.shopee.io/pages/viewpage.action?pageId=742615303 计费平台二期中间件申请 -> 742615303
+https://confluence.shopee.io/pages/viewpage.action?pageId=1012878720 计费平台订单量&&容量评估 -> 1012878720
+https://confluence.shopee.io/pages/viewpage.action?pageId=779357036 计费平台数据库设计 -> 779357036
+https://confluence.shopee.io/pages/viewpage.action?pageId=762967817 SPX计费分区梳理 -> 762967817
+https://confluence.shopee.io/pages/viewpage.action?pageId=855956782 SPX额外运费梳理 -> 855956782
+https://confluence.shopee.io/pages/viewpage.action?pageId=756714845 SPX计费梳理 -> 756714845
+https://confluence.shopee.io/pages/viewpage.action?pageId=480100870 chassis grpc 如何快速接入sls-comparator流量对比？ -> 480100870
+https://confluence.shopee.io/pages/viewpage.action?pageId=855956635 遗留项-待优化 -> 855956635
+https://confluence.shopee.io/pages/viewpage.action?pageId=597239184 雪花生成器算法方案 -> 597239184
+https://confluence.shopee.io/pages/viewpage.action?pageId=542059512 LFS SloId 短期扩容方案 -> 542059512
+https://confluence.shopee.io/pages/viewpage.action?pageId=858132737 Finance(logistic finance) -> 858132737
+https://confluence.shopee.io/pages/viewpage.action?pageId=644057525 Finance-计费平台 -> 644057525
+https://confluence.shopee.io/pages/viewpage.action?pageId=742615259 供应链计费平台 -> 742615259
+https://confluence.shopee.io/pages/viewpage.action?pageId=607040391 
+                         -> 607040391
+https://confluence.shopee.io/pages/viewpage.action?pageId=858132737&src=breadcrumbs-parent Finance(logistic finance) -> 858132737
+https://confluence.shopee.io/pages/viewpage.action?pageId=1130759499&src=contextnavpagetreemode 4PL上线问题复盘 -> 1130759499
+https://confluence.shopee.io/pages/viewpage.action?pageId=605237618&src=contextnavpagetreemode BR TAX项目流量回放记录 -> 605237618
+https://confluence.shopee.io/pages/viewpage.action?pageId=419969142&src=contextnavpagetreemode cod order 数据验证结果汇总 -> 419969142
+https://confluence.shopee.io/pages/viewpage.action?pageId=478121879&src=contextnavpagetreemode Finance-QA周报汇总 -> 478121879
+https://confluence.shopee.io/pages/viewpage.action?pageId=631440474&src=contextnavpagetreemode Finance压测计划及记录 -> 631440474
+https://confluence.shopee.io/pages/viewpage.action?pageId=621642352&src=contextnavpagetreemode pytest_server设计文档及接入指南 -> 621642352
+https://confluence.shopee.io/pages/viewpage.action?pageId=614114590&src=contextnavpagetreemode pytest实战 -> 614114590
+https://confluence.shopee.io/pages/viewpage.action?pageId=407577612&src=contextnavpagetreemode RTS对账测试报告 -> 407577612
+https://confluence.shopee.io/pages/viewpage.action?pageId=487655491&src=contextnavpagetreemode staging环境运费计算回归记录 -> 487655491
+https://confluence.shopee.io/pages/viewpage.action?pageId=767631040&src=contextnavpagetreemode 业务沉淀文档 -> 767631040
+https://confluence.shopee.io/pages/viewpage.action?pageId=1398257364&src=contextnavpagetreemode 对账 -> 1398257364
+https://confluence.shopee.io/pages/viewpage.action?pageId=607028169&src=contextnavpagetreemode 新人入职指引（QA） -> 607028169
+https://confluence.shopee.io/pages/viewpage.action?pageId=537958835&src=contextnavpagetreemode 新的QA周报模板 -> 537958835
+https://confluence.shopee.io/pages/viewpage.action?pageId=994914522&src=contextnavpagetreemode 账单一期测试日报 -> 994914522
+https://confluence.shopee.io/pages/viewpage.action?pageId=1337853036&src=contextnavpagetreemode 费率表配置 -> 1337853036
+https://confluence.shopee.io/pages/viewpage.action?pageId=363770137&src=contextnavpagetreemode 运费对账需求开发测试现有问题及改进思路 -> 363770137
+https://confluence.shopee.io/pages/viewpage.action?pageId=449196664&src=contextnavpagetreemode 运费计算回归记录 -> 449196664
+https://confluence.shopee.io/pages/viewpage.action?pageId=1471554994&src=contextnavpagetreemode asf mass update-测试指引 -> 1471554994
+https://confluence.shopee.io/pages/viewpage.action?pageId=1475225306&src=contextnavpagetreemode spx open计费 -> 1475225306
+https://confluence.shopee.io/pages/viewpage.action?pageId=1483146635&src=contextnavpagetreemode SPX计费 -> 1483146635
+https://confluence.shopee.io/pages/viewpage.action?pageId=356357413 
+                         -> 356357413
+https://confluence.shopee.io/pages/viewpage.action?pageId=1130759499 
+                         -> 1130759499
+https://confluence.shopee.io/pages/viewpage.action?pageId=356357413&src=breadcrumbs-parent Finance-QA文档 -> 356357413
+https://confluence.shopee.io/pages/viewpage.action?pageId=605237618 
+                         -> 605237618
+https://confluence.shopee.io/pages/viewpage.action?pageId=419969142 
+                         -> 419969142
+https://confluence.shopee.io/pages/viewpage.action?pageId=631444728&src=contextnavpagetreemode 2021.09.09 rateapi 压测 -> 631444728
+https://confluence.shopee.io/pages/viewpage.action?pageId=742610260&src=contextnavpagetreemode OMS拆单合单接入计费平台压测计划 -> 742610260
+https://confluence.shopee.io/pages/viewpage.action?pageId=751936258&src=contextnavpagetreemode 巴西多次对账压测计划 -> 751936258
+https://confluence.shopee.io/pages/viewpage.action?pageId=631440474 
+                         -> 631440474
+https://confluence.shopee.io/pages/viewpage.action?pageId=631444728 
+                         -> 631444728
+https://confluence.shopee.io/pages/viewpage.action?pageId=356357413&src=breadcrumbs-expanded Finance-QA文档 -> 356357413
+https://confluence.shopee.io/pages/viewpage.action?pageId=631440474&src=breadcrumbs-parent Finance压测计划及记录 -> 631440474
+https://confluence.shopee.io/pages/viewpage.action?pageId=747922990&src=contextnavpagetreemode OMS拆单合单接入计费平台压测报告 -> 747922990
+https://confluence.shopee.io/pages/viewpage.action?pageId=742610260 
+                         -> 742610260
+https://confluence.shopee.io/pages/viewpage.action?pageId=747922990 
+                         -> 747922990
+https://confluence.shopee.io/pages/viewpage.action?pageId=631440474&src=breadcrumbs-expanded Finance压测计划及记录 -> 631440474
+https://confluence.shopee.io/pages/viewpage.action?pageId=742610260&src=breadcrumbs-parent OMS拆单合单接入计费平台压测计划 -> 742610260
+https://confluence.shopee.io/pages/viewpage.action?pageId=751936258 
+                         -> 751936258
+https://confluence.shopee.io/pages/viewpage.action?pageId=621642352 
+                         -> 621642352
+https://confluence.shopee.io/pages/viewpage.action?pageId=614114590 
+                         -> 614114590
+https://confluence.shopee.io/pages/viewpage.action?pageId=407577612 
+                         -> 407577612
+https://confluence.shopee.io/pages/viewpage.action?pageId=487655491 
+                         -> 487655491
+https://confluence.shopee.io/pages/viewpage.action?pageId=1377774152&src=contextnavpagetreemode AR账户测试业务沉淀 -> 1377774152
+https://confluence.shopee.io/pages/viewpage.action?pageId=745900805&src=contextnavpagetreemode BR开票业务沉淀 -> 745900805
+https://confluence.shopee.io/pages/viewpage.action?pageId=1111664138&src=contextnavpagetreemode Cashback业务沉淀 -> 1111664138
+https://confluence.shopee.io/pages/viewpage.action?pageId=539855087&src=contextnavpagetreemode Lost claim业务沉淀 -> 539855087
+https://confluence.shopee.io/pages/viewpage.action?pageId=1144119157&src=contextnavpagetreemode 佣金业务沉淀 -> 1144119157
+https://confluence.shopee.io/pages/viewpage.action?pageId=957712951&src=contextnavpagetreemode 对账业务 -> 957712951
+https://confluence.shopee.io/pages/viewpage.action?pageId=1067518942&src=contextnavpagetreemode 新账单系统业务沉淀 -> 1067518942
+https://confluence.shopee.io/pages/viewpage.action?pageId=539858286&src=contextnavpagetreemode 结算系统业务沉淀 -> 539858286
+https://confluence.shopee.io/pages/viewpage.action?pageId=1113033304&src=contextnavpagetreemode 计费平台业务沉淀 -> 1113033304
+https://confluence.shopee.io/pages/viewpage.action?pageId=767631040 
+                         -> 767631040
+https://confluence.shopee.io/pages/viewpage.action?pageId=1377774152 
+                         -> 1377774152
+https://confluence.shopee.io/pages/viewpage.action?pageId=767631040&src=breadcrumbs-parent 业务沉淀文档 -> 767631040
+https://confluence.shopee.io/pages/viewpage.action?pageId=942915217 AR账户模块一期 -> 942915217
+https://confluence.shopee.io/pages/viewpage.action?pageId=1211993413 2022.07 [All] 支持 PMS Billing Management Phase 2.0 - back margin collection status tracking for bank transfer -> 1211993413
+https://confluence.shopee.io/pages/viewpage.action?pageId=481907369 [V0.7.0 for Biz&Fin ]Customer-Billing-Invoice -> 481907369
+https://confluence.shopee.io/pages/viewpage.action?pageId=978737641 2、customer接口 -> 978737641
+https://confluence.shopee.io/pages/viewpage.action?pageId=978737843 3、billing接口 -> 978737843
+https://confluence.shopee.io/pages/viewpage.action?pageId=543989714&src=contextnavpagetreemode Finance产品介绍 -> 543989714
+https://confluence.shopee.io/pages/viewpage.action?pageId=519013071&src=contextnavpagetreemode 产品资料 -> 519013071
+https://confluence.shopee.io/pages/viewpage.action?pageId=511778586&src=contextnavpagetreemode 团队周会 -> 511778586
+https://confluence.shopee.io/pages/viewpage.action?pageId=576852414&src=contextnavpagetreemode 团队文件 -> 576852414
+https://confluence.shopee.io/pages/viewpage.action?pageId=504440162&src=contextnavpagetreemode 日常case -> 504440162
+https://confluence.shopee.io/pages/viewpage.action?pageId=1016707285&src=contextnavpagetreemode 账户服务 -> 1016707285
+https://confluence.shopee.io/pages/viewpage.action?pageId=942915217&src=contextnavpagetreemode AR账户模块一期 -> 942915217
+https://confluence.shopee.io/pages/viewpage.action?pageId=1194579773&src=contextnavpagetreemode AR账户优化需求 -> 1194579773
+https://confluence.shopee.io/pages/viewpage.action?pageId=1016706573&src=contextnavpagetreemode 运费域（计费相关） -> 1016706573
+https://confluence.shopee.io/pages/viewpage.action?pageId=1016706644&src=contextnavpagetreemode 对账域 -> 1016706644
+https://confluence.shopee.io/pages/viewpage.action?pageId=1016707480&src=contextnavpagetreemode 账单域 -> 1016707480
+https://confluence.shopee.io/pages/viewpage.action?pageId=1016706698&src=contextnavpagetreemode 结算域 -> 1016706698
+https://confluence.shopee.io/pages/viewpage.action?pageId=1016708056&src=contextnavpagetreemode 开票相关 -> 1016708056
+https://confluence.shopee.io/pages/viewpage.action?pageId=1016707643&src=contextnavpagetreemode 财务分析 -> 1016707643
+https://confluence.shopee.io/pages/viewpage.action?pageId=1016707319&src=contextnavpagetreemode 风控服务 -> 1016707319
+https://confluence.shopee.io/pages/viewpage.action?pageId=1026356216&src=contextnavpagetreemode UI/UX规范 -> 1026356216
+https://confluence.shopee.io/pages/viewpage.action?pageId=168575547&src=contextnavpagetreemode Team Mgmt & Meeting Minutes -> 168575547
+https://confluence.shopee.io/pages/viewpage.action?pageId=1016707285&src=breadcrumbs-parent 账户服务 -> 1016707285
+https://confluence.shopee.io/pages/viewpage.action?pageId=978737071 1、接口使用说明 -> 978737071
+https://confluence.shopee.io/pages/viewpage.action?pageId=1016707285 账户服务 -> 1016707285
+https://confluence.shopee.io/pages/viewpage.action?pageId=633544003&src=contextnavpagetreemode 点线架构下的运费&对账 -> 633544003
+https://confluence.shopee.io/pages/viewpage.action?pageId=463930001&src=contextnavpagetreemode 运费产品梳理 -> 463930001
+https://confluence.shopee.io/pages/viewpage.action?pageId=536118416&src=contextnavpagetreemode 运费-对账产品梳理 -> 536118416
+https://confluence.shopee.io/pages/viewpage.action?pageId=1131881314&src=contextnavpagetreemode Finance 产品介绍V1.0 -> 1131881314
+https://confluence.shopee.io/pages/viewpage.action?pageId=1131881359&src=contextnavpagetreemode Finance产品整体介绍V2.0 -> 1131881359
+https://confluence.shopee.io/pages/viewpage.action?pageId=1488937304&src=contextnavpagetreemode Retail 产品介绍 -> 1488937304
+https://confluence.shopee.io/pages/viewpage.action?pageId=543989714 
+                         -> 543989714
+https://confluence.shopee.io/pages/viewpage.action?pageId=633544003 
+                         -> 633544003
+https://confluence.shopee.io/pages/viewpage.action?pageId=543989714&src=breadcrumbs-parent Finance产品介绍 -> 543989714
+https://confluence.shopee.io/pages/viewpage.action?pageId=517324418 supplier id管理 -> 517324418
+https://confluence.shopee.io/pages/viewpage.action?pageId=312814364 运费服务-ESF计费重量计算服务 -> 312814364
+https://confluence.shopee.io/pages/viewpage.action?pageId=160364381&src=contextnavpagetreemode 00.SLS PM会议纪要 -> 160364381
+https://confluence.shopee.io/pages/viewpage.action?pageId=570098416&src=contextnavpagetreemode 00.【Draft】需求变更流程&记录 -> 570098416
+https://confluence.shopee.io/pages/viewpage.action?pageId=125779724&src=contextnavpagetreemode 100. SLS Productization (点线项目) -> 125779724
+https://confluence.shopee.io/pages/viewpage.action?pageId=956991864&src=contextnavpagetreemode 巴西反欺诈轨迹拉取工具 -> 956991864
+https://confluence.shopee.io/pages/viewpage.action?pageId=1051009026&src=contextnavpagetreemode CB Multi Product架构升级项目 -> 1051009026
+https://confluence.shopee.io/pages/viewpage.action?pageId=1026350389&src=contextnavpagetreemode 点线迁移项目 -> 1026350389
+https://confluence.shopee.io/pages/viewpage.action?pageId=155056295&src=contextnavpagetreemode 方案总览 -> 155056295
+https://confluence.shopee.io/pages/viewpage.action?pageId=251541277&src=contextnavpagetreemode SLS架构需求迁移点线方案 -> 251541277
+https://confluence.shopee.io/pages/viewpage.action?pageId=132679008&src=contextnavpagetreemode 周报格式 -> 132679008
+https://confluence.shopee.io/pages/viewpage.action?pageId=945361161&src=contextnavpagetreemode 流量回放问题汇总 -> 945361161
+https://confluence.shopee.io/pages/viewpage.action?pageId=317827629&src=contextnavpagetreemode 点线渠道迁移 -> 317827629
+https://confluence.shopee.io/pages/viewpage.action?pageId=141146428&src=contextnavpagetreemode 点线项目验收 -> 141146428
+https://confluence.shopee.io/pages/viewpage.action?pageId=131084169&src=contextnavpagetreemode 项目会议纪要 -> 131084169
+https://confluence.shopee.io/pages/viewpage.action?pageId=132682878&src=contextnavpagetreemode 项目执行方案 -> 132682878
+https://confluence.shopee.io/pages/viewpage.action?pageId=132682687&src=contextnavpagetreemode 项目遗留项PM TO DO -> 132682687
+https://confluence.shopee.io/pages/viewpage.action?pageId=294397466&src=contextnavpagetreemode 点线新渠道接入 -> 294397466
+https://confluence.shopee.io/pages/viewpage.action?pageId=517324418&src=contextnavpagetreemode supplier id管理 -> 517324418
+https://confluence.shopee.io/pages/viewpage.action?pageId=335945344&src=contextnavpagetreemode 兼容期间-SLS-LFS-LLS/LCS渠道PM需关注的配置信息 -> 335945344
+https://confluence.shopee.io/pages/viewpage.action?pageId=155056305&src=contextnavpagetreemode 物流网络-LFS -> 155056305
+https://confluence.shopee.io/pages/viewpage.action?pageId=155056302&src=contextnavpagetreemode 点线物流资源-LLS -> 155056302
+https://confluence.shopee.io/pages/viewpage.action?pageId=155056311&src=contextnavpagetreemode 点线履约-LCS -> 155056311
+https://confluence.shopee.io/pages/viewpage.action?pageId=155056317&src=contextnavpagetreemode 公共服务 -> 155056317
+https://confluence.shopee.io/pages/viewpage.action?pageId=1026350275&src=contextnavpagetreemode 点线归档-废弃项目 -> 1026350275
+https://confluence.shopee.io/pages/viewpage.action?pageId=141152260&src=contextnavpagetreemode 103. Allocation & Smart Routing -> 141152260
+https://confluence.shopee.io/pages/viewpage.action?pageId=135222758&src=contextnavpagetreemode 104. Pickup & Delivery -> 135222758
+https://confluence.shopee.io/pages/viewpage.action?pageId=987042725&src=contextnavpagetreemode 207. Exception & Monitoring -> 987042725
+https://confluence.shopee.io/pages/viewpage.action?pageId=141152286&src=contextnavpagetreemode 505. Risk Control & Anti-fraud -> 141152286
+https://confluence.shopee.io/pages/viewpage.action?pageId=142651416&src=contextnavpagetreemode 506. Location & Postal Code -> 142651416
+https://confluence.shopee.io/pages/viewpage.action?pageId=141152274&src=contextnavpagetreemode 507. PN & Message -> 141152274
+https://confluence.shopee.io/pages/viewpage.action?pageId=211616039&src=contextnavpagetreemode 508.运输品 -> 211616039
+https://confluence.shopee.io/pages/viewpage.action?pageId=1278112141&src=contextnavpagetreemode 701.关务系统 -> 1278112141
+https://confluence.shopee.io/pages/viewpage.action?pageId=84093234&src=contextnavpagetreemode 901.Webapi下线 -> 84093234
+https://confluence.shopee.io/pages/viewpage.action?pageId=72983252&src=contextnavpagetreemode 902.OMS铺开文档 -> 72983252
+https://confluence.shopee.io/pages/viewpage.action?pageId=67331561&src=contextnavpagetreemode 999.优化类需求 -> 67331561
+https://confluence.shopee.io/pages/viewpage.action?pageId=334437641&src=contextnavpagetreemode Driver重新分配 -> 334437641
+https://confluence.shopee.io/pages/viewpage.action?pageId=125779724&src=breadcrumbs-expanded 100. SLS Productization (点线项目) -> 125779724
+https://confluence.shopee.io/pages/viewpage.action?pageId=1026350389&src=breadcrumbs-parent 点线迁移项目 -> 1026350389
+https://confluence.shopee.io/pages/viewpage.action?pageId=125779724 100. SLS Productization (点线项目) -> 125779724
+https://confluence.shopee.io/pages/viewpage.action?pageId=1026350389 点线迁移项目 -> 1026350389
+https://confluence.shopee.io/pages/viewpage.action?pageId=70193626&src=contextnavpagetreemode SLS会议纪要 -> 70193626
+https://confluence.shopee.io/pages/viewpage.action?pageId=57082270&src=contextnavpagetreemode SLS PM周会 -> 57082270
+https://confluence.shopee.io/pages/viewpage.action?pageId=160364381 
+                         -> 160364381
+https://confluence.shopee.io/pages/viewpage.action?pageId=67329442&src=contextnavpagetreemode [20190715] CB serviceable area校验现状确认会议纪要 -> 67329442
+https://confluence.shopee.io/pages/viewpage.action?pageId=84107045&src=contextnavpagetreemode [20190907]SLS与Order关于计费接口改善讨论 -> 84107045
+https://confluence.shopee.io/pages/viewpage.action?pageId=58713553&src=contextnavpagetreemode [Meeting Minutes] SC & SLS Dev discussion for Label Printing Tool -> 58713553
+https://confluence.shopee.io/pages/viewpage.action?pageId=88721427&src=contextnavpagetreemode [非集成渠道工具] 产品方案评审会议纪要 - 20190929 -> 88721427
+https://confluence.shopee.io/pages/viewpage.action?pageId=55244730&src=contextnavpagetreemode 190412-[ALL Countries] Removal of “Shipping fee included” as Fallback Logic -> 55244730
+https://confluence.shopee.io/pages/viewpage.action?pageId=55244718&src=contextnavpagetreemode 190412-[CB-TW] 711 & FM LM integration order allocation issue and workaround plan -> 55244718
+https://confluence.shopee.io/pages/viewpage.action?pageId=65179829&src=contextnavpagetreemode 190620-TW线下工具对接讨论会议纪要 -> 65179829
+https://confluence.shopee.io/pages/viewpage.action?pageId=67308233&src=contextnavpagetreemode 190705非集成渠道迁移二期讨论 -> 67308233
+https://confluence.shopee.io/pages/viewpage.action?pageId=90620366&src=contextnavpagetreemode 191014 - Serviceable Area技术方案Review -> 90620366
+https://confluence.shopee.io/pages/viewpage.action?pageId=99754299&src=contextnavpagetreemode 191121-logistics flag的逻辑确认 -> 99754299
+https://confluence.shopee.io/pages/viewpage.action?pageId=104873717&src=contextnavpagetreemode 191219-与SC讨论Webapi-shop相关功能交接 -> 104873717
+https://confluence.shopee.io/pages/viewpage.action?pageId=117617586&src=contextnavpagetreemode 200227-LCS TW渠道迁移相关问题确认 -> 117617586
+https://confluence.shopee.io/pages/viewpage.action?pageId=122703038&src=contextnavpagetreemode 200318 SLS与Order关于One API会议纪要 -> 122703038
+https://confluence.shopee.io/pages/viewpage.action?pageId=134457458&src=contextnavpagetreemode Cancel后续方案会议纪要 -> 134457458
+https://confluence.shopee.io/pages/viewpage.action?pageId=86775602&src=contextnavpagetreemode SC - 面单工具异步任务会议纪要 - 0909 -> 86775602
+https://confluence.shopee.io/pages/viewpage.action?pageId=91919678&src=contextnavpagetreemode serviceable area工具排期确认 -> 91919678
+https://confluence.shopee.io/pages/viewpage.action?pageId=84087519&src=contextnavpagetreemode 【会议纪要】面单工具新增表格组件与取消高度限制需求讨论 -> 84087519
+https://confluence.shopee.io/pages/viewpage.action?pageId=90623483&src=contextnavpagetreemode 非集成渠道迁移技术方案Review -> 90623483
+https://confluence.shopee.io/pages/viewpage.action?pageId=77044485&src=contextnavpagetreemode 非集成渠道运费对比总结 -> 77044485
+https://confluence.shopee.io/pages/viewpage.action?pageId=70193626 
+                         -> 70193626
+https://confluence.shopee.io/pages/viewpage.action?pageId=160364381&src=breadcrumbs-parent 00.SLS PM会议纪要 -> 160364381
+https://confluence.shopee.io/pages/viewpage.action?pageId=67329442 
+                         -> 67329442
+https://confluence.shopee.io/pages/viewpage.action?pageId=160364381&src=breadcrumbs-expanded 00.SLS PM会议纪要 -> 160364381
+https://confluence.shopee.io/pages/viewpage.action?pageId=70193626&src=breadcrumbs-parent SLS会议纪要 -> 70193626
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721649&src=contextnavpagetreemode Company&Team Instruction -> 797721649
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721735&src=contextnavpagetreemode 01 Management Policy / 产品线管理政策 -> 797721735
+https://confluence.shopee.io/pages/viewpage.action?pageId=821125220&src=contextnavpagetreemode 02 New Hire Onboarding Journey / 新人融入计划 -> 821125220
+https://confluence.shopee.io/pages/viewpage.action?pageId=797721907&src=contextnavpagetreemode 03 Development Basis / 研发基础 -> 797721907
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621&src=contextnavpagetreemode 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=90614597&src=contextnavpagetreemode 供应链大促计划 -> 90614597
+https://confluence.shopee.io/pages/viewpage.action?pageId=1114935746&src=contextnavpagetreemode 大促筹备SOP -> 1114935746
+https://confluence.shopee.io/pages/viewpage.action?pageId=912419359&src=contextnavpagetreemode 容量评估SOP -> 912419359
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020112&src=contextnavpagetreemode 大促系统 -> 902020112
+https://confluence.shopee.io/pages/viewpage.action?pageId=1073453197&src=contextnavpagetreemode 前置预案自动化-技术方案 -> 1073453197
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020221&src=contextnavpagetreemode 基线监控体系-技术方案 -> 902020221
+https://confluence.shopee.io/pages/viewpage.action?pageId=1163805217&src=contextnavpagetreemode 大促OPS变更优化-技术方案 -> 1163805217
+https://confluence.shopee.io/pages/viewpage.action?pageId=733134286&src=contextnavpagetreemode 大促系统流程设计 -> 733134286
+https://confluence.shopee.io/pages/viewpage.action?pageId=851775383&src=contextnavpagetreemode 大促系统重要表格汇总 -> 851775383
+https://confluence.shopee.io/pages/viewpage.action?pageId=904452986&src=contextnavpagetreemode 容量评估自动化-技术方案 -> 904452986
+https://confluence.shopee.io/pages/viewpage.action?pageId=1248467848&src=contextnavpagetreemode 履约后链路压测在SLS实施 -> 1248467848
+https://confluence.shopee.io/pages/viewpage.action?pageId=1390069677&src=contextnavpagetreemode 应急预案告警平台模块优化技术方案 -> 1390069677
+https://confluence.shopee.io/pages/viewpage.action?pageId=1471545993&src=contextnavpagetreemode 应急预案需求文档 -> 1471545993
+https://confluence.shopee.io/pages/viewpage.action?pageId=1294689728&src=contextnavpagetreemode 指导文档 -> 1294689728
+https://confluence.shopee.io/pages/viewpage.action?pageId=1223630806&src=contextnavpagetreemode 故障注入技术方案 -> 1223630806
+https://confluence.shopee.io/pages/viewpage.action?pageId=885001178&src=contextnavpagetreemode 核心链路-设计方案集 -> 885001178
+https://confluence.shopee.io/pages/viewpage.action?pageId=1054843534&src=contextnavpagetreemode 混沌工程技术方案 -> 1054843534
+https://confluence.shopee.io/pages/viewpage.action?pageId=1052242886&src=contextnavpagetreemode 资源管控 -> 1052242886
+https://confluence.shopee.io/pages/viewpage.action?pageId=948327207&src=contextnavpagetreemode 链路稳定性探测技术方案 -> 948327207
+https://confluence.shopee.io/pages/viewpage.action?pageId=767631067&src=contextnavpagetreemode 预案下发日常化设计 -> 767631067
+https://confluence.shopee.io/pages/viewpage.action?pageId=1267144367&src=contextnavpagetreemode 演练SOP -> 1267144367
+https://confluence.shopee.io/pages/viewpage.action?pageId=858131627&src=contextnavpagetreemode SLS(Shopee Logistic) -> 858131627
+https://confluence.shopee.io/pages/viewpage.action?pageId=865078141&src=contextnavpagetreemode SPX(Shopee Xpress) -> 865078141
+https://confluence.shopee.io/pages/viewpage.action?pageId=865079720&src=contextnavpagetreemode WMS(Warehouse Managment System) -> 865079720
+https://confluence.shopee.io/pages/viewpage.action?pageId=877396892&src=contextnavpagetreemode 内部项目(CICD & APP) -> 877396892
+https://confluence.shopee.io/pages/viewpage.action?pageId=897324703&src=contextnavpagetreemode 质量管理 -> 897324703
+https://confluence.shopee.io/pages/viewpage.action?pageId=9802654&src=contextnavpagetreemode 内部分享与培训 -> 9802654
+https://confluence.shopee.io/pages/viewpage.action?pageId=885002462&src=contextnavpagetreemode 废弃文档归总 -> 885002462
+https://confluence.shopee.io/pages/viewpage.action?pageId=889529756&src=contextnavpagetreemode 历史文档归总 -> 889529756
+https://confluence.shopee.io/pages/viewpage.action?pageId=1449307474&src=contextnavpagetreemode SCTP (Supply Chain Tech Platform) -> 1449307474
+https://confluence.shopee.io/pages/viewpage.action?pageId=858132737&src=contextnavpagetreemode Finance(logistic finance) -> 858132737
+https://confluence.shopee.io/pages/viewpage.action?pageId=91922582&src=contextnavpagetreemode 线上值班——By Product -> 91922582
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020112 
+                         -> 902020112
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621&src=breadcrumbs-parent 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=885001178 
+                         -> 885001178
+https://confluence.shopee.io/pages/viewpage.action?pageId=849056621&src=breadcrumbs-expanded 04 Big Promotion Management / 大促管理 -> 849056621
+https://confluence.shopee.io/pages/viewpage.action?pageId=902020112&src=breadcrumbs-parent 大促系统 -> 902020112
+https://confluence.shopee.io/pages/viewpage.action?pageId=1054843534 
+                         -> 1054843534
+https://confluence.shopee.io/pages/viewpage.action?pageId=814729741 Golang 常见性能问题总结 -> 814729741
