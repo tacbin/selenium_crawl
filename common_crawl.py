@@ -61,10 +61,6 @@ class CommonCrawl:
                 self.__next_url(browser)
 
             time.sleep(10)
-            cookies = browser.get_cookies()
-            json_cookies = json.dumps(cookies)
-            with open('cookies.json', 'w') as f:
-                f.write(json_cookies)
             browser.close()
             # 处理结果的策略
             self.before_send()
@@ -192,9 +188,19 @@ class CommonCrawl:
     # def __get_proxy(self):
     #     return requests.get("http://127.0.0.1:5010/get/").text
 
-    def load_cookie(self, browser: WebDriver):
-        if os.path.exists('cookies.json'):
-            with open('cookies.json', 'r', encoding='utf-8') as f:
+    def load_cookie(self, browser: WebDriver, file_name: str):
+        if os.path.exists(file_name):
+            with open(file_name, 'r', encoding='utf-8') as f:
                 list_cookies = json.loads(f.read())
-            for cookie in list_cookies:
-                browser.add_cookie(cookie)
+                result = []
+                for c in list_cookies:
+                    if "expiry" in c:
+                        continue
+                    result.append(c)
+                return result
+
+    def save_cookie(self, browser: WebDriver, file_name: str):
+        cookies = browser.get_cookies()
+        json_cookies = json.dumps(cookies)
+        with open(file_name, 'w') as f:
+            f.write(json_cookies)

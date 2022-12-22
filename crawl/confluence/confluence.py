@@ -37,6 +37,12 @@ class ConfluenceCrawl(CommonCrawl):
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'ConfluenceCrawl start crawl..',
               browser.current_url)
         noted = False
+        # 获取cookie
+        list_cookies = self.load_cookie(browser, 'confluence.json')
+        browser.delete_all_cookies()
+        for cookie in list_cookies:
+            browser.add_cookie(cookie_dict=cookie)
+        browser.refresh()
         while "https://confluence.shopee.io/pages/" not in browser.current_url:
             if not noted:
                 print("请登录后操作..")
@@ -68,6 +74,7 @@ class ConfluenceCrawl(CommonCrawl):
                 # 点击当前页
                 browser.execute_script(f"location.href='{root.url}';")
                 time.sleep(2)
+                self.save_cookie(browser,'confluence.json')
                 self.save_img(browser, 0, root.name)
                 time.sleep(8)
                 eles = browser.find_elements(By.XPATH, "//a[contains(@id,'action-menu-link')]")
