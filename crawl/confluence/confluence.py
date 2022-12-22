@@ -40,9 +40,11 @@ class ConfluenceCrawl(CommonCrawl):
         # 获取cookie
         list_cookies = self.load_cookie(browser, 'confluence.json')
         browser.delete_all_cookies()
+        time.sleep(10)
         for cookie in list_cookies:
             browser.add_cookie(cookie_dict=cookie)
         browser.refresh()
+        time.sleep(5)
         while "https://confluence.shopee.io/pages/" not in browser.current_url:
             if not noted:
                 print("请登录后操作..")

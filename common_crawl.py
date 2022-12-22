@@ -10,6 +10,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from typing import List
 
+import redis
 import selenium
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.webdriver import WebDriver
@@ -189,18 +190,30 @@ class CommonCrawl:
     #     return requests.get("http://127.0.0.1:5010/get/").text
 
     def load_cookie(self, browser: WebDriver, file_name: str):
-        if os.path.exists(file_name):
-            with open(file_name, 'r', encoding='utf-8') as f:
-                list_cookies = json.loads(f.read())
-                result = []
-                for c in list_cookies:
-                    if "expiry" in c:
-                        continue
-                    result.append(c)
-                return result
+        cookies = CommonInstance.Redis_client.get(file_name)
+        result = []
+        if cookies is not None:
+            list_cookies = json.loads(cookies)
+            for c in list_cookies:
+                if "expiry" in c:
+                    continue
+                result.append(c)
+            return result
+        return result
+
+        # if os.path.exists(file_name):
+        #     with open(file_name, 'r', encoding='utf-8') as f:
+        #         list_cookies = json.loads(f.read())
+        #         result = []
+        #         for c in list_cookies:
+        #             if "expiry" in c:
+        #                 continue
+        #             result.append(c)
+        #         return result
 
     def save_cookie(self, browser: WebDriver, file_name: str):
         cookies = browser.get_cookies()
         json_cookies = json.dumps(cookies)
-        with open(file_name, 'w') as f:
-            f.write(json_cookies)
+        # with open(file_name, 'w') as f:
+            # f.write(json_cookies)
+        CommonInstance.Redis_client.set(file_name, json_cookies)
