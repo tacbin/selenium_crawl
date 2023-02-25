@@ -5,6 +5,9 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 from crawl.beike.beike_crawl import BeiKeCrawl
 from crawl.beike.cs_beike_crawl import CsBeiKeCrawl
+from crawl.big_company_jobs.alibaba import AlibabaCrawl
+from crawl.big_company_jobs.baidu import BaiDuCrawl
+from crawl.big_company_jobs.bytedance import ByteDanceCrawl
 from crawl.code_task.wei_ke_crawl import WeiKeCrawl
 from crawl.code_task.zhu_ba_jie_crawl import ZhuBaJieCrawl
 from crawl.hok_task.dai_lian_ma_ma_crawl import DaiLianMaMaCrawl
@@ -15,6 +18,7 @@ from threads.qq_robot_thread import QQRobotThreadControl
 
 def empty_run():
     print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'empty running..')
+
 
 # 若debug报错，启动时设置下值
 # PYDEVD_USE_CYTHON=NO
@@ -29,24 +33,10 @@ if __name__ == '__main__':
     qq_thread.start()
 
     # 创建后台执行的 schedulers
-    tasks = [ZhuBaJieCrawl(), WeiKeCrawl(), BeiKeCrawl(), CsBeiKeCrawl()]
+    tasks = [ZhuBaJieCrawl(), WeiKeCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
+             BaiDuCrawl()]
+    # tasks = [BaiDuCrawl()]
     while True:
         for task in tasks:
             task.run()
-            time.sleep(60 * 10)
-
-    # scheduler = BackgroundScheduler()
-    # scheduler.add_job(empty_run, 'interval', seconds=300)
-    # # 添加调度任务
-    # zbj_crawl = ZhuBaJieCrawl()
-    # scheduler.add_job(zbj_crawl.run, 'interval', seconds=300)
-    # wei_ke_crawl = WeiKeCrawl()
-    # scheduler.add_job(wei_ke_crawl.run, 'interval', seconds=350)
-    # bei_ke_crawl = BeiKeCrawl()
-    # scheduler.add_job(bei_ke_crawl.run, 'interval', seconds=400)
-    # cs_bei_ke_crawl = CsBeiKeCrawl()
-    # scheduler.add_job(cs_bei_ke_crawl.run, 'interval', seconds=450)
-    #
-    # # 启动调度任务
-    # print('启动调度任务')
-    # scheduler.start()
+            time.sleep(60 * 10 / len(tasks))
