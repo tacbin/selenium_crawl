@@ -17,8 +17,7 @@ class ZhuBaJieCrawl(CommonCrawl):
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
-        self.urls = ["https://task.zbj.com/hall/list/h1", "https://task.zbj.com/hall/list/h7",
-                     "https://task.zbj.com/hall/list/h9"]
+        self.urls = ["https://task.zbj.com/hall/waibao-all-0-p1"]
         for url in self.urls:
             self.result_map[url] = []
 
@@ -32,25 +31,25 @@ class ZhuBaJieCrawl(CommonCrawl):
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)
-        tasks = selector.xpath('//div[@class="result-search-item"]')
+        tasks = selector.xpath('//div[@class="search-card-box"]')
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
-            title = sel.xpath('//div//h4/@title')
+            title = sel.xpath('//div[@class="outsource-card-title"]/text()')
             title = title[0] if len(title) > 0 else ''
             title = title.replace('\n', '')
 
-            detail = sel.xpath("//div[@class='pub-desc text-line-overflow-two']/text()")
+            detail = sel.xpath("//p[@class='outsource-card-desc']/text()")
             detail = detail[0] if len(detail) > 0 else ''
             detail = detail.replace('\n', '')
 
-            money = sel.xpath('//div[@class="pub-handles"]//span/text()')
+            money = sel.xpath('//div[@class="outsource-card-price"]/text()')
             money = money[0] if len(money) > 0 else ''
             money = money.replace('\n', '')
 
-            url = sel.xpath('//h4//a/@href')
+            url = sel.xpath('//a/@href')
             url = url[0] if len(url) > 0 else ''
             url = url.replace('\n', '')
-            url = url.replace('//', '')
+            url = "https://task.zbj.com" + url.replace('//', '')
 
             self.result_map[browser.current_url].append(ZhuBaJieTaskResult(title, detail, money, url))
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'zhu ba jie end crawl..', browser.current_url)
@@ -66,7 +65,7 @@ class ZhuBaJieCrawl(CommonCrawl):
                       '详情:%s\n' \
                       '价格:%s\n' \
                       '链接:%s' % (data.title, data.detail, data.money, data.url)
-                QQRobot.send_group_msg(461936572,[miraicle.Plain(txt)])
+                QQRobot.send_group_msg(461936572, [miraicle.Plain(txt)])
                 QQRobot.send_group_msg(963961013, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
 

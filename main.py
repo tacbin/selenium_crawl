@@ -16,7 +16,9 @@ from threads.qq_robot_thread import QQRobotThreadControl
 def empty_run():
     print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'empty running..')
 
-
+# 若debug报错，启动时设置下值
+# PYDEVD_USE_CYTHON=NO
+# PYDEVD_USE_FRAME_EVAL=NO
 if __name__ == '__main__':
     init_middleware()
 
