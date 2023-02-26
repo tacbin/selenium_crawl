@@ -12,65 +12,70 @@ from common.qq_robot import QQRobot
 from common_crawl import CommonCrawl
 
 
-class BaiDuCrawl(CommonCrawl):
+class VivoCrawl(CommonCrawl):
     def __init__(self):
         super().__init__()
         self.result_map = {}
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
-        self.urls = ["https://talent.baidu.com/jobs/social-list?search="]
+        self.urls = [
+            "https://hr.vivo.com/wt/vivo/web/templet1000/index/corpwebPosition1000vivo!gotoPostListForAjax?brandCode=1&useForm=0&recruitType=2&showComp=true"]
         for url in self.urls:
             self.result_map[url] = []
 
-        self.file_location = 'BaiDuCrawl'
+        self.file_location = 'VivoCrawl  '
         self.is_save_img = False
         self.mode = 1
         return browser
 
     def parse(self, browser: WebDriver):
-        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'BaiDuCrawl start crawl..', browser.current_url)
-        eles = browser.find_elements(By.XPATH,
-                                     '//div[@class="brick-checkbox-mark"]')
-        eles[0].click()
-        eles = browser.find_elements(By.XPATH, '//div[@class="brick-checkbox-mark"]')
-        eles[6].click()
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'VivoCrawl   start crawl..', browser.current_url)
         time.sleep(5)
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)
-        tasks = selector.xpath('//div[@class="post-item__D6QB-"]')
+        tasks = selector.xpath('//div[@class="job-item"]')
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
-            title = sel.xpath("//div[@class='post-title-content__5QLz1']//span/text()")
+            title = sel.xpath('//h4[@class="job-title"]/text()')
             title = title[0] if len(title) > 0 else ''
             title = title.replace('\n', '')
+            title = title.replace(' ', '')
 
-            detail = sel.xpath("//div[@class='post-content__4I3JT']/text()")
+            cate = sel.xpath('//div[@class="job-info"]//text()')
+            cate = cate[0] if len(cate) > 0 else ''
+            cate = cate.replace('\n', '')
+            cate = cate.replace(' ', '')
+
+            detail = sel.xpath('//div[@class="job-description introduceDetail"]//text()')
             detail = detail[0] if len(detail) > 0 else ''
             detail = detail.replace('\n', '')
+            detail = detail.replace(' ', '')
 
-            url = "https://talent.baidu.com/jobs/social-list?search=&"+title+detail
+            url = 'https://hr.vivo.com/wt/vivo/web/templet1000/index/corpwebPosition1000vivo!gotoPostListForAjax?brandCode=1&useForm=0&recruitType=2&showComp=true&&' + title + cate
 
-            self.result_map[browser.current_url].append(TaskResult(title, detail, url))
-        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'BaiDuCrawl end crawl..', browser.current_url)
+            self.result_map[browser.current_url].append(TaskResult(title, detail, cate, url))
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'VivoCrawl   end crawl..', browser.current_url)
 
     def custom_send(self):
         for url in self.result_map:
-            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'BaiDuCrawl start custom_send..', url)
+            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'VivoCrawl   start custom_send..', url)
             for data in self.result_map[url]:
                 if CommonInstance.Redis_client.get(data.url) is not None:
                     continue
-                txt = '【百度招聘】\n' \
+                txt = '【VIVO招聘】\n' \
                       '岗位名称：%s\n' \
+                      '类目:%s\n' \
                       '详情:%s\n' \
-                      '链接:%s' % (data.title, data.detail, data.url.split("&")[0])
+                      '链接:%s' % (data.title, data.cate, data.detail, data.url.split("&&")[0])
                 QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
 
 
 class TaskResult:
-    def __init__(self, title, detail, url):
+    def __init__(self, title, detail, cate, url):
         self.title = title
         self.detail = detail
+        self.cate = cate
         self.url = url

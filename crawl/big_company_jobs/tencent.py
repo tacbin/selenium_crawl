@@ -12,67 +12,66 @@ from common.qq_robot import QQRobot
 from common_crawl import CommonCrawl
 
 
-class DaJiangCrawl(CommonCrawl):
+class TencentCrawl(CommonCrawl):
     def __init__(self):
         super().__init__()
         self.result_map = {}
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
-        self.urls = ["https://we.dji.com/zh-CN/social"]
+        self.urls = ["https://careers.tencent.com/search.html?pcid=40001"]
         for url in self.urls:
             self.result_map[url] = []
 
-        self.file_location = 'DaJiangCrawl '
+        self.file_location = 'TencentCrawl  '
         self.is_save_img = False
         self.mode = 1
         return browser
 
     def parse(self, browser: WebDriver):
-        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'DaJiangCrawl  start crawl..', browser.current_url)
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'TencentCrawl   start crawl..', browser.current_url)
         time.sleep(5)
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)
-        tasks = selector.xpath('//li[@class="social_position_card__epffd"]')
+        tasks = selector.xpath('//div[@class="recruit-list"]')
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
-            title = sel.xpath('//span[@class="PositionCard_text__2BdZa"]/text()')
+            title = sel.xpath('//h4[@class="recruit-title"]/text()')
             title = title[0] if len(title) > 0 else ''
             title = title.replace('\n', '')
 
-            place = sel.xpath('//p[@class="PositionCard_keyword__FFaH5"]/text()')
-            place = place[0] if len(place) > 0 else ''
-            place = place.replace('\n', '')
+            cate = sel.xpath('//p[@class="recruit-tips"]//text()')
+            cate = cate[0] if len(cate) > 0 else ''
+            cate = cate.replace('\n', '')
 
-            detail = sel.xpath('//p[@class="PositionCard_phase__o1mPk"]/text()')
-            detail = '\n'.join(detail)
+            detail = sel.xpath('//p[@class="recruit-text"]//text()')
+            detail = detail[0] if len(detail) > 0 else ''
+            detail = detail.replace('\n', '')
 
-            url = sel.xpath('//a/@href')
-            url = url[0] if len(url) > 0 else ''
-            url = 'https://we.dji.com/zh-CN/social' + url.replace('\n', '')
+            url = 'https://careers.tencent.com/search.html?pcid=40001&'+title+cate+time.strftime('%Y-%m-%d')
 
-            self.result_map[browser.current_url].append(TaskResult(title, place, detail, url))
-        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'DaJiangCrawl  end crawl..', browser.current_url)
+            self.result_map[browser.current_url].append(TaskResult(title, detail, cate, url))
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'TencentCrawl   end crawl..', browser.current_url)
 
     def custom_send(self):
         for url in self.result_map:
-            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'DaJiangCrawl  start custom_send..', url)
+            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'TencentCrawl   start custom_send..', url)
             for data in self.result_map[url]:
                 if CommonInstance.Redis_client.get(data.url) is not None:
                     continue
-                txt = '【大疆招聘】\n' \
+                txt = '【腾讯招聘】\n' \
                       '岗位名称：%s\n' \
-                      '%s\n' \
-                      '详情:%s\n' \
-                      '链接:%s' % (data.title, data.place, data.detail, data.url)
+                      '类目:%s\n' \
+                      '详情：%s\n' \
+                      '链接:%s' % (data.title, data.cate, data.detail, data.url.split("&")[0])
                 QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
 
 
 class TaskResult:
-    def __init__(self, title, place, detail, url):
+    def __init__(self, title, detail, cate, url):
         self.title = title
-        self.place = place
         self.detail = detail
+        self.cate = cate
         self.url = url

@@ -60,8 +60,8 @@ class AlibabaCrawl(CommonCrawl):
             for data in self.result_map[url]:
                 if CommonInstance.Redis_client.get(data.url) is not None:
                     continue
-                txt = '阿里巴巴\n' \
-                      '【%s】\n' \
+                txt = '【阿里巴巴招聘】\n' \
+                      '岗位名称：%s\n' \
                       '地点：%s\n' \
                       '发布时间:%s\n' \
                       '链接:%s' % (data.title, data.place, data.update_time, data.url.split("&")[0])

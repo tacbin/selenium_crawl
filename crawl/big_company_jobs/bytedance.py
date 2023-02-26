@@ -63,8 +63,8 @@ class ByteDanceCrawl(CommonCrawl):
             for data in self.result_map[url]:
                 if CommonInstance.Redis_client.get(data.url) is not None:
                     continue
-                txt = '字节跳动\n' \
-                      '【%s】\n' \
+                txt = '【字节跳动招聘】\n' \
+                      '岗位名称：%s\n' \
                       '详情:%s\n' \
                       '%s\n' \
                       '链接:%s' % (data.title, data.detail, data.job_id, data.url)
