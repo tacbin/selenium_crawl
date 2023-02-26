@@ -29,13 +29,6 @@ class AlibabaCrawl(CommonCrawl):
 
     def parse(self, browser: WebDriver):
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'AlibabaCrawl start crawl..', browser.current_url)
-        eles = browser.find_elements(By.XPATH,
-                                     '//div[@aria-label="技术类"]//span[contains(@class,"next-tree-switcher next-noline")]')
-        eles[0].click()
-        eles = browser.find_elements(By.XPATH, '//input[@aria-label="开发"]')
-        eles[0].click()
-        eles = browser.find_elements(By.XPATH, '//input[@aria-label="深圳"]')
-        eles[0].click()
         time.sleep(5)
         page = browser.page_source
         etree = html.etree
@@ -47,13 +40,17 @@ class AlibabaCrawl(CommonCrawl):
             title = title[0] if len(title) > 0 else ''
             title = title.replace('\n', '')
 
+            place = sel.xpath('//div[@class="_3vj2eS7k7Mwpko5_6OSRu2"]/text()')
+            place = place[1] if len(place) > 0 else ''
+            place = place.replace('\n', '')
+
             update_time = sel.xpath("//div[@class='_3Jn5Z6PZA5H7Auzy0xlXu2']/text()")
             update_time = update_time[0] if len(update_time) > 0 else ''
             update_time = update_time.replace('\n', '')
 
-            url = "https://talent.alibaba.com/off-campus/position-list?lang=zh&"+title+update_time
+            url = "https://talent.alibaba.com/off-campus/position-list?lang=zh&" + title + update_time
 
-            self.result_map[browser.current_url].append(TaskResult(title, update_time, url))
+            self.result_map[browser.current_url].append(TaskResult(title, place, update_time, url))
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'AlibabaCrawl end crawl..', browser.current_url)
 
     def custom_send(self):
@@ -64,14 +61,16 @@ class AlibabaCrawl(CommonCrawl):
                     continue
                 txt = '阿里巴巴\n' \
                       '【%s】\n' \
+                      '地点：%s\n' \
                       '发布时间:%s\n' \
-                      '链接:%s' % (data.title, data.update_time, data.url.split("&")[0])
+                      '链接:%s' % (data.title, data.place, data.update_time, data.url.split("&")[0])
                 QQRobot.send_group_msg(461936572, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
 
 
 class TaskResult:
-    def __init__(self, title, update_time, url):
+    def __init__(self, title, place, update_time, url):
         self.title = title
+        self.place = place
         self.update_time = update_time
         self.url = url
