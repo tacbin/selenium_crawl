@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
 
 from common.common_instantce import CommonInstance
+from common.constants import JobGroupConstant
 from common.qq_robot import QQRobot
 from common_crawl import CommonCrawl
 
@@ -64,7 +65,7 @@ class BaiDuCrawl(CommonCrawl):
                       '【%s】\n' \
                       '详情:%s\n' \
                       '链接:%s' % (data.title, data.detail, data.url.split("&")[0])
-                QQRobot.send_group_msg(461936572, [miraicle.Plain(txt)])
+                QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
 
 

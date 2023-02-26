@@ -8,6 +8,7 @@ from crawl.beike.cs_beike_crawl import CsBeiKeCrawl
 from crawl.big_company_jobs.alibaba import AlibabaCrawl
 from crawl.big_company_jobs.baidu import BaiDuCrawl
 from crawl.big_company_jobs.bytedance import ByteDanceCrawl
+from crawl.big_company_jobs.dajiang import DaJiangCrawl
 from crawl.code_task.wei_ke_crawl import WeiKeCrawl
 from crawl.code_task.zhu_ba_jie_crawl import ZhuBaJieCrawl
 from crawl.hok_task.dai_lian_ma_ma_crawl import DaiLianMaMaCrawl
@@ -34,8 +35,8 @@ if __name__ == '__main__':
 
     # 创建后台执行的 schedulers
     tasks = [ZhuBaJieCrawl(), WeiKeCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
-             BaiDuCrawl()]
-    # tasks = [BaiDuCrawl()]
+             BaiDuCrawl(),DaJiangCrawl()]
+    # tasks = [DaJiangCrawl()]
     while True:
         for task in tasks:
             task.run()

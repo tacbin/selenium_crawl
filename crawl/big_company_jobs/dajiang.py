@@ -12,66 +12,67 @@ from common.qq_robot import QQRobot
 from common_crawl import CommonCrawl
 
 
-class AlibabaCrawl(CommonCrawl):
+class DaJiangCrawl(CommonCrawl):
     def __init__(self):
         super().__init__()
         self.result_map = {}
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
-        self.urls = ["https://talent.alibaba.com/off-campus/position-list?lang=zh"]
+        self.urls = ["https://we.dji.com/zh-CN/social"]
         for url in self.urls:
             self.result_map[url] = []
 
-        self.file_location = 'AlibabaCrawl'
+        self.file_location = 'DaJiangCrawl '
         self.is_save_img = False
         self.mode = 1
         return browser
 
     def parse(self, browser: WebDriver):
-        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'AlibabaCrawl start crawl..', browser.current_url)
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'DaJiangCrawl  start crawl..', browser.current_url)
         time.sleep(5)
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)
-        tasks = selector.xpath('//div[@class="_2AOmjKmlEtuR_KEoehWYcN"]')
+        tasks = selector.xpath('//li[@class="social_position_card__epffd"]')
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
-            title = sel.xpath("//div[@class='_1RRlPtjyYmeDGCWt9lrk2P _3vj2eS7k7Mwpko5_6OSRu2']/text()")
+            title = sel.xpath('//span[@class="PositionCard_text__2BdZa"]/text()')
             title = title[0] if len(title) > 0 else ''
             title = title.replace('\n', '')
 
-            place = sel.xpath('//div[@class="_3vj2eS7k7Mwpko5_6OSRu2"]/text()')
-            place = place[1] if len(place) > 0 else ''
+            place = sel.xpath('//p[@class="PositionCard_keyword__FFaH5"]/text()')
+            place = place[0] if len(place) > 0 else ''
             place = place.replace('\n', '')
 
-            update_time = sel.xpath("//div[@class='_3Jn5Z6PZA5H7Auzy0xlXu2']/text()")
-            update_time = update_time[0] if len(update_time) > 0 else ''
-            update_time = update_time.replace('\n', '')
+            detail = sel.xpath('//p[@class="PositionCard_phase__o1mPk"]/text()')
+            detail = '\n'.join(detail)
 
-            url = "https://talent.alibaba.com/off-campus/position-list?lang=zh&" + title + update_time
+            url = sel.xpath('//a/@href')
+            url = url[0] if len(url) > 0 else ''
+            url = 'https://we.dji.com/zh-CN/social' + url.replace('\n', '')
 
-            self.result_map[browser.current_url].append(TaskResult(title, place, update_time, url))
-        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'AlibabaCrawl end crawl..', browser.current_url)
+            self.result_map[browser.current_url].append(TaskResult(title, place, detail, url))
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'DaJiangCrawl  end crawl..', browser.current_url)
 
     def custom_send(self):
         for url in self.result_map:
-            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'AlibabaCrawl start custom_send..', url)
+            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'DaJiangCrawl  start custom_send..', url)
             for data in self.result_map[url]:
                 if CommonInstance.Redis_client.get(data.url) is not None:
                     continue
-                txt = '阿里巴巴\n' \
+                txt = '大疆\n' \
                       '【%s】\n' \
-                      '地点：%s\n' \
-                      '发布时间:%s\n' \
-                      '链接:%s' % (data.title, data.place, data.update_time, data.url.split("&")[0])
+                      '%s\n' \
+                      '详情:%s\n' \
+                      '链接:%s' % (data.title, data.place, data.detail, data.url)
                 QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
 
 
 class TaskResult:
-    def __init__(self, title, place, update_time, url):
+    def __init__(self, title, place, detail, url):
         self.title = title
         self.place = place
-        self.update_time = update_time
+        self.detail = detail
         self.url = url
