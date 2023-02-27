@@ -41,14 +41,15 @@ class CommonCrawl:
             # 代理
             # proxy = self.__get_proxy()
             # fire_fox_options.add_argument('--proxy-server=' + proxy)
-            if platform.system().lower() == 'linux':
-                fire_fox_options.add_argument('--headless')
-                browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
-            elif platform.system().lower() == 'darwin':
-                browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./mac_geckodriver')
-            else:
-                # fire_fox_options.add_argument('--headless')
-                browser = selenium.webdriver.Firefox(options=fire_fox_options)
+            if browser is None:
+                if platform.system().lower() == 'linux':
+                    fire_fox_options.add_argument('--headless')
+                    browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
+                elif platform.system().lower() == 'darwin':
+                    browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./mac_geckodriver')
+                else:
+                    # fire_fox_options.add_argument('--headless')
+                    browser = selenium.webdriver.Firefox(options=fire_fox_options)
             browser = self.before_crawl(args, browser)
             for i in range(0, len(self.urls)):
                 browser.execute_script(f"location.href='{self.urls[i]}';")
@@ -215,5 +216,5 @@ class CommonCrawl:
         cookies = browser.get_cookies()
         json_cookies = json.dumps(cookies)
         # with open(file_name, 'w') as f:
-            # f.write(json_cookies)
+        # f.write(json_cookies)
         CommonInstance.Redis_client.set(file_name, json_cookies)
