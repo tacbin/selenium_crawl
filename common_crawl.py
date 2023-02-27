@@ -42,6 +42,7 @@ class CommonCrawl:
             # proxy = self.__get_proxy()
             # fire_fox_options.add_argument('--proxy-server=' + proxy)
             if browser is None:
+                print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), "start to init browser")
                 if platform.system().lower() == 'linux':
                     fire_fox_options.add_argument('--headless')
                     browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
@@ -50,6 +51,8 @@ class CommonCrawl:
                 else:
                     # fire_fox_options.add_argument('--headless')
                     browser = selenium.webdriver.Firefox(options=fire_fox_options)
+            else:
+                print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), "skip to init browser")
             browser = self.before_crawl(args, browser)
             for i in range(0, len(self.urls)):
                 browser.execute_script(f"location.href='{self.urls[i]}';")
