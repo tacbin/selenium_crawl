@@ -80,6 +80,7 @@ class CommonCrawl:
             if browser is None:
                 return
             browser.close()
+            browser = None
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         return browser
