@@ -66,7 +66,7 @@ class CommonCrawl:
                 self.__next_url(browser)
 
             time.sleep(10)
-            browser.close()
+            # browser.close()
             # 处理结果的策略
             self.before_send()
             if self.mode == 0:

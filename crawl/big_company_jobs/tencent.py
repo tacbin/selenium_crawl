@@ -19,7 +19,9 @@ class TencentCrawl(CommonCrawl):
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
-        self.urls = ["https://careers.tencent.com/search.html?pcid=40001"]
+        self.urls = ["https://careers.tencent.com/search.html?pcid=40001",
+                     "https://careers.tencent.com/search.html?pcid=40006",
+                     "https://careers.tencent.com/search.html?query=ot_40003001,ot_40003002,ot_40003003"]
         for url in self.urls:
             self.result_map[url] = []
 
@@ -49,7 +51,7 @@ class TencentCrawl(CommonCrawl):
             detail = detail[0] if len(detail) > 0 else ''
             detail = detail.replace('\n', '')
 
-            url = 'https://careers.tencent.com/search.html?pcid=40001&'+title+cate+time.strftime('%Y-%m-%d')
+            url = 'https://careers.tencent.com/search.html?pcid=40001&' + title + cate + time.strftime('%Y-%m-%d')
 
             self.result_map[browser.current_url].append(TaskResult(title, detail, cate, url))
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'TencentCrawl   end crawl..', browser.current_url)
