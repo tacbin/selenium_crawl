@@ -35,6 +35,12 @@ class OppoCrawl(CommonCrawl):
         etree = html.etree
         selector = etree.HTML(page)
         tasks = selector.xpath('//div[@class="home-list-box"]')
+        eles = browser.find_elements(By.XPATH,
+                                     '//div[@class="home-list-box"]')
+        i = 0
+        if len(tasks) != len(eles):
+            print('error')
+            return
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
             title = sel.xpath('//span[@class="home-list-box-title-name"]/text()')
@@ -45,7 +51,18 @@ class OppoCrawl(CommonCrawl):
             cate = cate[0] if len(cate) > 0 else ''
             cate = cate.replace('\n', '')
 
-            url = 'https://career.oppo.com/pc/post/list&' + title + cate
+            eles[i].click()
+            i += 1
+            time.sleep(2)
+            # 切换到第二个窗口
+            windows = browser.window_handles
+            browser.switch_to.window(windows[-1])
+            url = browser.current_url
+            if len(browser.window_handles) > 1:
+                browser.close()
+                time.sleep(3)
+            browser.switch_to.window(windows[0])
+            # url = 'https://career.oppo.com/pc/post/list&' + title + cate
 
             self.result_map[browser.current_url].append(TaskResult(title, '', cate, url))
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'OppoCrawl   end crawl..', browser.current_url)
@@ -59,9 +76,10 @@ class OppoCrawl(CommonCrawl):
                 txt = '【OPPO招聘】\n' \
                       '岗位名称：%s\n' \
                       '类目:%s\n' \
-                      '链接:%s' % (data.title, data.cate, data.url.split("&")[0])
+                      '链接:%s' % (data.title, data.cate, data.url)
                 QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'OppoCrawl   end custom_send..', url)
 
 
 class TaskResult:

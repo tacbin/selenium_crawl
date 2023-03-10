@@ -69,6 +69,7 @@ class TencentCrawl(CommonCrawl):
                       '链接:%s' % (data.title, data.cate, data.detail, data.url.split("&")[0])
                 QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'TencentCrawl   end custom_send..', url)
 
 
 class TaskResult:

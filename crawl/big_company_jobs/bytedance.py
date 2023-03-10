@@ -46,7 +46,7 @@ class ByteDanceCrawl(CommonCrawl):
             detail = detail.replace('\n', '')
 
             job_id = sel.xpath("//span[@class='infoText__aS5hY']/text()")
-            job_id = job_id[1] if len(job_id) > 0 else ''
+            job_id = job_id[-1] if len(job_id) > 0 else ''
             job_id = job_id.replace('\n', '')
 
             url = sel.xpath('//a/@href')

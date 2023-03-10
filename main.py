@@ -17,6 +17,7 @@ from crawl.big_company_jobs.xunlei import XunLeiCrawl
 from crawl.code_task.wei_ke_crawl import WeiKeCrawl
 from crawl.code_task.zhu_ba_jie_crawl import ZhuBaJieCrawl
 from crawl.hok_task.dai_lian_ma_ma_crawl import DaiLianMaMaCrawl
+from crawl.tickets.xiecheng import XieChengCrawl
 from middleware.init_middleware import init_middleware
 from threads.mq_thread import MqThreadControl
 from threads.qq_robot_thread import QQRobotThreadControl
@@ -40,7 +41,7 @@ if __name__ == '__main__':
 
     # 创建后台执行的 schedulers
     tasks = [ZhuBaJieCrawl(), WeiKeCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
-             BaiDuCrawl(),DaJiangCrawl(),FuTuCrawl(),XunLeiCrawl(),TencentCrawl(),OppoCrawl(),VivoCrawl()]
+             BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(), ]
     # tasks = [VivoCrawl()]
     while True:
         for task in tasks:

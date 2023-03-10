@@ -30,16 +30,16 @@ class BaiDuCrawl(CommonCrawl):
 
     def parse(self, browser: WebDriver):
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'BaiDuCrawl start crawl..', browser.current_url)
-        eles = browser.find_elements(By.XPATH,
-                                     '//div[@class="brick-checkbox-mark"]')
-        eles[0].click()
-        eles = browser.find_elements(By.XPATH, '//div[@class="brick-checkbox-mark"]')
-        eles[6].click()
-        time.sleep(5)
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)
         tasks = selector.xpath('//div[@class="post-item__D6QB-"]')
+        eles = browser.find_elements(By.XPATH,
+                                     "//div[@class='post-title-content__5QLz1']")
+        i = 0
+        if len(eles) != len(tasks):
+            print('error')
+            return
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
             title = sel.xpath("//div[@class='post-title-content__5QLz1']//span/text()")
@@ -50,7 +50,19 @@ class BaiDuCrawl(CommonCrawl):
             detail = detail[0] if len(detail) > 0 else ''
             detail = detail.replace('\n', '')
 
-            url = "https://talent.baidu.com/jobs/social-list?search=&"+title+detail
+            eles[i].click()
+            i += 1
+            time.sleep(2)
+            # 切换到第二个窗口
+            windows = browser.window_handles
+            browser.switch_to.window(windows[-1])
+            url = browser.current_url
+            if len(browser.window_handles) > 1:
+                browser.close()
+                time.sleep(3)
+            browser.switch_to.window(windows[0])
+
+            # url = "https://talent.baidu.com/jobs/social-list?search=&"+title+detail
 
             self.result_map[browser.current_url].append(TaskResult(title, detail, url))
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'BaiDuCrawl end crawl..', browser.current_url)
@@ -64,7 +76,7 @@ class BaiDuCrawl(CommonCrawl):
                 txt = '【百度招聘】\n' \
                       '岗位名称：%s\n' \
                       '详情:%s\n' \
-                      '链接:%s' % (data.title, data.detail, data.url.split("&")[0])
+                      '链接:%s' % (data.title, data.detail, data.url)
                 QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
 
