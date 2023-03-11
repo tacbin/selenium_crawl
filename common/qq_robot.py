@@ -21,7 +21,7 @@ class QQRobot:
 
             url = "http://119.29.97.135:8888/sendgroupmsg"
 
-            payload = '{"group":%d,"logonqq":3266363480,"msg":"%s"}' % (group, msg.encode('utf-8'))
+            payload = '{"group":%d,"logonqq":3266363480,"msg":"%s"}' % (group, msg)
             curr_stamp = int(time.time()) + 150
 
             message = "user1/sendgroupmsg" + hashlib.md5("root".encode()).hexdigest() + str(curr_stamp)
@@ -35,7 +35,7 @@ class QQRobot:
                 'Cookie': res
             }
 
-            response = requests.request("POST", url, headers=headers, data=payload)
+            response = requests.request("POST", url, headers=headers, data=payload.encode('utf-8'))
 
             print(response.text)
 
