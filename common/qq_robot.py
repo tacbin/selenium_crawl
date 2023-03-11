@@ -16,7 +16,8 @@ class QQRobot:
             CommonInstance.App_IS_LOCKED = True
             time.sleep(random.randint(1, 3))
             msg = msg[0]
-
+            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'send..',
+                  group, msg)
             import requests
 
             url = "http://119.29.97.135:8888/sendgroupmsg"
