@@ -10,7 +10,10 @@ from crawl.big_company_jobs.baidu import BaiDuCrawl
 from crawl.big_company_jobs.bytedance import ByteDanceCrawl
 from crawl.big_company_jobs.dajiang import DaJiangCrawl
 from crawl.big_company_jobs.futu import FuTuCrawl
+from crawl.big_company_jobs.huawei import HuaWeiCrawl
+from crawl.big_company_jobs.kuaishou import KuaiShouCrawl
 from crawl.big_company_jobs.oppo import OppoCrawl
+from crawl.big_company_jobs.shangtang import ShangTangCrawler
 from crawl.big_company_jobs.tencent import TencentCrawl
 from crawl.big_company_jobs.vivo import VivoCrawl
 from crawl.big_company_jobs.xunlei import XunLeiCrawl
@@ -36,13 +39,11 @@ if __name__ == '__main__':
     mq_thread = MqThreadControl(1, 'mq thread')
     mq_thread.start()
 
-    qq_thread = QQRobotThreadControl(2, 'qq thread')
-    qq_thread.start()
-
     # 创建后台执行的 schedulers
     tasks = [ZhuBaJieCrawl(), WeiKeCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
-             BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(), ]
-    # tasks = [VivoCrawl()]
+             BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
+             HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler()]
+    # tasks = [ShangTangCrawler()]
     while True:
         for task in tasks:
             task.run()
