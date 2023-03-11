@@ -37,7 +37,8 @@ class QQRobot:
             }
 
             response = requests.request("POST", url, headers=headers,
-                                        data=payload.replace('&nbsp;', '').encode(encoding='utf-8'))
+                                        data=payload.replace('&nbsp;', '').replace('\xa0', ' ').encode(
+                                            encoding='utf-8'))
 
             print(response.text)
 
