@@ -75,7 +75,7 @@ class AlibabaCrawl(CommonCrawl):
         for url in self.result_map:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'AlibabaCrawl start custom_send..', url)
             for data in self.result_map[url]:
-                if CommonInstance.Redis_client.get(data.title+data.url+data.place+data.update_time) is not None:
+                if CommonInstance.Redis_client.get(data.title+data.place+data.update_time) is not None:
                     continue
                 txt = '【阿里巴巴招聘】\n' \
                       '岗位名称：%s\n' \
@@ -83,7 +83,7 @@ class AlibabaCrawl(CommonCrawl):
                       '发布时间:%s\n' \
                       '链接:%s' % (data.title, data.place, data.update_time, data.url)
                 QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
-                CommonInstance.Redis_client.set(data.title+data.url+data.place+data.update_time, '')
+                CommonInstance.Redis_client.set(data.title+data.place+data.update_time, '')
 
 
 class TaskResult:
