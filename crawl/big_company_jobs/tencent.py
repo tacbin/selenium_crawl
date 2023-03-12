@@ -20,9 +20,9 @@ class TencentCrawl(CommonCrawl):
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
-        self.urls = ["https://careers.tencent.com/en-us/search.html?pcid=40001",
-                     "https://careers.tencent.com/en-us/search.html?pcid=40006",
-                     "https://careers.tencent.com/en-us/search.html?query=ot_40003001,ot_40003002,ot_40003003"]
+        self.urls = ["https://careers.tencent.com/en-us/search.html?query=ot_40001001,ot_40001002,ot_40001003,ot_40001004,ot_40001005,ot_40001006,co_1&sc=1",
+                     "https://careers.tencent.com/en-us/search.html?query=ot_40006,co_1&sc=1",
+                     "https://careers.tencent.com/en-us/search.html?query=co_1,ot_40003001,ot_40003002,ot_40003003&sc=1"]
         for url in self.urls:
             self.result_map[url] = []
 
