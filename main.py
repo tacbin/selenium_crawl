@@ -15,6 +15,7 @@ from crawl.big_company_jobs.kuaishou import KuaiShouCrawl
 from crawl.big_company_jobs.oppo import OppoCrawl
 from crawl.big_company_jobs.shangtang import ShangTangCrawler
 from crawl.big_company_jobs.tencent import TencentCrawl
+from crawl.big_company_jobs.tp_link import TpLinkCrawl
 from crawl.big_company_jobs.vivo import VivoCrawl
 from crawl.big_company_jobs.xunlei import XunLeiCrawl
 from crawl.code_task.wei_ke_crawl import WeiKeCrawl
@@ -42,8 +43,8 @@ if __name__ == '__main__':
     # 创建后台执行的 schedulers
     tasks = [ZhuBaJieCrawl(), WeiKeCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
              BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
-             HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler()]
-    # tasks = [TencentCrawl()]
+             HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(),TpLinkCrawl()]
+    # tasks = [TpLinkCrawl()]
     while True:
         for task in tasks:
             task.run()
