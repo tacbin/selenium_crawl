@@ -16,6 +16,7 @@ class TencentCrawl(CommonCrawl):
     def __init__(self):
         super().__init__()
         self.result_map = {}
+        self.ck_cookie = False
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
@@ -37,6 +38,18 @@ class TencentCrawl(CommonCrawl):
         etree = html.etree
         selector = etree.HTML(page)
         tasks = selector.xpath('//div[@class="recruit-list"]')
+        eles = browser.find_elements(By.XPATH,
+                                     "//h4[@class='recruit-title']")
+        i = 0
+        if len(eles) != len(tasks):
+            print('error')
+            return
+
+        ck_bt = browser.find_elements(By.XPATH, "//div[@class='cookie-btn']")
+        if len(ck_bt) >= 1 and not self.ck_cookie:
+            ck_bt[0].click()
+            self.ck_cookie = True
+
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
             title = sel.xpath('//h4[@class="recruit-title"]/text()')
@@ -51,7 +64,17 @@ class TencentCrawl(CommonCrawl):
             detail = detail[0] if len(detail) > 0 else ''
             detail = detail.replace('\n', '')
 
-            url = 'https://careers.tencent.com/search.html?pcid=40001&' + title + cate + time.strftime('%Y-%m-%d')
+            eles[i].click()
+            i += 1
+            time.sleep(2)
+            # 切换到第二个窗口
+            windows = browser.window_handles
+            browser.switch_to.window(windows[-1])
+            url = browser.current_url
+            if len(browser.window_handles) > 1:
+                browser.close()
+                time.sleep(3)
+            browser.switch_to.window(windows[0])
 
             self.result_map[browser.current_url].append(TaskResult(title, detail, cate, url))
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'TencentCrawl   end crawl..', browser.current_url)
@@ -66,10 +89,10 @@ class TencentCrawl(CommonCrawl):
                       '岗位名称：%s\n' \
                       '类目:%s\n' \
                       '详情：%s\n' \
-                      '链接:%s' % (data.title, data.cate, data.detail, data.url.split("&")[0])
+                      '链接:%s' % (data.title, data.cate, data.detail, data.url)
                 QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
-        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'TencentCrawl   end custom_send..', url)
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'TencentCrawl   end custom_send..')
 
 
 class TaskResult:

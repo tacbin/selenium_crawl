@@ -43,7 +43,7 @@ if __name__ == '__main__':
     tasks = [ZhuBaJieCrawl(), WeiKeCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
              BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
              HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler()]
-    # tasks = [ShangTangCrawler()]
+    # tasks = [TencentCrawl()]
     while True:
         for task in tasks:
             task.run()

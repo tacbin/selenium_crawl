@@ -9,6 +9,8 @@ WORKDIR /$APP_HOME
 
 COPY . $APP_HOME/
 
+ENV TZ Asia/Shanghai
+
 #CMD tail -f /dev/null
 CMD chmod +x ./geckodriver && \
     pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/ && \
