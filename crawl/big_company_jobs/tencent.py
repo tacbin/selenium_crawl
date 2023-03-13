@@ -64,7 +64,11 @@ class TencentCrawl(CommonCrawl):
             detail = detail[0] if len(detail) > 0 else ''
             detail = detail.replace('\n', '')
 
-            eles[i].click()
+            try:
+                eles[i].click()
+            except Exception as e:
+                print(e)
+                continue
             i += 1
             time.sleep(2)
             # 切换到第二个窗口
