@@ -3,6 +3,7 @@ import hashlib
 import random
 import time
 from typing import List
+import requests
 
 from common.common_instantce import CommonInstance
 
@@ -18,7 +19,6 @@ class QQRobot:
             msg = msg[0]
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'send..',
                   group, msg)
-            import requests
 
             url = "http://119.29.97.135:8888/sendgroupmsg"
 
@@ -45,4 +45,5 @@ class QQRobot:
         except Exception as e:
             print('send_group_msg', e)
         finally:
+            requests.session().close()
             CommonInstance.App_IS_LOCKED = False
