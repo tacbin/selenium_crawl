@@ -36,7 +36,7 @@ class QQRobot:
                 'Cookie': res
             }
 
-            response = requests.request("POST", url, headers=headers,
+            response = requests.request("POST", url, headers=headers,timeout=30,
                                         data=payload.replace('&nbsp;', '').replace('\xa0', ' ').encode(
                                             encoding='utf-8'))
 
