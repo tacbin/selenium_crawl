@@ -34,14 +34,14 @@ def empty_run():
 if __name__ == '__main__':
     init_middleware()
 
-    mq_thread = MqThreadControl(1, 'mq thread')
-    mq_thread.start()
+    # mq_thread = MqThreadControl(1, 'mq thread')
+    # mq_thread.start()
 
     # 创建后台执行的 schedulers
     tasks = [ZhuBaJieCrawl(), WeiKeCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
              BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
              HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler()]
-    # tasks = [TencentCrawl()]
+    # tasks = [AlibabaCrawl()]
     while True:
         for task in tasks:
             task.run()

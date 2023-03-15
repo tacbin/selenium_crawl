@@ -10,6 +10,7 @@ from common.common_instantce import CommonInstance
 from common.constants import JobGroupConstant
 from common.qq_robot import QQRobot
 from common_crawl import CommonCrawl
+from middleware.rabbit_mq import get_rabbit_mq_channel
 
 
 class WeiLaiCrawler (CommonCrawl):
@@ -74,6 +75,11 @@ class WeiLaiCrawler (CommonCrawl):
                       '链接:%s' % (data.title, data.cate, data.place,data.update_time, data.url)
                 QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.url, '')
+                try:
+                    get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
+                                                          body=txt)
+                except Exception as e:
+                    print("mq err:",e)
 
 
 class TaskResult:

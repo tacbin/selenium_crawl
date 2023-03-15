@@ -10,6 +10,7 @@ from common.common_instantce import CommonInstance
 from common.constants import JobGroupConstant
 from common.qq_robot import QQRobot
 from common_crawl import CommonCrawl
+from middleware.rabbit_mq import  get_rabbit_mq_channel
 
 
 class AlibabaCrawl(CommonCrawl):
@@ -82,6 +83,11 @@ class AlibabaCrawl(CommonCrawl):
                       '地点：%s\n' \
                       '发布时间:%s\n' \
                       '链接:%s' % (data.title, data.place, data.update_time, data.url)
+                try:
+                    get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
+                                                          body=txt)
+                except Exception as e:
+                    print("mq err:", e)
                 QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
                 CommonInstance.Redis_client.set(data.title+data.place+data.update_time, '')
 

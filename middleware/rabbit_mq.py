@@ -6,7 +6,8 @@ __rabbit_mq_conn = None
 
 def get_rabbit_mq_channel():
     global __rabbit_mq_conn
-    if __rabbit_mq_conn.is_closed:
+
+    if __rabbit_mq_conn is None or __rabbit_mq_conn.is_closed:
         __init_rabbit_mq()
     return __rabbit_mq_conn
 
