@@ -17,13 +17,13 @@ class TencentCrawl(CommonCrawl):
     def __init__(self):
         super().__init__()
         self.result_map = {}
-        self.ck_cookie = False
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
-        self.urls = ["https://careers.tencent.com/en-us/search.html?query=ot_40001001,ot_40001002,ot_40001003,ot_40001004,ot_40001005,ot_40001006,co_1&sc=1",
-                     "https://careers.tencent.com/en-us/search.html?query=ot_40006,co_1&sc=1",
-                     "https://careers.tencent.com/en-us/search.html?query=co_1,ot_40003001,ot_40003002,ot_40003003&sc=1"]
+        self.urls = [
+            "https://careers.tencent.com/en-us/search.html?query=ot_40001001,ot_40001002,ot_40001003,ot_40001004,ot_40001005,ot_40001006,co_1&sc=1",
+            "https://careers.tencent.com/en-us/search.html?query=ot_40006,co_1&sc=1",
+            "https://careers.tencent.com/en-us/search.html?query=co_1,ot_40003001,ot_40003002,ot_40003003&sc=1"]
         for url in self.urls:
             self.result_map[url] = []
 
@@ -47,9 +47,11 @@ class TencentCrawl(CommonCrawl):
             return
 
         ck_bt = browser.find_elements(By.XPATH, "//div[@class='cookie-btn']")
-        if len(ck_bt) >= 1 and not self.ck_cookie:
-            ck_bt[0].click()
-            self.ck_cookie = True
+        if len(ck_bt) >= 1:
+            try:
+                ck_bt[0].click()
+            except Exception as e:
+                print("click err:", e)
 
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
@@ -69,7 +71,7 @@ class TencentCrawl(CommonCrawl):
                 eles[i].click()
             except Exception as e:
                 print(e)
-                continue
+            continue
             i += 1
             time.sleep(2)
             # 切换到第二个窗口
@@ -101,7 +103,7 @@ class TencentCrawl(CommonCrawl):
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
                                                           body=txt)
                 except Exception as e:
-                    print("mq err:",e)
+                    print("mq err:", e)
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'TencentCrawl   end custom_send..')
 
 
