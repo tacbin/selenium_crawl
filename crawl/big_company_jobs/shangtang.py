@@ -68,7 +68,8 @@ class ShangTangCrawler(CommonCrawl):
             windows = browser.window_handles
             browser.switch_to.window(windows[-1])
             url = browser.current_url
-            if len(browser.window_handles) > 1:
+            while len(browser.window_handles) > 1:
+                browser.switch_to.window(windows[-1])
                 browser.close()
                 time.sleep(3)
             browser.switch_to.window(windows[0])
