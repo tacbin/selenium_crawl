@@ -10,18 +10,21 @@ from crawl.big_company_jobs.dajiang import DaJiangCrawl
 from crawl.big_company_jobs.futu import FuTuCrawl
 from crawl.big_company_jobs.huawei import HuaWeiCrawl
 from crawl.big_company_jobs.kuaishou import KuaiShouCrawl
+from crawl.big_company_jobs.meituan import MeiTuanCrawl
 from crawl.big_company_jobs.oppo import OppoCrawl
 from crawl.big_company_jobs.shangtang import ShangTangCrawler
+from crawl.big_company_jobs.shen_xin_fu import ShenXinFuCrawl
 from crawl.big_company_jobs.tencent import TencentCrawl
 from crawl.big_company_jobs.tp_link import TpLinkCrawl
 from crawl.big_company_jobs.vivo import VivoCrawl
+from crawl.big_company_jobs.wangyi import WangYiCrawl
 from crawl.big_company_jobs.weilai import WeiLaiCrawler
+from crawl.big_company_jobs.weipai import WeiPaiCrawl
 from crawl.big_company_jobs.xunlei import XunLeiCrawl
 from crawl.big_company_jobs.zhaolian import ZhaoLianCrawler
 from crawl.code_task.wei_ke_crawl import WeiKeCrawl
 from crawl.code_task.zhu_ba_jie_crawl import ZhuBaJieCrawl
 from middleware.init_middleware import init_middleware
-from threads.mq_thread import MqThreadControl
 
 
 def empty_run():
@@ -40,8 +43,9 @@ if __name__ == '__main__':
     # 创建后台执行的 schedulers
     tasks = [ZhuBaJieCrawl(), WeiKeCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
              BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
-             HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler()]
-    # tasks = [TencentCrawl()]
+             HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler()
+        , MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl()]
+    # tasks = [ShenXinFuCrawl()]
     while True:
         for task in tasks:
             task.run()
