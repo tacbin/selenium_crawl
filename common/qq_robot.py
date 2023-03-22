@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
+import hashlib
 import random
 import time
 from typing import List
+import requests
 
 from common.common_instantce import CommonInstance
 
@@ -20,8 +22,7 @@ class QQRobot:
 
             import requests
 
-            url = "http://119.29.97.135:8888/send/group?route=105&frameqq=3266363480&group=%s&key=key&newscontent=%s" % (
-                group, msg)
+            url = "http://119.29.97.135:8888/send/group?route=105&frameqq=3266363480&group=%s&key=key&newscontent=%s" % (group,msg)
 
             payload = {}
             headers = {
@@ -52,7 +53,7 @@ class QQRobot:
             #                             data=payload.replace('&nbsp;', '').replace('\xa0', ' ').encode(
             #                                 encoding='utf-8'))
 
-            print(response.text)
+            # print(response.text)
 
         except Exception as e:
             print('send_group_msg', e)

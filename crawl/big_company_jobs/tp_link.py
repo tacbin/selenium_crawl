@@ -85,7 +85,7 @@ class TpLinkCrawl(CommonCrawl):
                       '类别：%s\n' \
                       '地点：%s\n' \
                       '链接:%s' % (data.title, data.cate, data.place, data.url)
-                QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
+                QQRobot.send_group_msg(JobGroupConstant, [txt])
                 CommonInstance.Redis_client.set(data.url, '')
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",

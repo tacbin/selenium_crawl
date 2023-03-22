@@ -79,7 +79,7 @@ class OppoCrawl(CommonCrawl):
                       '岗位名称：%s\n' \
                       '类目:%s\n' \
                       '链接:%s' % (data.title, data.cate, data.url)
-                QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
+                QQRobot.send_group_msg(JobGroupConstant, [txt])
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
                                                           body=txt)

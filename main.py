@@ -46,7 +46,7 @@ if __name__ == '__main__':
              BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
              HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler()
         , MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl()]
-    # tasks = [ShenXinFuCrawl()]
+    # tasks = [WeiKeCrawl()]
     while True:
         for task in tasks:
             task.run()

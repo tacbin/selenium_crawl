@@ -65,7 +65,7 @@ class XieChengCrawl (CommonCrawl):
                 txt = '【携程机票】\n' \
                       '中转时长：%s\n' \
                       '价格:%s\n'  % (data.duration, data.price)
-                QQRobot.send_group_msg(JobGroupConstant, [miraicle.Plain(txt)])
+                QQRobot.send_group_msg(JobGroupConstant, [txt])
                 CommonInstance.Redis_client.set(data.url, '')
 
 

@@ -16,42 +16,26 @@ from middleware.init_middleware import init_middleware
 from threads.qq_robot_thread import QQRobotThreadControl
 
 if __name__ == '__main__':
-    group = 858288116
-    msg = "我复活了"
-
     import requests
 
-    url = "http://119.29.97.135:8888/sendgroupmsg"
+    url = "http://119.29.97.135:8888/send/group"
 
-    payload = '{"group":%d,"logonqq":3266363480,"msg":"%s"}' % (group,msg)
-    curr_stamp = int(time.time()) + 150
-
-    message = "user1/sendgroupmsg" + hashlib.md5("root".encode()).hexdigest() + str(curr_stamp)
-
-    message = hashlib.md5(message.encode('utf-8')).hexdigest()
-
-    res = "user=user1;timestamp=" + str(curr_stamp) + ";signature=" + message
+    payload = {'route': '105',
+               'frameqq': '3266363480',
+               'group': '858288116',
+               'key': 'key',
+               'newscontent': '脚后跟 '}
 
     headers = {
-        'Content-Type': 'application/json',
-        'Cookie': res
+        'Content-Type': 'multipart/form-data',
+        'Accept-Charset': 'utf-8',
+        'Accept-Charsets': 'gbk',
+        'url-jsonurl-json': 'true',
+        'Accept-Charsettype': 'true',
     }
 
-    response = requests.request("POST", url, headers=headers, data=payload.encode('utf-8'))
+    response = requests.request("POST", url, headers=headers, data=payload)
 
     print(response.text)
 
-    # import requests
-    #
-    # url = "http://119.29.97.135:8888/sendgroupmsg"
-    #
-    # payload = "{\"group\":858288116,\r\n\"logonqq\":3266363480,\r\n\"msg\":\"ffff\"}"
-    # headers = {
-    #     'Content-Type': 'application/json',
-    #     'Cookie': 'user=user1;timestamp=1678524193;signature=4d7ba933f6a708306ab9b460277b38e0'
-    # }
-    #
-    # response = requests.request("POST", url, headers=headers, data=payload)
-    #
-    # print(response.text)
 

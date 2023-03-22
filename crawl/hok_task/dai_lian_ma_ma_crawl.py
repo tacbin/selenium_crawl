@@ -68,7 +68,7 @@ class DaiLianMaMaCrawl(CommonCrawl):
                       '%s\n' \
                       'http://m.dailianmama.com/v-3.0.9-zh_CN-/dlmm/index.w?language=zh_CN&skin=&ttt=random6833130&p3704878=pp1435623&t=1647424588903#!main' % (
                       data.title, data.area, data.money, data.end_time)
-                QQRobot.send_group_msg(461936572, [miraicle.Plain(txt)])
+                QQRobot.send_group_msg(461936572, [txt])
                 key = data.title + data.area + data.end_time + data.money
                 CommonInstance.Redis_client.set(key, '')
 
