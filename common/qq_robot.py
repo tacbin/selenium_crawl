@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-import hashlib
 import random
 import time
 from typing import List
-import requests
 
 from common.common_instantce import CommonInstance
 
