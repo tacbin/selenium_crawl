@@ -22,7 +22,8 @@ class QQRobot:
 
             import requests
 
-            url = "http://119.29.97.135:8888/send/group?route=105&frameqq=3266363480&group=%s&key=key&newscontent=%s" % (group,msg)
+            url = "http://119.29.97.135:8888/send/group?route=105&frameqq=3266363480&group=%s&key=key&newscontent=%s" % (group,msg.replace('&nbsp;', '').replace('\xa0', ' ').encode(
+                                            encoding='utf-8'))
 
             payload = {}
             headers = {
