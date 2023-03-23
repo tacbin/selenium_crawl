@@ -63,7 +63,8 @@ class HuaWeiCrawl (CommonCrawl):
         for url in self.result_map:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'HuaWeiCrawl   start custom_send..', url)
             for data in self.result_map[url]:
-                if CommonInstance.Redis_client.get(data.url) is not None:
+                key = data.url
+                if CommonInstance.Redis_client.get(key) is not None:
                     continue
                 val = CommonInstance.Redis_client.incrby('qq')
                 path = "r_qq/" + str(val)
@@ -81,7 +82,7 @@ class HuaWeiCrawl (CommonCrawl):
                 except Exception as e:
                     print("mq err:",e)
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
-                CommonInstance.Redis_client.set(data.url, '')
+                CommonInstance.Redis_client.set(key, '')
 
 
 class TaskResult:

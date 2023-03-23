@@ -73,7 +73,8 @@ class OppoCrawl(CommonCrawl):
         for url in self.result_map:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'OppoCrawl   start custom_send..', url)
             for data in self.result_map[url]:
-                if CommonInstance.Redis_client.get(data.url) is not None:
+                key = data.url
+                if CommonInstance.Redis_client.get(key) is not None:
                     continue
                 val = CommonInstance.Redis_client.incrby('qq')
                 path = "r_qq/" + str(val)
@@ -90,7 +91,7 @@ class OppoCrawl(CommonCrawl):
                                                           body=txt)
                 except Exception as e:
                     print("mq err:",e)
-                CommonInstance.Redis_client.set(data.url, '')
+                CommonInstance.Redis_client.set(key, '')
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'OppoCrawl   end custom_send..', url)
 
 
