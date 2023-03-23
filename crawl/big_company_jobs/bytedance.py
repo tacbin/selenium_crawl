@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import time
-
+import json
 import miraicle
 from lxml import html
 from selenium.webdriver.firefox.webdriver import WebDriver
@@ -77,7 +77,7 @@ class ByteDanceCrawl(CommonCrawl):
                       '链接:%s' % (data.title, data.detail, data.job_id, data.url)
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=str(data))
+                                                          body=str(json.dumps(data.__dict__)))
                 except Exception as e:
                     print("mq err:",e)
                 QQRobot.send_group_msg(JobGroupConstant, [txt])

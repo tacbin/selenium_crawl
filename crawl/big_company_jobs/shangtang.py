@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 import time
 from telnetlib import EC
 
@@ -99,7 +100,7 @@ class ShangTangCrawler(CommonCrawl):
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=str(data))
+                                                          body=str(json.dumps(data.__dict__)))
                 except Exception as e:
                     print("mq err:",e)
                 CommonInstance.Redis_client.set("st_" + data.title + data.place + data.update_time,

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 import time
 
 import miraicle
@@ -101,7 +102,7 @@ class MeiTuanCrawl(CommonCrawl):
                       '链接:%s' % (data.title, data.place, data.category, data.detail, data.update_time, data.url)
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=str(data))
+                                                          body=str(json.dumps(data.__dict__)))
                 except Exception as e:
                     print("mq err:", e)
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
