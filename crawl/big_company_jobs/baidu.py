@@ -75,6 +75,12 @@ class BaiDuCrawl(CommonCrawl):
             for data in self.result_map[url]:
                 if CommonInstance.Redis_client.get(data.url) is not None:
                     continue
+                val = CommonInstance.Redis_client.incrby('qq')
+                path = "r_qq/" + str(val)
+                print(path)
+                CommonInstance.Redis_client.set(path, data.url)
+                data.url = "http://api.tacbin.club" + path
+
                 txt = '【百度招聘】\n' \
                       '岗位名称：%s\n' \
                       '详情:%s\n' \

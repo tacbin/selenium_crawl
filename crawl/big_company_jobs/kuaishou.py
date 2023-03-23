@@ -91,6 +91,11 @@ class KuaiShouCrawl(CommonCrawl):
                 if CommonInstance.Redis_client.get(
                         "ks_" + data.title + data.experience + data.place + data.update_time) is not None:
                     continue
+                val = CommonInstance.Redis_client.incrby('qq')
+                path = "r_qq/" + str(val)
+                print(path)
+                CommonInstance.Redis_client.set(path, data.url)
+                data.url = "http://api.tacbin.club" + path
                 txt = '【快手招聘】\n' \
                       '岗位名称：%s\n' \
                       '类目:%s\n' \

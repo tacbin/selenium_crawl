@@ -10,7 +10,7 @@ from common.common_instantce import CommonInstance
 from common.constants import JobGroupConstant
 from common.qq_robot import QQRobot
 from common_crawl import CommonCrawl
-from middleware.rabbit_mq import  get_rabbit_mq_channel
+from middleware.rabbit_mq import get_rabbit_mq_channel
 
 
 class AlibabaCrawl(CommonCrawl):
@@ -77,8 +77,15 @@ class AlibabaCrawl(CommonCrawl):
         for url in self.result_map:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'AlibabaCrawl start custom_send..', url)
             for data in self.result_map[url]:
-                if CommonInstance.Redis_client.get(data.title+data.place+data.update_time) is not None:
+                if CommonInstance.Redis_client.get(data.title + data.place + data.update_time) is not None:
                     continue
+
+                val = CommonInstance.Redis_client.incrby('qq')
+                path = "r_qq/" + str(val)
+                print(path)
+                CommonInstance.Redis_client.set(path, data.url)
+                data.url = "http://api.tacbin.club" + path
+
                 txt = '【阿里巴巴招聘】\n' \
                       '岗位名称：%s\n' \
                       '地点：%s\n' \
@@ -90,7 +97,7 @@ class AlibabaCrawl(CommonCrawl):
                 except Exception as e:
                     print("mq err:", e)
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
-                CommonInstance.Redis_client.set(data.title+data.place+data.update_time, '')
+                CommonInstance.Redis_client.set(data.title + data.place + data.update_time, '')
 
 
 class TaskResult:

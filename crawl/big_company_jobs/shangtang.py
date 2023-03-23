@@ -85,6 +85,11 @@ class ShangTangCrawler(CommonCrawl):
                 if CommonInstance.Redis_client.get(
                         "st_" + data.title + data.place + data.update_time) is not None:
                     continue
+                val = CommonInstance.Redis_client.incrby('qq')
+                path = "r_qq/" + str(val)
+                print(path)
+                CommonInstance.Redis_client.set(path, data.url)
+                data.url = "http://api.tacbin.club" + path
                 txt = '【商汤招聘】\n' \
                       '岗位名称：%s\n' \
                       '类目:%s\n' \

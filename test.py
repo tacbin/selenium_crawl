@@ -3,6 +3,7 @@ import hashlib
 import time
 
 import crawl_mapping
+from common.common_instantce import CommonInstance
 from common_crawl import CommonCrawl
 import miraicle
 
@@ -18,9 +19,15 @@ from threads.qq_robot_thread import QQRobotThreadControl
 if __name__ == '__main__':
     import requests
 
+    init_middleware()
+    val = CommonInstance.Redis_client.incrby('qq')
+    path = "r_qq/"+str(val)
+    print(path)
+    CommonInstance.Redis_client.set(path,"https://talent.alibaba.com/off-campus/position-detail?positionId=937509&track_id=SSP1679533762732uwnAZlKLLL5967")
+    url = "http://api.tacbin.club" + path
     msg = """【阿里巴巴招聘】岗位名称：达摩院-OCR和文档理解算法专家-北京/杭州地点：北京 / 杭州发布时间:更新于 
-    2023-03-23链接://talent.alibaba.com/off-campus/position-detail?positionId=937509&track_id
-    =SSP1679533762732uwnAZlKLLL5967 """
+        2023-03-23链接: http://api.tacbin.club"""+path
+
     group = 461936572
     url = "http://119.29.97.135:8888/send/group?route=105&frameqq=3266363480&group=%s&key=key&newscontent=%s" % (
         group, msg.replace('&nbsp;', '').replace('\xa0', ' '))
