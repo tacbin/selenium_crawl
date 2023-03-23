@@ -80,7 +80,7 @@ class VivoCrawl(CommonCrawl):
                 CommonInstance.Redis_client.set(key, '')
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=txt)
+                                                          body=str(data))
                 except Exception as e:
                     print("mq err:",e)
 

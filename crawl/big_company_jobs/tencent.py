@@ -108,7 +108,7 @@ class TencentCrawl(CommonCrawl):
                 CommonInstance.Redis_client.set(key, '')
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=txt)
+                                                          body=str(data))
                 except Exception as e:
                     print("mq err:", e)
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'TencentCrawl   end custom_send..')

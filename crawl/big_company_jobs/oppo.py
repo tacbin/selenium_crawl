@@ -88,7 +88,7 @@ class OppoCrawl(CommonCrawl):
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=txt)
+                                                          body=str(data))
                 except Exception as e:
                     print("mq err:",e)
                 CommonInstance.Redis_client.set(key, '')
