@@ -19,7 +19,7 @@ class QQRobot:
             msg = msg[0]
             # group = 461936572
             url = "http://119.29.97.135:8888/send/group?route=105&frameqq=3266363480&group=%s&key=key&newscontent=%s" % (
-                group, str(msg.replace('&nbsp;', '').replace('\xa0', ' ')))
+                group, str(msg.replace('&nbsp;', '').replace('\xa0', ' ').replace('&',"和")))
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'send..',
                   group, url)
             payload = {}
