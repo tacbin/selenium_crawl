@@ -17,7 +17,7 @@ class QQRobot:
             CommonInstance.App_IS_LOCKED = True
             time.sleep(random.randint(1, 3))
             msg = msg[0]
-            group = 461936572
+            # group = 461936572
             url = "http://119.29.97.135:8888/send/group?route=105&frameqq=3266363480&group=%s&key=key&newscontent=%s" % (
                 group, str(msg.replace('&nbsp;', '').replace('\xa0', ' ')))
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'send..',
