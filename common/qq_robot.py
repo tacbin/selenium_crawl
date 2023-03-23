@@ -16,15 +16,12 @@ class QQRobot:
                 time.sleep(random.randint(5, 15))
             CommonInstance.App_IS_LOCKED = True
             time.sleep(random.randint(1, 3))
-            msg = msg[0]
+            msg = str(msg[0])
+
+            url = "http://119.29.97.135:8888/send/group?route=105&frameqq=3266363480&group=%s&key=key&newscontent=%s" % (
+                group, str(msg.replace('&nbsp;', '').replace('\xa0', ' ')))
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'send..',
-                  group, msg)
-
-            import requests
-
-            url = "http://119.29.97.135:8888/send/group?route=105&frameqq=3266363480&group=%s&key=key&newscontent=%s" % (group,msg.replace('&nbsp;', '').replace('\xa0', ' ').encode(
-                                            encoding='utf-8'))
-
+                  group, url)
             payload = {}
             headers = {
                 'Content-Type': 'multipart/form-data'
