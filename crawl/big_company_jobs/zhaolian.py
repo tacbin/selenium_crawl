@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 import time
 
 import miraicle
@@ -67,7 +68,7 @@ class ZhaoLianCrawler(CommonCrawl):
             time.sleep(2)
             # 切换到第二个窗口
             windows = browser.window_handles
-            browser.switch_to.window(windows[-1])
+
             url = browser.current_url
             while len(browser.window_handles) > 1:
                 browser.switch_to.window(windows[-1])
@@ -100,7 +101,7 @@ class ZhaoLianCrawler(CommonCrawl):
                 CommonInstance.Redis_client.set(key, '')
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=str(data))
+                                                          body=str(json.dumps(data.__dict__)))
                 except Exception as e:
                     print("mq err:",e)
 
