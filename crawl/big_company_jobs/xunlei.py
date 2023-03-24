@@ -79,7 +79,7 @@ class XunLeiCrawl(CommonCrawl):
                 CommonInstance.Redis_client.set(key, '')
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=str(json.dumps(data.__dict__)))
+                                                          body=str(json.dumps(data.__dict__,ensure_ascii=False)))
                 except Exception as e:
                     print("mq err:",e)
 

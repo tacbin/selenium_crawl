@@ -100,7 +100,7 @@ class ShangTangCrawler(CommonCrawl):
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=str(json.dumps(data.__dict__)))
+                                                          body=str(json.dumps(data.__dict__,ensure_ascii=False)))
                 except Exception as e:
                     print("mq err:",e)
                 CommonInstance.Redis_client.set("st_" + data.title + data.place + data.update_time,
