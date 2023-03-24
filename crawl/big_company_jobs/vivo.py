@@ -63,13 +63,13 @@ class VivoCrawl(CommonCrawl):
         for url in self.result_map:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'VivoCrawl   start custom_send..', url)
             for data in self.result_map[url]:
-                key = data.url
+                key = data.url.split("&&")[0]
                 if CommonInstance.Redis_client.get(key) is not None:
                     continue
                 val = CommonInstance.Redis_client.incrby('qq')
                 path = "r_qq/" + str(val)
                 print(path)
-                CommonInstance.Redis_client.set(path, data.url)
+                CommonInstance.Redis_client.set(path, key)
                 data.url = "http://api.tacbin.club/" + path
                 txt = '【VIVO招聘】\n' \
                       '岗位名称：%s\n' \
