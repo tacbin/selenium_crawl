@@ -77,7 +77,7 @@ class ByteDanceCrawl(CommonCrawl):
                       '链接:%s' % (data.title, data.detail, data.job_id, data.url)
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=str(json.dumps(data.__dict__)))
+                                                          body=str(json.dumps(data.__dict__,ensure_ascii=False)))
                 except Exception as e:
                     print("mq err:",e)
                 QQRobot.send_group_msg(JobGroupConstant, [txt])

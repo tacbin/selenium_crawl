@@ -64,13 +64,13 @@ class VivoCrawl(CommonCrawl):
         for url in self.result_map:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'VivoCrawl   start custom_send..', url)
             for data in self.result_map[url]:
-                key = data.url
+                key = data.url.split("&&")[0]
                 if CommonInstance.Redis_client.get(key) is not None:
                     continue
                 val = CommonInstance.Redis_client.incrby('qq')
                 path = "r_qq/" + str(val)
                 print(path)
-                CommonInstance.Redis_client.set(path, data.url)
+                CommonInstance.Redis_client.set(path, key)
                 data.url = "http://api.tacbin.club/" + path
                 txt = '【VIVO招聘】\n' \
                       '岗位名称：%s\n' \
@@ -81,7 +81,7 @@ class VivoCrawl(CommonCrawl):
                 CommonInstance.Redis_client.set(key, '')
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=str(json.dumps(data.__dict__)))
+                                                          body=str(json.dumps(data.__dict__,ensure_ascii=False)))
                 except Exception as e:
                     print("mq err:",e)
 
