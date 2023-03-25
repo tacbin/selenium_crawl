@@ -77,6 +77,7 @@ class CommonCrawl:
                 pass
         except Exception as e:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'common crawl exception:', e)
+            global browser
             if browser is None:
                 return
             browser.close()
