@@ -117,6 +117,7 @@ class TencentCrawl(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, detail, cate, url):
+        self.company = '腾讯招聘'
         self.title = title
         self.detail = detail
         self.cate = cate

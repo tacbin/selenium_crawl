@@ -104,6 +104,7 @@ class AlibabaCrawl(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, place, update_time, url):
+        self.company = '阿里巴巴招聘'
         self.title = title
         self.place = place
         self.update_time = update_time

@@ -87,6 +87,7 @@ class FuTuCrawl (CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, place, cate, url):
+        self.company = '富途招聘'
         self.title = title
         self.place = place
         self.cate = cate

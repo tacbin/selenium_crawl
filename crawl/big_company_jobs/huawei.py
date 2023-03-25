@@ -88,6 +88,7 @@ class HuaWeiCrawl (CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, place, cate, url):
+        self.company = '华为招聘'
         self.title = title
         self.place = place
         self.cate = cate

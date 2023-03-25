@@ -116,6 +116,7 @@ class KuaiShouCrawl(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, place, cate, experience, update_time, url):
+        self.company = '快手招聘'
         self.title = title
         self.place = place
         self.cate = cate

@@ -111,6 +111,7 @@ class MeiTuanCrawl(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, place, update_time, url, category, detail):
+        self.company = '美团招聘'
         self.title = title
         self.place = place
         self.update_time = update_time

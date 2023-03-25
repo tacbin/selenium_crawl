@@ -86,6 +86,7 @@ class ByteDanceCrawl(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, detail, job_id, url):
+        self.company = '字节跳动招聘'
         self.title = title
         self.detail = detail
         self.job_id = job_id

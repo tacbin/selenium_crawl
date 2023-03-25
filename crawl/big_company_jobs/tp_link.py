@@ -103,6 +103,7 @@ class TpLinkCrawl(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, cate, place, url):
+        self.company = 'TpLink招聘'
         self.title = title
         self.cate = cate
         self.place = place

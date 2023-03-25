@@ -108,6 +108,7 @@ class ZhaoLianCrawler(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, cate, place, update_time, url):
+        self.company = '招联金融招聘'
         self.title = title
         self.cate = cate
         self.place = place

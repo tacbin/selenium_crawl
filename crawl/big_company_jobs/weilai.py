@@ -91,6 +91,7 @@ class WeiLaiCrawler (CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, place, cate,update_time, url):
+        self.company = 'NIO蔚来招聘'
         self.title = title
         self.place = place
         self.cate = cate

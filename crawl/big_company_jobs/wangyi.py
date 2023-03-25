@@ -118,6 +118,7 @@ class WangYiCrawl(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, place, update_time, url, category):
+        self.company = '网易招聘'
         self.title = title
         self.place = place
         self.update_time = update_time

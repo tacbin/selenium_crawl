@@ -97,6 +97,7 @@ class BaiDuCrawl(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, detail, url):
+        self.company = '百度招聘'
         self.title = title
         self.detail = detail
         self.url = url

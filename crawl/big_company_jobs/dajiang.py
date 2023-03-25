@@ -85,6 +85,7 @@ class DaJiangCrawl(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, place, detail, url):
+        self.company = '大疆招聘'
         self.title = title
         self.place = place
         self.detail = detail

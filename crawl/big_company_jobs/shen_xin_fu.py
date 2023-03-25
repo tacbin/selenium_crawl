@@ -111,6 +111,7 @@ class ShenXinFuCrawl(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, place, url, category):
+        self.company = '深信服招聘'
         self.title = title
         self.place = place
         self.url = url

@@ -98,6 +98,7 @@ class OppoCrawl(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, place, cate, url):
+        self.company = 'OPPO招聘'
         self.title = title
         self.place = place
         self.cate = cate

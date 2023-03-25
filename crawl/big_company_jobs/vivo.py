@@ -88,6 +88,7 @@ class VivoCrawl(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, detail, cate, url):
+        self.company = 'VIVO招聘'
         self.title = title
         self.detail = detail
         self.cate = cate

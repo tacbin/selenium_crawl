@@ -83,6 +83,7 @@ class WeiPaiCrawl(CommonCrawl):
 
 class TaskResult:
     def __init__(self, title, update_time, url):
+        self.company = '武汉微派招聘'
         self.title = title
         self.update_time = update_time
         self.url = url
