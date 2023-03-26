@@ -24,7 +24,7 @@ if __name__ == '__main__':
     path = "r_qq/"+str(val)
     print(path)
     CommonInstance.Redis_client.set(path,"https://talent.alibaba.com/off-campus/position-detail?positionId=937509&track_id=SSP1679533762732uwnAZlKLLL5967")
-    url = "http://api.tacbin.club/" + path
+    url = "https://api.tacbin.club/" + path
     msg = """【阿里巴巴招聘】岗位名称：达摩院-OCR和文档理解算法专家-北京/杭州地点：北京 / 杭州发布时间:更新于 
         2023-03-23链接: http://api.tacbin.club"""+path
 
