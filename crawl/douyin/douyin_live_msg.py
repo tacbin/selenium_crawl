@@ -35,7 +35,7 @@ class DouYinMsgLiveCrawl(CommonCrawl):
         msg_dict = set()
         while True:
             try:
-                time.sleep(60)
+                time.sleep(30)
                 page = browser.page_source
                 etree = html.etree
                 selector = etree.HTML(page)
