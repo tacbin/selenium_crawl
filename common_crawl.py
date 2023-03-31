@@ -20,7 +20,7 @@ from common.common_instantce import CommonInstance
 from common.email import EmailInfo, AttachInfo
 from middleware.rabbit_mq import get_rabbit_mq_channel
 
-browser = None
+# browser = None
 
 
 class CommonCrawl:
@@ -34,7 +34,7 @@ class CommonCrawl:
         self.channel = get_rabbit_mq_channel()
 
     def run(self, *args):
-        global browser
+        browser = None
         try:
             # 使用 fire_fox 的 WebDriver
             fire_fox_options = Options()
