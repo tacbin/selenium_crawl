@@ -75,6 +75,9 @@ class CommonCrawl:
                 self.custom_send()
             else:
                 pass
+            if browser is None:
+                return
+            browser.close()
         except Exception as e:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'common crawl exception:', e)
             if browser is None:

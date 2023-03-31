@@ -31,11 +31,11 @@ class DouYinMsgLiveCrawl(CommonCrawl):
         return browser
 
     def parse(self, browser: WebDriver):
-        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'FuTuCrawl   start crawl..', browser.current_url)
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'start crawl..', browser.current_url)
         msg_dict = set()
         while True:
             try:
-                time.sleep(30)
+                time.sleep(10)
                 page = browser.page_source
                 etree = html.etree
                 selector = etree.HTML(page)
@@ -49,9 +49,15 @@ class DouYinMsgLiveCrawl(CommonCrawl):
                 print(msg)
                 msg_dict.add(msg)
                 try:
-                    get_rabbit_mq_channel().basic_publish(exchange="", routing_key="dou-yin-queue",
-                                                          body=str(msg))
+                    import requests
+                    url = "http://localhost:8080/live"
+                    payload = "{\"message\":\"%s\",\"appId\":\"xaa\",\"token\":\"fff\",\"timestamp\":1111}" % msg
+                    headers = {
+                        'Content-Type': 'application/json'
+                    }
+                    response = requests.request("POST", url, headers=headers, data=payload.encode('utf-8'))
+                    print(response.text)
                 except Exception as e:
-                    print("mq err:", e)
+                    print("req err:", e)
             except:
                 pass
