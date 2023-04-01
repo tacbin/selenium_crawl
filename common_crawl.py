@@ -15,10 +15,11 @@ import selenium
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
-
+from selenium import webdriver
 from common.common_instantce import CommonInstance
 from common.email import EmailInfo, AttachInfo
 from middleware.rabbit_mq import get_rabbit_mq_channel
+
 
 # browser = None
 
@@ -38,11 +39,14 @@ class CommonCrawl:
         try:
             # 使用 fire_fox 的 WebDriver
             fire_fox_options = Options()
-            fire_fox_options.add_argument('--disable-application-cache')
-            fire_fox_options.set_preference("browser.cache.disk.enable", False)
-            fire_fox_options.set_preference("browser.cache.memory.enable", False)
-            fire_fox_options.set_preference("browser.cache.offline.enable", False)
-            fire_fox_options.set_preference("network.http.use-cache", False)
+
+            profile = webdriver.FirefoxProfile()
+
+            # 禁用缓存
+            profile.set_preference("browser.cache.disk.enable", False)
+            profile.set_preference("browser.cache.memory.enable", False)
+            profile.set_preference("browser.cache.offline.enable", False)
+            profile.set_preference("network.http.use-cache", False)
             # 代理
             # proxy = self.__get_proxy()
             # fire_fox_options.add_argument('--proxy-server=' + proxy)
@@ -50,12 +54,14 @@ class CommonCrawl:
                 print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), "start to init browser")
                 if platform.system().lower() == 'linux':
                     fire_fox_options.add_argument('--headless')
-                    browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./geckodriver')
+                    browser = selenium.webdriver.Firefox(firefox_profile=profile, options=fire_fox_options,
+                                                         executable_path='./geckodriver')
                 elif platform.system().lower() == 'darwin':
-                    browser = selenium.webdriver.Firefox(options=fire_fox_options, executable_path='./mac_geckodriver')
+                    browser = selenium.webdriver.Firefox(firefox_profile=profile, options=fire_fox_options,
+                                                         executable_path='./mac_geckodriver')
                 else:
                     # fire_fox_options.add_argument('--headless')
-                    browser = selenium.webdriver.Firefox(options=fire_fox_options)
+                    browser = selenium.webdriver.Firefox(firefox_profile=profile, options=fire_fox_options)
             else:
                 print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), "skip to init browser")
             browser = self.before_crawl(args, browser)
