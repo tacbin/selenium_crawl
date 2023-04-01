@@ -72,8 +72,6 @@ class TencentCrawl(CommonCrawl):
                 eles[i].click()
             except Exception as e:
                 print(e)
-            continue
-            i += 1
             time.sleep(2)
             # 切换到第二个窗口
             windows = browser.window_handles
@@ -109,7 +107,7 @@ class TencentCrawl(CommonCrawl):
                 CommonInstance.Redis_client.set(key, '')
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=str(json.dumps(data.__dict__,ensure_ascii=False)))
+                                                          body=str(json.dumps(data.__dict__, ensure_ascii=False)))
                 except Exception as e:
                     print("mq err:", e)
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'TencentCrawl   end custom_send..')
