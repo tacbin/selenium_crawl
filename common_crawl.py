@@ -38,6 +38,11 @@ class CommonCrawl:
         try:
             # 使用 fire_fox 的 WebDriver
             fire_fox_options = Options()
+            fire_fox_options.add_argument('--disable-application-cache')
+            fire_fox_options.set_preference("browser.cache.disk.enable", False)
+            fire_fox_options.set_preference("browser.cache.memory.enable", False)
+            fire_fox_options.set_preference("browser.cache.offline.enable", False)
+            fire_fox_options.set_preference("network.http.use-cache", False)
             # 代理
             # proxy = self.__get_proxy()
             # fire_fox_options.add_argument('--proxy-server=' + proxy)
