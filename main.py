@@ -48,6 +48,7 @@ if __name__ == '__main__':
                  HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler()
             , MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl()]
         # tasks = [WeiKeCrawl()]
+        minutes = 60 * 2
         for task in tasks:
             task.run()
-            time.sleep(60 * 10 / len(tasks))
+            time.sleep(60 * minutes / len(tasks))
