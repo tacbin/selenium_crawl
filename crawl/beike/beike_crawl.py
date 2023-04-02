@@ -3,7 +3,6 @@ import re
 import time
 from typing import List
 
-import miraicle
 from lxml import html
 from selenium.webdriver.firefox.webdriver import WebDriver
 

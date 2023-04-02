@@ -33,6 +33,7 @@ class CommonCrawl:
         self.__img_path = []
         self.is_save_img = False
         self.channel = get_rabbit_mq_channel()
+        self.use_proxy = False
 
     def run(self, *args):
         browser = None
@@ -48,8 +49,25 @@ class CommonCrawl:
             profile.set_preference("browser.cache.offline.enable", False)
             profile.set_preference("network.http.use-cache", False)
             # 代理
-            # proxy = self.__get_proxy()
-            # fire_fox_options.add_argument('--proxy-server=' + proxy)
+            if self.use_proxy:
+                print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), "user proxy")
+                # proxy = "http://tacbin:Tacbin@129.204.189.111:9999"
+                # # host = 'tacbin:Tacbin@129.204.189.111'
+                # # port = '9999'
+                # host = '129.204.189.111'
+                # port = 9999
+                # user = 'tacbin'
+                # password = 'Tacbin'
+                # from selenium.webdriver.common.proxy import Proxy, ProxyType
+                # proxy = Proxy({
+                #     'proxyType': ProxyType.MANUAL,
+                #     'httpProxy': f'http://{user}:{password}@{host}:{port}',
+                #     'httpsProxy': f'https://{user}:{password}@{host}:{port}',
+                #     'ftpProxy': f'ftp://{user}:{password}@{host}:{port}',
+                #     'noProxy': ''
+                # })
+                # fire_fox_options.add_argument(f'--proxy-server={proxy}')
+
             if browser is None:
                 print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), "start to init browser")
                 if platform.system().lower() == 'linux':
@@ -66,7 +84,9 @@ class CommonCrawl:
                 print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), "skip to init browser")
             browser = self.before_crawl(args, browser)
             for i in range(0, len(self.urls)):
+                time.sleep(5)
                 browser.execute_script(f"location.href='{self.urls[i]}';")
+                time.sleep(2)
                 # save img
                 self.save_img(browser, i, "normal")
                 # parse html
@@ -74,6 +94,7 @@ class CommonCrawl:
                 self.parse(browser)
                 # page search
                 self.__next_click(browser)
+                time.sleep(2)
                 self.__next_url(browser)
 
             time.sleep(10)
@@ -96,7 +117,7 @@ class CommonCrawl:
                     return
                 browser.close()
             except Exception as e:
-                print("close err",e)
+                print("close err", e)
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         return browser

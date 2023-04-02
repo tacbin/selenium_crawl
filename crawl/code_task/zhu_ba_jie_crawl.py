@@ -2,7 +2,7 @@
 import json
 import time
 
-import miraicle
+
 from lxml import html
 from selenium.webdriver.firefox.webdriver import WebDriver
 

@@ -3,7 +3,6 @@ import json
 import json
 import time
 
-import miraicle
 from lxml import html
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver

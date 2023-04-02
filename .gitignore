@@ -3,3 +3,9 @@
 /boss_crawl/
 /hok_crawl/
 /venv/
+/files/
+/*.vtt
+/*.jpg
+/*.part
+/*.mp3
+/*.webp
