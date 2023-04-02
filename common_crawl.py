@@ -10,12 +10,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from typing import List
 
-import redis
 import selenium
+from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
-from selenium import webdriver
+
 from common.common_instantce import CommonInstance
 from common.email import EmailInfo, AttachInfo
 from middleware.rabbit_mq import get_rabbit_mq_channel
@@ -33,7 +33,6 @@ class CommonCrawl:
         self.__img_path = []
         self.is_save_img = False
         self.channel = get_rabbit_mq_channel()
-        self.use_proxy = False
 
     def run(self, *args):
         browser = None
@@ -48,38 +47,21 @@ class CommonCrawl:
             profile.set_preference("browser.cache.memory.enable", False)
             profile.set_preference("browser.cache.offline.enable", False)
             profile.set_preference("network.http.use-cache", False)
-            # 代理
-            if self.use_proxy:
-                print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), "user proxy")
-                # proxy = "http://tacbin:Tacbin@129.204.189.111:9999"
-                # # host = 'tacbin:Tacbin@129.204.189.111'
-                # # port = '9999'
-                # host = '129.204.189.111'
-                # port = 9999
-                # user = 'tacbin'
-                # password = 'Tacbin'
-                # from selenium.webdriver.common.proxy import Proxy, ProxyType
-                # proxy = Proxy({
-                #     'proxyType': ProxyType.MANUAL,
-                #     'httpProxy': f'http://{user}:{password}@{host}:{port}',
-                #     'httpsProxy': f'https://{user}:{password}@{host}:{port}',
-                #     'ftpProxy': f'ftp://{user}:{password}@{host}:{port}',
-                #     'noProxy': ''
-                # })
-                # fire_fox_options.add_argument(f'--proxy-server={proxy}')
-
             if browser is None:
                 print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), "start to init browser")
                 if platform.system().lower() == 'linux':
                     fire_fox_options.add_argument('--headless')
                     browser = selenium.webdriver.Firefox(firefox_profile=profile, options=fire_fox_options,
-                                                         executable_path='./geckodriver')
+                                                         executable_path='./geckodriver',
+                                                         )
                 elif platform.system().lower() == 'darwin':
                     browser = selenium.webdriver.Firefox(firefox_profile=profile, options=fire_fox_options,
-                                                         executable_path='./mac_geckodriver')
+                                                         executable_path='./mac_geckodriver',
+                                                         )
                 else:
                     # fire_fox_options.add_argument('--headless')
-                    browser = selenium.webdriver.Firefox(firefox_profile=profile, options=fire_fox_options)
+                    browser = selenium.webdriver.Firefox(firefox_profile=profile, options=fire_fox_options,
+                                                         )
             else:
                 print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), "skip to init browser")
             browser = self.before_crawl(args, browser)

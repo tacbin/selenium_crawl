@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
+import os
 import time
 
 import eyed3
 from lxml import html
-from moviepy.editor import *
-from qiniu import Auth, put_file
 from selenium.webdriver.firefox.webdriver import WebDriver
 
 from common_crawl import CommonCrawl
@@ -19,7 +18,7 @@ class YoutubeMusicCrawler(CommonCrawl):
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
         self.urls = [
-            "https://www.youtube.com/playlist?list=PLiqmg20oFCodQ68Gi2TrLlTJKFFP2w9PE"]
+            "https://www.youtube.com/playlist?list=PLgzTt0k8mXzEk586ze4BjvDXR7c-TUSnx"]
         for url in self.urls:
             self.result_map[url] = []
 
@@ -67,23 +66,6 @@ class YoutubeMusicCrawler(CommonCrawl):
         # QQRobot.send_group_msg(FuDuJiGroup, ["youtube music 更新完毕"])
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'YoutubeMusicCrawler  ending..')
 
-    def upload_file(self, i, mp3_path):
-        # 需要填写你的 Access Key 和 Secret Key
-        access_key = 'X4GniBjYNd5nWYl8v88N9PgPuTFrp3HFe49FqMjk'
-        secret_key = 'ZMFofjsAu8GQkmKevEteT5abAMC2_hH1IMfrYDeh'
-        # 构建鉴权对象
-        q = Auth(access_key, secret_key)
-        # 要上传的空间
-        bucket_name = 'tacbin-files'
-        # 上传后保存的文件名
-        key = '%d.mp3' % i
-        # 生成上传 Token，可以指定过期时间等
-        token = q.upload_token(bucket_name, key, 3600)
-        # 要上传文件的本地路径
-        # localfile = './sync/bbb.jpg'
-        ret, info = put_file(token, key, mp3_path, version='v2')
-        print(info)
-
     def download_audio(self, url, i):
         proxy = "http://localhost:10809"
 
@@ -112,7 +94,6 @@ class YoutubeMusicCrawler(CommonCrawl):
         self.remove_files([mp3_filename, subtitle_filename, img_filename])
         # Create a youtube_dl instance and download the video
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-            import os
             info_dict = ydl.extract_info(url, download=True)
             # video_title = info_dict.get('title')
             video_id = info_dict.get('id')
