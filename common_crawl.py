@@ -33,8 +33,13 @@ class CommonCrawl:
         self.__img_path = []
         self.is_save_img = False
         self.channel = get_rabbit_mq_channel()
+        self.is_run = True
+        self.show_head = False
 
     def run(self, *args):
+        if not self.is_run:
+            return
+
         browser = None
         try:
             # 使用 fire_fox 的 WebDriver
@@ -55,11 +60,14 @@ class CommonCrawl:
                                                          executable_path='./geckodriver',
                                                          )
                 elif platform.system().lower() == 'darwin':
+                    if not self.show_head:
+                        fire_fox_options.add_argument('--headless')
                     browser = selenium.webdriver.Firefox(firefox_profile=profile, options=fire_fox_options,
                                                          executable_path='./mac_geckodriver',
                                                          )
                 else:
-                    # fire_fox_options.add_argument('--headless')
+                    if not self.show_head:
+                        fire_fox_options.add_argument('--headless')
                     browser = selenium.webdriver.Firefox(firefox_profile=profile, options=fire_fox_options,
                                                          )
             else:

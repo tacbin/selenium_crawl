@@ -1,19 +1,33 @@
 # -*- coding: utf-8 -*-
 import os
+import threading
 import time
 
 import eyed3
 from lxml import html
 from selenium.webdriver.firefox.webdriver import WebDriver
 
+from common.common_instantce import CommonInstance
+from common.constants import Week, FuDuJiGroup
+from common.qq_robot import QQRobot
 from common_crawl import CommonCrawl
 from open_lib import youtube_dl
+from utils.utils import get_current_time, safeFilename
 
 
 class YoutubeMusicCrawler(CommonCrawl):
     def __init__(self):
         super().__init__()
+        self.sub_dir = time.strftime('%Y-%m-%d', time.localtime())
         self.result_map = {}
+        last_time = CommonInstance.Redis_client.get('YoutubeMusicCrawler')
+        if last_time is None:
+            last_time = get_current_time()
+        else:
+            last_time = int(last_time)
+        if get_current_time() - Week < last_time:
+            self.is_run = False
+        self.show_head = False
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
@@ -25,6 +39,11 @@ class YoutubeMusicCrawler(CommonCrawl):
         self.file_location = 'YoutubeMusicCrawler  '
         self.is_save_img = False
         self.mode = 1
+
+        new_dir = './files/%s' % self.sub_dir
+        if not os.path.exists(new_dir):
+            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), new_dir, '创建目录,')
+            os.makedirs(new_dir)
         return browser
 
     def parse(self, browser: WebDriver):
@@ -54,17 +73,42 @@ class YoutubeMusicCrawler(CommonCrawl):
 
     def custom_send(self):
         i = 0
+        threads = []
         for url in self.result_map:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'YoutubeMusicCrawler   start custom_send..',
                   url)
             for data in self.result_map[url]:
                 i += 1
                 try:
-                    self.download_audio(data.url, i)
+                    thread = threadControl(data.url, i, self.sub_dir)
+                    thread.start()
+                    threads.append(thread)
+                    # self.download_audio(data.url, i)
                 except Exception as e:
-                    print("mq err:", e)
-        # QQRobot.send_group_msg(FuDuJiGroup, ["youtube music 更新完毕"])
+                    print("YoutubeMusicCrawler err:", e)
+            for t in threads:
+                t.join()
+        CommonInstance.Redis_client.set('YoutubeMusicCrawler', get_current_time())
+        QQRobot.send_group_msg(FuDuJiGroup, ["youtube music 更新完毕"])
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'YoutubeMusicCrawler  ending..')
+
+
+class TaskResult:
+    def __init__(self, title, url):
+        self.type = 'youtube_music_top_50'
+        self.title = title
+        self.url = url
+
+
+class threadControl(threading.Thread):
+    def __init__(self, url, i, sub_dir):
+        super().__init__()
+        self.url = url
+        self.i = i
+        self.sub_dir = sub_dir
+
+    def run(self):
+        self.download_audio(self.url, self.i)
 
     def download_audio(self, url, i):
         proxy = "http://localhost:10809"
@@ -87,15 +131,13 @@ class YoutubeMusicCrawler(CommonCrawl):
                 'preferredquality': '192',
             }],
         }
-        mp3_filename = './files/%d.mp3' % i
-        # Subtitle file name
-        subtitle_filename = './files/%d.vtt' % i
-        img_filename = './files/%d.jpg' % i
-        self.remove_files([mp3_filename, subtitle_filename, img_filename])
+
         # Create a youtube_dl instance and download the video
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(url, download=True)
-            # video_title = info_dict.get('title')
+            video_title = info_dict.get('title')
+            video_title = safeFilename(video_title)
+
             video_id = info_dict.get('id')
             # Set the paths of the downloaded files
             audio_path = f'{video_id}.mp3'
@@ -103,6 +145,13 @@ class YoutubeMusicCrawler(CommonCrawl):
             img_path = f'{video_id}.jpg'
             webp_path = f'{video_id}.webp'
             # Rename the files to the user-specified names
+            mp3_filename = './files/%s/%d-%s.mp3' % (self.sub_dir, self.i, video_title)
+            # Subtitle file name
+            subtitle_filename = './files/%s/%d-%s.vtt' % (self.sub_dir, self.i, video_title)
+            img_filename = './files/%s/%d-%s.jpg' % (self.sub_dir, self.i, video_title)
+
+            self.remove_files([mp3_filename, subtitle_filename, img_filename])
+
             os.rename(audio_path, mp3_filename)
             if os.path.exists(subtitle_path):
                 os.rename(subtitle_path, subtitle_filename)
@@ -116,23 +165,18 @@ class YoutubeMusicCrawler(CommonCrawl):
         mp3 = eyed3.load(mp3_filename)
         mp3.tag.title = info_dict.get('title')
         # Setting Lyrics to the ID3 "lyrics" tag
-        with open(subtitle_filename, 'r', encoding='utf-8')as f, open(img_filename, "rb") as img:
-            data = f.read()
-            mp3.tag.lyrics.set(data)
+        if os.path.exists(subtitle_filename):
+            with open(subtitle_filename, 'r', encoding='utf-8')as f:
+                data = f.read()
+                mp3.tag.lyrics.set(data)
 
-        with open(img_filename, "rb") as img:
-            data = img.read()
-            mp3.tag.images.set(3, data, "image/jpeg", info_dict.get('description'))
+        if os.path.exists(img_filename):
+            with open(img_filename, "rb") as img:
+                data = img.read()
+                mp3.tag.images.set(3, data, "image/jpeg", info_dict.get('description'))
         mp3.tag.save()
 
     def remove_files(self, file_paths):
         for file_path in file_paths:
             if os.path.exists(file_path):
                 os.remove(file_path)
-
-
-class TaskResult:
-    def __init__(self, title, url):
-        self.type = 'youtube_music_top_50'
-        self.title = title
-        self.url = url
