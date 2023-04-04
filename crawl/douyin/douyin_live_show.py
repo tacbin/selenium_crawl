@@ -13,6 +13,7 @@ from selenium.webdriver.firefox.webdriver import WebDriver
 from common.common_instantce import CommonInstance
 from common_crawl import CommonCrawl
 from middleware.rabbit_mq import get_rabbit_mq_channel
+from utils.utils import get_first_one_or_empty
 
 
 class MessageInfo:

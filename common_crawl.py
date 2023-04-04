@@ -34,7 +34,7 @@ class CommonCrawl:
         self.is_save_img = False
         self.channel = get_rabbit_mq_channel()
         self.is_run = True
-        self.show_head = False
+        self.show_head = True
 
     def run(self, *args):
         if not self.is_run:

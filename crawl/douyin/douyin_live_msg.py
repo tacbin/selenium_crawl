@@ -22,6 +22,7 @@ class DouYinMsgLiveCrawl(CommonCrawl):
         super().__init__()
         self.live_url = live_url
         self.result_map = {}
+        self.show_head = True
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.urls = [self.live_url]
