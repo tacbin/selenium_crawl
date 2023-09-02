@@ -28,7 +28,7 @@ class YoutubeMusicRightListCrawler(CommonCrawl):
                 last_time = int(last_time)
             if get_current_time() - Week < last_time:
                 self.is_run = False
-        self.show_head = False
+        self.show_head = True
         self.url = url
         self.title = title
 

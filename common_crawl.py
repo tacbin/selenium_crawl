@@ -32,7 +32,7 @@ class CommonCrawl:
         self.email_info = EmailInfo()
         self.__img_path = []
         self.is_save_img = False
-        self.channel = get_rabbit_mq_channel()
+        # self.channel = get_rabbit_mq_channel()
         self.is_run = True
         self.show_head = True
 
