@@ -43,31 +43,37 @@ class YoutubeMusicRightListCrawler(CommonCrawl):
         self.file_location = 'YoutubeMusicRightListCrawler  '
         self.is_save_img = False
         self.mode = 1
-        self.sub_dir = '%s(%s)' % (self.title, self.sub_dir)
-        new_dir = './files/%s' % self.sub_dir
-        if not os.path.exists(new_dir):
-            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), new_dir, '创建目录,')
-            os.makedirs(new_dir)
+        # self.sub_dir = '%s(%s)' % (self.title, self.sub_dir)
+        # new_dir = 'E:/python-workspace/selenium_crawl/files/%s' % self.sub_dir
+        # if not os.path.exists(new_dir):
+        #     print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), new_dir, '创建目录,')
+        #     os.makedirs(new_dir)
         return browser
 
     def parse(self, browser: WebDriver):
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'YoutubeMusicRightListCrawler   start crawl..',
               browser.current_url)
-        curr_url = browser.current_url
         time.sleep(60)
+        curr_url = browser.current_url
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()),'after sleep current_url:',curr_url)
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)
         tasks = selector.xpath("//ytd-playlist-panel-video-renderer[@class='style-scope ytd-playlist-panel-renderer']")
         for task in tasks:
-            sel = etree.HTML(etree.tostring(task, method='html'))
+            try:
+                sel = etree.HTML(etree.tostring(task, method='html'))
 
-            url = sel.xpath("//ytd-playlist-panel-video-renderer//a/@href")
-            url = url[0] if len(url) > 0 else ''
-            url = url.strip()
-            url = 'https://www.youtube.com' + url.replace('\n', '')
-
-            self.result_map[curr_url].append(TaskResult(url))
+                url = sel.xpath("//ytd-playlist-panel-video-renderer//a/@href")
+                if len(url) == 0:
+                    continue
+                url = url[0] if len(url) > 0 else ''
+                url = url.strip()
+                url = 'https://www.youtube.com' + url.replace('\n', '')
+                print(url, ' end')
+                self.result_map[curr_url].append(TaskResult(url))
+            except:
+                pass
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'YoutubeMusicRightListCrawler   end crawl..',
               curr_url)
 
@@ -81,7 +87,7 @@ class YoutubeMusicRightListCrawler(CommonCrawl):
             for data in self.result_map[url]:
                 i += 1
                 try:
-                    thread = threadControl(data.url, i, self.sub_dir)
+                    thread = threadControl(data.url, i, self.title)
                     thread.start()
                     threads.append(thread)
                     # self.download_audio(data.url, i)
@@ -108,4 +114,4 @@ class threadControl(threading.Thread):
         self.sub_dir = sub_dir
 
     def run(self):
-        DownloadUtil.download_audio(self.url, self.i)
+        DownloadUtil.download_audio(self.url, self.i,self.sub_dir)

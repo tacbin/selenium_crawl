@@ -8,7 +8,15 @@ import eyed3
 
 class DownloadUtil:
     @staticmethod
-    def download_audio( url, i):
+    def download_audio( url, i,other_dir=''):
+        sub_dir = time.strftime('%Y-%m-%d', time.localtime())
+        if len(other_dir) != 0:
+            sub_dir = other_dir
+        new_dir = 'E:/python-workspace/selenium_crawl/files/%s' % sub_dir
+        if not os.path.exists(new_dir):
+            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), new_dir, '创建目录,')
+            os.makedirs(new_dir)
+
         proxy = "http://localhost:10809"
 
         # Set options for youtube_dl
@@ -29,7 +37,6 @@ class DownloadUtil:
                 'preferredquality': '192',
             }],
         }
-        sub_dir = time.strftime('%Y-%m-%d', time.localtime())
         # Create a youtube_dl instance and download the video
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(url, download=True)

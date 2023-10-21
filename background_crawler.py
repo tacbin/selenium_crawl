@@ -4,6 +4,7 @@ import sys
 
 from crawl.english.youtube_music_right_list import YoutubeMusicRightListCrawler
 from utils.download_util import DownloadUtil
+from utils.utils import get_current_time
 
 os.chdir('E:\python-workspace\selenium_crawl')
 from middleware.init_middleware import init_middleware
@@ -25,4 +26,5 @@ def download_collection(url, title):
 # 五月天合辑 https://www.youtube.com/watch?v=V9sWPHGbESM&list=RDV9sWPHGbESM&start_radio=1&rv=V9sWPHGbESM&t=8
 if __name__ == '__main__':
     download_collection(
-        'https://www.youtube.com/watch?v=V9sWPHGbESM&list=RDV9sWPHGbESM&start_radio=1&rv=V9sWPHGbESM&t=8', '五月天合辑')
+        'https://www.youtube.com/watch?v=j4zuDYrUHOg&list=RDasaEYRUKQVk&index=1', '武家坡合辑')
+    # download_single_audio('https://youtu.be/Y6KEvSTgF1Q',get_current_time())
