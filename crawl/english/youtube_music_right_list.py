@@ -56,6 +56,7 @@ class YoutubeMusicRightListCrawler(CommonCrawl):
         time.sleep(60)
         curr_url = browser.current_url
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()),'after sleep current_url:',curr_url)
+        self.result_map[curr_url] = []
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)
@@ -80,7 +81,7 @@ class YoutubeMusicRightListCrawler(CommonCrawl):
     def custom_send(self):
         i = 0
         threads = []
-        for url in self.result_map:
+        for url in self.result_map.keys():
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()),
                   'YoutubeMusicRightListCrawler   start custom_send..',
                   url)
@@ -96,7 +97,7 @@ class YoutubeMusicRightListCrawler(CommonCrawl):
             for t in threads:
                 t.join()
         CommonInstance.Redis_client.set('YoutubeMusicRightListCrawler', get_current_time())
-        QQRobot.send_group_msg(FuDuJiGroup, ["youtube music 更新完毕"])
+        # QQRobot.send_group_msg(FuDuJiGroup, ["youtube music 更新完毕"])
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'YoutubeMusicRightListCrawler  ending..')
 
 
