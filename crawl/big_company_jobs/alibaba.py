@@ -21,7 +21,7 @@ class AlibabaCrawl(CommonCrawl):
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
-        self.urls = ["https://talent.alibaba.com/off-campus/position-list?lang=zh"]
+        self.urls = ["https://talent-holding.alibaba.com/off-campus/position-list?lang=zh"]
         for url in self.urls:
             self.result_map[url] = []
 
