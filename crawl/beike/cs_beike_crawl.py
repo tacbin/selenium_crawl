@@ -31,10 +31,13 @@ class CsBeiKeCrawl(CommonCrawl):
     def parse(self, browser: WebDriver):
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'bei ke parse start crawl..',
               browser.current_url)
-        if browser.current_url in self.urls:
-            self.__list_strategy(browser)
-        else:
-            self.__detail_strategy(browser)
+        try:
+            if browser.current_url in self.urls:
+                self.__list_strategy(browser)
+            else:
+                self.__detail_strategy(browser)
+        except:
+            pass
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'bei ke parse end crawl..', browser.current_url)
 
     def __list_strategy(self, browser):
