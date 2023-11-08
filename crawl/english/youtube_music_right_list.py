@@ -51,6 +51,7 @@ class YoutubeMusicRightListCrawler(CommonCrawl):
         return browser
 
     def parse(self, browser: WebDriver):
+        time.sleep(10)
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'YoutubeMusicRightListCrawler   start crawl..',
               browser.current_url)
         time.sleep(60)
@@ -71,7 +72,7 @@ class YoutubeMusicRightListCrawler(CommonCrawl):
                 url = url[0] if len(url) > 0 else ''
                 url = url.strip()
                 url = 'https://www.youtube.com' + url.replace('\n', '')
-                print(url, ' end')
+                print(url, ' added')
                 self.result_map[curr_url].append(TaskResult(url))
             except:
                 pass

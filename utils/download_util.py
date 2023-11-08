@@ -17,12 +17,12 @@ class DownloadUtil:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), new_dir, '创建目录,')
             os.makedirs(new_dir)
 
-        proxy = "http://localhost:10809"
+        # proxy = "http://localhost:2080"
 
         # Set options for youtube_dl
         ydl_opts = {
             'noplaylist': True,
-            'proxy': proxy,
+            # 'proxy': proxy,
             'format': 'bestaudio/best',
             'outtmpl': '%(id)s.%(ext)s',
             'writethumbnail': True,  # 图像

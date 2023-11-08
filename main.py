@@ -22,9 +22,6 @@ from crawl.big_company_jobs.weilai import WeiLaiCrawler
 from crawl.big_company_jobs.weipai import WeiPaiCrawl
 from crawl.big_company_jobs.xunlei import XunLeiCrawl
 from crawl.big_company_jobs.zhaolian import ZhaoLianCrawler
-from crawl.code_task.wei_ke_crawl import WeiKeCrawl
-from crawl.code_task.zhu_ba_jie_crawl import ZhuBaJieCrawl
-from crawl.english.youtube_music import YoutubeMusicCrawler
 from middleware.init_middleware import init_middleware
 
 
