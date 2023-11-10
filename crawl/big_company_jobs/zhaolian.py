@@ -90,7 +90,7 @@ class ZhaoLianCrawler(CommonCrawl):
                 path = "r_qq/" + str(val)
                 print(path)
                 CommonInstance.Redis_client.set(path, data.url)
-                data.url = "https://api.tacbin.club/" + path
+                data.url = "http://api.tacbin.club/" + path
                 txt = '【招联金融招聘】\n' \
                       '岗位名称：%s\n' \
                       '类别：%s\n' \

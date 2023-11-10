@@ -73,7 +73,7 @@ class WeiLaiCrawler (CommonCrawl):
                 path = "r_qq/" + str(val)
                 print(path)
                 CommonInstance.Redis_client.set(path, data.url)
-                data.url = "https://api.tacbin.club/" + path
+                data.url = "http://api.tacbin.club/" + path
                 txt = '【NIO蔚来招聘】\n' \
                       '岗位名称：%s\n' \
                       '类目:%s\n' \
