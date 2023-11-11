@@ -52,7 +52,7 @@ class CommonCrawl:
             addr = "127.0.0.1:10809"
             if self.use_proxy:
                 if platform.system().lower() == 'linux':
-                    addr = "tacbin:Tacbin@192.168.3.19:9999"
+                    addr = "192.168.3.19:9999"
 
                 proxy.proxy_type = ProxyType.MANUAL
                 proxy.http_proxy = addr
