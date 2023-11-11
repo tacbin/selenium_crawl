@@ -39,13 +39,22 @@ class QQRobot:
     #         CommonInstance.App_IS_LOCKED = False
     @staticmethod
     def send_group_msg(group: int, msg: List):
+        url = "https://open.feishu.cn/open-apis/bot/v2/hook/28bb15ff-ca86-4505-9a16-14a39e93a396"
+        QQRobot.common_send(url,msg)
+
+    @staticmethod
+    def send_blogs(msg: List):
+        url = "https://open.feishu.cn/open-apis/bot/v2/hook/04e4b871-2a41-4fb7-b141-cb8b697abffa"
+        QQRobot.common_send(url,msg)
+
+    @staticmethod
+    def common_send(url, msg: List):
         try:
             while CommonInstance.App_IS_LOCKED:
                 time.sleep(random.randint(5, 15))
             CommonInstance.App_IS_LOCKED = True
             time.sleep(random.randint(1, 3))
 
-            url = "https://open.feishu.cn/open-apis/bot/v2/hook/28bb15ff-ca86-4505-9a16-14a39e93a396"
             payload = {"msg_type": "text",
                        "content": {"text": str(msg[0]), }}
             data = json.dumps(payload)

@@ -74,11 +74,11 @@ class WeiLaiCrawler (CommonCrawl):
                 print(path)
                 CommonInstance.Redis_client.set(path, data.url)
                 data.url = "https://api.tacbin.club/" + path
-                txt = '【NIO蔚来招聘】\n' \
-                      '岗位名称：%s\n' \
-                      '类目:%s\n' \
-                      '地点：%s\n' \
-                      '发布时间：%s\n' \
+                txt = '【NIO蔚来招聘】\n\n' \
+                      '岗位名称：%s\n\n' \
+                      '类目:%s\n\n' \
+                      '地点：%s\n\n' \
+                      '发布时间：%s\n\n' \
                       '链接:%s' % (data.title, data.cate, data.place,data.update_time, data.url)
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
                 CommonInstance.Redis_client.set(key, '')

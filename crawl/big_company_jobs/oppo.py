@@ -82,9 +82,9 @@ class OppoCrawl(CommonCrawl):
                 print(path)
                 CommonInstance.Redis_client.set(path, data.url)
                 data.url = "https://api.tacbin.club/" + path
-                txt = '【OPPO招聘】\n' \
-                      '岗位名称：%s\n' \
-                      '类目:%s\n' \
+                txt = '【OPPO招聘】\n\n' \
+                      '岗位名称：%s\n\n' \
+                      '类目:%s\n\n' \
                       '链接:%s' % (data.title, data.cate, data.url)
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
                 try:

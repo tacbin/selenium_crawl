@@ -87,10 +87,10 @@ class AlibabaCrawl(CommonCrawl):
                 CommonInstance.Redis_client.set(path, data.url)
                 data.url = "https://api.tacbin.club/" + path
 
-                txt = '【阿里巴巴招聘】\n' \
-                      '岗位名称：%s\n' \
-                      '地点：%s\n' \
-                      '发布时间:%s\n' \
+                txt = '【阿里巴巴招聘】\n\n' \
+                      '岗位名称：%s\n\n' \
+                      '地点：%s\n\n' \
+                      '发布时间:%s\n\n' \
                       '链接:%s' % (data.title, data.place, data.update_time, data.url)
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",

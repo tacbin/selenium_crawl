@@ -101,11 +101,11 @@ class WangYiCrawl(CommonCrawl):
                 print(path)
                 CommonInstance.Redis_client.set(path, data.url)
                 data.url = "https://api.tacbin.club/" + path
-                txt = '【网易招聘】\n' \
-                      '岗位名称：%s\n' \
-                      '地点：%s\n' \
-                      '部门：%s\n' \
-                      '发布时间:%s\n' \
+                txt = '【网易招聘】\n\n' \
+                      '岗位名称：%s\n\n' \
+                      '地点：%s\n\n' \
+                      '部门：%s\n\n' \
+                      '发布时间:%s\n\n' \
                       '链接:%s' % (data.title, data.place, data.category, data.update_time, data.url)
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",

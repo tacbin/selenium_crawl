@@ -91,11 +91,11 @@ class ShangTangCrawler(CommonCrawl):
                 print(path)
                 CommonInstance.Redis_client.set(path, data.url)
                 data.url = "https://api.tacbin.club/" + path
-                txt = '【商汤招聘】\n' \
-                      '岗位名称：%s\n' \
-                      '类目:%s\n' \
-                      '地点：%s\n' \
-                      '更新时间：%s\n' \
+                txt = '【商汤招聘】\n\n' \
+                      '岗位名称：%s\n\n' \
+                      '类目:%s\n\n' \
+                      '地点：%s\n\n' \
+                      '更新时间：%s\n\n' \
                       '链接:%s' % (data.title, data.cate, data.place, data.update_time, data.url)
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
                 try:

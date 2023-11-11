@@ -68,10 +68,10 @@ class DaJiangCrawl(CommonCrawl):
                 print(path)
                 CommonInstance.Redis_client.set(path, data.url)
                 data.url = "https://api.tacbin.club/" + path
-                txt = '【大疆招聘】\n' \
-                      '岗位名称：%s\n' \
-                      '%s\n' \
-                      '详情:%s\n' \
+                txt = '【大疆招聘】\n\n' \
+                      '岗位名称：%s\n\n' \
+                      '%s\n\n' \
+                      '详情:%s\n\n' \
                       '链接:%s' % (data.title, data.place, data.detail, data.url)
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",

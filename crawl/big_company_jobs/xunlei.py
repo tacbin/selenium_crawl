@@ -70,10 +70,10 @@ class XunLeiCrawl(CommonCrawl):
                 print(path)
                 CommonInstance.Redis_client.set(path, data.url)
                 data.url = "https://api.tacbin.club/" + path
-                txt = '【迅雷招聘】\n' \
-                      '岗位名称：%s\n' \
-                      '类目:%s\n' \
-                      '地点：%s\n' \
+                txt = '【迅雷招聘】\n\n' \
+                      '岗位名称：%s\n\n' \
+                      '类目:%s\n\n' \
+                      '地点：%s\n\n' \
                       '链接:%s' % (data.title, data.cate, data.place, data.url)
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
                 CommonInstance.Redis_client.set(key, '')

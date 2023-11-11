@@ -98,10 +98,10 @@ class TencentCrawl(CommonCrawl):
                 print(path)
                 CommonInstance.Redis_client.set(path, data.url)
                 data.url = "https://api.tacbin.club/" + path
-                txt = '【腾讯招聘】\n' \
-                      '岗位名称：%s\n' \
-                      '类目:%s\n' \
-                      '详情：%s\n' \
+                txt = '【腾讯招聘】\n\n' \
+                      '岗位名称：%s\n\n' \
+                      '类目:%s\n\n' \
+                      '详情：%s\n\n' \
                       '链接:%s' % (data.title, data.cate, data.detail, data.url)
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
                 CommonInstance.Redis_client.set(key, '')

@@ -22,8 +22,11 @@ from crawl.big_company_jobs.weilai import WeiLaiCrawler
 from crawl.big_company_jobs.weipai import WeiPaiCrawl
 from crawl.big_company_jobs.xunlei import XunLeiCrawl
 from crawl.big_company_jobs.zhaolian import ZhaoLianCrawler
+from crawl.blogs.fashion_blog import FashionBlogCrawl
+from crawl.blogs.fashion_blog_2 import FashionBlog2Crawl
 from crawl.english.youtube_music import YoutubeMusicCrawler
 from crawl.game.aoe4_news import Aoe4NewsCrawl
+from crawl.software.getpcsofts import GetPcSoftsCrawl
 from middleware.init_middleware import init_middleware
 
 
@@ -44,11 +47,12 @@ if __name__ == '__main__':
     # ZhuBaJieCrawl(), WeiKeCrawl()禁止爬
     # YoutubeMusicCrawler() 跑不起来?
     while True:
-        tasks = [Aoe4NewsCrawl(),BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
+        tasks = [Aoe4NewsCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
                  BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
                  HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler()
-            , MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl()]
-        # tasks = []
+            , MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl(), FashionBlogCrawl(), FashionBlog2Crawl(),
+                 GetPcSoftsCrawl()]
+        # tasks = [GetPcSoftsCrawl()]
         minutes = 60 * 2
         for task in tasks:
             task.run()

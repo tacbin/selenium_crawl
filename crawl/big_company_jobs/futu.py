@@ -71,10 +71,10 @@ class FuTuCrawl (CommonCrawl):
                 print(path)
                 CommonInstance.Redis_client.set(path, data.url)
                 data.url = "https://api.tacbin.club/" + path
-                txt = '【富途招聘】\n' \
-                      '岗位名称：%s\n' \
-                      '类目:%s\n' \
-                      '地点：%s\n' \
+                txt = '【富途招聘】\n\n' \
+                      '岗位名称：%s\n\n' \
+                      '类目:%s\n\n' \
+                      '地点：%s\n\n' \
                       '链接:%s' % (data.title, data.cate, data.place, data.url)
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
