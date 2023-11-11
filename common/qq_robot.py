@@ -46,9 +46,6 @@ class QQRobot:
             time.sleep(random.randint(1, 3))
 
             url = "https://open.feishu.cn/open-apis/bot/v2/hook/28bb15ff-ca86-4505-9a16-14a39e93a396"
-
-            # payload = "{\r\n    \"msg_type\": \"text\",\r\n    \"content\": {\r\n        \"text\": \"%s\"\r\n    }\r\n}" % str(msg[0]).encode('utf-8').decode('utf-8')
-
             payload = {"msg_type": "text",
                        "content": {"text": str(msg[0]), }}
             data = json.dumps(payload)
@@ -58,11 +55,8 @@ class QQRobot:
             headers = {
                 'Content-Type': 'application/json'
             }
-
             response = requests.request("POST", url, headers=headers, data=data)
-
             print(response.text)
-
         except Exception as e:
             print('send_group_msg', e)
         finally:

@@ -23,6 +23,7 @@ from crawl.big_company_jobs.weipai import WeiPaiCrawl
 from crawl.big_company_jobs.xunlei import XunLeiCrawl
 from crawl.big_company_jobs.zhaolian import ZhaoLianCrawler
 from crawl.english.youtube_music import YoutubeMusicCrawler
+from crawl.game.aoe4_news import Aoe4NewsCrawl
 from middleware.init_middleware import init_middleware
 
 
@@ -43,7 +44,7 @@ if __name__ == '__main__':
     # ZhuBaJieCrawl(), WeiKeCrawl()禁止爬
     # YoutubeMusicCrawler() 跑不起来?
     while True:
-        tasks = [BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
+        tasks = [Aoe4NewsCrawl(),BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
                  BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
                  HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler()
             , MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl()]
