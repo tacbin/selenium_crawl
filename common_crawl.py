@@ -12,13 +12,14 @@ from typing import List
 
 import selenium
 from selenium import webdriver
+from selenium.webdriver import Proxy, FirefoxProfile
+from selenium.webdriver.common.proxy import ProxyType
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
 
 from common.common_instantce import CommonInstance
 from common.email import EmailInfo, AttachInfo
-from middleware.rabbit_mq import get_rabbit_mq_channel
 
 
 # browser = None
@@ -35,41 +36,48 @@ class CommonCrawl:
         # self.channel = get_rabbit_mq_channel()
         self.is_run = True
         self.show_head = True
+        self.use_proxy = False
 
     def run(self, *args):
         if not self.is_run:
             return
-
+        # 代理置为空
         browser = None
         try:
             # 使用 fire_fox 的 WebDriver
             fire_fox_options = Options()
+            proxy = Proxy()
+            profile = FirefoxProfile()
 
-            profile = webdriver.FirefoxProfile()
+            addr = "127.0.0.1:10809"
+            if self.use_proxy:
+                if platform.system().lower() == 'linux':
+                    addr = "tacbin:Tacbin@192.168.3.19:9999"
 
-            # 禁用缓存
-            profile.set_preference("browser.cache.disk.enable", False)
-            profile.set_preference("browser.cache.memory.enable", False)
-            profile.set_preference("browser.cache.offline.enable", False)
-            profile.set_preference("network.http.use-cache", False)
+                proxy.proxy_type = ProxyType.MANUAL
+                proxy.http_proxy = addr
+                proxy.ssl_proxy = addr
+
+                profile.set_proxy(proxy)
+
             if browser is None:
                 print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), "start to init browser")
                 if platform.system().lower() == 'linux':
                     fire_fox_options.add_argument('--headless')
                     browser = selenium.webdriver.Firefox(firefox_profile=profile, options=fire_fox_options,
-                                                         executable_path='./geckodriver',
+                                                         executable_path='./geckodriver'
                                                          )
                 elif platform.system().lower() == 'darwin':
                     if not self.show_head:
                         fire_fox_options.add_argument('--headless')
                     browser = selenium.webdriver.Firefox(firefox_profile=profile, options=fire_fox_options,
-                                                         executable_path='./mac_geckodriver',
+                                                         executable_path='./mac_geckodriver'
                                                          )
                 else:
                     if not self.show_head:
                         fire_fox_options.add_argument('--headless')
-                    browser = selenium.webdriver.Firefox(firefox_profile=profile, options=fire_fox_options,
-                                                         )
+                    browser = selenium.webdriver.Firefox(firefox_profile=profile, options=fire_fox_options)
+
             else:
                 print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), "skip to init browser")
             browser = self.before_crawl(args, browser)
@@ -219,7 +227,7 @@ class CommonCrawl:
         return self.__img_path
 
     # def __get_proxy(self):
-    #     return requests.get("http://127.0.0.1:5010/get/").text
+    #     return requests.get("http://192.168.1.1:5010/get/").text
 
     def load_cookie(self, browser: WebDriver, file_name: str):
         cookies = CommonInstance.Redis_client.get(file_name)

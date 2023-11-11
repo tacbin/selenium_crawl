@@ -22,6 +22,7 @@ from crawl.big_company_jobs.weilai import WeiLaiCrawler
 from crawl.big_company_jobs.weipai import WeiPaiCrawl
 from crawl.big_company_jobs.xunlei import XunLeiCrawl
 from crawl.big_company_jobs.zhaolian import ZhaoLianCrawler
+from crawl.english.youtube_music import YoutubeMusicCrawler
 from middleware.init_middleware import init_middleware
 
 
@@ -40,12 +41,13 @@ if __name__ == '__main__':
 
     # 创建后台执行的 schedulers
     # ZhuBaJieCrawl(), WeiKeCrawl()禁止爬
+    # YoutubeMusicCrawler() 跑不起来?
     while True:
         tasks = [BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
                  BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
                  HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler()
             , MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl()]
-        # tasks = [YoutubeMusicCrawler()]
+        # tasks = []
         minutes = 60 * 2
         for task in tasks:
             task.run()

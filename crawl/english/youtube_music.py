@@ -28,6 +28,7 @@ class YoutubeMusicCrawler(CommonCrawl):
         if get_current_time() - Week < last_time:
             self.is_run = False
         self.show_head = False
+        self.use_proxy = True
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
@@ -111,12 +112,12 @@ class threadControl(threading.Thread):
         self.download_audio(self.url, self.i)
 
     def download_audio(self, url, i):
-        proxy = "http://localhost:10809"
+        # proxy = "http://localhost:10809"
 
         # Set options for youtube_dl
         ydl_opts = {
             'noplaylist': True,
-            'proxy': proxy,
+            # 'proxy': proxy,
             'format': 'bestaudio/best',
             'outtmpl': '%(id)s.%(ext)s',
             'writethumbnail': True,  # 图像
