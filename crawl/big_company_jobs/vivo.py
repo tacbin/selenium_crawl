@@ -71,7 +71,7 @@ class VivoCrawl(CommonCrawl):
                 path = "r_qq/" + str(val)
                 print(path)
                 CommonInstance.Redis_client.set(path, key)
-                data.url = "http://api.tacbin.club/" + path
+                data.url = "https://api.tacbin.club/" + path
                 txt = '【VIVO招聘】\n' \
                       '岗位名称：%s\n' \
                       '类目:%s\n' \
