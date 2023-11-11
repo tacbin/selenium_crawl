@@ -57,7 +57,7 @@ class Aoe4NewsCrawl(CommonCrawl):
         for url in self.result_map:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'Aoe4NewsCrawlstart custom_send..', url)
             for data in self.result_map[url]:
-                key = data.url
+                key = data.date + data.title
                 if CommonInstance.Redis_client.get(key) is not None:
                     continue
                 val = CommonInstance.Redis_client.incrby('qq')
