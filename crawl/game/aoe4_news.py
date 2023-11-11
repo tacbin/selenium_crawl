@@ -17,6 +17,8 @@ class Aoe4NewsCrawl(CommonCrawl):
     def __init__(self):
         super().__init__()
         self.result_map = {}
+        self.use_proxy = True
+
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
@@ -28,7 +30,6 @@ class Aoe4NewsCrawl(CommonCrawl):
         self.file_location = 'Aoe4NewsCrawl'
         self.is_save_img = False
         self.mode = 1
-        self.use_proxy = True
         return browser
 
     def parse(self, browser: WebDriver):
