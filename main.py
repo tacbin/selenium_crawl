@@ -24,6 +24,10 @@ from crawl.big_company_jobs.xunlei import XunLeiCrawl
 from crawl.big_company_jobs.zhaolian import ZhaoLianCrawler
 from crawl.blogs.fashion_blog import FashionBlogCrawl
 from crawl.blogs.fashion_blog_2 import FashionBlog2Crawl
+from crawl.coding.github_collections import GithubCollectionsCrawl
+from crawl.coding.github_explore import GithubExploreCrawl
+from crawl.coding.github_projects import GithubProjectsCrawl
+from crawl.coding.github_trending import GithubTrendingCrawl
 from crawl.english.youtube_music import YoutubeMusicCrawler
 from crawl.game.aoe4_news import Aoe4NewsCrawl
 from crawl.software.getpcsofts import GetPcSoftsCrawl
@@ -51,9 +55,10 @@ if __name__ == '__main__':
                  BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
                  HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler()
             , MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl(), FashionBlogCrawl(), FashionBlog2Crawl(),
-                 GetPcSoftsCrawl()]
-        # tasks = [GetPcSoftsCrawl()]
-        minutes = 60 * 2
+                 GetPcSoftsCrawl(), GithubTrendingCrawl(), GithubCollectionsCrawl(), GithubExploreCrawl(),
+                 GithubProjectsCrawl()]
+        # tasks = [GithubProjectsCrawl()]
+        hours = 2
         for task in tasks:
             task.run()
-            time.sleep(60 * minutes / len(tasks))
+            time.sleep(60 * 60 * hours / len(tasks))
