@@ -50,15 +50,13 @@ class HuaWeiCrawl (CommonCrawl):
 
 
             place = sel.xpath('//p//text()')
-            place = place[0] if len(place) > 0 else ''
+            place = ','.join(place)
             place = place.replace('\n', '')
 
-            cate = sel.xpath('//p//text()')
-            cate = cate[1] if len(cate) > 0 else ''
-            cate = cate.replace('\n', '')
+            cate = ''
 
             url = sel.xpath('//a/@href')
-            url = url[0] if len(url) > 0 else ''
+            url = ''.join(url)
             url = 'https://career.huawei.com/reccampportal/portal5/' + url.replace('\n', '')
 
             self.result_map[browser.current_url].append(TaskResult(title, place, cate, url))
@@ -78,14 +76,9 @@ class HuaWeiCrawl (CommonCrawl):
                 data.url = "https://api.tacbin.club/" + path
                 txt = '【华为招聘】\n\n' \
                       '岗位名称：%s\n\n' \
-                      '类目:%s\n\n' \
                       '地点：%s\n\n' \
-                      '链接:%s' % (data.title, data.cate, data.place, data.url)
-                try:
-                    get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=str(json.dumps(data.__dict__,ensure_ascii=False)))
-                except Exception as e:
-                    print("mq err:",e)
+                      '链接:%s' % (data.title, data.place, data.url)
+
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
                 CommonInstance.Redis_client.set(key, '')
 

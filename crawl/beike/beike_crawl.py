@@ -88,11 +88,17 @@ class BeiKeCrawl(CommonCrawl):
               browser.current_url)
 
     def __detail_strategy(self, browser):
+        time.sleep(5)
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)
-        detail = etree.tostring(selector.xpath("//div[@class='areaName']//span[@class='info']")[0], encoding='utf-8',
-                                method='html')
+        try:
+            detail = etree.tostring(selector.xpath("//div[@class='areaName']//span[@class='info']")[0],
+                                    encoding='utf-8',
+                                    method='html')
+        except:
+            print("贝壳深圳找房。url:%s不存在,",browser.current_url)
+            return
         dr = re.compile(r'<[^>]+>', re.S)
         dd = dr.sub('', detail.decode('utf-8'))
         dd = dd.replace('\n', '')
