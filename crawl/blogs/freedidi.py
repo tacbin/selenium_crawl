@@ -53,7 +53,6 @@ class FreeDidiCrawl(CommonCrawl):
             url = sel.xpath("//a[@rel='bookmark']/@href")
             url = url[0] if len(url) > 0 else ''
             url = url.replace('\n', '')
-            url = "https://weekly.tw93.fun" + url.replace('//', '')
 
             self.result_map[browser.current_url].append(TaskResult(title, date, desc, url))
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'FreeDidiCrawlend crawl..', browser.current_url)
