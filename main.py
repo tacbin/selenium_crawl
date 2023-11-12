@@ -24,6 +24,7 @@ from crawl.big_company_jobs.xunlei import XunLeiCrawl
 from crawl.big_company_jobs.zhaolian import ZhaoLianCrawler
 from crawl.blogs.fashion_blog import FashionBlogCrawl
 from crawl.blogs.fashion_blog_2 import FashionBlog2Crawl
+from crawl.blogs.freedidi import FreeDidiCrawl
 from crawl.coding.github_collections import GithubCollectionsCrawl
 from crawl.coding.github_explore import GithubExploreCrawl
 from crawl.coding.github_projects import GithubProjectsCrawl
@@ -56,8 +57,8 @@ if __name__ == '__main__':
                  HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler()
             , MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl(), FashionBlogCrawl(), FashionBlog2Crawl(),
                  GetPcSoftsCrawl(), GithubTrendingCrawl(), GithubCollectionsCrawl(), GithubExploreCrawl(),
-                 GithubProjectsCrawl()]
-        # tasks = [TencentCrawl()]
+                 GithubProjectsCrawl(),FreeDidiCrawl()]
+        # tasks = [FreeDidiCrawl()]
         hours = 2
         for task in tasks:
             task.run()
