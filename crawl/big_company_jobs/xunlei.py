@@ -37,6 +37,10 @@ class XunLeiCrawl(CommonCrawl):
         etree = html.etree
         selector = etree.HTML(page)
         tasks = selector.xpath('//div[@class="link-2tgd22te-3"]')
+
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 迅雷招聘解析失败!无岗位信息' % browser.current_url])
+
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
             title = sel.xpath('//div[@class="title-20V7ljm-Id"]/text()')

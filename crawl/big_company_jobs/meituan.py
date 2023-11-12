@@ -40,8 +40,11 @@ class MeiTuanCrawl(CommonCrawl):
                                      "//div[@class='position_list_item_content_left']")
         i = 0
         if len(eles) != len(tasks):
-            print('error')
+            QQRobot.send_to_police(['%s \n 美团招聘解析失败!任务数不一样' % browser.current_url])
             return
+
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 美团招聘解析失败!无岗位信息' % browser.current_url])
 
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))

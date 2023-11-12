@@ -37,6 +37,12 @@ class WeiLaiCrawler (CommonCrawl):
         etree = html.etree
         selector = etree.HTML(page)
         tasks = selector.xpath('//li[@class="CareerListCN_CareerListItem__GvZqM CareerListCN_CareerListCurrentPage__nqqfD"]')
+
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 蔚来招聘解析失败!无岗位信息' % browser.current_url])
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 网易招聘解析失败!无岗位信息' % browser.current_url])
+
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
             title = sel.xpath('//div[@class="CareerListCN_CareerListItemTitle__2fqQE"]/text()')

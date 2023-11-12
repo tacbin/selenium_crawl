@@ -37,6 +37,10 @@ class HuaWeiCrawl (CommonCrawl):
         etree = html.etree
         selector = etree.HTML(page)
         tasks = selector.xpath('//li[@class="border-top"]')
+
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 华为招聘解析失败!无岗位信息' % browser.current_url])
+
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
             title = sel.xpath('//h6/text()')

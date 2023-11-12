@@ -2,7 +2,6 @@
 import json
 import time
 
-
 from lxml import html
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
@@ -41,31 +40,33 @@ class TencentCrawl(CommonCrawl):
         selector = etree.HTML(page)
         tasks = selector.xpath('//div[@class="recruit-list"]')
         eles = browser.find_elements(By.XPATH,
-                                     "//h4[@class='recruit-title']")
+                                     "//span[@class='job-recruit-title']")
         i = 0
         if len(eles) != len(tasks):
-            print('error')
-            return
+            QQRobot.send_to_police(['%s \n 腾讯招聘解析失败,len(eles)!=len(tasks)' % browser.current_url])
 
         ck_bt = browser.find_elements(By.XPATH, "//div[@class='cookie-btn']")
         if len(ck_bt) >= 1:
             try:
                 ck_bt[0].click()
             except Exception as e:
+                QQRobot.send_to_police(['%s \n 腾讯招聘点击按钮报错!,e:%s' % (browser.current_url, str(e))])
                 print("click err:", e)
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 腾讯招聘解析失败!无岗位信息' % browser.current_url])
 
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
-            title = sel.xpath('//h4[@class="recruit-title"]/text()')
-            title = title[0] if len(title) > 0 else ''
+            title = sel.xpath('//span[@class="job-recruit-title"]/text()')
+            title = '\n'.join(title)
             title = title.replace('\n', '')
 
             cate = sel.xpath('//p[@class="recruit-tips"]//text()')
-            cate = cate[0] if len(cate) > 0 else ''
+            cate = '; '.join(cate)
             cate = cate.replace('\n', '')
 
             detail = sel.xpath('//p[@class="recruit-text"]//text()')
-            detail = detail[0] if len(detail) > 0 else ''
+            detail = '\n'.join(detail)
             detail = detail.replace('\n', '')
 
             try:
@@ -73,7 +74,7 @@ class TencentCrawl(CommonCrawl):
             except Exception as e:
                 print(e)
             time.sleep(2)
-            # 切换到第二个窗口
+            # 切换到第二个窗口 获取url
             windows = browser.window_handles
             browser.switch_to.window(windows[-1])
             url = browser.current_url

@@ -23,7 +23,7 @@ class ShangTangCrawler(CommonCrawl):
 
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
-        self.urls = ["https://hr.sensetime.com/SU604c56f9bef57c3d1a752c60/pb/social.html"]
+        self.urls = ["https://hr.sensetime.com/SU60fa3bdabef57c1023fc1cbc/pb/social.html?postTypeCode=0%2F1227%2F37850543%2F107221&workPlaceCode=0%2F4%2F396%2F399"]
         for url in self.urls:
             self.result_map[url] = []
 
@@ -44,6 +44,14 @@ class ShangTangCrawler(CommonCrawl):
         i = 0
 
         tasks = selector.xpath('//div[@class="list-row-item"]')
+
+        if len(tasks) != len(eles):
+            QQRobot.send_to_police(['%s \n 商汤招聘解析失败!任务数不一样' % browser.current_url])
+
+
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 商汤招聘解析失败!无岗位信息' % browser.current_url])
+
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
             title = sel.xpath('//div[@class="list-cell pos-name"]//span[@class="list-cell-span"]/text()')

@@ -40,6 +40,8 @@ class TpLinkCrawl(CommonCrawl):
         tasks = selector.xpath('//div[@class="line ng-star-inserted"]')
 
         i = 0
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n tp link招聘解析失败!无岗位信息' % browser.current_url])
 
         while i < len(tasks):
             page = browser.page_source

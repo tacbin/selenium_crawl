@@ -43,6 +43,10 @@ class KuaiShouCrawl(CommonCrawl):
         i = 0
 
         tasks = selector.xpath('//tr[@class="ant-table-row ant-table-row-level-0"]')
+
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 快手招聘解析失败!无岗位信息' % browser.current_url])
+
         while i < len(tasks):
             page = browser.page_source
             etree = html.etree

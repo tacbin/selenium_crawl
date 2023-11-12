@@ -41,8 +41,11 @@ class ShenXinFuCrawl(CommonCrawl):
                                      "//div[@class='details']")
         i = 0
         if len(eles) != len(tasks):
-            print('error')
+            QQRobot.send_to_police(['%s \n 深信服招聘解析失败!无岗位信息' % browser.current_url])
             return
+
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 深信服招聘解析失败!无岗位信息' % browser.current_url])
 
         for task in tasks:
             tasks = selector.xpath("//div[@class='x_zpPost_cardList']")

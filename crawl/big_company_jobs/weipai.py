@@ -38,17 +38,21 @@ class WeiPaiCrawl(CommonCrawl):
         etree = html.etree
         selector = etree.HTML(page)
         tasks = selector.xpath("//div[@class='container-aOp138AX_X large-yh1BjPzxqE list-oR2doUijv4']")
+
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 微派招聘解析失败!无岗位信息' % browser.current_url])
+
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
-            title = sel.xpath('//div[@class="title-u2qk9xX9Ie"]/text()')
+            title = sel.xpath('//span[@class="title-u2qk9xX9Ie target-color-container"]/text()')
             title = title[0] if len(title) > 0 else ''
             title = title.replace('\n', '')
 
-            update_time = sel.xpath('//span[@class="ellipsis-s4h2VX0z8O"]//text()')
+            update_time = sel.xpath('//span[@class="published-at-PQ5IBWmbJV"]//text()')
             update_time = update_time[0] if len(update_time) > 0 else ''
             update_time = update_time.replace('\n', '')
 
-            url = sel.xpath('//a/@href')
+            url = sel.xpath('//a[@class=" link-txmgVOCVz9"]/@href')
             url = url[0] if len(url) > 0 else ''
             url = "https://wepie-dingtalk.mokahr.com/social-recruitment/wepie/7359" + url
 

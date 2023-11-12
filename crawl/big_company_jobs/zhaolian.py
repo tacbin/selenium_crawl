@@ -2,7 +2,6 @@
 import json
 import time
 
-
 from lxml import html
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
@@ -42,8 +41,12 @@ class ZhaoLianCrawler(CommonCrawl):
                                      '//div[@class="list-row-item"]//div[@class="list-cell pos-name"]')
         i = 0
         if len(eles) != len(tasks):
-            print('error')
+            if len(eles) != len(tasks):
+                QQRobot.send_to_police(['%s \n 招联招聘解析失败!任务数不一样' % browser.current_url])
             return
+
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 招联招聘解析失败!无岗位信息' % browser.current_url])
 
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
@@ -101,9 +104,9 @@ class ZhaoLianCrawler(CommonCrawl):
                 CommonInstance.Redis_client.set(key, '')
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=str(json.dumps(data.__dict__,ensure_ascii=False)))
+                                                          body=str(json.dumps(data.__dict__, ensure_ascii=False)))
                 except Exception as e:
-                    print("mq err:",e)
+                    print("mq err:", e)
 
 
 class TaskResult:

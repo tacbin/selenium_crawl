@@ -111,7 +111,7 @@ class CommonCrawl:
             browser.close()
         except Exception as e:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'common crawl exception:', e)
-            QQRobot.send_to_police('%s 报错了!' % browser.current_url)
+            QQRobot.send_to_police(['%s 报错了!' % browser.current_url])
             try:
                 if browser is None:
                     return

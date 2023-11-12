@@ -36,6 +36,10 @@ class DaJiangCrawl(CommonCrawl):
         etree = html.etree
         selector = etree.HTML(page)
         tasks = selector.xpath('//li[@class="social_position_card__epffd"]')
+
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 大疆招聘解析失败!无岗位信息' % browser.current_url])
+
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
             title = sel.xpath('//span[@class="PositionCard_text__2BdZa"]/text()')

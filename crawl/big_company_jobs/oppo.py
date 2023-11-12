@@ -41,8 +41,12 @@ class OppoCrawl(CommonCrawl):
                                      '//div[@class="home-list-box"]')
         i = 0
         if len(tasks) != len(eles):
-            print('error')
+            QQRobot.send_to_police(['%s \n OPPO招聘解析失败!任务数不一样' % browser.current_url])
             return
+
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n OPPO招聘解析失败!无岗位信息' % browser.current_url])
+
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
             title = sel.xpath('//span[@class="home-list-box-title-name"]/text()')

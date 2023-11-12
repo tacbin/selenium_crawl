@@ -46,8 +46,10 @@ class WangYiCrawl(CommonCrawl):
             pass
 
         if len(eles) != len(tasks):
-            print('error')
-            return
+            QQRobot.send_to_police(['%s \n 网易招聘解析失败!任务数不一样' % browser.current_url])
+
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 网易招聘解析失败!无岗位信息' % browser.current_url])
 
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))

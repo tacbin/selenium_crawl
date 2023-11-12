@@ -38,6 +38,10 @@ class VivoCrawl(CommonCrawl):
         etree = html.etree
         selector = etree.HTML(page)
         tasks = selector.xpath('//div[@class="job-item"]')
+
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n vivo招聘解析失败!无岗位信息' % browser.current_url])
+
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
             title = sel.xpath('//h4[@class="job-title"]/text()')
