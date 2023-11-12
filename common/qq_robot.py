@@ -32,6 +32,11 @@ class QQRobot:
         QQRobot.common_send(url, msg)
 
     @staticmethod
+    def send_to_idea(msg: List):
+        url = "https://open.feishu.cn/open-apis/bot/v2/hook/51b20808-6df1-49c3-8fc4-ec32217699c4"
+        QQRobot.common_send(url, msg)
+
+    @staticmethod
     def common_send(url, msg: List):
         try:
             while CommonInstance.App_IS_LOCKED:

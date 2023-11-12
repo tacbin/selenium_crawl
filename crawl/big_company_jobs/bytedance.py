@@ -36,6 +36,8 @@ class ByteDanceCrawl(CommonCrawl):
         etree = html.etree
         selector = etree.HTML(page)
         tasks = selector.xpath("//div[@class='listItems__1q9i5']/a")
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 字节跳动招聘解析失败!无岗位信息' % browser.current_url])
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
             title = sel.xpath("//span[@class='positionItem-title-text']/text()")

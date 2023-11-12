@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import random
 import time
 
 from crawl.beike.beike_crawl import BeiKeCrawl
@@ -25,12 +26,17 @@ from crawl.big_company_jobs.zhaolian import ZhaoLianCrawler
 from crawl.blogs.fashion_blog import FashionBlogCrawl
 from crawl.blogs.fashion_blog_2 import FashionBlog2Crawl
 from crawl.blogs.freedidi import FreeDidiCrawl
+from crawl.blogs.fsi_language import FsiLanguageCrawl
 from crawl.coding.github_collections import GithubCollectionsCrawl
 from crawl.coding.github_explore import GithubExploreCrawl
 from crawl.coding.github_projects import GithubProjectsCrawl
 from crawl.coding.github_trending import GithubTrendingCrawl
 from crawl.english.youtube_music import YoutubeMusicCrawler
 from crawl.game.aoe4_news import Aoe4NewsCrawl
+from crawl.idea.breakoutlist import BreakoutListCrawl
+from crawl.idea.hacker_news import HackerNewsCrawl
+from crawl.idea.ideas_ted import IdeasTedCrawl
+from crawl.idea.producthunt import ProductHuntCrawl
 from crawl.software.getpcsofts import GetPcSoftsCrawl
 from middleware.init_middleware import init_middleware
 
@@ -57,8 +63,10 @@ if __name__ == '__main__':
                  HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler()
             , MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl(), FashionBlogCrawl(), FashionBlog2Crawl(),
                  GetPcSoftsCrawl(), GithubTrendingCrawl(), GithubCollectionsCrawl(), GithubExploreCrawl(),
-                 GithubProjectsCrawl(),FreeDidiCrawl()]
-        # tasks = [FreeDidiCrawl()]
+                 GithubProjectsCrawl(),FreeDidiCrawl(),ProductHuntCrawl(),BreakoutListCrawl(),HackerNewsCrawl(),FsiLanguageCrawl(),IdeasTedCrawl()]
+        random.shuffle(tasks)
+
+        # tasks = [IdeasTedCrawl()]
         hours = 2
         for task in tasks:
             task.run()

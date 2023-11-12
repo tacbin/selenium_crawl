@@ -34,10 +34,14 @@ class FashionBlogCrawl(CommonCrawl):
     def parse(self, browser: WebDriver):
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'FashionBlogCrawlstart crawl..',
               browser.current_url)
+        time.sleep(5)
+
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)
         tasks = selector.xpath('//a[contains(@class,"rounded-b-md shadow-md")]')
+        if len(tasks) == 0:
+            QQRobot.send_to_police(['%s \n 潮流周刊解析失败!无解析信息' % browser.current_url])
         for task in tasks:
             sel = etree.HTML(etree.tostring(task, method='html'))
             title = sel.xpath("//div[contains(@class,'text-gray-800')]/text()")
