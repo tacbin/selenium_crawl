@@ -51,13 +51,13 @@ if __name__ == '__main__':
     # ZhuBaJieCrawl(), WeiKeCrawl()禁止爬
     # YoutubeMusicCrawler() 跑不起来?
     while True:
-        # tasks = [Aoe4NewsCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
-        #          BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
-        #          HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler()
-        #     , MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl(), FashionBlogCrawl(), FashionBlog2Crawl(),
-        #          GetPcSoftsCrawl(), GithubTrendingCrawl(), GithubCollectionsCrawl(), GithubExploreCrawl(),
-        #          GithubProjectsCrawl()]
-        tasks = [TencentCrawl()]
+        tasks = [Aoe4NewsCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
+                 BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
+                 HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler()
+            , MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl(), FashionBlogCrawl(), FashionBlog2Crawl(),
+                 GetPcSoftsCrawl(), GithubTrendingCrawl(), GithubCollectionsCrawl(), GithubExploreCrawl(),
+                 GithubProjectsCrawl()]
+        # tasks = [TencentCrawl()]
         hours = 2
         for task in tasks:
             task.run()
