@@ -40,12 +40,12 @@ class QQRobot:
     @staticmethod
     def send_group_msg(group: int, msg: List):
         url = "https://open.feishu.cn/open-apis/bot/v2/hook/28bb15ff-ca86-4505-9a16-14a39e93a396"
-        QQRobot.common_send(url,msg)
+        QQRobot.common_send(url, msg)
 
     @staticmethod
     def send_blogs(msg: List):
         url = "https://open.feishu.cn/open-apis/bot/v2/hook/04e4b871-2a41-4fb7-b141-cb8b697abffa"
-        QQRobot.common_send(url,msg)
+        QQRobot.common_send(url, msg)
 
     @staticmethod
     def common_send(url, msg: List):
@@ -66,8 +66,26 @@ class QQRobot:
             }
             response = requests.request("POST", url, headers=headers, data=data)
             print(response.text)
+
+            QQRobot.send_to_es(str(msg[0]))
         except Exception as e:
             print('send_group_msg', e)
         finally:
             requests.session().close()
             CommonInstance.App_IS_LOCKED = False
+
+    @staticmethod
+    def send_to_es(msg):
+        curr_date = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+        payload = {"msg": msg,
+                   "create_time": curr_date}
+        data = json.dumps(payload)
+
+        # 按照utf-8编码成字节码
+        data = data.encode("utf-8")
+        headers = {
+            'Content-Type': 'application/json'
+        }
+        url = 'http://inner.tacbin.club:9200/spider/_doc'
+        response = requests.request("POST", url, headers=headers, data=data)
+        print(response.text)
