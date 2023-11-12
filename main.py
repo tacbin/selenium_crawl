@@ -58,20 +58,23 @@ if __name__ == '__main__':
     # 创建后台执行的 schedulers
     # ZhuBaJieCrawl(), WeiKeCrawl()禁止爬
     # YoutubeMusicCrawler() 跑不起来?
-    while True:
-        tasks = [Aoe4NewsCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
-                 BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
-                 HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler(),
-                 MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl(), FashionBlogCrawl(),
-                 FashionBlog2Crawl(),
-                 GetPcSoftsCrawl(), GithubTrendingCrawl(), GithubCollectionsCrawl(), GithubExploreCrawl(),
-                 GithubProjectsCrawl(), FreeDidiCrawl(), ProductHuntCrawl(), BreakoutListCrawl(), HackerNewsCrawl(),
-                 FsiLanguageCrawl(), IdeasTedCrawl(), ByteByteGoCrawl()]
 
-        # tasks = [ByteByteGoCrawl()]
+    tasks = [Aoe4NewsCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
+             BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
+             HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler(),
+             MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl(), FashionBlogCrawl(),
+             FashionBlog2Crawl(),
+             GetPcSoftsCrawl(), GithubTrendingCrawl(), GithubCollectionsCrawl(), GithubExploreCrawl(),
+             GithubProjectsCrawl(), FreeDidiCrawl(), ProductHuntCrawl(), BreakoutListCrawl(), HackerNewsCrawl(),
+             FsiLanguageCrawl(), IdeasTedCrawl(), ByteByteGoCrawl()]
+
+    # tasks = [ByteByteGoCrawl()]
+
+    random.shuffle(tasks)
+    while True:
+
 
         hours = 2
-        random.shuffle(tasks)
         for task in tasks:
             task.run()
             time.sleep(60 * 60 * hours / len(tasks))
