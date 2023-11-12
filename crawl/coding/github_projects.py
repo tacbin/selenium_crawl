@@ -20,7 +20,14 @@ class GithubProjectsCrawl(CommonCrawl):
         self.result_map = {}
         self.urls = [
             "https://github.com/shenghui0779/yiigo",
-            "https://github.com/yinggaozhen/awesome-go-cn"]
+            "https://github.com/yinggaozhen/awesome-go-cn",
+            "https://github.com/chatwoot/chatwoot",
+            "https://github.com/krahets/hello-algo",
+            "https://github.com//alibaba/flutter-go",
+            "https://github.com//APIs-guru/openapi-directory",
+            "https://github.com//TheAlgorithms/Python",
+            "https://github.com//lobehub/lobe-chat",
+        ]
         for url in self.urls:
             self.result_map[url] = []
 
