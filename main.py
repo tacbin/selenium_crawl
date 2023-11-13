@@ -68,7 +68,7 @@ if __name__ == '__main__':
              GithubProjectsCrawl(), FreeDidiCrawl(), ProductHuntCrawl(), BreakoutListCrawl(), HackerNewsCrawl(),
              FsiLanguageCrawl(), IdeasTedCrawl(), ByteByteGoCrawl()]
 
-    # tasks = [ByteByteGoCrawl()]
+    # tasks = [ByteDanceCrawl()]
 
     random.shuffle(tasks)
     while True:
