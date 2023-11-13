@@ -34,6 +34,7 @@ from crawl.coding.github_projects import GithubProjectsCrawl
 from crawl.coding.github_trending import GithubTrendingCrawl
 from crawl.english.youtube_music import YoutubeMusicCrawler
 from crawl.game.aoe4_news import Aoe4NewsCrawl
+from crawl.game.efootball import EfootballCrawl
 from crawl.idea.breakoutlist import BreakoutListCrawl
 from crawl.idea.hacker_news import HackerNewsCrawl
 from crawl.idea.ideas_ted import IdeasTedCrawl
@@ -66,9 +67,9 @@ if __name__ == '__main__':
              FashionBlog2Crawl(),
              GetPcSoftsCrawl(), GithubTrendingCrawl(), GithubCollectionsCrawl(), GithubExploreCrawl(),
              GithubProjectsCrawl(), FreeDidiCrawl(), ProductHuntCrawl(), BreakoutListCrawl(), HackerNewsCrawl(),
-             FsiLanguageCrawl(), IdeasTedCrawl(), ByteByteGoCrawl()]
+             FsiLanguageCrawl(), IdeasTedCrawl(), ByteByteGoCrawl(),EfootballCrawl()]
 
-    # tasks = [ByteDanceCrawl()]
+    # tasks = [EfootballCrawl()]
 
     random.shuffle(tasks)
     while True:
