@@ -28,6 +28,7 @@ from crawl.blogs.fashion_blog import FashionBlogCrawl
 from crawl.blogs.fashion_blog_2 import FashionBlog2Crawl
 from crawl.blogs.freedidi import FreeDidiCrawl
 from crawl.blogs.fsi_language import FsiLanguageCrawl
+from crawl.blogs.v2ex import V2exCrawl
 from crawl.coding.github_collections import GithubCollectionsCrawl
 from crawl.coding.github_explore import GithubExploreCrawl
 from crawl.coding.github_projects import GithubProjectsCrawl
@@ -67,9 +68,9 @@ if __name__ == '__main__':
              FashionBlog2Crawl(),
              GetPcSoftsCrawl(), GithubTrendingCrawl(), GithubCollectionsCrawl(), GithubExploreCrawl(),
              GithubProjectsCrawl(), FreeDidiCrawl(), ProductHuntCrawl(), BreakoutListCrawl(), HackerNewsCrawl(),
-             FsiLanguageCrawl(), IdeasTedCrawl(), ByteByteGoCrawl(),EfootballCrawl()]
+             FsiLanguageCrawl(), IdeasTedCrawl(), ByteByteGoCrawl(),EfootballCrawl(),V2exCrawl()]
 
-    # tasks = [ByteDanceCrawl()]
+    # tasks = [V2exCrawl()]
 
     random.shuffle(tasks)
     while True:

@@ -8,3 +8,4 @@ APScheduler~=3.9.1.post1
 pika~=1.2.1
 aiohttp~=3.7.0
 eyed3~=0.9.6
+requests_toolbelt~=1.0.0

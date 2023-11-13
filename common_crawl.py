@@ -49,6 +49,7 @@ class CommonCrawl:
             fire_fox_options = Options()
             proxy = Proxy()
             profile = FirefoxProfile()
+            profile.set_preference("browser.link.open_newwindow", 3)
 
             addr = "127.0.0.1:10809"
             if self.use_proxy:
@@ -204,7 +205,7 @@ class CommonCrawl:
             # save img
             self.save_img(browser, i, "click")
             # parse html
-            time.sleep(1.5)
+            time.sleep(3)
             self.parse(browser)
             # next page
             elements = self.get_next_click_elements(browser)

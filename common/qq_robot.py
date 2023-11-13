@@ -5,11 +5,32 @@ import random
 import time
 from typing import List
 import requests
+# pip install requests_toolbelt
+from requests_toolbelt import MultipartEncoder
 
 from common.common_instantce import CommonInstance
 
 
 class QQRobot:
+
+    # https://open.feishu.cn/api-explorer/cli_a5d8f9b46b78500b?apiName=create&from=op_doc_tab&project=im&resource=image&version=v1
+    @staticmethod
+    def upload_msg_image(file_path):
+        url = "https://open.feishu.cn/open-apis/im/v1/images"
+        form = {'image_type': 'message',
+                'image': (open(file_path, 'rb'))}  # 需要替换具体的path
+        multi_form = MultipartEncoder(form)
+        headers = {
+            'Authorization': 'Bearer t-g104bdnPBR7TRYO7RA65JHYR5ZVGGF6HRLFOJR5B',
+            ## 获取tenant_access_token, 需要替换为实际的token
+        }
+        headers['Content-Type'] = multi_form.content_type
+        response = requests.request("POST", url, headers=headers, data=multi_form)
+        print(response.headers['X-Tt-Logid'])  # for debug or oncall
+        print(response.content)
+        import ast
+        map = ast.literal_eval(str(response.content, encoding = "utf-8"))
+        return map['data']['image_key']
 
     @staticmethod
     def send_group_msg(group: int, msg: List):
@@ -20,6 +41,11 @@ class QQRobot:
     def send_blogs(msg: List):
         url = "https://open.feishu.cn/open-apis/bot/v2/hook/04e4b871-2a41-4fb7-b141-cb8b697abffa"
         QQRobot.common_send(url, msg)
+
+    @staticmethod
+    def send_image_blogs(msg: List):
+        url = "https://open.feishu.cn/open-apis/bot/v2/hook/04e4b871-2a41-4fb7-b141-cb8b697abffa"
+        QQRobot.common_send_image(url, msg)
 
     @staticmethod
     def send_to_coding(msg: List):
@@ -57,6 +83,34 @@ class QQRobot:
             print(response.text)
 
             QQRobot.send_to_es(str(msg[0]))
+        except Exception as e:
+            print('send_group_msg', e)
+        finally:
+            requests.session().close()
+            CommonInstance.App_IS_LOCKED = False
+
+    @staticmethod
+    def common_send_image(url, msg: List):
+        try:
+            while CommonInstance.App_IS_LOCKED:
+                time.sleep(random.randint(5, 15))
+            CommonInstance.App_IS_LOCKED = True
+            time.sleep(random.randint(1, 3))
+            img_key = QQRobot.upload_msg_image(msg[0])
+
+            # 发送图片消息
+            payload = {"msg_type": "image",
+                       "content": {"image_key": img_key, }}
+            data = json.dumps(payload)
+
+            # 按照utf-8编码成字节码
+            data = data.encode("utf-8")
+            headers = {
+                'Authorization': 'Bearer ' + 't-g104bdnPBR7TRYO7RA65JHYR5ZVGGF6HRLFOJR5B'
+            }
+            response = requests.request("POST", url, headers=headers, data=data)
+            print(response.text)
+
         except Exception as e:
             print('send_group_msg', e)
         finally:
