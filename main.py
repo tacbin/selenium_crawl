@@ -69,7 +69,7 @@ if __name__ == '__main__':
              GithubProjectsCrawl(), FreeDidiCrawl(), ProductHuntCrawl(), BreakoutListCrawl(), HackerNewsCrawl(),
              FsiLanguageCrawl(), IdeasTedCrawl(), ByteByteGoCrawl(),EfootballCrawl()]
 
-    # tasks = [EfootballCrawl()]
+    # tasks = [ByteDanceCrawl()]
 
     random.shuffle(tasks)
     while True:

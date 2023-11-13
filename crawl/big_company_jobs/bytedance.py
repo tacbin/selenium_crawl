@@ -36,7 +36,7 @@ class ByteDanceCrawl(CommonCrawl):
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)
-        tasks = selector.xpath("//div[@class='listItems__1q9i5']/a")
+        tasks = selector.xpath("//div[@class='listItems__1q9i5']//a")
         if len(tasks) == 0:
             QQRobot.send_to_police(['%s \n 字节跳动招聘解析失败!无岗位信息' % browser.current_url])
         for task in tasks:
@@ -78,11 +78,7 @@ class ByteDanceCrawl(CommonCrawl):
                       '详情:%s\n\n' \
                       '%s\n\n' \
                       '链接:%s' % (data.title, data.detail, data.job_id, data.url)
-                try:
-                    get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",
-                                                          body=str(json.dumps(data.__dict__,ensure_ascii=False)))
-                except Exception as e:
-                    print("mq err:",e)
+
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
                 CommonInstance.Redis_client.set(key, '')
 
