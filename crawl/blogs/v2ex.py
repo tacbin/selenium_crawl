@@ -23,7 +23,7 @@ class V2exCrawl(CommonCrawl):
     def before_crawl(self, args, browser: WebDriver) -> WebDriver:
         self.result_map = {}
         self.urls = [
-            "https://www.v2ex.com/?tab=all"]
+            "https://www.v2ex.com"]
         for url in self.urls:
             self.result_map[url] = []
 
@@ -34,7 +34,7 @@ class V2exCrawl(CommonCrawl):
 
     def parse(self, browser: WebDriver):
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'V2exCrawl   start crawl..', browser.current_url)
-        time.sleep(5)
+        time.sleep(300)
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)

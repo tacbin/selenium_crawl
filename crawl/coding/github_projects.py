@@ -28,7 +28,9 @@ class GithubProjectsCrawl(CommonCrawl):
             "https://github.com//TheAlgorithms/Python",
             "https://github.com//lobehub/lobe-chat",
             "https://github.com/donnemartin/system-design-primer",
-            "https://github.com/activepieces/activepieces"
+            "https://github.com/activepieces/activepieces",
+            "https://github.com//ashishps1/awesome-system-design-resources"
+            "https://github.com//chatchat-space/Langchain-Chatchat"
         ]
         for url in self.urls:
             self.result_map[url] = []

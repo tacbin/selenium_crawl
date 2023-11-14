@@ -50,6 +50,7 @@ class CommonCrawl:
             proxy = Proxy()
             profile = FirefoxProfile()
             profile.set_preference("browser.link.open_newwindow", 3)
+            fire_fox_options.add_argument("--disable-blink-features=AutomationControlled")
 
             addr = "127.0.0.1:10809"
             if self.use_proxy:

@@ -74,9 +74,8 @@ if __name__ == '__main__':
 
     random.shuffle(tasks)
     while True:
+        hours = 1.5
 
-
-        hours = 2
         for task in tasks:
             task.run()
             time.sleep(60 * 60 * hours / len(tasks))
