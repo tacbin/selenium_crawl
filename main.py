@@ -23,11 +23,18 @@ from crawl.big_company_jobs.weilai import WeiLaiCrawler
 from crawl.big_company_jobs.weipai import WeiPaiCrawl
 from crawl.big_company_jobs.xunlei import XunLeiCrawl
 from crawl.big_company_jobs.zhaolian import ZhaoLianCrawler
+from crawl.blogs.aws_blog import AwsBlogCrawl
 from crawl.blogs.bytebytego import ByteByteGoCrawl
+from crawl.blogs.confluent_blog import ConfluentBlogCrawl
+from crawl.blogs.docker_blog import DockerBlogCrawl
+from crawl.blogs.door_dash import DoorDashBlogCrawl
 from crawl.blogs.fashion_blog import FashionBlogCrawl
 from crawl.blogs.fashion_blog_2 import FashionBlog2Crawl
 from crawl.blogs.freedidi import FreeDidiCrawl
 from crawl.blogs.fsi_language import FsiLanguageCrawl
+from crawl.blogs.meta_blog import MetaBlogCrawl
+from crawl.blogs.netflixtech_blog import NetflixTechCrawl
+from crawl.blogs.strip_blog import StripBlogCrawl
 from crawl.blogs.v2ex import V2exCrawl
 from crawl.coding.github_collections import GithubCollectionsCrawl
 from crawl.coding.github_explore import GithubExploreCrawl
@@ -60,19 +67,26 @@ if __name__ == '__main__':
     # 创建后台执行的 schedulers
     # ZhuBaJieCrawl(), WeiKeCrawl()禁止爬
     # YoutubeMusicCrawler() 跑不起来?
+    # Invalided tasks
+    # FsiLanguageCrawl(),V2exCrawl()
+    # tasks = []
 
     tasks = [Aoe4NewsCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
              BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
              HuaWeiCrawl(), KuaiShouCrawl(), ShangTangCrawler(), TpLinkCrawl(), WeiLaiCrawler(), ZhaoLianCrawler(),
-             MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl(), FashionBlogCrawl(),
-             FashionBlog2Crawl(),
+             MeiTuanCrawl(), WangYiCrawl(), WeiPaiCrawl(), ShenXinFuCrawl(),
              GetPcSoftsCrawl(), GithubTrendingCrawl(), GithubCollectionsCrawl(), GithubExploreCrawl(),
-             GithubProjectsCrawl(), FreeDidiCrawl(), ProductHuntCrawl(), BreakoutListCrawl(), HackerNewsCrawl(),
-             FsiLanguageCrawl(), IdeasTedCrawl(), ByteByteGoCrawl(),EfootballCrawl(),V2exCrawl()]
+             GithubProjectsCrawl(), ProductHuntCrawl(), BreakoutListCrawl(), HackerNewsCrawl(),
+             IdeasTedCrawl(), EfootballCrawl()]
 
-    # tasks = [V2exCrawl()]
+    blogs = [ConfluentBlogCrawl(),DockerBlogCrawl(),DoorDashBlogCrawl(), AwsBlogCrawl(), StripBlogCrawl(), MetaBlogCrawl(), NetflixTechCrawl(),
+             ByteByteGoCrawl(), FashionBlogCrawl(),
+             FashionBlog2Crawl(), FreeDidiCrawl(), ]
+
+    tasks.extend(blogs)
 
     random.shuffle(tasks)
+
     while True:
         hours = 1.5
 
