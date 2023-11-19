@@ -35,7 +35,7 @@ class IdeasTedCrawl(CommonCrawl):
     def parse(self, browser: WebDriver):
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), 'IdeasTedCrawlstart crawl..',
               browser.current_url)
-        time.sleep(5)
+        time.sleep(15)
         page = browser.page_source
         etree = html.etree
         selector = etree.HTML(page)

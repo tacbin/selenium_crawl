@@ -69,7 +69,8 @@ if __name__ == '__main__':
     # YoutubeMusicCrawler() 跑不起来?
     # Invalided tasks
     # FsiLanguageCrawl(),V2exCrawl()
-    # tasks = []
+
+    # tasks = [IdeasTedCrawl()]
 
     tasks = [Aoe4NewsCrawl(), BeiKeCrawl(), CsBeiKeCrawl(), ByteDanceCrawl(), AlibabaCrawl(),
              BaiDuCrawl(), DaJiangCrawl(), FuTuCrawl(), XunLeiCrawl(), TencentCrawl(), OppoCrawl(), VivoCrawl(),
@@ -79,7 +80,7 @@ if __name__ == '__main__':
              GithubProjectsCrawl(), ProductHuntCrawl(), BreakoutListCrawl(), HackerNewsCrawl(),
              IdeasTedCrawl(), EfootballCrawl()]
 
-    blogs = [ConfluentBlogCrawl(),DockerBlogCrawl(),DoorDashBlogCrawl(), AwsBlogCrawl(), StripBlogCrawl(), MetaBlogCrawl(), NetflixTechCrawl(),
+    blogs = [NetflixTechCrawl(),ConfluentBlogCrawl(),DockerBlogCrawl(),DoorDashBlogCrawl(), AwsBlogCrawl(), StripBlogCrawl(), MetaBlogCrawl(),
              ByteByteGoCrawl(), FashionBlogCrawl(),
              FashionBlog2Crawl(), FreeDidiCrawl(), ]
 
