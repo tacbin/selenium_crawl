@@ -81,6 +81,7 @@ class HackerNewsCrawl(CommonCrawl):
                       '链接:%s' % (data.title,  data.url)
 
                 QQRobot.send_to_idea([txt])
+                QQRobot.send_to_idea_xiaowo([txt])
                 CommonInstance.Redis_client.set(key, '')
 
 

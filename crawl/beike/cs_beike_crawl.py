@@ -121,6 +121,7 @@ class CsBeiKeCrawl(CommonCrawl):
                       '链接:%s ' % (
                       data.title, data.area, data.community, data.house_info, data.price.replace("万","达不溜"), data.tag, data.url)
                 QQRobot.send_group_msg(885445945, [txt])
+                QQRobot.send_house_msg(885445945, [txt])
                 CommonInstance.Redis_client.set(data.url, '')
 
 

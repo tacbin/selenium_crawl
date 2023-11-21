@@ -36,6 +36,14 @@ class QQRobot:
     def send_group_msg(group: int, msg: List):
         url = "https://open.feishu.cn/open-apis/bot/v2/hook/28bb15ff-ca86-4505-9a16-14a39e93a396"
         QQRobot.common_send(url, msg)
+    @staticmethod
+    def send_house_msg(group: int, msg: List):
+        url = "https://open.feishu.cn/open-apis/bot/v2/hook/a70c68d3-42a8-4fe7-ac11-113fa42b38a5"
+        QQRobot.common_send(url, msg)
+    @staticmethod
+    def send_company_msg_xiaowo(group: int, msg: List):
+        url = "https://open.feishu.cn/open-apis/bot/v2/hook/8a14427e-d702-421b-99be-6dc85949ccb5"
+        QQRobot.common_send(url, msg)
 
     @staticmethod
     def send_blogs(msg: List):
@@ -53,6 +61,11 @@ class QQRobot:
         QQRobot.common_send(url, msg)
 
     @staticmethod
+    def send_to_coding_xiaowo(msg: List):
+        url = "https://open.feishu.cn/open-apis/bot/v2/hook/3788f85a-bec3-4ddd-bb0a-fde9f2149829"
+        QQRobot.common_send(url, msg)
+
+    @staticmethod
     def send_to_police(msg: List):
         url = "https://open.feishu.cn/open-apis/bot/v2/hook/2b904c87-8c76-4f5f-bd65-0940bc09d6f0"
         QQRobot.common_send(url, msg)
@@ -60,6 +73,10 @@ class QQRobot:
     @staticmethod
     def send_to_idea(msg: List):
         url = "https://open.feishu.cn/open-apis/bot/v2/hook/51b20808-6df1-49c3-8fc4-ec32217699c4"
+        QQRobot.common_send(url, msg)
+    @staticmethod
+    def send_to_idea_xiaowo(msg: List):
+        url = "https://open.feishu.cn/open-apis/bot/v2/hook/7a24b478-aed7-404a-ba70-44718fafc15e"
         QQRobot.common_send(url, msg)
 
     @staticmethod

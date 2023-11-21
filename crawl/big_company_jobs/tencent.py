@@ -105,6 +105,7 @@ class TencentCrawl(CommonCrawl):
                       '详情：%s\n\n' \
                       '链接:%s' % (data.title, data.cate, data.detail, data.url)
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
+                QQRobot.send_company_msg_xiaowo(JobGroupConstant, [txt])
                 CommonInstance.Redis_client.set(key, '')
                 try:
                     get_rabbit_mq_channel().basic_publish(exchange="", routing_key="selenium-crawl-queue",

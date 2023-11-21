@@ -97,6 +97,7 @@ class BaiDuCrawl(CommonCrawl):
                 except Exception as e:
                     print("mq err:",e)
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
+                QQRobot.send_company_msg_xiaowo(JobGroupConstant, [txt])
                 CommonInstance.Redis_client.set(key, '')
 
 

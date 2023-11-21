@@ -80,6 +80,7 @@ class HuaWeiCrawl (CommonCrawl):
                       '链接:%s' % (data.title, data.place, data.url)
 
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
+                QQRobot.send_company_msg_xiaowo(JobGroupConstant, [txt])
                 CommonInstance.Redis_client.set(key, '')
 
 

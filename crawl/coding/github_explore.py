@@ -80,6 +80,7 @@ class GithubExploreCrawl(CommonCrawl):
                       '链接:%s' % (data.title, data.desc, data.language, data.url)
 
                 QQRobot.send_to_coding([txt])
+                QQRobot.send_to_coding_xiaowo([txt])
                 CommonInstance.Redis_client.set(key, '')
 
 
