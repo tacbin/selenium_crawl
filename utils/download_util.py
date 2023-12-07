@@ -17,12 +17,19 @@ class DownloadUtil:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), new_dir, '创建目录,')
             os.makedirs(new_dir)
 
-        # proxy = "http://localhost:2080"
+        proxy = "http://localhost:2080"
 
         # Set options for youtube_dl
+        # linux sudo apt-get install aria2
+        # mac brew install aria2
+        # windowns https://aria2.github.io/
+
         ydl_opts = {
+            'external_downloader': "aria2c.exe",
+            'external_downloader_args': ['-x', '16', '-s', '16', '-j', '16', '-k', '1M'],
+            'verbose': True,
             'noplaylist': True,
-            # 'proxy': proxy,
+            'proxy': proxy,
             'format': 'bestaudio/best',
             'outtmpl': '%(id)s.%(ext)s',
             'writethumbnail': True,  # 图像
@@ -34,11 +41,14 @@ class DownloadUtil:
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
-                'preferredquality': '192',
+                'preferredquality': '320',
             }],
         }
         # Create a youtube_dl instance and download the video
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+            # retcode = ydl.download([url])
+            # print(retcode)
+
             info_dict = ydl.extract_info(url, download=True)
             video_title = info_dict.get('title')
             video_title = safeFilename(video_title)

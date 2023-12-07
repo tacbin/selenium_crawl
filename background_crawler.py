@@ -25,6 +25,10 @@ def download_collection(url, title):
 # 李圣杰推荐歌单 https://www.youtube.com/watch?v=7NIsBeVRAgk&list=RDEM196XDaIpRfMfFXqcWmH8RA&start_radio=1&rv=a1T2FVLP29M
 # 五月天合辑 https://www.youtube.com/watch?v=V9sWPHGbESM&list=RDV9sWPHGbESM&start_radio=1&rv=V9sWPHGbESM&t=8
 if __name__ == '__main__':
-    download_collection(
-        'https://www.youtube.com/watch?v=tkZVFJCpRqA&list=RDEMzM_DSOih_4ee94yJwG-Lyg&index=3', '凤凰传奇')
-    # download_single_audio('https://youtu.be/Y6KEvSTgF1Q',get_current_time())
+    # download_collection(
+    #     'https://www.youtube.com/watch?v=tkZVFJCpRqA&list=RDEMzM_DSOih_4ee94yJwG-Lyg&index=3', '凤凰传奇')
+    # download_single_audio('https://www.youtube.com/watch?v=vEajwiVHeYg',get_current_time())
+    download_single_audio('https://youtu.be/Vf6EDkIuviA',get_current_time())
+    download_single_audio('https://youtu.be/CMGsgQ2Jq_w',get_current_time())
+    download_single_audio('https://youtu.be/7_7slY0fXNU',get_current_time())
+    download_single_audio('https://youtu.be/pTZWvGIr8PE',get_current_time())
