@@ -17,16 +17,19 @@ class DownloadUtil:
             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()), new_dir, '创建目录,')
             os.makedirs(new_dir)
 
-        proxy = "http://localhost:2080"
+        proxy = "http://localhost:10808"
 
         # Set options for youtube_dl
         # linux sudo apt-get install aria2
         # mac brew install aria2
         # windowns https://aria2.github.io/
-
+        # -x or --max - connection - per - server
+        # -s or --split: Sets the maximum number of concurrent downloads.
+        # -j or --max - concurrent - downloads: Sets the maximum number of concurrent downloads.
+        # -k or --min - split - size: Sets the minimum size of  a file part for splitting.
         ydl_opts = {
             'external_downloader': "aria2c.exe",
-            'external_downloader_args': ['-x', '16', '-s', '16', '-j', '16', '-k', '1M'],
+            'external_downloader_args': ['-x', '16', '-s', '16', '-j', '16', '-k', '2M'],
             'verbose': True,
             'noplaylist': True,
             'proxy': proxy,

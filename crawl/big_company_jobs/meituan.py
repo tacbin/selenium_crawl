@@ -107,6 +107,16 @@ class MeiTuanCrawl(CommonCrawl):
                                                           body=str(json.dumps(data.__dict__,ensure_ascii=False)))
                 except Exception as e:
                     print("mq err:", e)
+
+                keywords = ["java","go","后端","工程","运营","开发"]
+                all_failed = True
+                for keyword in keywords:
+                    if keyword in txt.lower():
+                        all_failed = False
+                        break
+                if all_failed:
+                    return
+
                 QQRobot.send_group_msg(JobGroupConstant, [txt])
                 QQRobot.send_company_msg_xiaowo(JobGroupConstant, [txt])
                 CommonInstance.Redis_client.set(data.title + data.place + data.update_time, '')

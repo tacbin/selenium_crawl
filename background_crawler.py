@@ -28,7 +28,5 @@ if __name__ == '__main__':
     # download_collection(
     #     'https://www.youtube.com/watch?v=tkZVFJCpRqA&list=RDEMzM_DSOih_4ee94yJwG-Lyg&index=3', '凤凰传奇')
     # download_single_audio('https://www.youtube.com/watch?v=vEajwiVHeYg',get_current_time())
-    download_single_audio('https://youtu.be/Vf6EDkIuviA',get_current_time())
-    download_single_audio('https://youtu.be/CMGsgQ2Jq_w',get_current_time())
-    download_single_audio('https://youtu.be/7_7slY0fXNU',get_current_time())
-    download_single_audio('https://youtu.be/pTZWvGIr8PE',get_current_time())
+
+    download_single_audio('https://youtu.be/5Jd4h31C5mQ',get_current_time())
