@@ -92,5 +92,8 @@ if __name__ == '__main__':
         hours = 1.5
 
         for task in tasks:
-            task.run()
+            try:
+                task.run()
+            except Exception as e:
+                print(e)
             time.sleep(60 * 60 * hours / len(tasks))
