@@ -26,7 +26,7 @@ def download_collection(url, title):
 # 五月天合辑 https://www.youtube.com/watch?v=V9sWPHGbESM&list=RDV9sWPHGbESM&start_radio=1&rv=V9sWPHGbESM&t=8
 if __name__ == '__main__':
     # download_collection(
-    #     'https://www.youtube.com/watch?v=tkZVFJCpRqA&list=RDEMzM_DSOih_4ee94yJwG-Lyg&index=3', '凤凰传奇')
+    #     'https://www.youtube.com/watch?v=zPeMFCDPgKE&list=RDQMUdz7ww5gH38&index=3', '好听的老歌')
     # download_single_audio('https://www.youtube.com/watch?v=vEajwiVHeYg',get_current_time())
 
-    download_single_audio('https://youtu.be/IJT51et7owQ',get_current_time())
+    download_single_audio('https://www.youtube.com/watch?v=nBaYg4U8khA&ab_channel=%E6%B4%97%E8%84%91%E6%8A%96%E9%9F%B3%E6%AD%8C%E6%9B%B2',get_current_time())

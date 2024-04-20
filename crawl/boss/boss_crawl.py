@@ -113,3 +113,8 @@ class BossCrawl(CommonCrawl):
 
     def get_next_click_elements(self, browser: WebDriver) -> List[WebElement]:
         return browser.find_elements(By.XPATH, '//div[@class="page"]/a[@ka="page-next"]')
+
+
+if __name__ == '__main__':
+    boss = BossCrawl()
+    boss.before_crawl()
